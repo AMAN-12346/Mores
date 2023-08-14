@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "name": "web-application",
+=======
+  "name": "search_feature",
+>>>>>>> 2093560 (Initial commit from Create Next App)
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -10,7 +14,11 @@
   },
   "dependencies": {
     "autoprefixer": "10.4.14",
+<<<<<<< HEAD
     "eslint": "8.45.0",
+=======
+    "eslint": "8.46.0",
+>>>>>>> 2093560 (Initial commit from Create Next App)
     "eslint-config-next": "13.4.12",
     "next": "13.4.12",
     "postcss": "8.4.27",

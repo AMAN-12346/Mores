@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import Script from 'next/script'
 import '../styles/globals.css'; // Import your global styles here
 
@@ -14,3 +15,10 @@ function MyApp({ Component, pageProps }) {
 }
 
 export default MyApp;
+=======
+import '@/styles/globals.css'
+
+export default function App({ Component, pageProps }) {
+  return <Component {...pageProps} />
+}
+>>>>>>> 2093560 (Initial commit from Create Next App)
