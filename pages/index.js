@@ -6,7 +6,7 @@ const Home = () => {
     <main
       className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
     >
-      <div>Hello from main</div>
+      <div>Hello from mainnnnnnnnn</div>
     </main>
   );
 };
