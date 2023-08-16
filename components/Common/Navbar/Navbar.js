@@ -1,6 +1,5 @@
 "use client";
 import Styles from './Navbar.module.css';
-import logo from '../../assets/moreIcon/mores.png';
 
 const Navbar = () => {
     return ( 

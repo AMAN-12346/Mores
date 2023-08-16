@@ -1,10 +1,9 @@
 "use client";
 import Styles from './Footer.module.css';
-import logo from '../../assets/moreIcon/mores.png';
 import Image from 'next/image';
-import facebookIcon from '../../assets/socialIcons/facebook.svg';
-import twitterIcon from '../../assets/socialIcons/twitter.svg';
-import youtubeIcon from '../../assets/socialIcons/youtube.svg';
+import facebookIcon from '../../../assets/socialIcons/facebook.svg';
+import twitterIcon from '../../../assets/socialIcons/twitter.svg';
+import youtubeIcon from '../../../assets/socialIcons/youtube.svg';
 
 
 const Footer = () => {
