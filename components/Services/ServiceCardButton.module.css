@@ -1,0 +1,20 @@
+.serviceButton{
+    display: flex;
+    width: fit-content;
+    height: 44px;
+    padding: 7px 18px;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    border: 1px solid #018191;
+    color: #018191;
+    font-variant-numeric: lining-nums proportional-nums;
+    font-family: Raleway;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px; /* 171.429% */
+    margin: 5% 8%;
+}
