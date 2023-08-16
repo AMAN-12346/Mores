@@ -13,7 +13,7 @@ const ServiceCard = ({name, description}) => {
                 {description.points.map((point)=> <li className={Styles.listItem}>{point}</li> )}
             </ul>  
             <div className="flex justify-between">
-                <ServiceCardButton />
+                <ServiceCardButton path={description.path}/>
                 <div className={Styles.iconDiv} style={{background:description.iconBackgroundColor}}>
                    <div className={Styles.imgIconDiv}>
                        <img

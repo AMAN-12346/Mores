@@ -2,7 +2,7 @@
 import { useState } from "react";
 import ServiceCard from "./ServiceCard";
 import Styles from "./Services.module.css";
-import serviceContent from '../../content/serviceContent.jsx';
+import serviceContent from '../../../content/ServiceContent/serviceContent.jsx';
 
 
 const Services = () => {
