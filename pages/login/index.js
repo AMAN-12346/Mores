@@ -4,7 +4,7 @@ import footer_image from "../register/assets/footer-image.png";
 import right_side_image from "../register/assets/right_side_image.png";
 import logo_image from "../register/assets/logo_image.png";
 
-const RegisterUser = () => {
+const LoginUser = () => {
   const [selectedMethod, setSelectedMethod] = useState("email");
 
   return (
@@ -19,8 +19,8 @@ const RegisterUser = () => {
             width={130}
           />
         </div>
-        <h1 className="text-2xl font-bold">Register</h1>
-        <p className="mt-2">Create a new account</p>
+        <h1 className="text-2xl font-bold">Login</h1>
+        <p className="mt-2">Access back to your account</p>
         <div className="mt-8 w-full">
           <button
             className={`py-2 px-6 rounded-xl w-36 ${
@@ -63,7 +63,7 @@ const RegisterUser = () => {
             </span>
           </div>
           <button className="w-9/12 bg-button text-white py-2 rounded-lg mt-4">
-            Register
+            Login
           </button>
         </form>
         <div className="mt-0">
@@ -87,4 +87,4 @@ const RegisterUser = () => {
   );
 };
 
-export default RegisterUser;
+export default LoginUser;
