@@ -8,7 +8,7 @@ const LoginUser = () => {
   const [selectedMethod, setSelectedMethod] = useState("email");
 
   return (
-    <div className="flex items-center justify-center">
+    <div className="flex items-center justify-center max-h-fit overflow-x-hidden overflow-y-hidden">
       <div className="w-1/2 p-32 bg-login_background">
         <div className="absolute top-4 left-4">
           <Image
@@ -75,12 +75,13 @@ const LoginUser = () => {
           />
         </div>
       </div>
-      <div className="w-1/2">
+      <div className="w-1/2 bg-contain">
         <Image
           src={right_side_image}
           alt="footer-image"
-          height={1042}
-          width={710}
+          height={0}
+          width={0}
+          className=""
         />
       </div>
     </div>
