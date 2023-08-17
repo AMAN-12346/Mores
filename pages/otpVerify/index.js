@@ -8,7 +8,7 @@ import right_side_image from "../register/assets/right_side_image.png";
 import logo_image from "../register/assets/logo_image.png";
 
 const VerifyOTP = () => {
-  const [otp, setOTP] = useState(["", "", "", "", "",""]);
+  const [otp, setOTP] = useState(["", "", "", "", "", ""]);
   const router = useRouter(); // Get the router instance
   const [loginSuccess, setLoginSuccess] = useState(false);
 
@@ -20,22 +20,22 @@ const VerifyOTP = () => {
   const handleVerifyOTP = async () => {
     const userID = localStorage.getItem("userID");
     const enteredOTP = otp.join("");
-  
+
     // If the userID starts with "+91", it's a mobile number
     const isMobileNumber = userID.startsWith("+91");
-  
+
     const payload = {
       userID: isMobileNumber ? userID : `+91${userID}`, // Prepend +91 if it's not a mobile number
       otp: enteredOTP,
     };
-  console.log("payload from verify : ", payload)
+    console.log("payload from verify : ", payload)
     try {
       // Send POST request to verify OTP
       const response = await axios.post(
         "http://localhost:1950/api/v1/user/verifyOTP",
         payload
       );
-  
+
       if (response.status === 200) {
         // Delete the userID from local storage
         localStorage.removeItem("userID");
@@ -44,7 +44,7 @@ const VerifyOTP = () => {
           setLoginSuccess(false); // Reset the login success state after a timeout
           // router.push("/otpVerify");
         }, 3000); // Set the timeout to 3 seconds (adjust as needed)
-  
+
         // Redirect the user to a success page or any other desired location
         // router.push("/login");
       }
@@ -53,8 +53,8 @@ const VerifyOTP = () => {
       console.error("Error verifying OTP:", error);
     }
   };
-  
-  
+
+
 
   return (
     <div className="flex items-center justify-center max-h-fit overflow-x-hidden overflow-y-hidden">
