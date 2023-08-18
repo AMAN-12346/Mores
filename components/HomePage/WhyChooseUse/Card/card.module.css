@@ -1,0 +1,19 @@
+.card{
+    width: 28%;
+    height: fit-content;
+    flex-shrink: 0;
+    background-color: #FFF;
+    border: 3px solid #003E71;
+    border-radius: 30px;
+}
+
+.imageDiv{
+    width: 95px;
+    height: 95px;
+    flex-shrink: 0;
+    background-color: #018191;
+    margin: auto;
+    border-radius: 50%;
+    margin-top: 12%;
+    position: relative;
+}

@@ -4,6 +4,9 @@ import Image from 'next/image';
 import facebookIcon from '../../../assets/socialIcons/facebook.svg';
 import twitterIcon from '../../../assets/socialIcons/twitter.svg';
 import youtubeIcon from '../../../assets/socialIcons/youtube.svg';
+import addressIcon from '../../../assets/FooterIcons/placeholder.png';
+import gmailIcon from '../../../assets/FooterIcons/gmail.png';
+import phoneIcon from '../../../assets/FooterIcons/call.png';
 
 
 const Footer = () => {
@@ -16,8 +19,8 @@ const Footer = () => {
                 src="https://s3-alpha-sig.figma.com/img/e7aa/0378/04e2d5856f135d6d10a0aaa5c453113e?Expires=1693180800&Signature=pMdNl8b3K9wO1Qgb1NnF1mZd-c80RlqzE8AfEsVdq3VsR7CaH4AW-Of~YP3wVhM868wvwhLQwvMIh1~LSe7-~jdFr3lO4BP9vmZFYK8mQXqpK-jbKnNRjA7DiZUEUtoLSrU1JI12qnkZp-rCJjP-51bTkRDiMl-U-h57xIhIFQzkoq6Esxgxj7QnlRfE5kxhbSixMLmbUU7gBtkQnxmb43fNGE9vNFINtSVuOkf--u~RA4obc3PiW4dg5vFFrI4F4BZy8MZHGGaVi~1JFMDSXJL9CBsU1ayh3OvOcD8-ve1wPZ25piZELjUSiVwewXHEc5BSKGesiJ-fKQ1Bt~0krw__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"
                 alt='Mores-logo' />
             
-                <p className='h-14 w-5/5 text-base text-white font-normal mb-5'>
-                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                <p className='h-14 w-4/5 text-xs text-white font-normal mb-9'>
+                   Everyone has dreams and aspirations, but most of us don’t have the first idea about how to make them come true
                 </p>
                 <div className='inline-flex'>
                     <Image
@@ -43,7 +46,7 @@ const Footer = () => {
                 </div>
               </div>
             </div>
-           <div className={`flex justify-evenly w-9/12 justify-center mt-12`}>
+           <div className={`flex justify-evenly w-9/12 justify-center mt-12 ml-9`}>
             <div>
                 <div className={Styles.footerTag}>QUICK LINKS</div>
                 <div>
@@ -53,9 +56,10 @@ const Footer = () => {
                     <p className={Styles.paraTag}>CONTACT US</p>
                 </div>
             </div>
-            <div>
+            <div className='mx-12'>
                 <div className={Styles.footerTag}>ABOUT</div>
                 <div>
+                    <p className={Styles.paraTag}>Career</p>
                     <p className={Styles.paraTag}>Terms & Conditions</p>
                     <p className={Styles.paraTag}>Privacy Policy</p>
                 </div>
@@ -63,8 +67,25 @@ const Footer = () => {
             <div>
                 <div className={Styles.footerTag}>CONTACT</div>
                 <div>
-                    <p className={Styles.adddressParaTag}>ABC, TOWER NO. 4, SECTOR-135, NOIDA, UP, INDIA</p>
-                    <p className={Styles.paraTag}>xyzcompany@gmail.com</p>
+                    <div className='flex'>
+                        <Image src={addressIcon} className='w-[20px] h-[20px] mr-2' alt='address-icon'/>
+                        <p className={Styles.adddressParaTag}>
+                            CORPORATE OFFICE
+                            5th Floor , Unit No. 503 , Tower 4, 
+                            Assotech Business Cresterra, Sector 135,
+                            Noida, Uttar Pradesh 201305
+                        </p>
+                    </div>
+                    <div className={Styles.paraTag}>
+                        <p className='mb-3 flex'> 
+                            <Image src={gmailIcon} className='w-[20px] h-[20px] mr-2' alt='email-icon'/> 
+                            sales@mores.in
+                        </p>
+                        <p className='flex'>
+                            <Image src={phoneIcon} className='w-[20px] h-[20px] mr-2' alt='phone-icon'/>
+                            +91-8409091010
+                        </p>
+                    </div>
                 </div>
             </div>
            </div>

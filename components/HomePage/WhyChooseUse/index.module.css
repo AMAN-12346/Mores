@@ -1,0 +1,14 @@
+.container{
+    background-color: #C7A97E;
+    height: fit-content;
+}
+
+.underline{
+    width: 174px;
+    height: 5px;
+    flex-shrink: 0;
+    border-radius: 16px;
+    background: #FFF;
+    margin: auto;
+    margin-top: 10px;
+}

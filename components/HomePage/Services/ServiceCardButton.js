@@ -1,15 +1,12 @@
 "use client";
-import Link from "next/link";
 import Styles from "./ServiceCardButton.module.css";
 
 
-const ServiceCardButton = ({path}) => {
-    return ( 
+const ServiceCardButton = ({path, buttonName}) => {
+    return (        
         <div className={Styles.serviceButton}>  
-            <Link href={path}>
-                <button>Create Now</button>  
-            </Link>             
-        </div>
+                <button>{buttonName}</button> 
+        </div>                        
      );
 }
 
