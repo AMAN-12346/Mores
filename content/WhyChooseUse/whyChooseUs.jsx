@@ -1,6 +1,6 @@
-import la_hands from "../../assets/whyChooseUsIcons/la_hands-helping.png";
-import account_secure from "../../assets/whyChooseUsIcons/mdi_account-secure-outline.png";
-import list_icon from "../../assets/whyChooseUsIcons/ion_list-sharp.png";
+import la_hands from "../../assets/whyChooseUsIcons/la_hands-helping.svg";
+import account_secure from "../../assets/whyChooseUsIcons/mdi_account-secure-outline.svg";
+import list_icon from "../../assets/whyChooseUsIcons/ion_list-sharp.svg";
 
 
 const whyChooseUsContent = () => {

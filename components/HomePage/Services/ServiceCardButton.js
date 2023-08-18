@@ -2,7 +2,7 @@
 import Styles from "./ServiceCardButton.module.css";
 
 
-const ServiceCardButton = ({path, buttonName}) => {
+const ServiceCardButton = ({buttonName}) => {
     return (        
         <div className={Styles.serviceButton}>  
             <button>{buttonName}</button> 
