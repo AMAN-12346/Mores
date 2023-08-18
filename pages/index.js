@@ -1,14 +1,18 @@
 import Image from "next/image";
-
+import Services from "@/components/HomePage/Services/Services";
 import { Inter } from "next/font/google";
+import Navbar from "@/components/Common/Navbar/Navbar";
+import Footer from "@/components/Common/Footer/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const  Home = () => {
   console.log("hello")
   return (
-    <div className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
-      <h1 className="text-4xl"> index </h1>
+    <div>
+      <Navbar/>
+      <Services/>
+      <Footer/>
     </div>
   );
 }

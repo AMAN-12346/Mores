@@ -6,6 +6,7 @@ import axios from "axios"; // Import axios for making API requests
 import footer_image from "../register/assets/footer-image.png";
 import right_side_image from "../register/assets/right_side_image.png";
 import logo_image from "../register/assets/logo_image.png";
+import Services from "@/components/HomePage/Services/Services";
 
 const VerifyOTP = () => {
   const [otp, setOTP] = useState(["", "", "", "", "", ""]);
@@ -42,6 +43,7 @@ const VerifyOTP = () => {
         setLoginSuccess(true); // Set the login success state to true
         setTimeout(() => {
           setLoginSuccess(false); // Reset the login success state after a timeout
+          router.push("/");
           // router.push("/otpVerify");
         }, 3000); // Set the timeout to 3 seconds (adjust as needed)
 

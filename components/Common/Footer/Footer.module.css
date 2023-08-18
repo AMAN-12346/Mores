@@ -1,0 +1,35 @@
+.footer{
+    background-color: var(--footer-bg);
+    height: 336px;
+}
+
+.footerTag{
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 32px; /* 200% */
+    margin-bottom: 21px;
+}
+
+.paraTag{
+    width: 150px;
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px; /* 171.429% */
+    margin-bottom: 10%;
+}
+.adddressParaTag{
+    width: 70%;
+    color: #FFF;
+    font-family: Poppins;
+    margin-bottom: 10%;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px; /* 171.429% */
+}

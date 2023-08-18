@@ -1,0 +1,57 @@
+.card{
+    width: 31%;
+    height: 285px;
+    flex-shrink: 0;
+    background-color: #FFF;
+    border: 2px solid #018191;
+    border-radius: 30px;
+    position: relative;
+}
+
+.heading{
+    color: #000;
+    font-variant-numeric: lining-nums proportional-nums;
+    font-family: "Poppins";
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 48px; /* 252.632% */
+    margin-left: 30px;
+    margin-top: 10px;
+}
+.unorderedList{
+    width: 90%;
+    height: 93px;
+    margin-left: 40px;
+    margin-top: 10px;
+}
+.listItem{
+    color: var(--text-body, #818181);
+    font-family: Poppins;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px; /* 200% */
+    list-style-type: disc;
+}
+
+.iconDiv{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 45%;
+    height: 105px;
+    flex-shrink: 0;
+    border-radius: 55px 0px 30px 0px;
+    background: rgba(72, 145, 211, 0.11);
+}
+
+.imgIconDiv{
+   position: absolute;
+   top: 22%;
+   left: 40%;
+}
+
+.serviceIcon{
+   margin: auto !important;
+}

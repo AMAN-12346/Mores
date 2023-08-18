@@ -3,6 +3,11 @@ import Script from 'next/script'
 import '../styles/globals.css'; // Import your global styles here
 
 
+import "@fontsource/poppins"; // Defaults to weight 400
+import "@fontsource/raleway";
+import '../styles/globals.css'; // Import your global styles here
+
+ 
 
 function MyApp({ Component, pageProps }) {
 
@@ -25,7 +30,6 @@ function MyApp({ Component, pageProps }) {
   );
 
 }
-
 
 
 export default MyApp;
