@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react"
 import { PieChart } from '@mui/x-charts/PieChart';
 import Styles from './index.module.css';
-import Navbar from "@/components/Common/Navbar/Navbar";
 import InputValue from "@/utils/InputValue";
 
 const EMI = () => {
@@ -32,7 +31,6 @@ const EMI = () => {
 
     return (
         <div className="relative">
-        <Navbar />
         <div className="w-12/12 flex">
             <div className={`text-center w-4/12 m-auto ${Styles.calculatorDiv}`}>
                 <p className="text-2xl my-6 ">Calculate EMI</p>

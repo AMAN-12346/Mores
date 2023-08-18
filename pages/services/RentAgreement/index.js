@@ -1,6 +1,4 @@
 "use client";
-
-import Navbar from "@/components/Common/Navbar/Navbar";
 import InputValue from "@/utils/InputValue/index";
 import { useEffect, useState } from "react";
 
@@ -106,7 +104,6 @@ const RentAgreement = () => {
 
     return (
         <>
-        <Navbar />
         <div className="text-center items-center">
             {loading ?
                 <div>

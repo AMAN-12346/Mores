@@ -5,7 +5,7 @@ import Styles from "./ServiceCardButton.module.css";
 const ServiceCardButton = ({path, buttonName}) => {
     return (        
         <div className={Styles.serviceButton}>  
-                <button>{buttonName}</button> 
+            <button>{buttonName}</button> 
         </div>                        
      );
 }
