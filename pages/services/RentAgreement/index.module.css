@@ -1,0 +1,137 @@
+.paragraph{
+    font-size: 16px;
+    color: #7f8282;
+    margin: 40px 0px;
+}
+
+.Details{
+    width: 70%;
+    text-align: left;
+    background-color: white;
+    border: 2px solid #018191;
+    border-radius: 5px;
+    margin: auto;
+    margin-bottom: 2%;
+}
+.summary{
+    color: #ffffff;
+    background-color: #018191;
+    padding: 14px 2px;
+    font-weight: bold;
+    padding-left: 3%;
+}
+/* .summary:focus{
+    color: white;
+    background-color: #018191;
+} */
+.innerSummary{
+    padding: 20px 0px;
+}
+.innerSummary div{
+    width: 30vw;
+    margin: 10px 0px;
+}
+.innerSummary h2{
+    color: #018191;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+.InputValue{
+    width: 100%;
+    padding: 4px 8px;
+    color: #222323;
+    border: 1px solid #018191;
+    border-radius: 4px;
+}
+.InputValue:focus{
+    outline: none;
+}
+
+.button{
+    margin: 5% 0px 10%;
+    padding: 9px 36px;
+    color: #931602;
+    background-color: white;
+    border: 2px solid #931602;
+    border-radius: 5px;
+    font-weight: 600;
+    text-align: end;
+}
+.button:hover{
+    background-color: #931602;
+    color: white;
+}
+.AmenityValue{
+    width: 22vw;
+    padding: 7px 15px;
+    border: 1px solid #018191;
+    border-radius: 20px 0px 0px 20px;
+}
+.AmenityValue:focus{
+    outline: none;
+}
+.addAmenityButton{
+    padding: 5px 14px;
+    background-color: #018191;
+    color: white;
+    height: 40px;
+    border-radius: 0px 20px 20px 0px;
+}
+.addAmenityButton:hover{
+    opacity: 0.8;
+}
+
+.amenityDetails{
+    display: flex;
+}
+.amenityName{
+    font-size: 15px;
+    padding: 5px;
+    font-weight: 600;
+    color: #018191;
+}
+.amenityButton{
+    display: flex;
+    width: 40px;
+}
+.amenityButton button{
+    color: #018191;
+    background-color:  rgba(1, 129, 145, 0.22);
+    font-size: 18px;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+.amenityButton h2{
+    margin: 0px 10px;
+    padding: 8px 5px;
+}
+.amenityButton button:hover{
+    opacity: 0.8;
+}
+
+
+/* pdf css */
+.functionButton{
+    color: #ffffff;
+    background-color: rgb(16, 134, 134);
+    width: 160px;
+    margin: 20px 20px;
+    padding: 6px 10px;
+    border-radius: 10px;
+}
+.functionButton:hover{
+    opacity: 0.7;
+}
+.pdfDiv{
+    width: 700px;
+    background-color: white;
+    padding: 40px;
+    margin: auto;
+    box-shadow: 0px 0px 4px 1px rgb(221, 221, 221);
+}
+.Lines li{
+    margin: 20px;
+    text-align: left;
+    list-style: disc;
+}

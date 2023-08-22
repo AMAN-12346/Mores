@@ -1,0 +1,31 @@
+.slideButton{
+    width: 69px;
+    height: 69px;
+    flex-shrink: 0;
+    border-radius: 100px;
+    border: 1px solid rgba(0, 0, 0, 0.19);
+    background: #FFF;
+    margin-left: 15px;
+}
+.slideButton:hover{
+   opacity: 0.8;
+   border: 1px solid grey;
+   background-color: #faf7f7;
+}
+
+.RightSlideButton{
+    width: 69px;
+    height: 69px;
+    flex-shrink: 0;
+    border-radius: 100px;
+    border: 1px solid rgba(0, 0, 0, 0.19);
+    background: #FFF;
+    margin-left: 15px;
+    transform: rotate(180deg);
+}
+
+.RightSlideButton:hover{
+    opacity: 0.8;
+    border: 1px solid grey;
+    background-color: #faf7f7;
+ }

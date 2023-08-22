@@ -1,4 +1,5 @@
 "use client";
+import DropdownButton from '@/utils/DropdownButton';
 import Styles from './Navbar.module.css';
 
 const Navbar = () => {
@@ -10,13 +11,34 @@ const Navbar = () => {
                     alt='Mores-Logo'/>
                 </div>            
                 <div className={`flex justify-evenly w-8/12`}>
-                        <div className={Styles.optionName}>City <img src='https://cdn-icons-png.flaticon.com/128/2985/2985150.png' width={18} className='ml-2' alt='down arrow' /> </div>
-                        <div className={Styles.optionName}>Buy <img src='https://cdn-icons-png.flaticon.com/128/2985/2985150.png' width={18} className='ml-2' alt='down arrow' /></div>
-                        <div className={Styles.optionName}>Rent <img src='https://cdn-icons-png.flaticon.com/128/2985/2985150.png' width={18} className='ml-2' alt='down arrow' /></div>
-                        <div className={Styles.optionName}>Projects <img src='https://cdn-icons-png.flaticon.com/128/2985/2985150.png' width={18} className='ml-2' alt='down arrow' /></div>
-                        <div className={Styles.optionName}>Agents <img src='https://cdn-icons-png.flaticon.com/128/2985/2985150.png' width={18} className='ml-2' alt='down arrow' /></div>
-                        <div className={Styles.optionName}>Services <img src='https://cdn-icons-png.flaticon.com/128/2985/2985150.png' width={18} className='ml-2' alt='down arrow' /></div>
-                        <div className={Styles.optionName}>Resources <img src='https://cdn-icons-png.flaticon.com/128/2985/2985150.png' width={18} className='ml-2' alt='down arrow' /></div>
+                        <div className={Styles.optionName}>
+                            <DropdownButton optionName="City" menuItem={['random', 'data']} />                        
+                            <img src='https://cdn-icons-png.flaticon.com/128/2985/2985150.png' width={18} className='ml-2' alt='down arrow' /> 
+                        </div>
+                        <div className={Styles.optionName}>
+                            <DropdownButton optionName="Sell" menuItem={['random', 'data']} />                        
+                            <img src='https://cdn-icons-png.flaticon.com/128/2985/2985150.png' width={18} className='ml-2' alt='down arrow' /> 
+                        </div>
+                        <div className={Styles.optionName}>
+                            <DropdownButton optionName="Rent" menuItem={['random', 'data']} />                        
+                            <img src='https://cdn-icons-png.flaticon.com/128/2985/2985150.png' width={18} className='ml-2' alt='down arrow' /> 
+                        </div>
+                        <div className={Styles.optionName}>
+                            <DropdownButton optionName="Projects" menuItem={['random', 'data']} />                        
+                            <img src='https://cdn-icons-png.flaticon.com/128/2985/2985150.png' width={18} className='ml-2' alt='down arrow' /> 
+                        </div>
+                        <div className={Styles.optionName}>
+                            <DropdownButton optionName="Agents" menuItem={['random', 'data']} />                        
+                            <img src='https://cdn-icons-png.flaticon.com/128/2985/2985150.png' width={18} className='ml-2' alt='down arrow' /> 
+                        </div>
+                        <div className={Styles.optionName}>
+                            <DropdownButton optionName="services" menuItem={['random', 'data']} />                        
+                            <img src='https://cdn-icons-png.flaticon.com/128/2985/2985150.png' width={18} className='ml-2' alt='down arrow' /> 
+                        </div>
+                        <div className={Styles.optionName}>
+                            <DropdownButton optionName="Resources" menuItem={['random', 'data']} />                        
+                            <img src='https://cdn-icons-png.flaticon.com/128/2985/2985150.png' width={18} className='ml-2' alt='down arrow' /> 
+                        </div>
                 </div>                
            </div>
             <div>
