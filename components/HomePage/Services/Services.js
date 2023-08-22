@@ -12,7 +12,7 @@ const Services = () => {
             <h1 className={Styles.heading}>
                 Everything you Need at One Place
                 <hr className={Styles.underline} />
-            </h1>       
+            </h1>           
             <div className={Styles.wrapper}>
             {Object.keys(serviceList).map((service) =>
                 <ServiceCard name={service} description={serviceList[service]}/>
