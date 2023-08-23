@@ -5,6 +5,7 @@ import axios from "axios"; // Import axios for making API requests
 import footer_image from "../register/assets/footer-image.png";
 import right_side_image from "../register/assets/right_side_image.png";
 import logo_image from "../register/assets/logo_image.png";
+import Link from "next/link";
 
 const LoginUser = () => {
   const [selectedMethod, setSelectedMethod] = useState("email");
@@ -24,7 +25,8 @@ const LoginUser = () => {
 
     try {
       // Send POST request to the API endpoint
-      const response = await axios.post("http://localhost:1950/api/v1/user/Login",
+      const response = await axios.post(
+        "http://localhost:1950/api/v1/user/Login",
         payload
       );
 
@@ -102,6 +104,15 @@ const LoginUser = () => {
           <button className="w-9/12 bg-button text-white py-2 rounded-lg mt-4">
             Login
           </button>
+          <p className="mt-3">
+            Don't have an account?{" "}
+            <Link
+              href="/register"
+              className="text-button underline cursor-pointer"
+            >
+              Register
+            </Link>
+          </p>
         </form>
         {otpSuccess && (
           <p className="text-green-500 mt-2">Otp sent successfully!</p>

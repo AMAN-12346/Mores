@@ -5,6 +5,8 @@ import axios from "axios"; // Import axios for making API requests
 import footer_image from "../register/assets/footer-image.png";
 import right_side_image from "../register/assets/right_side_image.png";
 import logo_image from "../register/assets/logo_image.png";
+import Link from "next/link";
+
 
 const RegisterUser = () => {
   const [selectedMethod, setSelectedMethod] = useState("email");
@@ -98,6 +100,15 @@ const RegisterUser = () => {
           <button className="w-9/12 bg-button text-white py-2 rounded-lg mt-4">
             Register
           </button>
+          <p className="mt-3">
+            Already have an account?{" "}
+            <Link
+              href="/login"
+              className="text-button underline cursor-pointer"
+            >
+              Login
+            </Link>
+          </p>
         </form>
         <div className="mt-0">
           <Image
