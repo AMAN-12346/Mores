@@ -1,0 +1,82 @@
+.servicesComponent{
+    width: 100%;
+    margin: auto;
+    padding: 5%;
+    background-color: #9DACA1;
+}
+
+.heading{
+    color: #FFF;
+    text-align: center;
+    font-variant-numeric: lining-nums proportional-nums;
+    font-family: Poppins;
+    font-size: 38px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.paragraph{
+    color: #FFF;
+    text-align: center;
+    font-size: 17px;
+    font-style: normal;
+    margin-top: 2%;
+    font-weight: 400;
+    line-height: 27px; /* 135% */
+}
+
+.fieldName{
+    color: #FFF;
+    font-variant-numeric: lining-nums proportional-nums;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 22px; /* 137.5% */
+    margin-bottom: 12px;
+}
+
+.inputField{
+    width: 300px;
+    height: 52px;
+    flex-shrink: 0;
+    background-color: #9DACA1;
+    border: 2px solid white;
+    border-radius: 7px;
+    color: white;
+    padding-left: 5px;
+}
+.inputField:focus{
+    outline: none;
+}
+
+.textArea{
+    width: 76vw;
+    height: 240px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    border: 2px solid #FFF;
+    background-color: #9DACA1;
+    color: white;
+    padding: 5px;
+}
+.textArea:focus{
+    outline: none;
+}
+
+
+.button{
+    display: inline-flex;
+    padding: 18.344px 37px 16.656px 44px;
+    justify-content: flex-end;
+    align-items: center;
+    border-radius: 11px;
+    background: #FFF;
+    color: #000;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: bolder;
+    line-height: 150%; /* 25.5px */
+} 
+
+  

@@ -11,6 +11,9 @@
 body{
   background-color: var(--primary-bg);
   font-family: 'Poppins';
+    background-color: var(--primary-bg);
+    font-family: 'Poppins';
+    overflow-x: hidden;
 }
 
 /* :root {

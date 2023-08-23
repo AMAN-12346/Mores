@@ -3,12 +3,21 @@ import Image from 'next/image';
 import bathtub from '../../../assets/moreIcon/bathtub.svg';
 import school from '../../../assets/moreIcon/school.svg';
 import testing from '../../../assets/moreIcon/testing.svg';
+import Gymnasium from '../../../assets/moreIcon/Gymnasium.png';
+import Lift from '../../../assets/moreIcon/Lift.png';
+// import Gymnasium from '../../../assets/moreIcon/Gymnasium.png';
+// import Gymnasium from '../../../assets/moreIcon/Gymnasium.png';
+// import Gymnasium from '../../../assets/moreIcon/Gymnasium.png';
+// import Gymnasium from '../../../assets/moreIcon/Gymnasium.png';
+// import Gymnasium from '../../../assets/moreIcon/Gymnasium.png';
+// import Gymnasium from '../../../assets/moreIcon/Gymnasium.png';
 
 // Example of amenityIcons object
 const amenityIcons = {
-    Gymnasium: bathtub,
+    Gymnasium: Gymnasium,
     school: school,
     SwimmingPool:testing,
+    Lift : Lift
     // ... and so on for other amenities
 };
 

@@ -4,7 +4,7 @@ export default function AgentFrom() {
     const countryCodes = ['+1', '+44', '+91', '+86', '+81'];
     return (
         <div>
-            <div className="bg-[#A37F4F] rounded-t-lg shadow-lg p-2">
+            <div className="bg-[#A37F4F] rounded-t-lg shadow-md p-2">
                 <div>
                     <h1 className="text-white text-2xl font-semibold">Agent Overview</h1>
                 </div>

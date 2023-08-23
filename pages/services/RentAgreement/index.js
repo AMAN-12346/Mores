@@ -1,6 +1,10 @@
 "use client";
+import React, { useRef } from 'react';
 import InputValue from "@/utils/InputValue/index";
 import { useEffect, useState } from "react";
+import jsPDF from 'jspdf';
+import html2canvas from 'html2canvas';
+import Styles from './index.module.css';
 
 
 
@@ -8,6 +12,7 @@ const RentAgreement = () => {
 
     const [city, setCity] = useState("");
     const [agreementDate, setAgreementDate] = useState("");
+    const pdfDivRef = useRef(null);
 
     //landlord details
     const [ltitle, setLTitle] = useState("");
@@ -84,17 +89,39 @@ const RentAgreement = () => {
 
     //download
     const handleDownload = async () => {
+        setDownloading(true);
+        const element = pdfDivRef.current;
+        console.log('Element', element)
 
-        const capture = document.querySelector(".my-file");
-        html2canvas(capture).then((canvas) => {
-            const imgData = canvas.toDataURL('img/png');
-            const doc = new jsPDF('p', 'mm', 'a4');
-            // const componentWidth = doc.internal.pageSize.getWidth();
-            // const componentHeight = doc.internal.pageSize.getHeight();
-            doc.addImage(imgData, 'JPEG', 0, 0);
-            doc.save('Agreement.pdf')
-        })
+        if (element) {
+            const pdf = new jsPDF('p', 'mm', 'a4');
+            const contentHeight = element.clientHeight;
+            const pageHeight = pdf.internal.pageSize.height + 750; // Adjust margin if needed
+            const pages = Math.ceil(contentHeight / pageHeight);
 
+            for (let page = 0; page < pages; page++) {
+                const yOffset = page * pageHeight;
+                const canvas = await html2canvas(element, {
+                    scale: 2,
+                    windowWidth: element.scrollWidth,
+                    windowHeight: pageHeight,
+                    y: yOffset,
+                });
+                const imgData = canvas.toDataURL('image/jpeg', 1.0);
+
+                if (page !== 0) {
+                    pdf.addPage();
+                }
+
+                pdf.addImage(imgData, 'JPEG', 10, 10, 190, 0); // Adjust the parameters as needed
+            }
+
+            pdf.save('Mores-Rent-Agreement.pdf');
+            setDownloading(false);
+        } else {
+            console.log('Element does not exist');
+        }     
+        
     }
 
     // handleAgrrement
@@ -106,246 +133,275 @@ const RentAgreement = () => {
         <>
         <div className="text-center items-center">
             {loading ?
-                <div>
-                    <h1>Rent Agreement</h1>
-                    <p>Create rent agreement form in a easy free way !!!</p>
-                    <InputValue value={city} setValue={setCity} placeholder="Enter City name" />
-                    <h2>Agrement Date</h2>
-                    <InputValue value={agreementDate} setValue={setAgreementDate} placeholder="Enter Date" type="date" />
-
-
-                    <div className="flex mt-5 justify-center">
-
-                        {/* landlord details form */}
-                        <div className="w-60 mr-5">
-                            <h1>Landlord Details</h1>
-                            {/* {
-                                [1, 2, 3, 4, 5].map((d, i) =>
-                                    <InputValue key={i} value={d} setValue={setLTitle} placeholder="Mr/Mrs/Miss" />
-                                )
-                            } */}
-
-                            <InputValue value={ltitle} setValue={setLTitle} placeholder="Mr/Mrs/Miss" />
-                            <InputValue value={lname} setValue={setLname} placeholder="Enter Landlord Name" />
-
-                            <InputValue value={lParentName} setValue={setLParentName} placeholder="Enter Parent Name" />
-
-                            <InputValue value={lMob} setValue={setLMob} placeholder="Enter Mobile Number" />
-
-                            <InputValue value={lEmail} setValue={setLEmail} placeholder="Enter Email" />
-
-                            <InputValue value={lPan} setValue={setLPan} placeholder="Enter Pan Number" />
-
-                            <InputValue value={lAdhaar} setValue={setLAdhaar} placeholder="Enter Adhaar Number" />
-
-                            <InputValue value={lAddress} setValue={setLAddress} placeholder="Enter Address" />
+                <div className={Styles.outerDiv}>
+                    <h1 className="text-3xl font-bold mt-4 underline">Rent Agreement</h1>
+                    <p className={Styles.paragraph}>Create rent agreement form in a easy free way !!!</p>
+                    <details className={Styles.Details}>
+                        <summary className={Styles.summary}>Enter City and Date</summary>
+                        <div className={`flex justify-evenly ${Styles.innerSummary}`}>
+                            <div>
+                                <h2>City</h2>
+                                <InputValue value={city} setValue={setCity} placeholder="Enter City name" className={Styles.InputValue}/>
+                            </div>
+                            <div>
+                                <h2>Agrement Date</h2>
+                                <InputValue value={agreementDate} setValue={setAgreementDate} placeholder="Enter Date" type="date" className={Styles.InputValue}/>
+                            </div>
                         </div>
+                    </details>
+
+                    {/* landlord details */}
+                    <details className={Styles.Details}>
+                        <summary className={Styles.summary}>Landlord Details</summary>
+                        <div className={`flex justify-evenly flex-wrap ${Styles.innerSummary}`}>
+                            <div>
+                                <h2>Title</h2>
+                                <InputValue value={ltitle} setValue={setLTitle} placeholder="Mr/Mrs/Miss" className={Styles.InputValue}/>
+                            </div>
+                            <div>
+                                <h2>Name</h2>
+                                <InputValue value={lname} setValue={setLname} placeholder="Enter Name" className={Styles.InputValue} />
+                            </div>
+                            <div>
+                                <h2>Parent Name</h2>
+                                <InputValue value={lParentName} setValue={setLParentName} placeholder="Enter Parent Name" className={Styles.InputValue}/>
+                            </div>
+                            <div>
+                                <h2>Mobile Number</h2>
+                                <InputValue value={lMob} setValue={setLMob} placeholder="Enter Mobile Number" className={Styles.InputValue}/>
+                            </div>
+                            <div>
+                                <h2>Email</h2>
+                                <InputValue value={lEmail} setValue={setLEmail} placeholder="Enter Email" className={Styles.InputValue}/>
+                            </div>
+                            <div>
+                                <h2>Pan Card</h2>
+                                <InputValue value={lPan} setValue={setLPan} placeholder="Enter Pan Number" className={Styles.InputValue}/>
+                            </div>
+                            <div>
+                                <h2>Adhaar</h2>
+                                <InputValue value={lAdhaar} setValue={setLAdhaar} placeholder="Enter Adhaar Number" className={Styles.InputValue}/>
+                            </div>
+                            <div>
+                                <h2>Full Address</h2>
+                                <InputValue value={lAddress} setValue={setLAddress} placeholder="Enter Address" className={Styles.InputValue}/>
+                            </div>                     
+                        </div>
+                    </details>
+
 
                         {/* Renter form */}
-                        <div className="w-60 mr-5">
-                            <h1>Renter Details</h1>
-                            <InputValue value={rtitle} setValue={setRTitle} placeholder="Mr/Mrs/Miss" />
-
-                            <InputValue value={rname} setValue={setRname} placeholder="Enter renter name" />
-
-                            <InputValue value={rParentName} setValue={setRParentName} placeholder="Enter Parent Name" />
-
-                            <InputValue value={rMob} setValue={setRMob} placeholder="Enter Mobile Number" />
-
-                            <InputValue value={rEmail} setValue={setREmail} placeholder="Enter Email" />
-
-                            <InputValue value={rPan} setValue={setRPan} placeholder="Enter Pan Number" />
-
-                            <InputValue value={rAdhaar} setValue={setRAdhaar} placeholder="Enter Adhaar Number" />
-
-                            <InputValue value={rAddress} setValue={setRAddress} placeholder="Enter Address" />
-                        </div>
-                    </div>
+                        <details className={Styles.Details}>
+                            <summary className={Styles.summary}>Renter Details</summary>
+                            <div className={`flex justify-evenly flex-wrap ${Styles.innerSummary}`}>
+                                <div>
+                                    <h2>Title</h2>
+                                    <InputValue value={rtitle} setValue={setRTitle} placeholder="Mr/Mrs/Miss" className={Styles.InputValue}/>
+                                </div>
+                                <div>
+                                    <h2>Name</h2>
+                                    <InputValue value={rname} setValue={setRname} placeholder="Enter Name" className={Styles.InputValue} />
+                                </div>
+                                <div>
+                                    <h2>Parent Name</h2>
+                                    <InputValue value={rParentName} setValue={setRParentName} placeholder="Enter Parent Name" className={Styles.InputValue}/>
+                                </div>
+                                <div>
+                                    <h2>Mobile Number</h2>
+                                    <InputValue value={rMob} setValue={setRMob} placeholder="Enter Mobile Number" className={Styles.InputValue}/>
+                                </div>
+                                <div>
+                                    <h2>Email</h2>
+                                    <InputValue value={rEmail} setValue={setREmail} placeholder="Enter Email" className={Styles.InputValue}/>
+                                </div>
+                                <div>
+                                    <h2>Pan Card</h2>
+                                    <InputValue value={rPan} setValue={setRPan} placeholder="Enter Pan Number" className={Styles.InputValue}/>
+                                </div>
+                                <div>
+                                    <h2>Adhaar</h2>
+                                    <InputValue value={rAdhaar} setValue={setRAdhaar} placeholder="Enter Adhaar Number" className={Styles.InputValue}/>
+                                </div>
+                                <div>
+                                    <h2>Full Address</h2>
+                                    <InputValue value={rAddress} setValue={setRAddress} placeholder="Enter Address" className={Styles.InputValue}/>
+                                </div>                     
+                            </div>
+                        </details>
 
 
                     {/* create form for amenities details */}
-                    <div className="amenities">
-                        <h1>Amenitites Details</h1>
-                        <p>Items provided by the Owner at the time of execution of Lease Deed between the Owner and the Renter are as follows:</p>
+                    <details className={`relative ${Styles.Details}`}>
+                            <summary className={Styles.summary}>Amenity Details</summary>
+                            <div className={``}>
+                              <div className={`flex justify-evenly flex-wrap ${Styles.innerSummary}`}>
+                                {Object.keys(assets).map((asset, index) =>
 
-                        {/* items details */}
-                        {/* {assets.map((item) => (
-
-                            <div className="d-flex assets-div">
-                                <div>{item?.name}</div>
-                                <div>
-                                    <button className="testbutton" onClick={() => setAssets([...assets], assets[item.id - 1].qty = item.qty + 1)}>+</button>
-                                    {item?.qty}
-                                    <button className="testbutton" onClick={() => item.qty !== 0 && setAssets([...assets], assets[item.id - 1].qty--)}>-</button>
+                                    <div className={Styles.amenityDetails}>
+                                        <div className={Styles.amenityName} >{asset}</div>
+                                        <div className={Styles.amenityButton}>
+                                            <button  onClick={() => assets[asset] !== 0 && setAssets({ ...assets, [asset]: assets[asset] - 1 })}>-</button>
+                                                <h2>{assets[asset]}</h2>
+                                            <button className="qtyButton" onClick={() => setAssets({ ...assets, [asset]: assets[asset] + 1 })}>+</button>
+                                        </div>
+                                    </div>
+                                    )}
                                 </div>
-                            </div>
 
-                        ))} */}
-                        {Object.keys(assets).map((asset, index) =>
-
-                            <div className="d-flex assets-div">
-                                <div>{asset}</div>
+                                {/* create assets */}
                                 <div>
-                                    <button className="testbutton" onClick={() => setAssets({ ...assets, [asset]: assets[asset] + 1 })}>+</button>
-                                    {assets[asset]}
-                                    {console.log(asset, assets[asset])}
-                                    <button className="testbutton" onClick={() => assets[asset] !== 0 && setAssets({ ...assets, [asset]: assets[asset] - 1 })}>-</button>
+                                <div className="flex py-5 mb-12 justify-center">
+                                    <InputValue value={addAmenity} setValue={setAddAmenity} placeholder="Enter Amenity Name" className={Styles.AmenityValue} />
+                                    <button className={Styles.addAmenityButton} onClick={() => (setAssets({ ...assets, [addAmenity]: 0 }))}>Add</button>
+                                </div>
+                                
                                 </div>
 
                             </div>
-
-                        )}
-
-                        {/* create assets */}
-                        <div className="d-flex assets-div">
-                            <div>
-                                <InputValue value={addAmenity} setValue={setAddAmenity} placeholder="Enter Amenity Name" />
-                            </div>
-                            <button className="testbutton" onClick={() => setAssets({ ...assets, addAmenity: 0 })}>add</button>
-                        </div>
-
+                    </details>
+                        
                         {/* Property details*/}
-                        <div className="prop-div">
-                            <h1>Property Details</h1>
-                            <div className="d-flex m-5">
+                         <details className={Styles.Details}>
+                            <summary className={Styles.summary}>Property Details</summary>
+                            <div className={`flex justify-evenly flex-wrap ${Styles.innerSummary}`}>
                                 <div>
                                     <h2>Building Type</h2>
-                                    <InputValue placeholder="Residential/Commercial" value={buildingType} setValue={setBuildingType} />
+                                    <InputValue placeholder="Residential/Commercial" value={buildingType} setValue={setBuildingType} className={Styles.InputValue}/>
                                 </div>
 
                                 <div>
                                     <h2>Property Type</h2>
-                                    <InputValue placeholder="Vill/office/apartment" value={propertyType} setValue={setPropertyType} />
+                                    <InputValue placeholder="Vill/office/apartment" value={propertyType} setValue={setPropertyType} className={Styles.InputValue}/>
                                 </div>
 
                                 <div>
                                     <h2>Area Type</h2>
-                                    <InputValue placeholder="Carpet area / plot area" value={areaType} setValue={setAreaType} />
+                                    <InputValue placeholder="Carpet area / plot area" value={areaType} setValue={setAreaType} className={Styles.InputValue}/>
                                 </div>
 
                                 <div>
                                     <h2>Area</h2>
-                                    <InputValue placeholder="in sqft" value={area} setValue={setArea} />
+                                    <InputValue placeholder="in sqft" value={area} setValue={setArea} className={Styles.InputValue}/>
                                 </div>
 
                                 <div>
                                     <h2>Pin code</h2>
-                                    <InputValue placeholder="Enter Pin Code" value={pinCode} setValue={setPinCode} />
+                                    <InputValue placeholder="Enter Pin Code" value={pinCode} setValue={setPinCode} className={Styles.InputValue}/>
                                 </div>
 
                                 <div>
                                     <h2>Locality</h2>
-                                    <InputValue placeholder="locality" value={locality} setValue={setLocality} />
+                                    <InputValue placeholder="locality" value={locality} setValue={setLocality} className={Styles.InputValue}/>
                                 </div>
 
                                 <div>
                                     <h2>Building Name</h2>
-                                    <InputValue placeholder="Building Name" value={buildingName} setValue={setBuildingName} />
+                                    <InputValue placeholder="Building Name" value={buildingName} setValue={setBuildingName} className={Styles.InputValue}/>
                                 </div>
 
                                 <div>
                                     <h2>Floor Number</h2>
-                                    <InputValue placeholder="Floor Number" value={floorNumber} setValue={setFloorNumber} />
+                                    <InputValue placeholder="Floor Number" value={floorNumber} setValue={setFloorNumber} className={Styles.InputValue}/>
                                 </div>
 
                                 <div>
                                     <h2>House Number</h2>
-                                    <InputValue placeholder="House Number" value={houseNumber} setValue={setHouseNumber} />
+                                    <InputValue placeholder="House Number" value={houseNumber} setValue={setHouseNumber} className={Styles.InputValue}/>
                                 </div>
 
                                 <div>
                                     <h2>City Name</h2>
-                                    <InputValue placeholder="City" value={propertyCity} setValue={setPropertyCity} />
+                                    <InputValue placeholder="City" value={propertyCity} setValue={setPropertyCity} className={Styles.InputValue}/>
                                 </div>
 
                                 <div>
                                     <h2>Complete Address</h2>
-                                    <InputValue placeholder="Address" value={completeAddress} setValue={setCompleteAddress} />
+                                    <InputValue placeholder="Address" value={completeAddress} setValue={setCompleteAddress} className={Styles.InputValue}/>
                                 </div>
 
                             </div>
-                        </div>
+                        </details>    
+                        
 
                         {/* Rent details*/}
-                        <div className="prop-div">
-                            <h1 className="m-5">Rent Details</h1>
-                            <div className="d-flex m-5">
+                        <details className={Styles.Details}>
+                            <summary className={Styles.summary}>Rent Details</summary>
+                            <div className={`flex justify-evenly flex-wrap ${Styles.innerSummary}`}>
                                 <div>
                                     <h2>Agreement Period</h2>
-                                    <InputValue placeholder="In months" value={rentPeriod} setValue={setRentPeriod} type="Number" />
+                                    <InputValue placeholder="In months" value={rentPeriod} setValue={setRentPeriod} type="Number" className={Styles.InputValue}/>
                                 </div>
 
                                 <div>
                                     <h2>Start date</h2>
-                                    <InputValue placeholder="Date" value={startDate} setValue={setStartDate} type="date" />
+                                    <InputValue placeholder="Date" value={startDate} setValue={setStartDate} type="date" className={Styles.InputValue}/>
                                 </div>
 
                                 <div>
                                     <h2>Rent in Rs.</h2>
-                                    <InputValue placeholder="Rs." value={rent} setValue={setRent} type="Number" />
+                                    <InputValue placeholder="Rs." value={rent} setValue={setRent} type="Number" className={Styles.InputValue}/>
                                 </div>
 
                                 <div>
                                     <h2>Maintenance Type</h2>
-                                    <InputValue placeholder="With/Without" value={maintenanceType} setValue={setMaintenanceType} />
+                                    <InputValue placeholder="With/Without" value={maintenanceType} setValue={setMaintenanceType} className={Styles.InputValue}/>
                                 </div>
 
                                 <div>
                                     <h2>Rent Payment date</h2>
-                                    <InputValue placeholder="date" value={paymentDate} setValue={setPaymentDate} type="Number" />
+                                    <InputValue placeholder="date" value={paymentDate} setValue={setPaymentDate} type="Number" className={Styles.InputValue} />
                                 </div>
 
                                 <div>
                                     <h2>Rent Increment</h2>
-                                    <InputValue placeholder="rent increment in %" value={rentInc} setValue={setRentInc} />
+                                    <InputValue placeholder="rent increment in %" value={rentInc} setValue={setRentInc} className={Styles.InputValue}/>
                                 </div>
 
                                 <div>
                                     <h2>Security Deposit</h2>
-                                    <InputValue placeholder="Security Deposit" value={securityDeposit} setValue={setSecurityDeposit} type="Number" />
+                                    <InputValue placeholder="Security Deposit" value={securityDeposit} setValue={setSecurityDeposit} type="Number" className={Styles.InputValue}/>
                                 </div>
 
                                 <div>
                                     <h2>Notice Period</h2>
-                                    <InputValue placeholder="in Days" value={noticePeriod} setValue={setNoticePeriod} type="Number" />
+                                    <InputValue placeholder="in Days" value={noticePeriod} setValue={setNoticePeriod} type="Number" className={Styles.InputValue}/>
                                 </div>
 
                                 <div>
                                     <h2>Lock In Period</h2>
-                                    <InputValue placeholder="in days" value={lockinPeriod} setValue={setLockInPeriod} type="Number" />
+                                    <InputValue placeholder="in days" value={lockinPeriod} setValue={setLockInPeriod} type="Number" className={Styles.InputValue}/>
                                 </div>
                             </div>
-                        </div>
-
-                    </div>
-                    <button className="testbutton mt-5" onClick={handleAgreement}>Create Form</button>
+                        </details>
+                    <button className={Styles.button} onClick={handleAgreement}>Create Form</button>
                 </div>
                 :
-                <div className="Home-Page">
+                <div className="pdf-section">
+                    <div className="flex justify-center">                    
+                        <button className={Styles.functionButton} onClick={() => setLoading(true)}>Edit Again</button>
+                        <button className={Styles.functionButton} onClick={handleDownload}>{downloading ? "Wait..." : "Download"}</button>                        
+                    </div>
 
-                    {/* <button className="testbutton" onClick={handleDownload}>Download</button> */}
-                    {/* <button className="testbutton" onClick={() => setLoading(true)}>Edit Again</button> */}
+                    <div className={Styles.pdfDiv} ref={pdfDivRef}>
+                        <h1 className="font-bold text-2xl underline mb-7">Rent Agreement</h1>
+                        <h2 className="text-sm mb-5">This Lease Deed/Rent Agreement is executed at {city} on day, {agreementDate}.</h2>
+                        <h2 className="font-semibold">BETWEEN</h2>
+                        <p className="mb-5 text-xs">{ltitle} {lname}, S/O {lParentName} , having contact number {lMob}, Email id {lEmail}, PAN {lPan}, UID (ADHAAR NO.): {lAdhaar}, residing at {lAddress}.</p>
+                        <h2 className="font-semibold">AND</h2>
+                        <p className="mb-5 text-xs">{rtitle} {rname}, S/O {rParentName} , having contact number {rMob}, Email id {rEmail}, PAN {rPan}, UID (ADHAAR NO.): {rAdhaar}, residing at {rAddress}.</p>
 
-                    <div className="my-file">
-                        <h1 className="h-tag">Rent Agreement</h1>
-                        <h2 className="h2-tag">This Lease Deed/Rent Agreement is executed at {city} on day, {agreementDate}.</h2>
-                        <h2 className="h3-tag">BETWEEN</h2>
-                        <p>{ltitle} {lname}, S/O {lParentName} , having contact number {lMob}, Email id {lEmail}, PAN {lPan}, UID (ADHAAR NO.): {lAdhaar}, residing at {lAddress}.</p>
-                        <h2 className="h3-tag">AND</h2>
-                        <p>{rtitle} {rname}, S/O {rParentName} , having contact number {rMob}, Email id {rEmail}, PAN {rPan}, UID (ADHAAR NO.): {rAdhaar}, residing at {rAddress}.</p>
-
-                        <p>For the purpose hereof, the Lessor and Lessee are referred to collectively as the "Parties" and individually the "Party" as the context may require.</p>
+                        <p className="mb-5 text-xs">For the purpose hereof, the Lessor and Lessee are referred to collectively as the "Parties" and individually the "Party" as the context may require.</p>
 
 
-                        <p>
+                        <p className="mb-5 text-xs">
                             Whereas the Lessor is the lawful owner in possession of the {propertyType} unit of {areaType} {area} Sq. Ft. bearing House No.{houseNumber} , situated on the Floor No {floorNumber} , Building known as {buildingName} , Address 1: {completeAddress},{pinCode} , Locality: {locality} , City: {propertyCity} ,{pinCode} . The expression Lessor and Lessee shall mean and include their respective heirs, successors, representatives, and assignees.
                         </p>
-                        <p>
+                        <p className="mb-5 text-xs">
                             Whereas on the request of the Lessee, the Lessor has agreed to let out the Demised Premises to the LESSEE, and the LESSEE has agreed to take it on rent for a period of {rentPeriod} Month(s) w.e.f. {startDate}  for its bonafide Residential use. Whereas the LESSOR has represented that the Demised Premises is free from all encumbrances and the LESSOR has a clean and unrestricted right to the Demised Premises. Whereas the Lessor and Lessee both represented that they are legally competent to enter into this Lease Agreement on the terms and conditions contained herein.
                         </p>
 
-                        <h1 className="h2-tag">Now, these present witnesses as under:</h1>
-                        <ol>
+                        <h1 className="mb-5 text-xs font-semibold">Now, these present witnesses as under:</h1>
+                        <ol className={`mb-5 text-xs ${Styles.Lines}`}>
                             <li>That the second party shall pay the monthly rent of Rs {rent} in respect of the Demised Premises located at 2354,12,chood,mamura,Noida,201301 .</li>
 
                             <li>The rent shall be paid per month in advance through advance rental on or before the {paymentDate} th day of each English calendar month. In case of TDS deduction, the Lessee shall furnish the TDS certificate to the Lessor at the end of each calendar quarter well within time so as to enable the Lessor to file his income tax return within the stipulated timeframe. Each of the parties will bear the consequences for any non-compliance on account of the tax liability of its part.</li>
@@ -365,7 +421,7 @@ const RentAgreement = () => {
                             <li>
                                 The Lessor will ensure that all outstanding bills/ charges on the above said demised premises on account of electricity, water, and any other incidentals prior to the start of lease from are settled and paid
                             </li>
-
+                    
                             <li>
                                 Lock in period: Both the parties have agreed to set a lock-in period of {lockinPeriod} Month(s) during which neither the Lessor shall ask the Lessee to vacate the premises, nor the Lessee shall vacate the premises on his/her own during the Lock-in period. In spite of this mandatory clause, if the Lessee leaves the premises for whatsoever reason, he shall pay to the Lessor license fee for the remaining lock-in period at the rate of License Fees agreed upon in the Agreement. On the other hand, Lessor shall compensate the Lessee for loss and inconvenience caused to the Lessee if he has been asked to vacate the premises.
 
@@ -445,36 +501,39 @@ const RentAgreement = () => {
                             </li>
                         </ol>
 
-                        <h1 className="h2-tag">ANNEXURE 1</h1>
-                        <p>
+                        <h1 className="mb-5 text-xs font-bold">ANNEXURE </h1>
+                        <p className="mb-5 text-xs">
                             Items provided by the LESSOR at the time of execution of Lease Deed between the LESSOR and the LESSEE are as follows:
                         </p>
-                        {Object.keys(assets).map((asset, index) =>
+                
+                        {Object.keys(assets).map((asset) => {
+                            if (assets[asset] > 0) {
+                                return (
+                                    <div key={asset} className="flex justify-center justify-between w-80 m-auto">
+                                        <div className="mb-5 text-xs">{asset}</div>
+                                        <div className="mb-5 text-xs">
+                                            {assets[asset]}
+                                        </div>
+                                    </div>
+                                );
+                            }
+                            return null; // If assets[asset] is not greater than 0, you can return null
+                        })}
 
-
-                            <div className="d-flex assets-div">
-                                <div>{asset}</div>
-                                <div>
-                                    {assets[asset]}
-                                </div>
-                            </div>
-
-                        )}
-
-                        <div className="d-flex assets-div mt-5">
-                            <div>
+                        <div className="flex  my-24 justify-evenly">
+                            <div className="m-5  text-xs">
                                 <div>
                                     ----------------------
                                 </div>
                                 <div>Lessor Sign</div>
-                                <div>Date : / /</div>
+                                <div className="mt-3">Date : &nbsp; / &nbsp; /&nbsp;</div>
                             </div>
-                            <div>
+                            <div className="m-5 text-xs">
                                 <div>
                                     ----------------------
                                 </div>
                                 <div>Lessee Sign</div>
-                                <div>Date : / /</div>
+                                <div className="mt-3">Date : &nbsp; / &nbsp; /&nbsp;</div>
                             </div>
                         </div>
                     </div>

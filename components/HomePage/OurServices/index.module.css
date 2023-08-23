@@ -1,0 +1,49 @@
+.servicesComponent{
+    width: 95%;
+    margin-top: 40px;
+    padding-bottom: 70px;
+    margin-right: 0px;
+}
+
+.heading{
+    color: var(--black-black-70, #283646);
+    font-variant-numeric: lining-nums proportional-nums;
+    /* font-family: Poppins; */
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 160%; /* 160% */
+    margin-left: 7.5%;
+}
+
+.underline{
+    width: 13%;
+    height: 6px;
+    flex-shrink: 0;
+    border-radius: 15px;
+    background: #C88E20;
+}
+
+.shortPara{
+    width: 45%;
+    color: rgba(0, 0, 0, 0.46);
+    font-family: Poppins;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 162%; /* 32.4px */
+}
+
+.wrapper {
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+    scroll-behavior: smooth;
+    gap: 3%;
+    padding: 20px 20px;
+    margin-top: 50px;
+    margin-left: 6%;
+}
+  
+
+  
