@@ -1,11 +1,14 @@
 import React from 'react';
 import Image from 'next/image';
 import bathtub from '../../../assets/moreIcon/bathtub.svg';
+import school from '../../../assets/moreIcon/school.svg';
+import testing from '../../../assets/moreIcon/testing.svg';
 
 // Example of amenityIcons object
 const amenityIcons = {
     Gymnasium: bathtub,
-    SwimmingPool: 'path/to/SwimmingPool.svg',
+    school: school,
+    SwimmingPool:testing,
     // ... and so on for other amenities
 };
 

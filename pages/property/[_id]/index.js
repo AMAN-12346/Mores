@@ -45,37 +45,65 @@ const SinglePropertyCard = () => {
             {/* miltipull image  */}
             <div className="rounded-lg shadow-md m-5">
                 <div className="grid grid-cols-2 gap-4">
+
                     <div className="col-span-1">
-                        {/* Render an image here */}
                         <div className="relative">
                             <img src={images[0].original} alt={propertyName} className="w-full rounded-md" />
-                            <div className="absolute flex justify-center top-7 left-5 text-white p-5 w-194px h-69px rounded-tl-md" style={{ borderRadius: "43px", background: "rgba(1, 129, 145, 0.20)", width: "200px", height: "69px", flexShrink: 0 }}>
+                            <div className="absolute flex justify-center top-7 left-5 w-[150px] lg:w-[200px] text-white rounded-tl-md" style={{ borderRadius: "43px", background: "rgba(1, 129, 145, 0.20)", flexShrink: 0 }}>
                                 <Image
-                                    className="bg-contain mr-2"
+                                    className="bg-contain py-2 mr-2 md:py-5"
                                     src={EYE}
                                     alt="eye SVG"
                                     height={23}
                                     width={24}
                                 />
-                                <span className="mr-1 text-2xl font-semibold" style={{ color: "#FFF", fontSize: "26px", fontWeight: 600 }}>100+</span>
-                                <span className="text-2xl font-semibold" style={{ color: "#FFF", fontSize: "26px", fontWeight: 600 }}>Views</span>
+                                <span className="mr-1 py-2 text-sm md:py-5 lg:text-xl font-semibold" style={{ color: "#FFF", fontWeight: 600 }}>100+</span>
+                                <span className="text-sm py-2 md:py-5 lg:text-xl font-semibold" style={{ color: "#FFF", fontWeight: 600 }}>Views</span>
                             </div>
-                            <div className="absolute flex justify-center top-7 right-5 text-white p-5 w-194px h-69px bg-red-800 bg-opacity-30 rounded-3xl" style={{ borderRadius: "43px", background: "rgba(147, 22, 2, 0.20)", width: "200px", height: "69px", flexShrink: 0 }}>
-                                <span className="text-2xl font-semibold" style={{ color: "#FFF", fontSize: "22px", fontWeight: 600 }}>Already Seen</span>
+                            <div className="absolute flex justify-center top-7 right-5 w-[150px] lg:w-[200px] text-white rounded-tl-md" style={{ borderRadius: "43px", background: "rgba(147, 22, 2, 0.20)", flexShrink: 0 }}>
+                                <span className="text-sm py-2 md:py-5 lg:text-xl font-semibold" style={{ color: "#FFF", fontWeight: 600 }}>Already Seen</span>
                             </div>
                         </div>
                     </div>
+
                     <div className="col-span-1">
                         <div className="grid grid-cols-2 gap-4">
-                            {/* Render four images */}
-                            {images.slice(1, 5).map((image, index) => (
+                            {/* Render first image */}
+                            <img
+                                src={images[1].original}
+                                alt="First Image"
+                                className="w-full h-45 rounded-md"
+                            />
+
+                            {/* Render second image */}
+                            <img
+                                src={images[2].original}
+                                alt="Second Image"
+                                className="w-full h-45 rounded-md"
+                            />
+
+                            {/* Display Google Map */}
+                            <div className="w-full h-45 rounded-md">
                                 <img
-                                    key={index}
-                                    src={image.original}
-                                    alt={`Image ${index}`}
+                                    src={images[3].original}
+                                    alt="Second Image"
                                     className="w-full h-45 rounded-md"
                                 />
-                            ))}
+                                {/* Add your Google Map component here */}
+                                {/* Example: <GoogleMapComponent /> */}
+                            </div>
+
+                            {/* Display the image count */}
+                            <div className="w-full h-45 rounded-md relative">
+                                <img
+                                    src={images[3].original}
+                                    alt="Second Image"
+                                    className="w-full h-45 rounded-md"
+                                />
+                                <div className="absolute inset-0 flex justify-center items-center text-white bg-gray-800 bg-opacity-75">
+                                    <p className="text-2xl font-semibold">{images.length - 2} +</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
