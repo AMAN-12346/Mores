@@ -192,8 +192,6 @@ const Search = () => {
 
           setLocation(locationData);
 
-          // console.log(results)
-
           let cityName = "";
 
           const addressComponents = results[0].address_components;
