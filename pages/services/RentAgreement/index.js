@@ -1,6 +1,9 @@
 "use client";
+import React, { useRef } from 'react';
 import InputValue from "@/utils/InputValue/index";
 import { useEffect, useState } from "react";
+import jsPDF from 'jspdf';
+import html2canvas from 'html2canvas';
 import Styles from './index.module.css';
 
 
@@ -9,6 +12,7 @@ const RentAgreement = () => {
 
     const [city, setCity] = useState("");
     const [agreementDate, setAgreementDate] = useState("");
+    const pdfDivRef = useRef(null);
 
     //landlord details
     const [ltitle, setLTitle] = useState("");
@@ -85,17 +89,39 @@ const RentAgreement = () => {
 
     //download
     const handleDownload = async () => {
+        setDownloading(true);
+        const element = pdfDivRef.current;
+        console.log('Element', element)
 
-        const capture = document.querySelector(".pdfDiv");
-        html2canvas(capture).then((canvas) => {
-            const imgData = canvas.toDataURL('img/png');
-            const doc = new jsPDF('p', 'mm', 'a4');
-            // const componentWidth = doc.internal.pageSize.getWidth();
-            // const componentHeight = doc.internal.pageSize.getHeight();
-            doc.addImage(imgData, 'JPEG', 0, 0);
-            doc.save('Agreement.pdf')
-        })
+        if (element) {
+            const pdf = new jsPDF('p', 'mm', 'a4');
+            const contentHeight = element.clientHeight;
+            const pageHeight = pdf.internal.pageSize.height + 750; // Adjust margin if needed
+            const pages = Math.ceil(contentHeight / pageHeight);
 
+            for (let page = 0; page < pages; page++) {
+                const yOffset = page * pageHeight;
+                const canvas = await html2canvas(element, {
+                    scale: 2,
+                    windowWidth: element.scrollWidth,
+                    windowHeight: pageHeight,
+                    y: yOffset,
+                });
+                const imgData = canvas.toDataURL('image/jpeg', 1.0);
+
+                if (page !== 0) {
+                    pdf.addPage();
+                }
+
+                pdf.addImage(imgData, 'JPEG', 10, 10, 190, 0); // Adjust the parameters as needed
+            }
+
+            pdf.save('Mores-Rent-Agreement.pdf');
+            setDownloading(false);
+        } else {
+            console.log('Element does not exist');
+        }     
+        
     }
 
     // handleAgrrement
@@ -107,7 +133,7 @@ const RentAgreement = () => {
         <>
         <div className="text-center items-center">
             {loading ?
-                <div>
+                <div className={Styles.outerDiv}>
                     <h1 className="text-3xl font-bold mt-4 underline">Rent Agreement</h1>
                     <p className={Styles.paragraph}>Create rent agreement form in a easy free way !!!</p>
                     <details className={Styles.Details}>
@@ -350,14 +376,14 @@ const RentAgreement = () => {
                     <button className={Styles.button} onClick={handleAgreement}>Create Form</button>
                 </div>
                 :
-                <div>
+                <div className="pdf-section">
                     <div className="flex justify-center">                    
                         <button className={Styles.functionButton} onClick={() => setLoading(true)}>Edit Again</button>
-                        <button className={Styles.functionButton} onClick={handleDownload}>Download</button>                        
+                        <button className={Styles.functionButton} onClick={handleDownload}>{downloading ? "Wait..." : "Download"}</button>                        
                     </div>
 
-                    <div className={Styles.pdfDiv}>
-                        <h1 className="font-bold text-2xl underline mt-9 mb-4">Rent Agreement</h1>
+                    <div className={Styles.pdfDiv} ref={pdfDivRef}>
+                        <h1 className="font-bold text-2xl underline mb-7">Rent Agreement</h1>
                         <h2 className="text-sm mb-5">This Lease Deed/Rent Agreement is executed at {city} on day, {agreementDate}.</h2>
                         <h2 className="font-semibold">BETWEEN</h2>
                         <p className="mb-5 text-xs">{ltitle} {lname}, S/O {lParentName} , having contact number {lMob}, Email id {lEmail}, PAN {lPan}, UID (ADHAAR NO.): {lAdhaar}, residing at {lAddress}.</p>
@@ -395,7 +421,7 @@ const RentAgreement = () => {
                             <li>
                                 The Lessor will ensure that all outstanding bills/ charges on the above said demised premises on account of electricity, water, and any other incidentals prior to the start of lease from are settled and paid
                             </li>
-
+                    
                             <li>
                                 Lock in period: Both the parties have agreed to set a lock-in period of {lockinPeriod} Month(s) during which neither the Lessor shall ask the Lessee to vacate the premises, nor the Lessee shall vacate the premises on his/her own during the Lock-in period. In spite of this mandatory clause, if the Lessee leaves the premises for whatsoever reason, he shall pay to the Lessor license fee for the remaining lock-in period at the rate of License Fees agreed upon in the Agreement. On the other hand, Lessor shall compensate the Lessee for loss and inconvenience caused to the Lessee if he has been asked to vacate the premises.
 
@@ -475,7 +501,7 @@ const RentAgreement = () => {
                             </li>
                         </ol>
 
-                        <h1 className="mb-5 text-xs font-bold">ANNEXURE 1</h1>
+                        <h1 className="mb-5 text-xs font-bold">ANNEXURE </h1>
                         <p className="mb-5 text-xs">
                             Items provided by the LESSOR at the time of execution of Lease Deed between the LESSOR and the LESSEE are as follows:
                         </p>
@@ -495,19 +521,19 @@ const RentAgreement = () => {
                         })}
 
                         <div className="flex  my-24 justify-evenly">
-                            <div className="mb-5 text-xs">
+                            <div className="m-5  text-xs">
                                 <div>
                                     ----------------------
                                 </div>
                                 <div>Lessor Sign</div>
-                                <div>Date : / /</div>
+                                <div className="mt-3">Date : &nbsp; / &nbsp; /&nbsp;</div>
                             </div>
-                            <div className="mb-5 text-xs">
+                            <div className="m-5 text-xs">
                                 <div>
                                     ----------------------
                                 </div>
                                 <div>Lessee Sign</div>
-                                <div>Date : / /</div>
+                                <div className="mt-3">Date : &nbsp; / &nbsp; /&nbsp;</div>
                             </div>
                         </div>
                     </div>
