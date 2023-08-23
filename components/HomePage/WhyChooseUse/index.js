@@ -17,7 +17,7 @@ const WhyChooseUs = () => {
                 Taking the time to truly understand our customer’s needs and then make sure they consistently get that is what makes us different
                 </p>
             </div>
-            <div className='flex mt-12 pb-16 w-[100%] justify-evenly text-center'>
+            <div className='flex mt-12 pb-16 w-[100%] justify-evenly text-center px-12'>
                 {Object.keys(list).map((item) =>
                    <Card name={item} description={list[item]}/>
                 )}
