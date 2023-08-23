@@ -1,11 +1,42 @@
 import React, { useState } from "react";
 import Image from "next/image";
+import { useRouter } from "next/router"; // Import the router from Next.js
+import axios from "axios"; // Import axios for making API requests
 import footer_image from "../register/assets/footer-image.png";
 import right_side_image from "../register/assets/right_side_image.png";
 import logo_image from "../register/assets/logo_image.png";
 
 const RegisterUser = () => {
   const [selectedMethod, setSelectedMethod] = useState("email");
+  const [inputValue, setInputValue] = useState("");
+  const router = useRouter(); // Get the router instance
+
+  const handleRegister = async (event) => {
+    event.preventDefault(); // Prevent default form submission behavior
+
+    let payload = {};
+    if (selectedMethod === "email") {
+      payload.userID = inputValue;
+    } else if (selectedMethod === "phone") {
+      payload.userID = "+91" + inputValue;
+    }
+
+    try {
+      // Send POST request to the API endpoint
+      const response = await axios.post("http://localhost:1950/api/v1/user/Register",
+        payload
+      );
+
+      if (response.status === 200) {
+        localStorage.setItem("userID", inputValue);
+        // If the response is successful, navigate to the "otpVerify" path
+        router.push("/otpVerify");
+      }
+    } catch (error) {
+      // Handle error here (show error message or handle it in another way)
+      console.error("Error registering user:", error);
+    }
+  };
 
   return (
     <div className="flex items-center justify-center">
@@ -43,7 +74,7 @@ const RegisterUser = () => {
             Phone
           </button>
         </div>
-        <form className="mt-8">
+        <form className="mt-8" onSubmit={handleRegister}>
           <div className="relative">
             <input
               type="text"
@@ -53,6 +84,8 @@ const RegisterUser = () => {
                   ? "Enter your email"
                   : "Enter mobile number"
               }
+              value={inputValue}
+              onChange={(e) => setInputValue(e.target.value)}
             />
             <span className="absolute left-3 top-1/2 transform -translate-y-1/2">
               {selectedMethod === "email" ? "✉️" : "📱"}
