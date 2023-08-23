@@ -1,5 +1,6 @@
-import Image from "next/image";
+import OurNewsBlog from "@/components/HomePage/OurNewsBlog";
 import Services from "@/components/HomePage/Services/Services";
+import WhyChooseUs from "@/components/HomePage/WhyChooseUse";
 import { Inter } from "next/font/google";
 import Navbar from "@/components/Common/Navbar/Navbar";
 import Footer from "@/components/Common/Footer/Footer";
@@ -10,9 +11,10 @@ export const  Home = () => {
   console.log("hello")
   return (
     <div>
-      <Navbar/>
-      <Services/>
-      <Footer/>
+      <Services />  
+      <WhyChooseUs />
+      <OurNewsBlog />
+      <Footer />    
     </div>
   );
 }
