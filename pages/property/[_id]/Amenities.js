@@ -5,10 +5,10 @@ import school from '../../../assets/moreIcon/school.svg';
 import testing from '../../../assets/moreIcon/testing.svg';
 import Gymnasium from '../../../assets/moreIcon/Gymnasium.png';
 import Lift from '../../../assets/moreIcon/Lift.png';
-// import Gymnasium from '../../../assets/moreIcon/Gymnasium.png';
-// import Gymnasium from '../../../assets/moreIcon/Gymnasium.png';
-// import Gymnasium from '../../../assets/moreIcon/Gymnasium.png';
-// import Gymnasium from '../../../assets/moreIcon/Gymnasium.png';
+import CCTV from '../../../assets/moreIcon/CCTV.png';
+import FireFightingSystems from '../../../assets/moreIcon/FireFightingSystems.png';
+import Security from '../../../assets/moreIcon/Security.png';
+import wifi from '../../../assets/moreIcon/wifi.png';
 // import Gymnasium from '../../../assets/moreIcon/Gymnasium.png';
 // import Gymnasium from '../../../assets/moreIcon/Gymnasium.png';
 
@@ -17,7 +17,11 @@ const amenityIcons = {
     Gymnasium: Gymnasium,
     school: school,
     SwimmingPool:testing,
-    Lift : Lift
+    Lift : Lift,
+    FireFightingSystems : FireFightingSystems,
+    wifi : wifi,
+    Security : Security,
+    CCTV : CCTV
     // ... and so on for other amenities
 };
 
