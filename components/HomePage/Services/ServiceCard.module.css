@@ -1,5 +1,5 @@
 .card{
-    width: 31%;
+    width: 30%;
     height: 285px;
     flex-shrink: 0;
     background-color: #FFF;
@@ -48,7 +48,7 @@
 
 .imgIconDiv{
    position: absolute;
-   top: 22%;
+   top:  22%;
    left: 40%;
 }
 

@@ -1,15 +1,18 @@
 "use client";
-import Link from "next/link";
+import { useState } from "react";
 import Styles from "./ServiceCardButton.module.css";
 
 
-const ServiceCardButton = ({path}) => {
-    return ( 
+const ServiceCardButton = ({buttonName}) => {
+
+    const [loading, setLoading] = useState(false)
+
+    return (        
         <div className={Styles.serviceButton}>  
-            <Link href={path}>
-                <button>Create Now</button>  
-            </Link>             
-        </div>
+            <button onClick={()=> setLoading(true)}>
+                {loading ? "Loading..." : buttonName}
+            </button> 
+        </div>                        
      );
 }
 
