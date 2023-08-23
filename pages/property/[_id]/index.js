@@ -17,11 +17,33 @@ import InstantLoan from "../../../assets/moreIcon/InstantLoan.svg"
 import iconCall from "../../../assets/moreIcon/iconCall.svg"
 import AgentFrom from './AgentFrom';
 import Review from './Review';
+import FeaturesSectionCard from '@/components/HomePage/FeaturedPropertiesSection/FeaturesSectionCard';
+import RecommenedCard from '../RecommenedCard';
+import { useEffect } from 'react';
 
 const SinglePropertyCard = () => {
-    // const [OverView, setOverView] = useState();
-    // const [Amenities, setAmenities] = useState();
-    // const [PropertyInformation, setPropertyInformation] = useState();
+
+    // const [card, setCard] = useState({});
+    // const params = useParams();
+
+    // useEffect(() => {
+    //     if (params?._id) {
+    //         ShowCared();
+    //     }
+    // }, [params?._id]);
+
+    // const ShowCared = async () => {
+    //     try {
+    //         const { data } = await axios.get(
+    //             `${Property_API}/viewproperty/${params._id}`
+    //         );
+    //         const info = data.result;
+    //         setCard(info);
+    //         console.log("card----------------", info);
+    //     } catch (error) {
+    //         console.log(error);
+    //     }
+    // };
     const { propertyName, price, bedrooms, bathrooms, balconies, additionalRoom, description, images, areaDetails } = property;
 
     const topLinestyle = { borderRadius: '35px', background: 'rgba(1, 129, 145, 0.22)', fontFamily: 'Poppins', fontSize: '16px', fontStyle: 'normal', fontWeight: 400, lineHeight: 'normal', }
@@ -268,30 +290,26 @@ const SinglePropertyCard = () => {
                 </div>
 
                 <div className='px-8 mt-8'>  {/* Additional Component */}
-                    <div className='mb-8'>
+                    <div className='mb-8 shadow-md'>
                         <OverView props={property.Overview} />
                     </div>
-                    <div className='mb-8'>
+                    <div className='mb-8 shadow-md'>
                         <Amenities props={property} />
                     </div>
-                    <div className='mb-8'>
+                    <div className='mb-8 shadow-md'>
                         <PropertyInformation property={property} />
                     </div>
-                    <div className='mb-8'>
+                    <div className='mb-8 shadow-md'>
                         <AgentFrom />
                     </div>
-                    <div className='mb-8'>
+                    <div className='mb-8 shadow-md'>
                         <Review />
                     </div>
                 </div>
             </div >
-
-            <div>
-                <div className="flex justify-center mt-10">
-                    <p className="text-3xl font-bold px-8">Similar Properties</p>
-                </div>
+            <div className='mt-11'>
+                <RecommenedCard />
             </div>
-
         </>
     );
 };
