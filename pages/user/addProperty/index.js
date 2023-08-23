@@ -1,3 +1,5 @@
+"use client";
+
 import * as React from "react";
 import Box from "@mui/material/Box";
 import Stepper from "@mui/material/Stepper";
@@ -7,44 +9,39 @@ import StepContent from "@mui/material/StepContent";
 import Button from "@mui/material/Button";
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
-import StepOneCard from "./component/StepOneCard";
+import StepOneCard from "./component/cards/StepOneCard";
 import PropertyDetailsForm from "./component/PropertyDetailsForm";
+import AdditionalDetail from "./component/AdditionalDetails";
 
 const steps = [
   {
     label: "Whats your plan",
     component: (
-        <div style={{ display: "flex" }} className="mb-3 mt-2">
-         
+      <div style={{ display: "flex" }} className="mb-3 mt-2">
         <div className="p-4 border-2 border-button bg-white rounded-lg">
           <StepOneCard
             mainHeading="Sell or Rent Your Home With MORES Expert"
             definition="Lorem ipsum dolor sit amet consectetur. Et ut orci morbi Vulputate pretium sem. Justo sollicitudin lacus interdum Sit in sollicitudin vestibulum ultricies duis. Malesuada fusce sit lorem aliquam."
           />
-          </div>
-          <div className="p-4 border-2 border-primary bg-white rounded-lg ml-5">
+        </div>
+        <div className="p-4 border-2 border-primary bg-white rounded-lg ml-5">
           <StepOneCard
             mainHeading="Sell or Rent Your Home Directly"
             definition="Lorem ipsum dolor sit amet consectetur. Et ut orci morbi Vulputate pretium sem. Justo sollicitudin lacus interdum Sit in sollicitudin vestibulum ultricies duis. Malesuada fusce sit lorem aliquam."
           />
-          </div>
         </div>
-      ),
+      </div>
+    ),
   },
   {
     label: "Property Details",
-    
-      component:(
-        <PropertyDetailsForm/>
-          ),
+
+    component: <PropertyDetailsForm />,
   },
 
   {
-    label: "Create an ad",
-    description: `Try out different ad text to see what brings in the most customers,
-              and learn how to enhance your ads using features like ad extensions.
-              If you run into any problems with your ads, find out how to tell if
-              they're running and how to resolve approval issues.`,
+    label: "Additional Details",
+    component: <AdditionalDetail />,
   },
 ];
 
@@ -69,7 +66,7 @@ export default function VerticalLinearStepper() {
     },
   };
   return (
-    <div className="">
+    <div className="bg-white">
       {" "}
       {/* Apply Tailwind classes */}
       <Box sx={{ maxWidth: 400 }}>

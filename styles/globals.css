@@ -1,35 +1,21 @@
 @tailwind base;
+
 @tailwind components;
+
 @tailwind utilities;
 
-:root{
-  --primary-bg: #FAEEE0;
-  --footer-bg: #A37F4F;
+:root {
+  --primary-bg: #faeee0;
+
+  --footer-bg: #a37f4f;
+
   --black-black-70: #283646;
 }
 
-body{
+body {
   background-color: var(--primary-bg);
-  font-family: 'Poppins';
-    background-color: var(--primary-bg);
-    font-family: 'Poppins';
-    overflow-x: hidden;
+
+  font-family: "Poppins";
+
+  overflow-x: hidden;
 }
-
-/* :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-  --footer-bg: #A37F4F;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-    --footer-bg: #A37F4F;
-  }
-} */
-
-

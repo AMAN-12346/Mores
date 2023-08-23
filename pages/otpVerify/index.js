@@ -1,3 +1,4 @@
+"use client"
 import React, { useState, useRef } from "react";
 import Image from "next/image";
 import { useRouter } from "next/router"; // Import the router from Next.js
@@ -84,7 +85,7 @@ const VerifyOTP = () => {
 
         // Store the authentication data in local storage
         localStorage.setItem("auth", JSON.stringify(result));
-        console.log(auth, "auth from context")
+        console.log(auth, "auth from context");
 
         // Delete the userID from local storage
         localStorage.removeItem("userID");
@@ -104,6 +105,46 @@ const VerifyOTP = () => {
     }
   };
 
+  const handleResendOTP = async () => {
+    const userID = localStorage.getItem("userID");
+
+    // If the userID starts with "+91", it's a mobile number
+    const isMobileNumber = userID.startsWith("+91");
+
+    const payload = {
+      userID: isMobileNumber ? userID : `+91${userID}`, // Prepend +91 if it's not a mobile number
+    };
+
+    try {
+      // Send PUT request to resendOTP
+      const response = await axios.put(
+        "http://localhost:1950/api/v1/user/resendOTP",
+        payload
+      );
+
+      console.log(response)
+
+      if (response.status === 200) {
+        console.log("OTP Resent successfully!");
+        // Clear the OTP input fields
+        const newOTP = Array.from({ length: 6 }, () => "");
+        setOTP(newOTP);
+
+        // Clear the input field references
+        otpInputsRef.current.forEach((inputRef) => {
+          if (inputRef && inputRef.current) {
+            inputRef.current.value = "";
+          }
+        });
+
+        // Handle success (you can show a success message to the user or perform any other action)
+      }
+    } catch (error) {
+      // Handle error here (show error message or handle it in another way)
+      console.error("Error resending OTP:", error);
+    }
+  };
+
   return (
     <div className="flex items-center justify-center max-h-fit overflow-x-hidden overflow-y-hidden">
       <div className="w-1/2 p-32 bg-login_background">
@@ -117,9 +158,7 @@ const VerifyOTP = () => {
           />
         </div>
         <h1 className="text-2xl font-bold">Verify OTP</h1>
-        <p className="mt-2">
-          Enter the 6 digit code received on your email address.
-        </p>
+        <p className="mt-2">Enter the 6 digit code you received.</p>
         <div className="flex mt-6 w-9/12">
           {otp.map((value, index) => (
             <input
@@ -140,7 +179,11 @@ const VerifyOTP = () => {
 
         <p className="mt-6">
           <span className="text-gray-500">Not get code yet?</span>
-          <a href="#" className="text-blue-500 ml-1 hover:underline">
+          <a
+            href="#"
+            className="text-button underline ml-1"
+            onClick={handleResendOTP}
+          >
             Resend
           </a>
         </p>

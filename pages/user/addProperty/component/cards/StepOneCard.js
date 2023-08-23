@@ -1,3 +1,5 @@
+"use client"
+
 import * as React from "react";
 import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
@@ -17,6 +19,7 @@ const bull = (
 
 export default function StepOneCard({ mainHeading, definition }) {
   return (
+    <div >
     <Box sx={{ minWidth: 275 }}>
       <Card variant="outlined">
         <CardContent>
@@ -28,5 +31,6 @@ export default function StepOneCard({ mainHeading, definition }) {
         </CardContent>
       </Card>
     </Box>
+    </div>
   );
 }

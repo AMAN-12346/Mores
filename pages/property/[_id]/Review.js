@@ -68,7 +68,7 @@ const Review = () => {
                     ))}
                 </div>
                 <div>
-                    <div className="flex justify-center mt-4">
+                    <div className="flex justify-center p-8">
                         {Array.from({ length: Math.ceil(reviewsData.length / itemsPerPage) }).map((_, index) => (
                             <button
                                 key={index}
