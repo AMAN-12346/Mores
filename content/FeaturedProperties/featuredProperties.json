@@ -1,0 +1,122 @@
+[
+    {
+        "name":"Royal Palms",
+        "price":"₹ 980/SqFt",
+        "src":"../../assets/FeaturedPropertiesImages/RoyalPalms.png",
+        "address":"2972 Westheimer Rd. Santa Ana, Illinois 85486",
+        "amenities":[
+            {
+                "name":"2 baths",
+                "icon":"../../assets/FeaturedPropertiesIcons/bathtub.png"
+            },
+            {
+                "name":"3 beds",
+                "icon":"../../assets/FeaturedPropertiesIcons/double-bed.png"
+            },
+            {
+                "name":"2650 SqFt",
+                "icon":"../../assets/FeaturedPropertiesIcons/measured.png"
+            }
+        ]
+    },
+    {
+        "name":"Miro Residence",
+        "price":"₹ 640/SqFt",
+        "src":"../../assets/FeaturedPropertiesImages/MiroResidence.png",
+        "address":"6391 Elgin St. Celina, Delaware 10299",
+        "amenities":[
+            {
+                "name":"2 baths",
+                "icon":"../../assets/FeaturedPropertiesIcons/bathtub.png"
+            },
+            {
+                "name":"5 beds",
+                "icon":"../../assets/FeaturedPropertiesIcons/double-bed.png"
+            },
+            {
+                "name":"2050 SqFt",
+                "icon":"../../assets/FeaturedPropertiesIcons/measured.png"
+            }
+        ]
+    },
+    {
+        "name":"Elegant House",
+        "price":"₹ 600/SqFt",
+        "src":"../../assets/FeaturedPropertiesImages/ElegantHouse.png",
+        "address":"2972 Westheimer Rd. Santa Ana, Illinois 85486",
+        "amenities":[
+            {
+                "name":"2 baths",
+                "icon":"../../assets/FeaturedPropertiesIcons/bathtub.png"
+            },
+            {
+                "name":"3 beds",
+                "icon":"../../assets/FeaturedPropertiesIcons/double-bed.png"
+            },
+            {
+                "name":"2650 SqFt",
+                "icon":"../../assets/FeaturedPropertiesIcons/measured.png"
+            }
+        ]
+    },
+    {
+        "name":"Adin Royals",
+        "price":"₹ 900/SqFt",
+        "src":"../../assets/FeaturedPropertiesImages/AdinRoyal.png",
+        "address":"4140 Parker Rd. Allentown, New Mexico 31134",
+        "amenities":[
+            {
+                "name":"2 baths",
+                "icon":"../../assets/FeaturedPropertiesIcons/bathtub.png"
+            },
+            {
+                "name":"6 beds",
+                "icon":"../../assets/FeaturedPropertiesIcons/double-bed.png"
+            },
+            {
+                "name":"1650 SqFt",
+                "icon":"../../assets/FeaturedPropertiesIcons/measured.png"
+            }
+        ]
+    },
+    {  
+        "name":"PentHouse Inn",
+        "price":"₹ 950/SqFt",
+        "src":"../../assets/FeaturedPropertiesImages/PentHouseInn.png",
+        "address":"6391 Elgin St. Celina, Delaware 10299",
+        "amenities":[
+            {
+                "name":"2 baths",
+                "icon":"../../assets/FeaturedPropertiesIcons/bathtub.png"
+            },
+            {
+                "name":"5 beds",
+                "icon":"../../assets/FeaturedPropertiesIcons/double-bed.png"
+            },
+            {
+                "name":"2050 SqFt",
+                "icon":"../../assets/FeaturedPropertiesIcons/measured.png"
+            }
+        ]
+    },
+    {
+        "name":"Royal Palms",
+        "price":"₹ 980/SqFt",
+        "src":"../../assets/FeaturedPropertiesImages/Royal.png",
+        "address":"2972 Westheimer Rd. Santa Ana, Illinois 85486",
+        "amenities":[
+            {
+                "name":"2 baths",
+                "icon":"../../assets/FeaturedPropertiesIcons/bathtub.png"
+            },
+            {
+                "name":"3 beds",
+                "icon":"../../assets/FeaturedPropertiesIcons/double-bed.png"
+            },
+            {
+                "name":"2650 SqFt",
+                "icon":"../../assets/FeaturedPropertiesIcons/measured.png"
+            }
+        ]
+    }
+]
