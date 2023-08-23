@@ -1,14 +1,21 @@
 @tailwind base;
+
 @tailwind components;
+
 @tailwind utilities;
 
-:root{
-    --primary-bg: #FAEEE0;
-    --footer-bg: #A37F4F;
-    --black-black-70: #283646;
+:root {
+  --primary-bg: #faeee0;
+
+  --footer-bg: #a37f4f;
+
+  --black-black-70: #283646;
 }
-body{
-    background-color: var(--primary-bg);
-    font-family: 'Poppins';
-    overflow-x: hidden;
+
+body {
+  background-color: var(--primary-bg);
+
+  font-family: "Poppins";
+
+  overflow-x: hidden;
 }
