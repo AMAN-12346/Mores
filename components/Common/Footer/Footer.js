@@ -2,7 +2,7 @@
 import Styles from './Footer.module.css';
 import Image from 'next/image';
 import facebookIcon from '../../../assets/socialIcons/facebook.svg';
-import twitterIcon from '../../../assets/socialIcons/twitter.svg';
+import twitterIcon from '../../../assets/socialIcons/x-twitter.svg';
 import youtubeIcon from '../../../assets/socialIcons/youtube.svg';
 import addressIcon from '../../../assets/FooterIcons/placeholder.png';
 import gmailIcon from '../../../assets/FooterIcons/gmail.png';
@@ -31,7 +31,7 @@ const Footer = () => {
                         alt="facebook icon"
                     />
                     <Image
-                        className='mr-3'
+                        className='mr-3 text-white'
                         src={twitterIcon} // Route of the image file
                         height={24} // Desired size with correct aspect ratio
                         width={24} // Desired size with correct aspect ratio

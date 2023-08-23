@@ -9,14 +9,15 @@ const ServiceCard = ({name, description}) => {
         <div className={Styles.card}>     
             <h1 className={Styles.heading}>
                 {name}
-            </h1>     
+            </h1>                 
             <ul className={Styles.unorderedList}>
                 {description.points.map((point)=> <li className={Styles.listItem}>{point}</li> )}
             </ul>  
-            <Link href={description.path}>
-                <div className="flex justify-between">
-                    <ServiceCardButton buttonName={description.buttonName}/>                
-                    <div className={Styles.iconDiv} style={{background:description.iconBackgroundColor}}>
+            <div>
+                <Link href={description.path}>
+                    <ServiceCardButton buttonName={description.buttonName}/>
+                </Link>                
+                <div className={Styles.iconDiv} style={{background:description.iconBackgroundColor}}>
                     <div className={Styles.imgIconDiv}>
                         <img
                             src={description.iconFile}
@@ -26,9 +27,8 @@ const ServiceCard = ({name, description}) => {
                             className="serviceIcon"
                         />
                     </div>
-                    </div>
-                </div>    
-            </Link>        
+                </div>
+            </div>           
         </div>
      );
 }

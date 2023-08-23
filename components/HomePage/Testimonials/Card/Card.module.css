@@ -1,0 +1,57 @@
+.card{
+    width: 30%;
+    height: 60vh;
+    max-height: 40%;
+    flex-shrink: 0;
+    background-color: #FFF;
+    border: 2px solid #003E71;
+    border-radius: 20px;
+    position: relative;
+}
+
+.imageNameDiv{
+    display: flex;
+    margin-top: 8%;
+    margin-left: 6%;
+    position: relative;
+}
+
+.image{
+    width: 65px;
+    height: 65px; 
+    border-radius: 50%;
+    border: 1.5px solid #003E71;
+    padding: 2px;
+}
+
+.name{
+    margin-left: 4%;
+    position: absolute;
+    top: 28%;
+    left: 20%;
+    font-weight: 600;
+}
+
+.story{
+    display: -webkit-box;
+    -webkit-line-clamp: 8; /* Number of lines to display */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #666;
+}
+
+.cityTag{
+    position: absolute;
+    bottom: 8%;
+    left: 10%;
+    font-size: 14px;
+    font-weight: 600;
+}
+.cityUnderline{
+    width: 91px;
+    height: 4px;
+    flex-shrink: 0;
+    margin-top: 5px;
+    background: #A37F4F;
+}

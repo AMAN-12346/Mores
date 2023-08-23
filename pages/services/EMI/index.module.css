@@ -1,18 +1,21 @@
 .calculatorDiv{
     background-color: white;
-    width: 50%;
+     /* background: url(""); */
+    width: 40%;
     height: fit-content;
-    margin-left: 2%;
-    border-radius: 20px;
+    margin-left: 5%;
+    border-radius: 8px;
+    border: 3px solid #018191; 
 }
 
 .formInput{
     border: 2px solid #018191;
     color: black;
-    /* background-color: #018191; */
-    margin: 10px;
+    width: 50%;
+    margin: 16px;
     border-radius: 5px;
-    padding: 4px;
+    padding: 6px 8px;
+    color: #018191;
 }
 
 .formInput:focus{
@@ -20,9 +23,7 @@
 }
 .button{
     display: flex;
-    width: 114px;
-    height: 44px;
-    padding: 8px 32px;
+    padding: 1% 7%;
     justify-content: center;
     align-items: flex-start;
     gap: 10px;
@@ -38,6 +39,29 @@
     font-weight: 600;
     line-height: 24px; /* 171.429% */
     margin: auto;
-    margin-top: 10px;
+    margin-top: 25px;
     margin-bottom: 25px;
+}
+.button:hover{
+    opacity: 0.8;
+}
+
+.emiDiv{
+    margin-left: 5%;
+    font-weight: 600;
+    color: #086978;
+}
+
+.sideDiv{
+    height: 80%;
+    width: 80%;
+    text-align: center;
+}
+
+.Md_quotes{
+    font-size: 36px;
+    width: 450px;
+    margin-top: 50px;
+    color: #095c69;
+    font-weight: 600;
 }
