@@ -12,6 +12,9 @@ import Typography from "@mui/material/Typography";
 import StepOneCard from "./component/cards/StepOneCard";
 import PropertyDetailsForm from "./component/PropertyDetailsForm";
 import AdditionalDetail from "./component/AdditionalDetails";
+import Amenities from "@/pages/property/[_id]/Amenities";
+import property from '@/DummyData/data';
+
 
 const steps = [
   {
@@ -42,6 +45,11 @@ const steps = [
   {
     label: "Additional Details",
     component: <AdditionalDetail />,
+  },
+
+  {
+    label: "Amenities",
+    component: <Amenities props={property} />,
   },
 ];
 
@@ -75,7 +83,7 @@ export default function VerticalLinearStepper() {
             <Step key={step.label}>
               <StepLabel
                 optional={
-                  index === 2 ? (
+                  index === 3 ? (
                     <Typography variant="caption">Last step</Typography>
                   ) : null
                 }
