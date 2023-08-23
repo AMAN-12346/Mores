@@ -13,8 +13,7 @@ import StepOneCard from "./component/cards/StepOneCard";
 import PropertyDetailsForm from "./component/PropertyDetailsForm";
 import AdditionalDetail from "./component/AdditionalDetails";
 import Amenities from "@/pages/property/[_id]/Amenities";
-import property from '@/DummyData/data';
-
+import property from "@/DummyData/data";
 
 const steps = [
   {
@@ -74,10 +73,10 @@ export default function VerticalLinearStepper() {
     },
   };
   return (
-    <div className="bg-white">
+    <div className="bg-white pt-10 pl-60">
       {" "}
       {/* Apply Tailwind classes */}
-      <Box sx={{ maxWidth: 400 }}>
+      <Box sx={{ maxWidth: 800 }}>
         <Stepper activeStep={activeStep} orientation="vertical">
           {steps.map((step, index) => (
             <Step key={step.label}>
