@@ -10,7 +10,7 @@ module.exports = {
       colors:{
         featuredTorquoise:'#003E71',
         featuredBackground:'#003e71',
-        featuredBackground:'#931602'
+        featuredBackground:'#931602',
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
