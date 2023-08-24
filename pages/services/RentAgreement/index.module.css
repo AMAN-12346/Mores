@@ -28,13 +28,10 @@
     padding: 14px 2px;
     font-weight: bold;
     padding-left: 3%;
+    box-shadow: 0px 0px 5px 1px white;
 }
-/* .summary:focus{
-    color: white;
-    background-color: #018191;
-} */
 .innerSummary{
-    padding: 20px 0px;
+    padding: 20px 40px;
 }
 .innerSummary div{
     width: 30vw;

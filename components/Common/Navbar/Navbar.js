@@ -6,8 +6,12 @@ import Image from 'next/image';
 import fillHeart from '../../../assets/ButtonIcons/ph_heart-fill.svg';
 import notificationBell from '../../../assets/ButtonIcons/carbon_notification-new.svg';
 import downArrow from '../../../assets/ButtonIcons/fluent_ios-arrow-24-filled.svg';
+import { useAuth } from '@/context/auth';
  
 const Navbar = () => {
+    const [auth, setAuth] = useAuth();
+    console.log("-from navbAR-->", auth);
+
     return ( 
         <div className={Styles.navbar}>
            <div className={`flex w-9/12 items-center ml-5`}>
@@ -56,8 +60,9 @@ const Navbar = () => {
                     <Image src={fillHeart} width={28} height={28}/>
                     <Image src={notificationBell} width={28} height={28}/>
                     <Image src="https://s3-alpha-sig.figma.com/img/22aa/3b45/6260f5c114826d26f0063851b8322353?Expires=1693785600&Signature=X0scVn4d3eneQGiJHCUCFGZATEWF3GA5fsx4MNMeYtFzwC7m~4KjS4HFh1Hw6YgaFLPLwVN5D~4BnNwVMpFSmSNTHiRn2CuGV5pqMCMaIHKNN0QXkzadNgpG-EQRUSOw~Dw7gcuUuaHJZ1Fb2YAiJg-vZZV3EA6x5RK2sAzDQ0nFt22F3nysZDJDgVIvsjoBFOUfRzQ4o3xM6VXe12mVZLgtRA4zaMCOIHd6QIoXuN01aIbF8r60ksLtoinf6NG3yQBew1CgRyESShuI7YjrgtLGIzKsvnOZc5EKaGSpuYIqS60SAPkwrJ~tgvYH2rVA38gRSAYEBDrRtMh8TaAv8A__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" 
-                    width={55} height={55}
-                    className='rounded-full'/>
+                       width={55} height={55}
+                       className='rounded-full'
+                    />
                     <div className={Styles.optionName}>
                         <div className={Styles.name}>
                             <DropdownButton optionName="Prateek Rai" menuItem={['random', 'data']} />

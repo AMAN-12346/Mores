@@ -6,16 +6,12 @@
 
 :root {
   --primary-bg: #faeee0;
-
   --footer-bg: #a37f4f;
-
   --black-black-70: #283646;
 }
 
 body {
   background-color: var(--primary-bg);
-
   font-family: "Poppins";
-
   overflow-x: hidden;
 }

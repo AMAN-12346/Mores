@@ -1,9 +1,6 @@
 import Script from "next/script";
-
-import { AuthProvider, useAuth } from "../context/auth.js";
-
+import { AuthProvider} from "../context/auth.js";
 import "@fontsource/poppins"; // Defaults to weight 400
-
 import "@fontsource/raleway";
 import "../styles/globals.css"; // Import your global styles here
 import Navbar from "@/components/Common/Navbar/Navbar";
@@ -18,7 +15,7 @@ function MyApp({ Component, pageProps }) {
       />
       <Navbar />
       <Component {...pageProps} />
-      {/* <Footer />  */}
+      <Footer /> 
     </AuthProvider>
   );
 }
