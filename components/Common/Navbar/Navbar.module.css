@@ -40,3 +40,9 @@
     font-weight: 500;
     line-height: 20px; /* 125% */
 }
+.name{
+    width: 120px;
+    margin-top: 18px;
+    font-size: 18px;
+    font-weight: 600;
+}
