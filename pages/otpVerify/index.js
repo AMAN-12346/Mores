@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useState, useRef } from "react";
 import Image from "next/image";
 import { useRouter } from "next/router"; // Import the router from Next.js
@@ -14,6 +14,8 @@ const VerifyOTP = () => {
   const router = useRouter();
   const [loginSuccess, setLoginSuccess] = useState(false);
   const [auth, setAuth] = useAuth();
+  const [error, setError] = useState("");
+
   const otpInputsRef = useRef([
     { current: null },
     { current: null },
@@ -67,7 +69,7 @@ const VerifyOTP = () => {
     const isMobileNumber = userID.startsWith("+91");
 
     const payload = {
-      userID: isMobileNumber ? userID : `+91${userID}`, // Prepend +91 if it's not a mobile number
+      userID,
       otp: enteredOTP,
     };
     console.log("payload from verify : ", payload);
@@ -77,10 +79,10 @@ const VerifyOTP = () => {
         "http://localhost:1950/api/v1/user/verifyOTP",
         payload
       );
-
-      if (response.status === 200) {
+      console.log("testing-------------->>", response);
+      if (response.data.responseCode === 200) {
         const result = response.data.result; // Extract the result field from the response
-        // console.log(result, "result")
+        console.log(result, "result from verify otp");
         setAuth(result); // Update the context state
 
         // Store the authentication data in local storage
@@ -94,17 +96,21 @@ const VerifyOTP = () => {
           setLoginSuccess(false); // Reset the login success state after a timeout
           router.push("/");
           // router.push("/otpVerify");
-        }, 3000); // Set the timeout to 3 seconds (adjust as needed)
+        }, 1000); // Set the timeout to 3 seconds (adjust as needed)
 
         // Redirect the user to a success page or any other desired location
         // router.push("/login");
       }
     } catch (error) {
-      // Handle error here (show error message or handle it in another way)
-      console.error("Error verifying OTP:", error);
+      console.error("Error logging in:", error);
+
+      if (error.response) {
+        setError(error.response.data?.responseMessage);
+      } else {
+        setError("An error occurred");
+      }
     }
   };
-
   const handleResendOTP = async () => {
     const userID = localStorage.getItem("userID");
 
@@ -122,7 +128,7 @@ const VerifyOTP = () => {
         payload
       );
 
-      console.log(response)
+      console.log(response);
 
       if (response.status === 200) {
         console.log("OTP Resent successfully!");
@@ -140,8 +146,13 @@ const VerifyOTP = () => {
         // Handle success (you can show a success message to the user or perform any other action)
       }
     } catch (error) {
-      // Handle error here (show error message or handle it in another way)
-      console.error("Error resending OTP:", error);
+      console.error("Error logging in:", error);
+
+      if (error.response) {
+        setError(error.response.data?.responseMessage);
+      } else {
+        setError("An error occurred");
+      }
     }
   };
 
@@ -197,6 +208,11 @@ const VerifyOTP = () => {
         {loginSuccess && (
           <p className="text-green-500 mt-2">Login successfully!</p>
         )}
+
+        {error && (
+          <p className="text-green-500 mt-2">Login successfully!</p>
+        )}
+
 
         <div className="mt-0">
           <Image

@@ -14,6 +14,7 @@ const RegisterUser = () => {
   const [selectedMethod, setSelectedMethod] = useState("email");
   const [inputValue, setInputValue] = useState("");
   const router = useRouter(); // Get the router instance
+  const [error, setError] = useState("");
 
   const handleRegister = async (event) => {
     event.preventDefault(); // Prevent default form submission behavior
@@ -37,8 +38,13 @@ const RegisterUser = () => {
         router.push("/otpVerify");
       }
     } catch (error) {
-      // Handle error here (show error message or handle it in another way)
-      console.error("Error registering user:", error);
+      console.error("Error logging in:", error);
+
+      if (error.response) {
+        setError(error.response.data?.responseMessage);
+      } else {
+        setError("An error occurred");
+      }
     }
   };
 
@@ -112,6 +118,7 @@ const RegisterUser = () => {
             </Link>
           </p>
         </form>
+        {error && <p className="text-red-500 mt-2">{error}</p>}
         <div className="mt-0">
           <Image
             src={footer_image}
