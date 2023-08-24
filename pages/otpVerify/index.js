@@ -84,6 +84,7 @@ const VerifyOTP = () => {
         const result = response.data.result; // Extract the result field from the response
         console.log(result, "result from verify otp");
         setAuth(result); // Update the context state
+        //test
 
         // Store the authentication data in local storage
         localStorage.setItem("auth", JSON.stringify(result));
