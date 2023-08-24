@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import property from '@/DummyData/data';
@@ -19,31 +20,31 @@ import AgentFrom from './AgentFrom';
 import Review from './Review';
 import FeaturesSectionCard from '@/components/HomePage/FeaturedPropertiesSection/FeaturesSectionCard';
 import RecommenedCard from '../RecommenedCard';
-import { useEffect } from 'react';
 
 const SinglePropertyCard = () => {
 
-    // const [card, setCard] = useState({});
-    // const params = useParams();
+    // const router = useRouter();
+    // const { _id } = router.query;
+
+    // const [property, setproperty] = useState({}); 
 
     // useEffect(() => {
-    //     if (params?._id) {
+    //     if (router?.query) {
     //         ShowCared();
     //     }
-    // }, [params?._id]);
+    // }, [router?.query]);
 
-    // const ShowCared = async () => {
-    //     try {
-    //         const { data } = await axios.get(
-    //             `${Property_API}/viewproperty/${params._id}`
-    //         );
-    //         const info = data.result;
-    //         setCard(info);
-    //         console.log("card----------------", info);
-    //     } catch (error) {
-    //         console.log(error);
-    //     }
-    // };
+    const ShowCared = async () => {
+        try {
+            const { data } = await axios.get(`localhost:1950/api/v1/property/viewproperty/${_id}`
+            );
+            const info = data.result;
+            console.log("-------------->>>>>>>", info);
+            setproperty(info);
+        } catch (error) {
+            console.log(error);
+        }
+    };
     const { propertyName, price, bedrooms, bathrooms, balconies, additionalRoom, description, images, areaDetails } = property;
 
     const topLinestyle = { borderRadius: '35px', background: 'rgba(1, 129, 145, 0.22)', fontFamily: 'Poppins', fontSize: '16px', fontStyle: 'normal', fontWeight: 400, lineHeight: 'normal', }
@@ -57,7 +58,7 @@ const SinglePropertyCard = () => {
     const isLoggedIn = true;
     return (
         <>
-            <div className="relative bg-cover bg-center text-white text-center h-32" style={{ backgroundImage: `url(${images[0].original})` }} >
+            <div className="relative bg-cover bg-center text-white text-center h-32" style={{ backgroundImage: `url(${images[0]?.original})` }} >
                 <div className="absolute inset-0 bg-black opacity-60"></div>
                 <div className="absolute inset-0 flex flex-col justify-center items-center">
                     <h1 className="text-3xl font-semibold">Property Details</h1>
