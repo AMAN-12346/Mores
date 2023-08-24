@@ -8,7 +8,7 @@ export default function PropertyInformation({ property }) {
                     <h1 className="text-white text-2xl font-semibold">Property Information</h1>
                 </div>
             </div>
-            <div className="bg-white p-8">
+            <div className="bg-white p-8 shadow-md">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {/* Left Column */}
                     <div className="grid-rows-1 space-y-4">

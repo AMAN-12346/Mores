@@ -17,7 +17,7 @@ export default function AgentFrom() {
                     <h1 className="text-white text-2xl font-semibold">Agent Overview</h1>
                 </div>
             </div>
-            <div className="bg-white">
+            <div className="bg-white shadow-md">
                 <div className='w-12/12 mb-4 md:flex'>
                     <div className='w-8/12 p-10'>
                         <div className='lg:flex md:justify-start gap-10'>

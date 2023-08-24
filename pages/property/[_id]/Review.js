@@ -36,7 +36,7 @@ const Review = () => {
                     <h1 className="text-white text-2xl font-semibold">Reviews</h1>
                 </div>
             </div>
-            <div className="bg-white">
+            <div className="bg-white shadow-md">
                 <div className='p-8 flex justify-center gap-20'>
                     {currentReviews.map((review) => (
                         <div

@@ -70,13 +70,13 @@ export default function Amenities({ props }) {
     }
 
     return (
-        <div className="bg-white">
+        <div className="bg-white shadow-md">
             <div className="bg-[#018191] rounded-t-lg shadow-lg p-2">
                 <div>
                     <h1 className="text-white text-2xl font-semibold">Amenities</h1>
                 </div>
             </div>
-            <div className="flex flex-wrap m-5 p-8">
+            <div className="flex flex-wrap p-8">
                 {rows.map((row, rowIndex) => (
                     <div key={rowIndex} className="w-full md:w-1/2 lg:w-1/3 px-3">
                         <div className="flex flex-col gap-4">

@@ -8,7 +8,7 @@ export default function OverView({ props }) {
                     <h1 className="text-white text-2xl font-semibold">Overview</h1>
                 </div>
             </div>
-            <div className="bg-white">
+            <div className="bg-white shadow-md">
                 <div className="p-5">
                     <p>{props?.heading}</p>
                 </div>
