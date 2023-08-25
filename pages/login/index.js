@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/router"; // Import the router from Next.js
@@ -13,6 +13,7 @@ const LoginUser = () => {
   const [inputValue, setInputValue] = useState("");
   const router = useRouter(); // Get the router instance
   const [otpSuccess, setOtpSuccess] = useState(false);
+  const [error, setError] = useState("");
 
   const handleLogin = async (event) => {
     event.preventDefault(); // Prevent default form submission behavior
@@ -40,11 +41,17 @@ const LoginUser = () => {
         }, 3000); // Set the timeout to 3 seconds (adjust as needed)
       }
     } catch (error) {
-      // Handle error here (show error message or handle it in another way)
-      console.error("Error registering user:", error);
+      console.error("Error logging in:", error);
+
+      if (
+        error.response 
+      ) {
+        setError(error.response.data?.responseMessage);
+      } else {
+        setError("An error occurred");
+      }
     }
   };
-
   return (
     <div className="flex items-center justify-center">
       <div className="w-1/2 p-32 bg-login_background">
@@ -118,6 +125,8 @@ const LoginUser = () => {
         {otpSuccess && (
           <p className="text-green-500 mt-2">Otp sent successfully!</p>
         )}
+        {error && <p className="text-red-500 mt-2">{error}</p>}
+
         <div className="mt-0">
           <Image
             src={footer_image}

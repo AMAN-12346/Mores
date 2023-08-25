@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 
 const AdditionalDetailsForm = () => {
-  const [additionalRoom, setAdditionalRoom] = useState("");
+    const [additionalRooms, setAdditionalRooms] = useState([]);
+
   const [possessionStatus, setPossessionStatus] = useState("");
   const [furnishStatus, setFurnishStatus] = useState("");
   const [propertyAge, setPropertyAge] = useState("");
-  const [balconyOption, setBalconyOption] = useState("");
+  const [additionalBalconies, setAdditionalBalconies] = useState([]);
   const [balconyView, setBalconyView] = useState(""); // State for Balcony View
   const [viewOption, setViewOption] = useState("");
   const [flooringOption, setFlooringOption] = useState("");
@@ -18,57 +19,57 @@ const AdditionalDetailsForm = () => {
   const [numBathrooms, setNumBathrooms] = useState("");
   const [powerBackupOption, setPowerBackupOption] = useState("");
 
+  const handleAdditionalRoomClick = (roomType) => {
+    if (additionalRooms.includes(roomType)) {
+      setAdditionalRooms(additionalRooms.filter(room => room !== roomType));
+    } else {
+      setAdditionalRooms([...additionalRooms, roomType]);
+    }
+  };
+
+  const handleAdditionalBalconyClick = (balconyType) => {
+    if (additionalBalconies.includes(balconyType)) {
+      setAdditionalBalconies(additionalBalconies.filter(balcony => balcony !== balconyType));
+    } else {
+      setAdditionalBalconies([...additionalBalconies, balconyType]);
+    }
+  }
+  const allBalconyOptions = [
+    "Connected Balcony",
+    "Individual Balcony",
+    "Room Attached Balcony",
+    // Add more balcony options here...
+  ];
+  const allAdditionalRooms = [
+    "Pooja Room",
+    "Servent Room",
+    "Study Room",
+    "Extra Room",
+    // Add more room options here...
+  ];
   return (
     <div className="p-8">
       <h2 className="text-2xl font-semibold mb-4 border-b pb-2">
         Additional Details
       </h2>
 
-      {/* Additional Room */}
-      <div className="mb-4">
-        <label className="block font-semibold mb-2">Additional Room</label>
+     {/* Additional Rooms */}
+     <div className="mb-4">
+        <label className="block font-semibold mb-2">Additional Rooms</label>
         <div className="flex space-x-4">
-          <button
-            className={`px-4 py-2 rounded-full ${
-              additionalRoom === "poojRoom"
-                ? "bg-primary text-white"
-                : "bg-white text-gray-600"
-            } border-2 border-primary`}
-            onClick={() => setAdditionalRoom("poojRoom")}
-          >
-            Pooj Room
-          </button>
-          <button
-            className={`px-4 py-2 rounded-full ${
-              additionalRoom === "serventRoom"
-                ? "bg-primary text-white"
-                : "bg-white text-gray-600"
-            } border-2 border-primary`}
-            onClick={() => setAdditionalRoom("serventRoom")}
-          >
-            Servant Room
-          </button>
-          <button
-            className={`px-4 py-2 rounded-full ${
-              additionalRoom === "studyRoom"
-                ? "bg-primary text-white"
-                : "bg-white text-gray-600"
-            } border-2 border-primary`}
-            onClick={() => setAdditionalRoom("studyRoom")}
-          >
-            Study Room
-          </button>
-          <button
-            className={`px-4 py-2 rounded-full ${
-              additionalRoom === "extraRoom"
-                ? "bg-primary text-white"
-                : "bg-white text-gray-600"
-            } border-2 border-primary`}
-            onClick={() => setAdditionalRoom("extraRoom")}
-          >
-            Extra Room
-          </button>
-          {/* Add more buttons for other room options */}
+          {allAdditionalRooms.map(roomType => (
+            <button
+              key={roomType}
+              className={`px-4 py-2 rounded-full ${
+                additionalRooms.includes(roomType)
+                  ? "bg-primary text-white"
+                  : "bg-white text-gray-600"
+              } border-2 border-primary`}
+              onClick={() => handleAdditionalRoomClick(roomType)}
+            >
+              {roomType}
+            </button>
+          ))}
         </div>
       </div>
 
@@ -321,40 +322,23 @@ const AdditionalDetailsForm = () => {
       </div>
 
       {/* Balcony Option */}
-      <div className="mb-4">
-        <label className="block font-semibold mb-2">Balcony Option</label>
+        {/* Additional Balconies */}
+        <div className="mb-4">
+        <label className="block font-semibold mb-2">Additional Balconies</label>
         <div className="flex space-x-4">
-          <button
-            className={`px-4 py-2 rounded-full ${
-              balconyOption === "connectedBalcony"
-                ? "bg-primary text-white"
-                : "bg-white text-gray-600"
-            } border-2 border-primary`}
-            onClick={() => setBalconyOption("connectedBalcony")}
-          >
-            Connected Balcony
-          </button>
-          <button
-            className={`px-4 py-2 rounded-full ${
-              balconyOption === "individualBalcony"
-                ? "bg-primary text-white"
-                : "bg-white text-gray-600"
-            } border-2 border-primary`}
-            onClick={() => setBalconyOption("individualBalcony")}
-          >
-            Individual Balcony
-          </button>
-          <button
-            className={`px-4 py-2 rounded-full ${
-              balconyOption === "roomAttachedBalcony"
-                ? "bg-primary text-white"
-                : "bg-white text-gray-600"
-            } border-2 border-primary`}
-            onClick={() => setBalconyOption("roomAttachedBalcony")}
-          >
-            Room-Attached Balcony
-          </button>
-          {/* Add more buttons for other balcony options */}
+          {allBalconyOptions.map(balconyType => (
+            <button
+              key={balconyType}
+              className={`px-4 py-2 rounded-full ${
+                additionalBalconies.includes(balconyType)
+                  ? "bg-primary text-white"
+                  : "bg-white text-gray-600"
+              } border-2 border-primary`}
+              onClick={() => handleAdditionalBalconyClick(balconyType)}
+            >
+              {balconyType}
+            </button>
+          ))}
         </div>
       </div>
 
@@ -385,83 +369,87 @@ const AdditionalDetailsForm = () => {
           {/* Add more buttons for other power backup options */}
         </div>
       </div>
+      <div className="flex -mb-16">
+  {/* First Column */}
+  <div className="mb-4 flex-1 pr-4">
+    <label className="block font-semibold mb-2">View</label>
+    <select
+      className="w-full border rounded-md px-4 py-2 focus:outline-none focus:border-primary"
+      value={balconyView}
+      onChange={(e) => setBalconyView(e.target.value)}
+    >
+      <option value="">Select Balcony View</option>
+      <option value="city">City View</option>
+      <option value="garden">Garden View</option>
+      {/* Add more balcony view options */}
+    </select>
 
-      <div className="mb-4">
-        <label className="block font-semibold mb-2">View</label>
-        <select
-          className="w-full border rounded-md px-4 py-2 focus:outline-none focus:border-primary"
-          value={balconyView}
-          onChange={(e) => setBalconyView(e.target.value)}
-        >
-          <option value="">Select Balcony View</option>
-          <option value="city">City View</option>
-          <option value="garden">Garden View</option>
-          {/* Add more balcony view options */}
-        </select>
-      </div>
+    {/* Floor Number */}
+    <div className="mb-4 mt-4">
+      <label className="block font-semibold mb-2">Floor Number</label>
+      <input
+        type="text"
+        className="w-full border rounded-md px-4 py-2 focus:outline-none focus:border-primary"
+        value={floorNumber}
+        onChange={(e) => setFloorNumber(e.target.value)}
+      />
+    </div>
 
-      {/* Flooring Option */}
-      <div className="mb-4">
-        <label className="block font-semibold mb-2">Flooring Option</label>
-        <input
-          type="text"
-          className="w-full border rounded-md px-4 py-2 focus:outline-none focus:border-primary"
-          value={flooringOption}
-          onChange={(e) => setFlooringOption(e.target.value)}
-        />
-      </div>
+    {/* Tower/Block */}
+    <div className="mb-4">
+      <label className="block font-semibold mb-2">Tower/Block</label>
+      <input
+        type="text"
+        className="w-full border rounded-md px-4 py-2 focus:outline-none focus:border-primary"
+        value={towerBlock}
+        onChange={(e) => setTowerBlock(e.target.value)}
+      />
+    </div>
+  </div>
 
-      {/* Floor Number */}
-      <div className="mb-4">
-        <label className="block font-semibold mb-2">Floor Number</label>
-        <input
-          type="text"
-          className="w-full border rounded-md px-4 py-2 focus:outline-none focus:border-primary"
-          value={floorNumber}
-          onChange={(e) => setFloorNumber(e.target.value)}
-        />
-      </div>
+  {/* Second Column */}
+  <div className="mb-4 flex-1 pl-4">
+    <label className="block font-semibold mb-2">Flooring Option</label>
+    <input
+      type="text"
+      className="w-full border rounded-md px-4 py-2 focus:outline-none focus:border-primary"
+      value={flooringOption}
+      onChange={(e) => setFlooringOption(e.target.value)}
+    />
 
-      {/* Tower/Block and Total Floors */}
-      <div className="mb-4">
-        <label className="block font-semibold mb-2">Tower/Block</label>
-        <input
-          type="text"
-          className="w-full border rounded-md px-4 py-2 focus:outline-none focus:border-primary"
-          value={towerBlock}
-          onChange={(e) => setTowerBlock(e.target.value)}
-        />
-      </div>
-      <div className="mb-4">
-        <label className="block font-semibold mb-2">Total Floors</label>
-        <input
-          type="text"
-          className="w-full border rounded-md px-4 py-2 focus:outline-none focus:border-primary"
-          value={totalFloors}
-          onChange={(e) => setTotalFloors(e.target.value)}
-        />
-      </div>
+    {/* Total Floors */}
+    <div className="mb-4">
+      <label className="block font-semibold mb-2">Total Floors</label>
+      <input
+        type="text"
+        className="w-full border rounded-md px-4 py-2 focus:outline-none focus:border-primary"
+        value={totalFloors}
+        onChange={(e) => setTotalFloors(e.target.value)}
+      />
+    </div>
 
-      {/* Unit Number */}
-      <div className="mb-4">
-        <label className="block font-semibold mb-2">Unit Number</label>
-        <input
-          type="text"
-          className="w-full border rounded-md px-4 py-2 focus:outline-none focus:border-primary"
-          value={unitNumber}
-          onChange={(e) => setUnitNumber(e.target.value)}
-        />
-      </div>
+    {/* Unit Number */}
+    <div className="-mb-10">
+      <label className="block font-semibold mb-2">Unit Number</label>
+      <input
+        type="text"
+        className="w-full border rounded-md px-4 py-2 focus:outline-none focus:border-primary"
+        value={unitNumber}
+        onChange={(e) => setUnitNumber(e.target.value)}
+      />
+    </div>
+  </div>
+</div>
 
       {/* Private Balcony */}
-      <div className="mb-4">
+      {/* <div className="mb-4">
         <label className="block font-semibold mb-2">Private Balcony</label>
         <input
           type="checkbox"
           checked={privateBalcony}
           onChange={(e) => setPrivateBalcony(e.target.checked)}
         />
-      </div>
+      </div> */}
     </div>
   );
 };
