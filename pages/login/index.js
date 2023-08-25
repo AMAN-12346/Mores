@@ -1,4 +1,5 @@
 "use client";
+//TODO country constant, dropdown on mobile number
 import React, { useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/router"; // Import the router from Next.js
@@ -26,30 +27,29 @@ const LoginUser = () => {
     }
 
     try {
+      console.log("i am in login");
       // Send POST request to the API endpoint
       const response = await axios.post(
         "http://localhost:1950/api/v1/user/Login",
         payload
       );
+      console.log(response.data?.responseCode, ">>>>>>>>>>>>>>>>>login");
 
-      if (response.status === 200) {
+      if (response.data?.responseCode === 200) {
         localStorage.setItem("userID", inputValue);
         setOtpSuccess(true); // Set the login success state to true
         setTimeout(() => {
           setOtpSuccess(false); // Reset the login success state after a timeout
           router.push("/otpVerify");
         }, 3000); // Set the timeout to 3 seconds (adjust as needed)
+      } else {
+        setError(response.data?.responseMessage);
+        setTimeout(() => {
+          setError("");
+        }, 3000);
       }
     } catch (error) {
       console.error("Error logging in:", error);
-
-      if (
-        error.response 
-      ) {
-        setError(error.response.data?.responseMessage);
-      } else {
-        setError("An error occurred");
-      }
     }
   };
   return (

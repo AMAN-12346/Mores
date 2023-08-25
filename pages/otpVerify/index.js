@@ -1,4 +1,5 @@
 "use client";
+//TODO resenOTP gromming
 import React, { useState, useRef } from "react";
 import Image from "next/image";
 import { useRouter } from "next/router"; // Import the router from Next.js
@@ -14,7 +15,8 @@ const VerifyOTP = () => {
   const router = useRouter();
   const [loginSuccess, setLoginSuccess] = useState(false);
   const [auth, setAuth] = useAuth();
-  const [error, setError] = useState("");
+  const [backendError, setError] = useState("");
+  const [resendOtpMessage, setResendOtpMessage] = useState("");
 
   const otpInputsRef = useRef([
     { current: null },
@@ -80,11 +82,10 @@ const VerifyOTP = () => {
         payload
       );
       console.log("testing-------------->>", response);
-      if (response.data.responseCode === 200) {
+      if (response.data?.responseCode === 200) {
         const result = response.data.result; // Extract the result field from the response
         console.log(result, "result from verify otp");
         setAuth(result); // Update the context state
-        //test
 
         // Store the authentication data in local storage
         localStorage.setItem("auth", JSON.stringify(result));
@@ -96,20 +97,16 @@ const VerifyOTP = () => {
         setTimeout(() => {
           setLoginSuccess(false); // Reset the login success state after a timeout
           router.push("/");
-          // router.push("/otpVerify");
-        }, 1000); // Set the timeout to 3 seconds (adjust as needed)
-
-        // Redirect the user to a success page or any other desired location
-        // router.push("/login");
+        }, 1000);
+      } else {
+        setError(response.data?.responseMessage);
+        setTimeout(() => {
+          setError("");
+        }, 3000);
+        throw new Error("Verification failed");
       }
     } catch (error) {
       console.error("Error logging in:", error);
-
-      if (error.response) {
-        setError(error.response.data?.responseMessage);
-      } else {
-        setError("An error occurred");
-      }
     }
   };
   const handleResendOTP = async () => {
@@ -131,7 +128,7 @@ const VerifyOTP = () => {
 
       console.log(response);
 
-      if (response.status === 200) {
+      if (response.data?.responseCode === 200) {
         console.log("OTP Resent successfully!");
         // Clear the OTP input fields
         const newOTP = Array.from({ length: 6 }, () => "");
@@ -143,17 +140,19 @@ const VerifyOTP = () => {
             inputRef.current.value = "";
           }
         });
-
-        // Handle success (you can show a success message to the user or perform any other action)
+        setResendOtpMessage(response.data?.responseMessage);
+        setTimeout(() => {
+          setResendOtpMessage("");
+        }, 3000);
+        router.push("/otpVerify");
+      } else {
+        setError(response.data?.responseMessage);
+        setTimeout(() => {
+          setError("");
+        }, 3000);
       }
     } catch (error) {
-      console.error("Error logging in:", error);
-
-      if (error.response) {
-        setError(error.response.data?.responseMessage);
-      } else {
-        setError("An error occurred");
-      }
+      console.log(error);
     }
   };
 
@@ -209,11 +208,11 @@ const VerifyOTP = () => {
         {loginSuccess && (
           <p className="text-green-500 mt-2">Login successfully!</p>
         )}
-
-        {error && (
-          <p className="text-green-500 mt-2">Login successfully!</p>
+        {resendOtpMessage && (
+          <p className="text-red-500 mt-2">{resendOtpMessage}</p>
         )}
 
+        {backendError && <p className="text-red-500 mt-2">{backendError}</p>}
 
         <div className="mt-0">
           <Image
