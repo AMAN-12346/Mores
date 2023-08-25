@@ -19,7 +19,7 @@ import AgentFrom from './AgentFrom';
 import Review from './Review';
 import FeaturesSectionCard from '@/components/HomePage/FeaturedPropertiesSection/FeaturesSectionCard';
 import RecommenedCard from '../RecommenedCard';
-import SimpleMap from '@/components/GoogleMap/Using_Lat_Log';
+import SimpleMap from '@/components/GoogleMapo/Using_Lat_Log';
 
 const SinglePropertyCard = () => {
     const _id = "64e87f603838555b05ec5cb9"
@@ -29,7 +29,6 @@ const SinglePropertyCard = () => {
             const { data } = await axios.get(`http://localhost:1950/api/v1/property/viewproperty/${_id}`);
             if (data) {
                 const info = data?.result;
-                console.log("Testing useEffect run :::::: ------------->>", info);
                 setProperty(info);
             }
         } catch (error) {
@@ -40,8 +39,6 @@ const SinglePropertyCard = () => {
     useEffect(() => {
         ShowCard()
     }, []);
-    console.log("Property--------------->>", property);
-
     const topLinestyle = { borderRadius: '35px', background: 'rgba(1, 129, 145, 0.22)', fontFamily: 'Poppins', fontSize: '16px', fontStyle: 'normal', fontWeight: 400, lineHeight: 'normal', }
     const MScore = {
         width: '100px',
