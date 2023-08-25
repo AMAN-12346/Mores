@@ -1,5 +1,5 @@
-"use client"
-
+"use client";
+//TODO error handling
 import React, { useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/router"; // Import the router from Next.js
@@ -9,12 +9,12 @@ import right_side_image from "../register/assets/right_side_image.png";
 import logo_image from "../register/assets/logo_image.png";
 import Link from "next/link";
 
-
 const RegisterUser = () => {
   const [selectedMethod, setSelectedMethod] = useState("email");
   const [inputValue, setInputValue] = useState("");
   const router = useRouter(); // Get the router instance
   const [error, setError] = useState("");
+  const [otpSuccess, setOtpSuccess] = useState(false);
 
   const handleRegister = async (event) => {
     event.preventDefault(); // Prevent default form submission behavior
@@ -27,24 +27,36 @@ const RegisterUser = () => {
     }
 
     try {
+      console.log(">>>>>>>>>>>from register");
+
       // Send POST request to the API endpoint
-      const response = await axios.post("http://localhost:1950/api/v1/user/Register",
+      const response = await axios.post(
+        "http://localhost:1950/api/v1/user/Register",
         payload
       );
 
-      if (response.status === 200) {
+        if (response.data?.responseCode === 200) {
         localStorage.setItem("userID", inputValue);
         // If the response is successful, navigate to the "otpVerify" path
+        setOtpSuccess(true); // Set the login success state to true
+        setTimeout(() => {
+          setOtpSuccess(false); // Reset the login success state after a timeout
+        }, 3000);
         router.push("/otpVerify");
+      } else {
+        console.log("i am in register else part");
+        setError(response.data?.responseMessage);
+        setTimeout(() => {
+          setError("");
+        }, 3000);
       }
     } catch (error) {
-      console.error("Error logging in:", error);
+      setError(error.response.data.responseMessage);
+      setTimeout(() => {
+        setError("");
+      }, 3000);
+      console.error("Error logging in:",error );
 
-      if (error.response) {
-        setError(error.response.data?.responseMessage);
-      } else {
-        setError("An error occurred");
-      }
     }
   };
 
@@ -118,6 +130,9 @@ const RegisterUser = () => {
             </Link>
           </p>
         </form>
+        {otpSuccess && (
+          <p className="text-green-500 mt-2">Otp sent successfully!</p>
+        )}
         {error && <p className="text-red-500 mt-2">{error}</p>}
         <div className="mt-0">
           <Image
