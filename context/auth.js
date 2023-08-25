@@ -16,7 +16,7 @@ const AuthProvider = ({ children }) => {
     if (formLocalStorage) {
       setAuth(JSON.parse(formLocalStorage)); //we use parse when we fatch data use stringfy when we set data
     }
-  }, [auth]);
+  }, []);
 
   // url went with
   axios.defaults.baseURL = API;

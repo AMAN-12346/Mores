@@ -10,7 +10,6 @@ import { useAuth } from '@/context/auth';
  
 const Navbar = () => {
     const [auth, setAuth] = useAuth();
-    console.log("-from navbAR-->", auth);
 
     return ( 
         <div className={Styles.navbar}>
