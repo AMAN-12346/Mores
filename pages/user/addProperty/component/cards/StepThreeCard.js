@@ -1,46 +1,24 @@
-import * as React from "react";
-import Box from "@mui/material/Box";
-import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
-import CardContent from "@mui/material/CardContent";
-import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
+import React from "react";
 
-const bull = (
-  <Box
-    component="span"
-    sx={{ display: "inline-block", mx: "2px", transform: "scale(0.8)" }}
-  >
-    •
-  </Box>
-);
-
-export default function StepThreeCard({ imageSrc, definition, buttonLabel }) {
+const StepThreeCard = ({ icon, definition, buttonLabel,onSelect }) => {
   return (
-    <div>
-      <Box
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-          minHeight: "100vh", // Adjust this value as needed
-        }}
-      >
-        <Card variant="outlined">
-          <CardContent>
-            {/* Image */}
-            <img src={imageSrc} alt="Main Image" />
+    <div className="flex items-center justify-center h-50 bg-secondary rounded w-80">
+      <div className="rounded-lg p-4 text-center">
+        {/* Icon */}
+        <div className="text-5xl mb-4 ">{icon}</div>
 
-            {/* Definition */}
-            <Typography variant="body2">{definition}</Typography>
-          </CardContent>
-          <CardActions>
-            {/* Button */}
-            <Button size="small">{buttonLabel}</Button>
-          </CardActions>
-        </Card>
-      </Box>
+        {/* Definition */}
+        <p className="text-black text-center font-poppins text-sm font-normal leading-[128%] tracking-[0.14px]">
+          {definition}
+        </p>
+
+        {/* Button */}
+        <button className="mt-2 py-1 px-3 rounded bg-primary text-white text-sm w-30 h-10 flex-shrink-0 border-none border-radius-9" onClick={onSelect}>
+          {buttonLabel}
+        </button>
+      </div>
     </div>
   );
-}
+};
+
+export default StepThreeCard;

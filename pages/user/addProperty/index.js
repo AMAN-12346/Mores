@@ -12,6 +12,8 @@ import Typography from "@mui/material/Typography";
 import StepOneCard from "./component/cards/StepOneCard";
 import PropertyDetailsForm from "./component/PropertyDetailsForm";
 import AdditionalDetail from "./component/AdditionalDetails";
+import Amenities from "./component/services/Amenities";
+import property from "@/DummyData/data";
 
 const steps = [
   {
@@ -43,6 +45,11 @@ const steps = [
     label: "Additional Details",
     component: <AdditionalDetail />,
   },
+
+  {
+    label: "Amenities",
+    component: <Amenities />,
+  },
 ];
 
 export default function VerticalLinearStepper() {
@@ -66,19 +73,33 @@ export default function VerticalLinearStepper() {
     },
   };
   return (
-    <div className="bg-white">
+    <div className="bg-white pt-10 pl-60">
       {" "}
       {/* Apply Tailwind classes */}
-      <Box sx={{ maxWidth: 400 }}>
+      <Box sx={{ maxWidth: 800 }}>
         <Stepper activeStep={activeStep} orientation="vertical">
           {steps.map((step, index) => (
             <Step key={step.label}>
               <StepLabel
+                className="font-extrabold p-2 rounded bg-white border"
                 optional={
-                  index === 2 ? (
+                  index === 3 ? (
                     <Typography variant="caption">Last step</Typography>
                   ) : null
                 }
+                sx={{
+                  "& .MuiStepLabel-label": {
+                    fontSize: "18px",
+                    fontWeight: "bold",
+                    color: "#018191",
+                    // ... other custom styles
+                  },
+                  "& .MuiStepLabel-iconContainer": {
+                    "& .MuiStepIcon-root": {
+                      color: "#931602", // Change color for step index circle
+                    },
+                  },
+                }}
               >
                 {step.label}
               </StepLabel>
@@ -92,12 +113,12 @@ export default function VerticalLinearStepper() {
                       onClick={handleNext}
                       style={buttonStyle} // Use inline style for button
                     >
-                      {index === steps.length - 1 ? "Finish" : "Continue"}
+                      {index === steps.length - 1 ? "Post Property" : "Continue"}
                     </Button>
                     <Button
                       disabled={index === 0}
                       onClick={handleBack}
-                      sx={buttonStyle.color}
+                    //   sx={}
                     >
                       Back
                     </Button>
@@ -119,3 +140,4 @@ export default function VerticalLinearStepper() {
     </div>
   );
 }
+
