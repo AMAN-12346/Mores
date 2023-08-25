@@ -20,75 +20,196 @@ import Basketball from '../../../assets/moreIcon/Basketball.png';
 import Volleyball from '../../../assets/moreIcon/Volleyball.png';
 import Yoga from '../../../assets/moreIcon/Yoga.png';
 import PowerBackup from '../../../assets/moreIcon/PowerBackup.png';
-import table from '../../../assets/moreIcon/table.png';
-import sofa from '../../../assets/moreIcon/sofa.png';
 import Jogging from '../../../assets/moreIcon/Jogging.png';
-import { tabClasses } from '@mui/material';
+
 
 // Example of amenityIcons object
-const amenityIcons = {
-    Gymnasium: Gymnasium,
-    school: school,
-    SwimmingPool:testing,
-    Lift : Lift,
-    FireFightingSystems : FireFightingSystems,
-    wifi : wifi,
-    Security : Security,
-    CCTV : CCTV,
-    tv : tv,
+const amenityIconsess = {
+    SwimmingPool: testing,
+    Lift: Lift,
+    FireFightingSystems: FireFightingSystems,
+    wifi: wifi,
+    Security: Security,
+    CCTV: CCTV,
+    TV: tv,
     KidsPool: school,
-    BadmintonCourt : BadmintonCourt,
-    TennisCourt :  TennisCourt,
-    Football :Football,
-    SquashCourt : SquashCourt,
-    Basketball : Basketball,
-    Cricket : Cricket,
-    Volleyball : Volleyball,
-    Yoga : Yoga,
-    bathtub : bathtub,
-    doubleBed : doubleBed,
-    TableTennis : BadmintonCourt,
-    park : school,
-    PowerBackup : PowerBackup,
-    bed : doubleBed,
-    table : table,
-    sofa : sofa,
-    Jogging : Jogging,
+    BadmintonCourt: BadmintonCourt,
+    TennisCourt: TennisCourt,
+    Football: Football,
+    SquashCourt: SquashCourt,
+    Basketball: Basketball,
+    Cricket: Cricket,
+    Volleyball: Volleyball,
+    Yoga: Yoga,
+    bathtub: bathtub,
+    doubleBed: doubleBed,
+    TableTennis: BadmintonCourt,
+    Park: school,
 };
 
 export default function Amenities({ props }) {
-    const allAmenities = Object.assign({}, props.perks.Sports, props.perks.safety, props.perks.furniture);
+    const allAmenities = Object.assign({}, props?.perks?.Sports, props?.perks?.safety);
 
-    const amenities = Object.entries(allAmenities)
+    // Create a function to map amenity values to their respective image info
+    const mapAmenityToImage = (amenity) => {
+        const amenityIconsess = {
+            // ... your other icons
+            TennisCourt: {
+                image: TennisCourt,
+                name: 'Tennis Court'
+            },
+            Jogging: {
+                image : Jogging,
+                name :"Jogging"
+            },
+            PowerBackup: {
+                image : PowerBackup,
+                name :"PowerBackup"
+            },
+            Gymnasium: {
+                image : Gymnasium,
+                name :"Gymnasium"
+            },
+            School: {
+                image : school,
+                name :"School"
+            },
+            SwimmingPool: {
+                image : Jogging,
+                name :"Swimming Pool"
+            },
+            Lift: {
+                image : Lift,
+                name :"Lift"
+            },
+            FireFightingSystems: {
+                image : FireFightingSystems,
+                name :"Fire Fighting Systems"
+            },
+            wifi: {
+                image : wifi,
+                name :"wifi"
+            },
+            PowerBackup: {
+                image : PowerBackup,
+                name :"PowerBackup"
+            },
+            Security: {
+                image : Security,
+                name :"Security"
+            },
+            CCTV: {
+                image : CCTV,
+                name :"CCTV"
+            },
+            TV: {
+                image : tv,
+                name :"TV"
+            },
+            KidsPool: {
+                image : school,
+                name :"KidsPool"
+            },
+            BadmintonCourt: {
+                image : BadmintonCourt,
+                name :"Badminton Court"
+            },
+            TennisCourt: {
+                image : TennisCourt,
+                name :"Tennis Court"
+            },
+            Football: {
+                image : Football,
+                name :"Football"
+            },
+            SquashCourt: {
+                image : SquashCourt,
+                name :"Squash Court"
+            },
+            Basketball: {
+                image : Basketball,
+                name :"Basketball"
+            },
+            Cricket: {
+                image : Cricket,
+                name :"Cricket"
+            },
+            Volleyball: {
+                image : Volleyball,
+                name :"Volleyball"
+            },
+            Yoga: {
+                image : Yoga,
+                name :"Yoga"
+            },
+            SquashCourt: {
+                image : SquashCourt,
+                name :"Squash Court"
+            },
+            Basketball: {
+                image : Basketball,
+                name :"Basketball"
+            },
+            Cricket: {
+                image : Cricket,
+                name :"Cricket"
+            },
+            bathtub: {
+                image : bathtub,
+                name :"bathtub"
+            },
+            doubleBed: {
+                image : doubleBed,
+                name :"doubleBed"
+            },
+            TableTennis: {
+                image : TennisCourt,
+                name :"Table Tennis"
+            },
+            Park: {
+                image : school,
+                name :"Park"
+            },
+        };
+
+        return amenityIconsess[amenity] || null;
+    };
+
+    const amenitiesWithImages = Object.entries(allAmenities)
         .filter(([amenity, value]) => value)
-        .map(([amenity]) => amenity);
+        .map(([amenity, value]) => ({
+            amenity,
+            imageInfo: mapAmenityToImage(amenity)
+        }));
 
     const rows = [];
-    const chunkSize = Math.ceil(amenities.length / 3); // Adjusted to 3 chunks
-    for (let i = 0; i < amenities.length; i += chunkSize) {
-        rows.push(amenities.slice(i, i + chunkSize));
+    const chunkSize = Math.ceil(amenitiesWithImages.length / 3);
+    for (let i = 0; i < amenitiesWithImages.length; i += chunkSize) {
+        rows.push(amenitiesWithImages.slice(i, i + chunkSize));
     }
 
     return (
         <div className="bg-white shadow-md">
-            <div className="bg-[#018191] rounded-t-lg shadow-lg p-2">
+            <div className="bg-[#018191] rounded-t-lg shadow-md p-4">
                 <div>
-                    <h1 className="text-white text-2xl font-semibold">Amenities</h1>
+                    <h1 className="text-white text-2xl font-semibold">Overview</h1>
                 </div>
             </div>
             <div className="flex flex-wrap p-8">
                 {rows.map((row, rowIndex) => (
-                    <div key={rowIndex} className="w-full md:w-1/2 lg:w-1/3 px-3">
+                    <div key={rowIndex} className="w-full md:w-1/2 lg:w-1/3 px-3 p-5">
                         <div className="flex flex-col gap-4">
-                            {row.map((amenity) => (
-                                <div key={amenity} className="flex items-center gap-2">
-                                    <Image
-                                        src={amenityIcons[amenity]} // Use the SVG path from amenityIcons
-                                        alt={`${amenity} Icon`}
-                                        height={24} // Set the height of the image
-                                        width={24} // Set the width of the image
-                                    />
-                                    <p className="font-semibold">{amenity}</p>
+                            {row.map(({ amenity, imageInfo }) => (
+                                <div key={amenity} className="flex items-center gap-4">
+                                    {imageInfo && (
+                                        <Image
+                                            src={imageInfo.image}
+                                            alt={`${amenity} Icon`}
+                                            height={24}
+                                            width={24}
+                                        />
+                                    )}
+                                    <p className="font-semibold">{imageInfo ? imageInfo.name : amenity}</p>
                                 </div>
                             ))}
                         </div>
@@ -98,3 +219,5 @@ export default function Amenities({ props }) {
         </div>
     );
 }
+
+

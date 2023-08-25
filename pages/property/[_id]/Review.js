@@ -31,7 +31,7 @@ const Review = () => {
 
     return (
         <div className='relative shadow-md'>
-            <div className="bg-[#9DACA1] rounded-t-lg shadow-lg p-2">
+            <div className="bg-[#9DACA1] rounded-t-lg shadow-lg p-4">
                 <div>
                     <h1 className="text-white text-2xl font-semibold">Reviews</h1>
                 </div>

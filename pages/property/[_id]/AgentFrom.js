@@ -2,8 +2,8 @@ import React from 'react'
 
 const userId = {
     name: "Johan Deep",
-    MobileNumber: "(406) 555-0120",
-    Images: "https://variety.com/wp-content/uploads/2023/05/GettyImages-1255874688.jpg?w=1000&h=563&crop=1&resize=1000%2C563",
+    MobileNumber: "+91 858395348",
+    Images: "https://english.cdn.zeenews.com/sites/default/files/styles/zm_700x400/public/2017/11/17/639329-indian-men.jpg?im=Resize=(700,400)",
     YearOfExprience: 7,
     onSellProperty: 8,
     onRentProperty: 12
@@ -12,7 +12,7 @@ export default function AgentFrom() {
     const countryCodes = ['+1', '+44', '+91', '+86', '+81'];
     return (
         <div>
-            <div className="bg-[#A37F4F] rounded-t-lg shadow-md p-2">
+            <div className="bg-[#A37F4F] rounded-t-lg shadow-md p-4">
                 <div>
                     <h1 className="text-white text-2xl font-semibold">Agent Overview</h1>
                 </div>
