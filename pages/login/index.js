@@ -39,6 +39,8 @@ const LoginUser = () => {
 
       if (response.data?.responseCode === 200) {
         localStorage.setItem("userID", inputValue);
+        localStorage.setItem("isLogin", true);//!
+
         setOtpSuccess(true); // Set the login success state to true
         setLoading(false)
         setTimeout(() => {

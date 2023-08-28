@@ -19,6 +19,8 @@ const VerifyOTP = () => {
   const [resendOtpMessage, setResendOtpMessage] = useState("");
   const [loading, setLoading] = useState(false);
 
+  const source = router.query.source;
+
   const otpInputsRef = useRef([
     { current: null },
     { current: null },
@@ -99,8 +101,13 @@ const VerifyOTP = () => {
         setLoading(false);
         setTimeout(() => {
           setLoginSuccess(false); // Reset the login success state after a timeout
-          router.push("/");
         }, 1000);
+        if (source === 'register') {
+          router.push('/register/registerAs'); // Redirect to home page if source is login
+        }
+        else{
+          router.push('/');
+        }
       } else {
         setError(response.data?.responseMessage);
         setLoading(false);
@@ -212,7 +219,7 @@ const VerifyOTP = () => {
           onClick={handleVerifyOTP}
           disabled={loading}
         >
-          {loading ? "Loading..." : "Verify"}
+          {loading ? "Verifing..." : "Verify"}
         </button>
 
         {loginSuccess && (

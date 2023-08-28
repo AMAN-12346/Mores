@@ -45,7 +45,7 @@ const RegisterUser = () => {
         setTimeout(() => {
           setOtpSuccess(false); // Reset the login success state after a timeout
         }, 3000);
-        router.push("/otpVerify");
+        router.push(`/otpVerify?source=register`);
       } else {
         console.log("i am in register else part");
         setError(response.data?.responseMessage);
