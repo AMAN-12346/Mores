@@ -65,8 +65,8 @@ const LoginUser = () => {
     }
   };
   return (
-    <div className="flex items-center justify-center">
-      <div className="w-1/2 p-32 bg-login_background">
+    <div className="flex">
+      <div className="p-24 bg-login_background">
         <div className="absolute top-4 left-4">
           <Image
             className="bg-contain"
@@ -141,7 +141,7 @@ const LoginUser = () => {
         {error && <p className="text-red-500 mt-2">{error}</p>}
         </div>
 
-        <div className="mt-0">
+        <div >
           <Image
             src={footer_image}
             alt="footer-image"
@@ -150,13 +150,9 @@ const LoginUser = () => {
           />
         </div>
       </div>
-      <div className="w-1/2">
-        <Image
-          src={right_side_image}
-          alt="footer-image"
-          height={1042}
-          width={710}
-        />
+      <div className='h-[600px] w-[600px] z-50' style={{
+        backgroundImage:`url(https://s3-alpha-sig.figma.com/img/1f81/ac45/4fd5c5795c71952b459a053c984a29de?Expires=1694390400&Signature=DGFPo2tnfrR8tWUUl9SizkPV3St~QGIh~RMioewTjHL3UVQG4Zs3yNuF9fCdjXeZLNSr9TvMoo1YuhdUbYMjN74rNt2QROO5IBP6GNUv-EQUs2hk8IocJmNRZeEiohbiahy721QFnh4NhO7gSLo-qqXFr-C7J-kT-iW4uMt~RzBBSU7oRNk~SjlQRA6qu3O~r4-Os7~rzE1KGlHk~dNGM1CRtw8UD81ussN~8lJ2HtrrqPT1jChmrZ-OyYq-apUGZK4YuX~bQuK0BYppc446K0ZpKk3tbphp2XGo3Kocu5s0khWPiYGr-C-Zs0gUaGPUBWrgXqz1wnN907434vBi8Q__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4)`
+      }}>
       </div>
     </div>
   );

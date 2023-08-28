@@ -8,12 +8,16 @@ import footer_image from "../assets/footer-image.png";
 import right_side_image from "../assets/right_side_image.png";
 import logo_image from "../assets/logo_image.png";
 import Link from "next/link";
-import GooglePlacesAutocomplete from "react-google-autocomplete";
-import { apiGooglePlace } from "@/config";
+import { apiGooglePlace } from "@/config.js";
+import GooglePlaceDropdown from "./components/GooglePlaceDropdown";
 
 import { useAuth } from "@/context/auth";
 
-const RegisterUser = () => {
+const RegisterUser = ({ selectedLocation }) => {
+  const [cityName, setParentCity] = useState("");
+  const [longitude, setParentLongitude] = useState("");
+  const [latitude, setParentLatitude] = useState("");
+
   const [selectedRole, setSelectedRole] = useState("individual"); // Changed state and variable names
   const [inputName, setNameValue] = useState("");
   const [email, setEmail] = useState("");
@@ -27,6 +31,12 @@ const RegisterUser = () => {
   const router = useRouter();
   const [otpSuccess, setOtpSuccess] = useState(false);
 
+  const updateParentLocation = (city, longitude, latitude) => {
+    setParentCity(city);
+    setParentLongitude(longitude);
+    setParentLatitude(latitude);
+  };
+
   const handleRegister = async (event) => {
     console.log(
       city,
@@ -39,9 +49,9 @@ const RegisterUser = () => {
 
     let payload = {
       name: inputName,
-      city: city,
-      latitude: coordinates.lat,
-      longitude: coordinates.lng,
+      city: cityName,
+      latitude: latitude,
+      longitude: longitude,
       email: email,
       mobileNumber: mobileNumber,
       userType: selectedRole,
@@ -66,7 +76,21 @@ const RegisterUser = () => {
       console.error("Error registering user:", error);
     }
   };
+  const handlePlaceSelect = async (place) => {
+    try {
+      const response = await axios.get(
+        `https://maps.googleapis.com/maps/api/place/details/json?place_id=${place.place_id}&fields=geometry&key=${apiGooglePlace}`
+      );
 
+      const location = response.data.result.geometry.location;
+      setCoordinates({
+        lat: location.lat,
+        lng: location.lng,
+      });
+    } catch (error) {
+      console.error("Error fetching place details:", error);
+    }
+  };
   return (
     <div className="flex items-center justify-center">
       <div className="w-1/2 p-32 bg-login_background">
@@ -144,33 +168,7 @@ const RegisterUser = () => {
               disabled={auth.userResult?.email !== undefined}
             />
 
-            <GooglePlacesAutocomplete
-              apiKey={apiGooglePlace}
-              selectProps={{
-                inputValue: city,
-                onChange: setCity,
-                placeholder: "City",
-              }}
-              onLoadFailed={(error) =>
-                console.error("Google API loading failed", error)
-              }
-              onSelect={(place) => {
-                if (place.geometry && place.geometry.location) {
-                  setCity(place.formatted_address);
-                  const selectedLocation = place.geometry.location;
-                  setCoordinates({
-                    lat: selectedLocation.lat(),
-                    lng: selectedLocation.lng(),
-                  });
-                } else {
-                  console.error("Selected place has no geometry or location.");
-                }
-              }}
-              options={{
-                types: ["(cities)"],
-                componentRestrictions: { country: "IN" }, // Restrict to India
-              }}
-            />
+            <GooglePlaceDropdown updateParentLocation={updateParentLocation} />
           </div>
           <button className="w-9/12 bg-button text-white py-2 rounded-lg mt-4">
             Register

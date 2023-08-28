@@ -20,6 +20,7 @@
     "axios": "^1.4.0",
     "eslint": "8.46.0",
     "eslint-config-next": "13.4.12",
+    "google-maps-react": "^2.0.6",
     "html2canvas": "^1.4.1",
     "jspdf": "^2.5.1",
     "next": "^13.4.12",
