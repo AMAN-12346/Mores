@@ -65,7 +65,7 @@ const LoginUser = () => {
     }
   };
   return (
-    <div className="flex">
+    <div className="flex justify-between">
       <div className="p-24 bg-login_background">
         <div className="absolute top-4 left-4">
           <Image
@@ -100,8 +100,8 @@ const LoginUser = () => {
             Phone
           </button>
         </div>
-        <form className="mt-8" onSubmit={handleLogin}>
-          <div className="relative">
+        <form className="mt-8 " onSubmit={handleLogin}>
+          <div className="relative ">
             <input
               type="text"
               className="border rounded-lg pl-12 pr-8 py-2 w-9/12"
@@ -150,7 +150,7 @@ const LoginUser = () => {
           />
         </div>
       </div>
-      <div className='h-[600px] w-[600px] z-50' style={{
+      <div className='h-[700px] w-[600px] object-cover' style={{
         backgroundImage:`url(https://s3-alpha-sig.figma.com/img/1f81/ac45/4fd5c5795c71952b459a053c984a29de?Expires=1694390400&Signature=DGFPo2tnfrR8tWUUl9SizkPV3St~QGIh~RMioewTjHL3UVQG4Zs3yNuF9fCdjXeZLNSr9TvMoo1YuhdUbYMjN74rNt2QROO5IBP6GNUv-EQUs2hk8IocJmNRZeEiohbiahy721QFnh4NhO7gSLo-qqXFr-C7J-kT-iW4uMt~RzBBSU7oRNk~SjlQRA6qu3O~r4-Os7~rzE1KGlHk~dNGM1CRtw8UD81ussN~8lJ2HtrrqPT1jChmrZ-OyYq-apUGZK4YuX~bQuK0BYppc446K0ZpKk3tbphp2XGo3Kocu5s0khWPiYGr-C-Zs0gUaGPUBWrgXqz1wnN907434vBi8Q__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4)`
       }}>
       </div>

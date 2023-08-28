@@ -1,12 +1,17 @@
 import React, { useState } from "react";
+import AddProperty from "./addProperty/AddProperty";
 
 // import Styles from "./Sidebar.module.css";
 
 const Sidebar = () => {
   const [profile, setProfile] = useState(false);
+  const [showAddProperty, setShowAddProperty] = useState(false);
 
   const handleProfileClick = () => {
     setProfile(!profile);
+  };
+  const handlePostPropertyClick = () => {
+    setShowAddProperty(!showAddProperty);
   };
 
   const IconComponent = ({ icon }) => {
@@ -19,8 +24,8 @@ const Sidebar = () => {
         {data.map((item, index) => (
           <div
             className="flex mt-5 cursor-pointer "
-            onClick={handleProfileClick}
-          >
+            onClick={handlePostPropertyClick}>
+          
             <div className="bg-secondary rounded-full p-2 ">
               <IconComponent icon={item.icon} />
             </div>
@@ -32,7 +37,10 @@ const Sidebar = () => {
         ))}
       </div>
 
-      <div className="text-3xl">{profile && <h1>Profile</h1>}</div>
+      <div className="text-3xl">
+        {/* Conditionally rendering the AddProperty component */}
+        {showAddProperty ? <AddProperty /> : profile && <h1>Profile</h1>}
+      </div>
     </div>
   );
 };

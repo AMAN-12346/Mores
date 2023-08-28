@@ -73,10 +73,10 @@ export default function AddProperty() {
     },
   };
   return (
-    <div className="bg-white ml-4  pt-10 pl-60">
+    <div className="bg-white">
       {" "}
       {/* Apply Tailwind classes */}
-      <Box sx={{ maxWidth: 800 }}>
+      <Box>
         <Stepper activeStep={activeStep} orientation="vertical">
           {steps.map((step, index) => (
             <Step key={step.label}>
