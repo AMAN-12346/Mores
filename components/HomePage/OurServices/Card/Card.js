@@ -13,10 +13,10 @@ const Card = ({name,imageSrc}) => {
         try{
             setLoading(true);
             const {data} = await axios.get(`property/PropertyType_SubtypeList`);
-            
+
             if(data){
-                setPropertyList(data);     
-                console.log("it is ", propertyList)            
+                setPropertyList(data?.result);
+                console.log("it is ", propertyList , "data ==>", data)            
             } 
             setLoading(false); 
             return;         
