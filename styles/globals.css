@@ -7,6 +7,9 @@
     --footer-bg: #A37F4F;
     --black-black-70: #283646;
 }
+.overflow-scroll::-webkit-scrollbar {
+    display: none;
+}
 body{
     background-color: var(--primary-bg);
     font-family: 'Poppins';

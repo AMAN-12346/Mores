@@ -8,26 +8,25 @@ import house from "../../../assets/FeaturedPropertiesIcons/measured.png"
 const FeaturesSectionCard=({data})=>{
     return(
         <div
-        className={`pt-1 gap-x-6 gap-y-8 grid grid-cols-2 md:grid-cols-5 lg-grid-cols-4 ${Styles.gridDivs}`}
+        className={`grid grid-cols-2 md:grid-cols-5 lg-grid-cols-4 ${Styles.gridDivs}`}
       >
         {
             data.length >0 && 
             data.map((singlePropertydata,index)=>
             (
-            <div key={index} className={Styles.divCardSize}>
-          <div className={`mb-2 ${Styles.cardBorder}`}>
+            <div key={index} className={`${Styles.divCardSize}`}>
+          <div className={`${Styles.cardBorder}`}>
             <Image
               className={`object-cover aspect-square ${Styles.cardBorder}`}
               src={AdinRoyal}
               alt="property"
             />
-            {console.log(typeof(royalPlams))}
-            {console.log(typeof(singlePropertydata.src))}
+     
           </div >
-          <div className="bg-white pt-2">
+          <div className="bg-white py-4 rounded-b-md">
             <div className="flex justify-around ">
               <h2 className="font-bold text-xl">{singlePropertydata.name}</h2>
-              <h3 className="text-featuredTorquoise bg-featuredBackground bg-opacity-10 p-2 rounded-sm font-bold">
+              <h3 className="text-featuredTorquoise bg-featuredBackground bg-opacity-10 p-2 text-sm rounded-sm font-bold">
                 {singlePropertydata.price}
               </h3>
             </div>
@@ -47,7 +46,7 @@ const FeaturesSectionCard=({data})=>{
                   />
                 </g>
               </svg>
-              <span className="text-xs w-48 font-extralight text-gray-400">{singlePropertydata.address}</span>
+              <span className="text-xs w-40 font-extralight text-gray-400">{singlePropertydata.address}</span>
             </div>
             <div className="flex mt-4 px-5 gap-6">
                 
@@ -76,7 +75,7 @@ const FeaturesSectionCard=({data})=>{
                 </div>
               </div>
             </div>
-            <div className="flex justify-center mt-4 p-2 bg-featuredBackground text-sm text-white rounded-md">
+            <div className="flex justify-center w-72 mt-4 p-2 bg-featuredBackground text-sm text-white rounded-md m-auto">
               <button>Check It Out</button>
             </div>
           </div>

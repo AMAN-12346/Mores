@@ -9,8 +9,11 @@ module.exports = {
     extend: {
       colors:{
         featuredTorquoise:'#003E71',
-        featuredBackground:'#003e71',
         featuredBackground:'#931602',
+        searchPageText:'#018191',
+        Background:'#01819140',
+        SearchResultText:'#78828a',
+        Text:'#F0E4F4',
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
