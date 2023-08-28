@@ -3,7 +3,6 @@ const FilterInput = ({ name }) => {
   const [isChecked, setIsChecked] = useState(false);
   function handleCheckBoxChange(event) {
     setIsChecked(event.target.checked);
-    console.log(name)
  }
   return (
     <div>

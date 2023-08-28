@@ -7,13 +7,20 @@ module.exports = {
   ],
   theme: {
     extend: {
-      colors:{
+      colors: {
+        primary: '#018191',
+        secondary: 'rgba(1, 129, 145, 0.17)',
+         secondary: 'rgba(1, 129, 145, 0.17)',
+         iconBackground: 'rgba(1, 129, 145, 0.17)',
+        button: "#931602",
+        login_background:"#FAEEE0",
         featuredTorquoise:'#003E71',
         featuredBackground:'#931602',
         searchPageText:'#018191',
         Background:'#01819140',
         SearchResultText:'#78828a',
         Text:'#F0E4F4',
+        paginationButton:"#A37F4F"
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

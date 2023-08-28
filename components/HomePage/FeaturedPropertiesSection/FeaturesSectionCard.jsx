@@ -6,6 +6,7 @@ import doubleBed from "../../../assets/FeaturedPropertiesIcons/double-bed.png"
 import house from "../../../assets/FeaturedPropertiesIcons/measured.png"
 // import data from "../../../content/FeaturedProperties/featuredProperties.json"
 const FeaturesSectionCard=({data})=>{
+  console.log("TEsing------------>>",{data}); 
     return(
         <div
         className={`grid grid-cols-2 md:grid-cols-5 lg-grid-cols-4 ${Styles.gridDivs}`}

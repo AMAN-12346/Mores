@@ -1,3 +1,5 @@
+import FeelFreeToContact from "@/components/HomePage/FeelFreeToContact"
+import OurNewsBlog from "@/components/HomePage/OurNewsBlog"
 import FilterSection from "@/components/SearchResultPage/FilterSection/FilterSection"
 import TopBar from "@/components/SearchResultPage/TopBar/TopBar"
 const SearchResultPage=()=>{
@@ -5,6 +7,8 @@ const SearchResultPage=()=>{
         <>      
         <TopBar/>
         <FilterSection/>
+        <FeelFreeToContact/>
+        <OurNewsBlog/>
         </>
 
     )

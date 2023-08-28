@@ -422,9 +422,9 @@
             "$date": "2023-08-16T05:23:51.621Z"
         },
         "__v": 0
-    },
+    }, 
     {
-        "propertyName": "Elegant house",
+        "propertyName": "Blue Berry House",
         "propertyType": "RESIDENTIAL",
         "propertySubType": "PENT_HOUSE",
         "price": "1200000",
@@ -475,16 +475,334 @@
         "furniture": "SEMI_FURNISHED",
         "action": "RENT",
         "floorNumber": "23",
-        "cityName": "Lucknow",
+        "cityName": "Kanpur",
         "description": "React component for emoji/svg country flags. ... Start using react-country-flag in your project by running `npm i react-country-flag",
         "status": "ACTIVE",
-        "images": ["https://images.pexels.com/photos/2194399/pexels-photo-2194399.jpeg?auto=compress&cs=tinysrgb&w=600","https://images.pexels.com/photos/1022936/pexels-photo-1022936.jpeg?auto=compress&cs=tinysrgb&w=600","https://images.pexels.com/photos/2351649/pexels-photo-2351649.jpeg?auto=compress&cs=tinysrgb&w=600"],
-        "locality": "789 Maplewood Lane Willowbrook, CA 56789",
+        "images": ["https://images.pexels.com/photos/1172064/pexels-photo-1172064.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1","https://images.pexels.com/photos/1559825/pexels-photo-1559825.jpeg?auto=compress&cs=tinysrgb&w=600","https://images.pexels.com/photos/2816284/pexels-photo-2816284.jpeg?auto=compress&cs=tinysrgb&w=600"],
+        "locality": "6391 Elgin St. Celina, Delaware 10299",
         "location": {
             "type": "Point",
             "coordinates": [
-                26.85,
-                80.91
+                26.45,
+                80.31
+            ]
+        },
+        "allowance": "FAMILY",
+        "perks": {
+            "Sports": {
+                "Gymnasium": true,
+                "SwimmingPool": true,
+                "KidsPool": true,
+                "BadmintonCourt": false,
+                "TennisCourt": false,
+                "SquashCourt": false,
+                "Football": false,
+                "Cricket": false,
+                "Basketball": true,
+                "Volleyball": false,
+                "Yoga": false,
+                "Jogging": false,
+                "TableTennis": false,
+                "park": true,
+                "school": true
+            },
+            "safety": {
+                "PowerBackup": true,
+                "Lift": true,
+                "Security": true,
+                "FireFightingSystems": false,
+                "CCTV": true
+            },
+            "furniture": {
+                "wifi": false,
+                "tv": false,
+                "bed": true,
+                "sofa": false,
+                "table": false
+            }
+        },
+        "createdAt": {
+            "$date": "2023-08-16T05:23:51.621Z"
+        },
+        "updatedAt": {
+            "$date": "2023-08-16T05:23:51.621Z"
+        },
+        "__v": 0
+    },
+    {
+        "propertyName": "Retro House",
+        "propertyType": "RESIDENTIAL",
+        "propertySubType": "PENT_HOUSE",
+        "price": "1200000",
+        "bedrooms": "3",
+        "bathrooms": "3",
+        "balconies": "PERSONAL",
+        "coverCarPark": true,
+        "uncoverCarPark": true,
+        "PowerBackup": true,
+        "facing": "NORTH_EAST",
+        "View": "EXPRESS_WAY",
+        "flooring": "MARBLE",
+        "tower": "4",
+        "unitNumber": "501",
+        "areaDetails": [
+            {
+                "bedrooms": "100",
+                "bathrooms": "120",
+                "study": "110"
+            }
+        ],
+        "additionalRoom": [
+            {
+                "MEETING_ROOM": 2,
+                "CONFERENCE_ROOM": 1,
+                "BOARD_ROOM": "NA",
+                "LOUNGE_AREA": 1,
+                "RECEPTION_AREA": 1,
+                "PANTRY": 1,
+                "CABIN": 2,
+                "RESTROOM": "NA",
+                "STORAGE_ROOM": "NA",
+                "SERVER_ROOM": "NA",
+                "OPEN_WORKSPACE": 2,
+                "TRAINING_ROOM": 1,
+                "AUDITORIUM": "NA",
+                "LIBRARY": "NA",
+                "SHOWROOM": "NA",
+                "DISPLAY_AREA": "NA"
+            }
+        ],
+        "current_status": [
+            {
+                "ReadyToMove": true,
+                "UnderConstruction": "12-12-2023"
+            }
+        ],
+        "furniture": "SEMI_FURNISHED",
+        "action": "RENT",
+        "floorNumber": "23",
+        "cityName": "Kanpur",
+        "description": "React component for emoji/svg country flags. ... Start using react-country-flag in your project by running `npm i react-country-flag",
+        "status": "ACTIVE",
+        "images": ["https://images.pexels.com/photos/1795508/pexels-photo-1795508.jpeg?auto=compress&cs=tinysrgb&w=600","https://images.pexels.com/photos/1559825/pexels-photo-1559825.jpeg?auto=compress&cs=tinysrgb&w=600","https://images.pexels.com/photos/2816284/pexels-photo-2816284.jpeg?auto=compress&cs=tinysrgb&w=600"],
+        "locality": "6391 Elgin St. Celina, Delaware 10299",
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                26.45,
+                80.31
+            ]
+        },
+        "allowance": "FAMILY",
+        "perks": {
+            "Sports": {
+                "Gymnasium": true,
+                "SwimmingPool": true,
+                "KidsPool": true,
+                "BadmintonCourt": false,
+                "TennisCourt": false,
+                "SquashCourt": false,
+                "Football": false,
+                "Cricket": false,
+                "Basketball": true,
+                "Volleyball": false,
+                "Yoga": false,
+                "Jogging": false,
+                "TableTennis": false,
+                "park": true,
+                "school": true
+            },
+            "safety": {
+                "PowerBackup": true,
+                "Lift": true,
+                "Security": true,
+                "FireFightingSystems": false,
+                "CCTV": true
+            },
+            "furniture": {
+                "wifi": false,
+                "tv": false,
+                "bed": true,
+                "sofa": false,
+                "table": false
+            }
+        },
+        "createdAt": {
+            "$date": "2023-08-16T05:23:51.621Z"
+        },
+        "updatedAt": {
+            "$date": "2023-08-16T05:23:51.621Z"
+        },
+        "__v": 0
+    },
+    {
+        "propertyName": "Mullberry Inn",
+        "propertyType": "RESIDENTIAL",
+        "propertySubType": "PENT_HOUSE",
+        "price": "1200000",
+        "bedrooms": "3",
+        "bathrooms": "3",
+        "balconies": "PERSONAL",
+        "coverCarPark": true,
+        "uncoverCarPark": true,
+        "PowerBackup": true,
+        "facing": "NORTH_EAST",
+        "View": "EXPRESS_WAY",
+        "flooring": "MARBLE",
+        "tower": "4",
+        "unitNumber": "501",
+        "areaDetails": [
+            {
+                "bedrooms": "100",
+                "bathrooms": "120",
+                "study": "110"
+            }
+        ],
+        "additionalRoom": [
+            {
+                "MEETING_ROOM": 2,
+                "CONFERENCE_ROOM": 1,
+                "BOARD_ROOM": "NA",
+                "LOUNGE_AREA": 1,
+                "RECEPTION_AREA": 1,
+                "PANTRY": 1,
+                "CABIN": 2,
+                "RESTROOM": "NA",
+                "STORAGE_ROOM": "NA",
+                "SERVER_ROOM": "NA",
+                "OPEN_WORKSPACE": 2,
+                "TRAINING_ROOM": 1,
+                "AUDITORIUM": "NA",
+                "LIBRARY": "NA",
+                "SHOWROOM": "NA",
+                "DISPLAY_AREA": "NA"
+            }
+        ],
+        "current_status": [
+            {
+                "ReadyToMove": true,
+                "UnderConstruction": "12-12-2023"
+            }
+        ],
+        "furniture": "SEMI_FURNISHED",
+        "action": "RENT",
+        "floorNumber": "23",
+        "cityName": "Kanpur",
+        "description": "React component for emoji/svg country flags. ... Start using react-country-flag in your project by running `npm i react-country-flag",
+        "status": "ACTIVE",
+        "images": ["https://images.pexels.com/photos/1127119/pexels-photo-1127119.jpeg?auto=compress&cs=tinysrgb&w=600","https://images.pexels.com/photos/1559825/pexels-photo-1559825.jpeg?auto=compress&cs=tinysrgb&w=600","https://images.pexels.com/photos/2816284/pexels-photo-2816284.jpeg?auto=compress&cs=tinysrgb&w=600"],
+        "locality": "6391 Elgin St. Celina, Delaware 10299",
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                26.45,
+                80.31
+            ]
+        },
+        "allowance": "FAMILY",
+        "perks": {
+            "Sports": {
+                "Gymnasium": true,
+                "SwimmingPool": true,
+                "KidsPool": true,
+                "BadmintonCourt": false,
+                "TennisCourt": false,
+                "SquashCourt": false,
+                "Football": false,
+                "Cricket": false,
+                "Basketball": true,
+                "Volleyball": false,
+                "Yoga": false,
+                "Jogging": false,
+                "TableTennis": false,
+                "park": true,
+                "school": true
+            },
+            "safety": {
+                "PowerBackup": true,
+                "Lift": true,
+                "Security": true,
+                "FireFightingSystems": false,
+                "CCTV": true
+            },
+            "furniture": {
+                "wifi": false,
+                "tv": false,
+                "bed": true,
+                "sofa": false,
+                "table": false
+            }
+        },
+        "createdAt": {
+            "$date": "2023-08-16T05:23:51.621Z"
+        },
+        "updatedAt": {
+            "$date": "2023-08-16T05:23:51.621Z"
+        },
+        "__v": 0
+    },
+    {
+        "propertyName": "Maestro Villa",
+        "propertyType": "RESIDENTIAL",
+        "propertySubType": "PENT_HOUSE",
+        "price": "1200000",
+        "bedrooms": "3",
+        "bathrooms": "3",
+        "balconies": "PERSONAL",
+        "coverCarPark": true,
+        "uncoverCarPark": true,
+        "PowerBackup": true,
+        "facing": "NORTH_EAST",
+        "View": "EXPRESS_WAY",
+        "flooring": "MARBLE",
+        "tower": "4",
+        "unitNumber": "501",
+        "areaDetails": [
+            {
+                "bedrooms": "100",
+                "bathrooms": "120",
+                "study": "110"
+            }
+        ],
+        "additionalRoom": [
+            {
+                "MEETING_ROOM": 2,
+                "CONFERENCE_ROOM": 1,
+                "BOARD_ROOM": "NA",
+                "LOUNGE_AREA": 1,
+                "RECEPTION_AREA": 1,
+                "PANTRY": 1,
+                "CABIN": 2,
+                "RESTROOM": "NA",
+                "STORAGE_ROOM": "NA",
+                "SERVER_ROOM": "NA",
+                "OPEN_WORKSPACE": 2,
+                "TRAINING_ROOM": 1,
+                "AUDITORIUM": "NA",
+                "LIBRARY": "NA",
+                "SHOWROOM": "NA",
+                "DISPLAY_AREA": "NA"
+            }
+        ],
+        "current_status": [
+            {
+                "ReadyToMove": true,
+                "UnderConstruction": "12-12-2023"
+            }
+        ],
+        "furniture": "SEMI_FURNISHED",
+        "action": "RENT",
+        "floorNumber": "23",
+        "cityName": "Kanpur",
+        "description": "React component for emoji/svg country flags. ... Start using react-country-flag in your project by running `npm i react-country-flag",
+        "status": "ACTIVE",
+        "images": ["https://images.pexels.com/photos/2282445/pexels-photo-2282445.jpeg?auto=compress&cs=tinysrgb&w=600","https://images.pexels.com/photos/1559825/pexels-photo-1559825.jpeg?auto=compress&cs=tinysrgb&w=600","https://images.pexels.com/photos/2816284/pexels-photo-2816284.jpeg?auto=compress&cs=tinysrgb&w=600"],
+        "locality": "6391 Elgin St. Celina, Delaware 10299",
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                26.45,
+                80.31
             ]
         },
         "allowance": "FAMILY",
@@ -529,4 +847,5 @@
         },
         "__v": 0
     }
+   
 ]

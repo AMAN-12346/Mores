@@ -1,10 +1,9 @@
 import FilterInput from "./FilterInput";
-import SecondaryInput from "./SecondaryInput";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const MainAccordion = ({ hname, htype, filters}) => {
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState(true);
   function handleClick() {
     setShow(!show);
   }
