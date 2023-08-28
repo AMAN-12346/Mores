@@ -59,116 +59,116 @@ export default function Amenities({ props }) {
                 name: 'Tennis Court'
             },
             Jogging: {
-                image : Jogging,
-                name :"Jogging"
+                image: Jogging,
+                name: "Jogging"
             },
             PowerBackup: {
-                image : PowerBackup,
-                name :"PowerBackup"
+                image: PowerBackup,
+                name: "PowerBackup"
             },
             Gymnasium: {
-                image : Gymnasium,
-                name :"Gymnasium"
+                image: Gymnasium,
+                name: "Gymnasium"
             },
             School: {
-                image : school,
-                name :"School"
+                image: school,
+                name: "School"
             },
             SwimmingPool: {
-                image : Jogging,
-                name :"Swimming Pool"
+                image: Jogging,
+                name: "Swimming Pool"
             },
             Lift: {
-                image : Lift,
-                name :"Lift"
+                image: Lift,
+                name: "Lift"
             },
             FireFightingSystems: {
-                image : FireFightingSystems,
-                name :"Fire Fighting Systems"
+                image: FireFightingSystems,
+                name: "Fire Fighting Systems"
             },
             wifi: {
-                image : wifi,
-                name :"wifi"
+                image: wifi,
+                name: "wifi"
             },
             PowerBackup: {
-                image : PowerBackup,
-                name :"PowerBackup"
+                image: PowerBackup,
+                name: "PowerBackup"
             },
             Security: {
-                image : Security,
-                name :"Security"
+                image: Security,
+                name: "Security"
             },
             CCTV: {
-                image : CCTV,
-                name :"CCTV"
+                image: CCTV,
+                name: "CCTV"
             },
             TV: {
-                image : tv,
-                name :"TV"
+                image: tv,
+                name: "TV"
             },
             KidsPool: {
-                image : school,
-                name :"KidsPool"
+                image: school,
+                name: "KidsPool"
             },
             BadmintonCourt: {
-                image : BadmintonCourt,
-                name :"Badminton Court"
+                image: BadmintonCourt,
+                name: "Badminton Court"
             },
             TennisCourt: {
-                image : TennisCourt,
-                name :"Tennis Court"
+                image: TennisCourt,
+                name: "Tennis Court"
             },
             Football: {
-                image : Football,
-                name :"Football"
+                image: Football,
+                name: "Football"
             },
             SquashCourt: {
-                image : SquashCourt,
-                name :"Squash Court"
+                image: SquashCourt,
+                name: "Squash Court"
             },
             Basketball: {
-                image : Basketball,
-                name :"Basketball"
+                image: Basketball,
+                name: "Basketball"
             },
             Cricket: {
-                image : Cricket,
-                name :"Cricket"
+                image: Cricket,
+                name: "Cricket"
             },
             Volleyball: {
-                image : Volleyball,
-                name :"Volleyball"
+                image: Volleyball,
+                name: "Volleyball"
             },
             Yoga: {
-                image : Yoga,
-                name :"Yoga"
+                image: Yoga,
+                name: "Yoga"
             },
             SquashCourt: {
-                image : SquashCourt,
-                name :"Squash Court"
+                image: SquashCourt,
+                name: "Squash Court"
             },
             Basketball: {
-                image : Basketball,
-                name :"Basketball"
+                image: Basketball,
+                name: "Basketball"
             },
             Cricket: {
-                image : Cricket,
-                name :"Cricket"
+                image: Cricket,
+                name: "Cricket"
             },
             bathtub: {
-                image : bathtub,
-                name :"bathtub"
+                image: bathtub,
+                name: "bathtub"
             },
             doubleBed: {
-                image : doubleBed,
-                name :"doubleBed"
+                image: doubleBed,
+                name: "doubleBed"
             },
             TableTennis: {
-                image : TennisCourt,
-                name :"Table Tennis"
+                image: TennisCourt,
+                name: "Table Tennis"
             },
             Park: {
-                image : school,
-                name :"Park"
+                image: school,
+                name: "Park"
             },
         };
 
@@ -192,13 +192,13 @@ export default function Amenities({ props }) {
         <div className="bg-white shadow-md">
             <div className="bg-[#018191] rounded-t-lg shadow-md p-4">
                 <div>
-                    <h1 className="text-white text-2xl font-semibold">Overview</h1>
+                    <h1 className="text-white text-2xl font-semibold">Amenities</h1>
                 </div>
             </div>
-            <div className="flex flex-wrap p-8">
+            <div className="flex flex-wrap p-9 text-sm">
                 {rows.map((row, rowIndex) => (
-                    <div key={rowIndex} className="w-full md:w-1/2 lg:w-1/3 px-3 p-5">
-                        <div className="flex flex-col gap-4">
+                    <div key={rowIndex} className="md:w-1/2 lg:w-1/3 px-3 p-5">
+                        <div className="flex flex-col gap-2 justify-center"> {/* Added justify-center */}
                             {row.map(({ amenity, imageInfo }) => (
                                 <div key={amenity} className="flex items-center gap-4">
                                     {imageInfo && (
@@ -216,6 +216,7 @@ export default function Amenities({ props }) {
                     </div>
                 ))}
             </div>
+
         </div>
     );
 }

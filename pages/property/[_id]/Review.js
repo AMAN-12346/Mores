@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
+import Styles from './index.module.css';
+
 
 // Sample reviews data
 const reviewsData = [
     { id: 1, user: 'User 1', rating: 4, userType: "AGNET", review: 'Great experience, loved the place Great experience, loved the place.' },
-    { id: 2, user: 'User 2', rating: 5, userType: "USER", review: 'Excellent service and amenities Great experience, loved the place.' },
+    { id: 2, user: 'User 2', rating: 5, userType: "USER", review: 'Excellent service and amen Great experience, loved the place Great experience, loved the place ities amen Great experience, loved the place Great experience, loved the place ities  amen Great experience, loved the place Great experience, loved the place ities  amen Great experience, loved the place Great experience, loved the place ities  amen Great experience, loved the place Great experience, loved the place ities  amen Great experience, loved the place Great experience, loved the place ities  amen Great experience, loved the place Great experience, loved the place ities  amen Great experience, loved the place Great experience, loved the place ities  ' },
     { id: 3, user: 'User 3', rating: 3, userType: "AGNET", review: 'Decent place, but needs improvem Great experience, loved the place Great experience, loved the placeent.' },
     { id: 4, user: 'User 4', rating: 4, userType: "USER", review: 'Great experience, loved the p Great experience, loved the place Great experience, loved the placelace.' },
-    { id: 5, user: 'User 5', rating: 5, userType: "ADMIN", review: 'Excellent service and amen Great experience, loved the place Great experience, loved the place ities.' },
+    { id: 5, user: 'User 5', rating: 5, userType: "ADMIN", review: 'Excellent service and amen Great experience, loved the place Great experience, loved the place ities  .' },
     { id: 6, user: 'User 6', rating: 3, userType: "OWNER", review: 'Decent place, but needs improvement.' },
     { id: 7, user: 'User 8', rating: 4, userType: "USER", review: 'Great experience, loved th Great experience, loved the place e place.' },
     { id: 8, user: 'User 9', rating: 5, userType: "USER", review: 'Excellent service and am Great experience, loved the place enities.' },
@@ -28,6 +30,7 @@ const Review = () => {
     const handlePageChange = (newPage) => {
         setCurrentPage(newPage);
     };
+   
 
     return (
         <div className='relative shadow-md'>
@@ -44,7 +47,7 @@ const Review = () => {
                             className="p-4 border border-gray-300 rounded-lg flex flex-col"
                             style={{ width: '350px', height: '200px' }}
                         >
-                            <div className="items-center relative">
+                            <div className="items-center">
                                 <h2 className="font-semibold">{review.user}</h2>
                                 <div className="flex mt-2">
                                     {Array.from({ length: review.rating }).map((_, index) => (
@@ -62,8 +65,10 @@ const Review = () => {
                                         </svg>
                                     ))}
                                 </div>
+                                <div className={`overflow-y-scroll h-24 ${Styles.para}`}>
+                                    <p>{review.review}</p>
+                                </div>
                             </div>
-                            <p>{review.review}</p>
                         </div>
                     ))}
                 </div>

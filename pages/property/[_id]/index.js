@@ -19,7 +19,9 @@ import AgentFrom from './AgentFrom';
 import Review from './Review';
 import FeaturesSectionCard from '@/components/HomePage/FeaturedPropertiesSection/FeaturesSectionCard';
 import RecommenedCard from '../RecommenedCard';
-import SimpleMap from '@/components/GoogleMapo/Using_Lat_Log';
+import LikeShareButtons from '@/components/LikeShear/Component';
+import Footer from '@/components/Common/Footer/Footer';
+// import SimpleMap from '@/components/GoogleMapo/Using_Lat_Log'; 
 
 const SinglePropertyCard = () => {
     const _id = "64e87f603838555b05ec5cb9"
@@ -74,7 +76,10 @@ const SinglePropertyCard = () => {
                                 <span className="mr-1 py-2 text-sm md:py-5 lg:text-xl font-semibold" style={{ color: "#FFF", fontWeight: 600 }}>100+</span>
                                 <span className="text-sm py-2 md:py-5 lg:text-xl font-semibold" style={{ color: "#FFF", fontWeight: 600 }}>Views</span>
                             </div>
-                            <div className="absolute flex justify-center top-7 right-5 w-[150px] lg:w-[200px] text-white rounded-tl-md" style={{ borderRadius: "43px", background: "rgba(147, 22, 2, 0.20)", flexShrink: 0 }}>
+                            <div className="absolute flex justify-center top-7 right-5 w-[150px] lg:w-[200px] text-white rounded-tl-md">
+                                <LikeShareButtons />
+                            </div>
+                            <div className="absolute flex justify-center bottom-7 right-5 w-[150px] lg:w-[200px] text-white rounded-tl-md" style={{ borderRadius: "43px", background: "rgba(147, 22, 2, 0.20)", flexShrink: 0 }}>
                                 <span className="text-sm py-2 md:py-5 lg:text-xl font-semibold" style={{ color: "#FFF", fontWeight: 600 }}>Already Seen</span>
                             </div>
                         </div>
@@ -127,11 +132,6 @@ const SinglePropertyCard = () => {
             </div>
 
             <div>
-                <div className="flex justify-between mt-4"> {/* Name and price */}
-                    <p className="text-3xl font-bold px-8">{property?.propertyName}</p>
-                    <p className="text-3xl font-bold mr-8">₹ {property?.price}</p>
-                </div>
-
                 {/* Render areaDetails properties */}
                 <div className='mr-8 mt-5'>
                     <div className='flex flex-col md:flex-row gap-4 w-full'>
@@ -177,6 +177,10 @@ const SinglePropertyCard = () => {
                     </div>
                 </div>
 
+                <div className="flex justify-between mt-4"> {/* Name and price */}
+                    <p className="text-3xl font-bold px-8">{property?.propertyName}</p>
+                    <p className="text-3xl font-bold mr-8">₹ {property?.price}</p>
+                </div>
 
                 <div className="flex px-8 mt-5"> {/* Location */}
                     <Image
@@ -300,7 +304,10 @@ const SinglePropertyCard = () => {
                 </div>
             </div >
             <div className='mt-11'>
-                <RecommenedCard />
+                <RecommenedCard data={property} />
+            </div>
+            <div>
+                <Footer />
             </div>
         </>
     );
