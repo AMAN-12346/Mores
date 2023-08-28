@@ -13,5 +13,18 @@
 body {
   background-color: var(--primary-bg);
   font-family: "Poppins";
+  /* font-family: 'Telegrafico'; */
   overflow-x: hidden;
 }
+
+
+@font-face {
+  font-family: 'Telegrafico';
+  src: url('../utils/Fonts/FontsFree-Net-telegrafico.ttf') format('ttf');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+

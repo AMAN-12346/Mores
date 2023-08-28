@@ -127,6 +127,7 @@ const RentAgreement = () => {
     // handleAgrrement
     const handleAgreement = () => {
         setLoading(false);
+        window.scrollTo(0,0);
     }
 
     return (

@@ -2,8 +2,23 @@
 import InputValue from '@/utils/InputValue';
 import Styles from './index.module.css';
 import { useState } from 'react';
+import PhoneNumberInput from '@/utils/PhoneNumerInput';
+
 
 const FeelFreeToContact = () => {
+
+    
+  const [phoneNumber, setPhoneNumber] = useState('');
+  const [selectedCountry, setSelectedCountry] = useState(null);
+
+  const handlePhoneNumberChange = (value) => {
+    setPhoneNumber(value);
+  };
+
+  const handleCountryChange = (selectedOption) => {
+    setSelectedCountry(selectedOption);
+  };
+
 
     return ( 
         <div className={Styles.servicesComponent}>     
@@ -21,9 +36,18 @@ const FeelFreeToContact = () => {
                         <p className={Styles.fieldName}>Last Name</p>
                         <InputValue className={Styles.inputField}/>
                     </div>
-                    <div>
-                        <p className={Styles.fieldName}>Your Email</p>
+                    <div className='my-12'>
+                        <p className={Styles.fieldName}>Email Address</p>
                         <InputValue className={Styles.inputField}/>
+                    </div>
+                    <div className='my-12'>
+                        <p className={Styles.fieldName}>Phone Number</p>
+                        <PhoneNumberInput  value={phoneNumber}
+                            onChange={handlePhoneNumberChange}
+                            country={selectedCountry}
+                            onCountryChange={handleCountryChange}
+                            className={Styles.inputField}
+                        />                                        
                     </div>
                 </div>
                 <div className='ml-[6vw]'>

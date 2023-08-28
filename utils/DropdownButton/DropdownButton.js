@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
-import Button from '@mui/material/Button';
+import Image from 'next/image';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
+import downArrow from '../../assets/ButtonIcons/fluent_ios-arrow-24-filled.svg';
+import upArrow from '../../assets/ButtonIcons/UpArrow.png';
 
 const DropdownButton = ({optionName, menuItem}) => {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -21,8 +23,14 @@ const DropdownButton = ({optionName, menuItem}) => {
         aria-haspopup="true"
         onClick={handleClick}
         variant="contained"
+        className='flex'
       >
-        {optionName}
+        <p className='mr-2'>{optionName}</p>
+        {anchorEl ? 
+          <Image src={upArrow} width={18} alt='down arrow' /> 
+        : <Image src={downArrow} width={18} alt='down arrow' />
+        }
+        
       </button>
       <Menu
         id="simple-menu"
