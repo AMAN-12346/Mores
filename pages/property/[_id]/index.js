@@ -1,6 +1,6 @@
 import React from 'react';
-import { Carousel } from 'react-responsive-carousel';
-import 'react-responsive-carousel/lib/styles/carousel.min.css';
+// import { Carousel } from 'react-responsive-carousel';
+// import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import property from '@/DummyData/data';
 import Image from 'next/image';
 import mVerified from '../../../assets/moreIcon/mVerified.svg'

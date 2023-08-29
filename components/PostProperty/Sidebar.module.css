@@ -1,0 +1,11 @@
+.icon{
+
+}
+.div1{
+    width: 332px;
+    height: 1014px;
+    flex-shrink: 0;
+    border: 100px;
+    border-color: black;
+    /* background-color: black; */
+}
