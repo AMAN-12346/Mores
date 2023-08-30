@@ -28,4 +28,39 @@
     opacity: 0.8;
     border: 1px solid grey;
     background-color: #faf7f7;
- }
+}
+
+/* Medium devices (tablets) */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .slideButton{
+        width: 55px;
+        height: 55px;
+    }
+    .RightSlideButton{
+        width: 55px;
+        height: 55px;
+    }
+}
+
+/* for mobile view */
+@media screen and (max-width: 767px) {
+    .slideButton{
+        width: 55px;
+        height: 55px;
+        position: absolute;
+        opacity: 0.7;
+        left: 0;
+        top: 160px;
+        margin-left: 40px;
+        z-index: 2;
+    }
+    .RightSlideButton{
+        width: 55px;
+        height: 55px;
+        position: absolute;
+        opacity: 0.7;
+        right: 0;
+        top: 160px;
+        z-index: 2;
+    }
+}

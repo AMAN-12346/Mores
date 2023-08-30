@@ -10,7 +10,6 @@
     text-align: center;
     font-variant-numeric: lining-nums proportional-nums;
     font-family: Poppins;
-    font-size: 38px;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
@@ -19,7 +18,6 @@
 .paragraph{
     color: #FFF;
     text-align: center;
-    font-size: 17px;
     font-style: normal;
     margin-top: 2%;
     font-weight: 400;
@@ -37,7 +35,7 @@
 }
 
 .inputField{
-    width: 500px;
+    width: 35vw;
     height: 52px;
     flex-shrink: 0;
     background-color: #9DACA1;
@@ -78,4 +76,16 @@
     line-height: 150%; /* 25.5px */
 } 
 
-  
+/* Media Queries */
+
+/* Small devices (mobile) */
+@media screen and (max-width: 767px) {
+    .inputField {
+        width: 78vw;
+    }
+    .textArea {
+        width: 78vw;
+    }
+}
+
+ 

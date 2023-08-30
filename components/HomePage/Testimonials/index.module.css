@@ -9,7 +9,6 @@
     color: var(--black-black-70, #283646);
     font-variant-numeric: lining-nums proportional-nums;
     /* font-family: Poppins; */
-    font-size: 40px;
     font-style: normal;
     font-weight: 600;
     line-height: 160%; /* 160% */
@@ -17,7 +16,7 @@
 }
 
 .underline{
-    width: 18%;
+    width: 160px;
     height: 6px;
     flex-shrink: 0;
     border-radius: 15px;
@@ -27,11 +26,23 @@
 
 .wrapper {
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
     gap: 0px 1%;
     margin-top: 50px;
 }
+.dot{
+    width: 2px;
+    border: 50%;
+    background-color: grey;
+}
   
+@media screen and (max-width:768px) {
+    .servicesComponent{
+        margin-top: 10px;
+    }
+    .wrapper {
+        margin-top: 40px;
+    }
+}
+
 
   

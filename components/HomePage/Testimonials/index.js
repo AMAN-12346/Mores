@@ -3,20 +3,29 @@ import Card from './Card/Card';
 import Styles from './index.module.css';
 import { useState } from 'react';
 import testimonialsContent from '@/content/Testimonials/testimonials';
+import useWindowWidth from '@/context/useWindowWidth';
 
 const Testimonials = () => {
     const [list, setList] = useState(testimonialsContent);
+    const windowWidth = useWindowWidth();
+
     return ( 
         <div className={Styles.servicesComponent}>     
-            <h1 className={Styles.heading}>
+            <h1 className={`text-[30px] md:text-[40px] ${Styles.heading}`}>
                 Testimonials
                 <hr className={Styles.underline} />
             </h1>       
-            <div className={Styles.wrapper}>
+            <div className={`lg:justify-center ml-7 md:ml-7 lg:ml-0 ${Styles.wrapper}`}>
                 {Object.keys(list).map((listItem) =>
                     <Card description={list[listItem]}/>
                 )}
             </div>
+            {/* conditional rendering of dots for tab view */}
+            {(1024 > windowWidth > 768) && 
+              <div>
+                <button className={Styles.dot}>fgdehw</button>
+              </div>
+            }
         </div>
      );
 }

@@ -5,8 +5,8 @@ import Styles from "./index.module.css";
 const BlogCard = ({description}) => {
     return ( 
         <div className={Styles.parentDiv}>
-            <div className={Styles.imageDiv}>
-               <img src={description.imageFile} alt="blog-image"/>
+            <div className={Styles.imageDiv}>              
+               <Image src={description.imageFile} alt="blog-image" width={60} height={60} className={Styles.imageBlog}/>
             </div>
             <div className={Styles.childDiv}>
                 <div className={Styles.title}>

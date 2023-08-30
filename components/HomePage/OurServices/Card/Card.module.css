@@ -1,6 +1,4 @@
 .card{
-    width: 36%;
-    height: 469px;
     max-height: 40%;
     flex-shrink: 0;
     background-color: #FFF;
@@ -19,8 +17,13 @@
     width: 160px;
     top: 25%;
     left: 12%;
-    font-size: 21px;
-    font-weight: 600;
     text-align: center;
     color: white;
+}
+
+@media screen and (max-width: 768px) {
+    .name{
+        left: 0%;
+        top:22%
+    }
 }

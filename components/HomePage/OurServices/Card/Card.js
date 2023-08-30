@@ -27,16 +27,17 @@ const Card = ({name,imageSrc}) => {
     }
 
     return ( 
-        <div className={`cursor-default ${Styles.card}`}>
+        <div className={`cursor-default w-[85%] md:w-[60%] lg:w-[36%] h-[320px] md:h-[469px] ${Styles.card} mr-5`}>
             <Image src={imageSrc} 
                 alt="icon" 
                 width={2000} height={1200}
                 className={Styles.image}
             />
-            <div className="text-xl absolute bottom-9 left-7" onClick={handleClick}>
+            <div className="text-lg md:text-xl md:font-semibold absolute bottom-9 left-7" onClick={handleClick}>
                 <Image src={amoebaButton} 
                     alt="icon" 
                     width={200} height={72}
+                    className="w-[160px] md:w-[200px]"
                 />
                 <p className={Styles.name}>{loading ? "Wait..." : name}</p>
             </div>

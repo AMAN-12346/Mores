@@ -2,17 +2,18 @@
     width: 32%;
     height: 26rem;
     position: relative;
+    margin: 0px 20px;
 }
 
-.imageDiv img{
-    width: 100%;
+.imageBlog{
+    width: 100px;
     height: 22rem;
     border-radius: 8px;
 }
 
 .childDiv{
     width: 92%;
-    height: 50%;
+    height: 52%;
     background-color: white;
     position: absolute;
     bottom: 0px;
@@ -30,7 +31,7 @@
     font-size: 16px;
     font-weight: 600;
     margin: auto;
-    margin-top: 20px;
+    margin-top: 15px;
 }
 
 .storyContainer {
@@ -40,18 +41,20 @@
 }
 .story{
     width: 85%;
-    /* height: 30%;
-    max-height: 30%; */
     display: -webkit-box;
-    -webkit-line-clamp: 2; /* Number of lines to display */
+    -webkit-line-clamp: 3; /* Number of lines to display */
     -webkit-box-orient: vertical;
     color: #818181;
     font-size: 12px;
     font-weight: 400;
     line-height: 22px; /* 162.5% */
     margin: auto;
-    overflow: hidden;
+    margin-bottom: 10px;
+    overflow: scroll;
     text-overflow: ellipsis;
+}
+.story::-webkit-scrollbar{
+    display: none;
 }
 
 .button{
@@ -66,4 +69,23 @@
     position: absolute;
     left: 6%;
     bottom: 8%;
+}
+
+/* tablet view */
+@media screen and (min-width: 783px) and (max-width: 1024px) {
+    .parentDiv{
+        width: 50vw;
+        margin: 0px 20px;
+        height: 26rem;
+    }
+    .title{
+        font-size: 14px;
+    }    
+}
+
+/* mobile view */
+@media screen and (max-width: 768px) {
+    .title{
+        font-size: 12px;
+    }
 }
