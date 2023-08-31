@@ -28,7 +28,19 @@
 }
 
 /* media queries */
-@media screen and (min-width: 783px) and (max-width: 1024px) {
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .button{
+        width: 130px;
+        height: 45px;
+    }
+    .cardsDiv{
+        overflow-x: scroll;
+    }
+    .cardsDiv::-webkit-scrollbar{
+        display: none;
+    }
+}
+@media screen and (max-width: 768px) {
     .button{
         width: 130px;
         height: 45px;

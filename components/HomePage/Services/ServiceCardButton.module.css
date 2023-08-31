@@ -22,3 +22,18 @@
     color: white;
     background-color: #018191;
 }
+
+
+/* Small screens */
+@media screen and (max-width: 567px) {
+    .serviceButton{
+        font-size: 12px;
+    }
+}
+/* Medium screens */
+@media screen and (min-width: 568px) and (max-width: 767px) {
+    .serviceButton{
+        font-size: 15px;
+        width: 22%;
+    }
+}

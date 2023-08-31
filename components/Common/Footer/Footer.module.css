@@ -1,36 +1,26 @@
 .footer{
     background-color: var(--footer-bg);
-    height: 336px;
+    color: white;
 }
-
-.footerTag{
-    color: #FFF;
-    font-family: Poppins;
+.spanHeading{
+    color: white;
     font-size: 16px;
     font-style: normal;
     font-weight: 600;
-    line-height: 32px; /* 200% */
-    margin-bottom: 21px;
+    margin-bottom: 16px;
 }
-
-.paraTag{
-    width: 150px;
-    color: #FFF;
-    font-family: Poppins;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 24px; /* 171.429% */
-    margin-bottom: 10%;
-    margin-top: -10px;
+.RightSlideButton{
+    width: 25px;
+    height: 25px;
+    flex-shrink: 0;
+    border-radius: 100px;
+    border: 1px solid rgba(0, 0, 0, 0.19);
+    background: #FFF;
+    margin-left: 15px;
+    transform: rotate(180deg);
 }
-.adddressParaTag{
-    width: 70%;
-    color: #FFF;
-    font-family: Poppins;
-    margin-bottom: 5%;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 24px; /* 171.429% */
+.RightSlideButton:hover{
+    opacity: 0.8;
+    border: 1px solid grey;
+    background-color: #f0ecec;
 }
