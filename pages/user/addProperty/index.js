@@ -14,7 +14,7 @@ import PropertyDetailsForm from "./component/PropertyDetailsForm";
 import AdditionalDetail from "./component/AdditionalDetails";
 import Amenities from "./component/services/Amenities";
 import property from "@/DummyData/data";
-
+//TODO map function in step 1.
 const steps = [
   {
     label: "Whats your plan",

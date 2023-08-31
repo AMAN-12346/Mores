@@ -1,6 +1,7 @@
 "use client";
 import Styles from './Footer.module.css';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 import facebookIcon from '../../../assets/socialIcons/facebook.svg';
 import twitterIcon from '../../../assets/socialIcons/x-twitter.svg';
 import youtubeIcon from '../../../assets/socialIcons/youtube.svg';
@@ -10,6 +11,16 @@ import phoneIcon from '../../../assets/FooterIcons/call.png';
 
 
 const Footer = () => {
+
+    const router = useRouter();
+
+    // List of paths where Navbar should be hidden
+    const pathsWithoutNavbar = ['/login', '/register','/otpVerify'];
+
+    if (pathsWithoutNavbar.includes(router.pathname)) {
+        return null; // Do not render the Navbar
+    }
+
     return ( 
         <div className={`flex justify-evenly w-12/12 ${Styles.footer}`}>
             <div className='flex w-4/12 items-center flex-wrap ml-20 mt-24 h-fit'>
@@ -26,21 +37,21 @@ const Footer = () => {
                     <Image
                         className='mr-3'
                         src={facebookIcon} // Route of the image file
-                        height={24} // Desired size with correct aspect ratio
-                        width={24} // Desired size with correct aspect ratio
+                        height={20} // Desired size with correct aspect ratio
+                        width={20} // Desired size with correct aspect ratio
                         alt="facebook icon"
                     />
                     <Image
                         className='mr-3 text-white'
                         src={twitterIcon} // Route of the image file
-                        height={24} // Desired size with correct aspect ratio
-                        width={24} // Desired size with correct aspect ratio
+                        height={21} // Desired size with correct aspect ratio
+                        width={21} // Desired size with correct aspect ratio
                         alt="twitter icon"
                     />
                     <Image
                         src={youtubeIcon} // Route of the image file
-                        height={24} // Desired size with correct aspect ratio
-                        width={24} // Desired size with correct aspect ratio
+                        height={20} // Desired size with correct aspect ratio
+                        width={20} // Desired size with correct aspect ratio
                         alt="youtube icon"
                     />
                 </div>

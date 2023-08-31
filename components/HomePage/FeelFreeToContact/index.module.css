@@ -37,7 +37,7 @@
 }
 
 .inputField{
-    width: 300px;
+    width: 500px;
     height: 52px;
     flex-shrink: 0;
     background-color: #9DACA1;
@@ -49,7 +49,6 @@
 .inputField:focus{
     outline: none;
 }
-
 .textArea{
     width: 76vw;
     height: 240px;

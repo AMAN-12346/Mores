@@ -6,16 +6,25 @@
 
 :root {
   --primary-bg: #faeee0;
-
   --footer-bg: #a37f4f;
-
   --black-black-70: #283646;
 }
 
 body {
   background-color: var(--primary-bg);
-
   font-family: "Poppins";
-
+  /* font-family: 'Telegrafico'; */
   overflow-x: hidden;
 }
+
+
+@font-face {
+  font-family: 'Telegrafico';
+  src: url('../utils/Fonts/FontsFree-Net-telegrafico.ttf') format('ttf');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+

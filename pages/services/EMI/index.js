@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react"
-import { PieChart } from '@mui/x-charts/PieChart';
+import { PieChart } from '@mui/x-charts';
 import Styles from './index.module.css';
 import InputValue from "@/utils/InputValue";
 import Image from "next/image";
