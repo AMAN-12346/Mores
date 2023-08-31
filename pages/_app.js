@@ -16,7 +16,7 @@ function MyApp({ Component, pageProps }) {
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAeaI1gkovXnm4yY1AzN97XOmcf1db5aAo&libraries=places"
         async
       />
-      <Navbar />
+      {/* <Navbar /> */}
       <Component {...pageProps} />
       {/* <Footer />  */}
     </AuthProvider>

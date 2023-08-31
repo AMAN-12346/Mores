@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/router"; // Import the router from Next.js
@@ -7,12 +7,16 @@ import footer_image from "../register/assets/footer-image.png";
 import right_side_image from "../register/assets/right_side_image.png";
 import logo_image from "../register/assets/logo_image.png";
 import Link from "next/link";
+import { Button } from "@material-tailwind/react";
+// import  "./loginStyles.css"
+import loginStyles from "./loginStyles.module.css";
 
 const LoginUser = () => {
   const [selectedMethod, setSelectedMethod] = useState("email");
   const [inputValue, setInputValue] = useState("");
   const router = useRouter(); // Get the router instance
   const [otpSuccess, setOtpSuccess] = useState(false);
+  const [error, setError] = useState("");
 
   const handleLogin = async (event) => {
     event.preventDefault(); // Prevent default form submission behavior
@@ -40,14 +44,20 @@ const LoginUser = () => {
         }, 3000); // Set the timeout to 3 seconds (adjust as needed)
       }
     } catch (error) {
-      // Handle error here (show error message or handle it in another way)
-      console.error("Error registering user:", error);
+      console.error("Error logging in:", error);
+
+      if (error.response) {
+        setError(error.response.data?.responseMessage);
+      } else {
+        setError("An error occurred");
+      }
     }
   };
-
   return (
     <div className="flex items-center justify-center">
-      <div className="w-1/2 p-32 bg-login_background">
+      <div className="w-1/2 p-32 bg-login_background  bg-slate-600">
+        {/* ${"loginStyles.tView"} */}
+
         <div className="absolute top-4 left-4">
           <Image
             className="bg-contain"
@@ -57,7 +67,7 @@ const LoginUser = () => {
             width={130}
           />
         </div>
-        <h1 className="text-2xl font-bold">Login</h1>
+        <h1 className="text-2xl  font-bold">Login</h1>
         <p className="mt-2">Access back to your account</p>
         <div className="mt-8 w-full">
           <button
@@ -102,9 +112,15 @@ const LoginUser = () => {
               {/* Add flag icon here */}
             </span>
           </div>
-          <button className="w-9/12 bg-button text-white py-2 rounded-lg mt-4">
-            Login
+          <button className=" bg-button text-white w-full lg:w-9/12 py-3 lg:py-4 rounded-lg mt-4 overflow-hidden">
+            <span class="text-sm md:text-base lg:text-lg xl:text-xl">
+              Login
+            </span>
           </button>
+
+          {/* <Button variant="contained">
+            Contained
+          </Button> */}
           <p className="mt-3">
             Don't have an account?{" "}
             <Link
@@ -118,6 +134,8 @@ const LoginUser = () => {
         {otpSuccess && (
           <p className="text-green-500 mt-2">Otp sent successfully!</p>
         )}
+        {error && <p className="text-red-500 mt-2">{error}</p>}
+
         <div className="mt-0">
           <Image
             src={footer_image}
@@ -127,7 +145,8 @@ const LoginUser = () => {
           />
         </div>
       </div>
-      <div className="w-1/2">
+      <div className="w-1/2 bg-slate-950">
+        {/* ${loginStyles.tabletImage} */}
         <Image
           src={right_side_image}
           alt="footer-image"
