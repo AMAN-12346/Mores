@@ -14,7 +14,6 @@ import FeaturedProperties from "@/components/HomePage/FeaturedPropertiesSection/
 const inter = Inter({ subsets: ["latin"] });
 
 export const  Home = () => {
-  console.log("hello")
   return (
     <div>
       <SearchSection />

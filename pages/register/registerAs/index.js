@@ -10,6 +10,7 @@ import logo_image from "../assets/logo_image.png";
 import Link from "next/link";
 import { apiGooglePlace } from "@/config.js";
 import GooglePlaceDropdown from "./components/GooglePlaceDropdown";
+import styles from "./RegisterAs.module.css";
 
 import { useAuth } from "@/context/auth";
 
@@ -64,13 +65,14 @@ const RegisterUser = ({ selectedLocation }) => {
         payload
       );
 
-      if (response.status === 200) {
+      if (response.data?.responseCode === 200) {
         localStorage.setItem("userID", inputValue);
         setOtpSuccess(true);
         setTimeout(() => {
           setOtpSuccess(false);
           router.push("/otpVerify");
         }, 3000);
+        router.push(`/login`);
       }
     } catch (error) {
       console.error("Error registering user:", error);
@@ -92,97 +94,101 @@ const RegisterUser = ({ selectedLocation }) => {
     }
   };
   return (
-    <div className="flex items-center justify-center">
-      <div className="w-1/2 p-32 bg-login_background">
-        <div className="absolute top-4 left-4">
-          <Image
+    <div className={styles.loginContainer}>
+      <div className={styles.leftContent}>
+        <div className={styles.logo}>
+          {/* <Image
             className="bg-contain"
             src={logo_image}
             alt="footer-image"
             height={30}
             width={130}
-          />
+          /> */}
         </div>
-        <h1 className="text-2xl font-bold">Register</h1>
-        <p className="mt-2">I am a:</p>
-        <div className="mt-5 w-full">
-          <button
-            className={`py-2 px-6 rounded-xl w-36 ${
-              selectedRole === "individual"
-                ? "bg-primary text-white"
-                : "bg-secondary text-black"
-            }`}
-            onClick={() => setSelectedRole("individual")}
-          >
-            Individual
-          </button>
-          <button
-            className={`-ml-3 py-2 px-6 rounded-xl w-36 ${
-              selectedRole === "agent"
-                ? "bg-primary text-white"
-                : "bg-secondary text-black"
-            }`}
-            onClick={() => setSelectedRole("agent")}
-          >
-            Agent
-          </button>
-        </div>
-        <form className="mt-8" onSubmit={handleRegister}>
-          <div className="relative">
-            <input
-              type="text"
-              className="border rounded-lg pl-12 pr-8 py-2 w-9/12 mb-5"
-              placeholder="Full Name"
-              value={inputName}
-              onChange={(e) => setNameValue(e.target.value)}
-            />
-            <input
-              type="text"
-              className="border rounded-lg pl-12 pr-8 py-2 w-9/12"
-              placeholder={
-                auth.userResult?.mobileNumber !== undefined
-                  ? auth.userResult?.mobileNumber
-                  : "Mobile Number"
-              }
-              value={mobileNumber}
-              onChange={(e) => setMobileNumber(e.target.value)}
-              defaultValue={auth.userResult?.mobileNumber} // Autofill mobile number if available
-              disabled={auth.userResult?.mobileNumber !== undefined} // Disable input if mobile number is present
-            />
-
-            <span className="absolute right-3 top-1/2 transform -translate-y-1/2">
-              {/* Add flag icon here */}
-            </span>
-
-            <input
-              type="text"
-              className="border rounded-lg pl-12 pr-8 py-2 w-9/12 mb-5 mt-5"
-              placeholder={
-                auth.userResult?.email !== undefined
-                  ? auth.userResult?.email
-                  : "Email"
-              }
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              defaultValue={auth.userResult?.email}
-              disabled={auth.userResult?.email !== undefined}
-            />
-
-            <GooglePlaceDropdown updateParentLocation={updateParentLocation} />
-          </div>
-          <button className="w-9/12 bg-button text-white py-2 rounded-lg mt-4">
-            Register
-          </button>
-          <p className="mt-3">
-            Want to Login?{" "}
-            <Link
-              href="/login"
-              className="text-button underline cursor-pointer"
+        <div className={styles.formContainer}>
+          <h1 className="text-2xl font-bold">Register</h1>
+          <p className="mt-2 mb-2">I am a:</p>
+          <div className={styles.buttonContainer}>
+            <button
+              className={`py-2 px-6 rounded-xl w-36 ${
+                selectedRole === "individual"
+                  ? "bg-primary text-white"
+                  : "bg-secondary text-black"
+              }`}
+              onClick={() => setSelectedRole("individual")}
             >
-              Login
-            </Link>
-          </p>
-        </form>
+              Individual
+            </button>
+            <button
+              className={`-ml-3 py-2 px-6 rounded-xl w-36 ${
+                selectedRole === "agent"
+                  ? "bg-primary text-white"
+                  : "bg-secondary text-black"
+              }`}
+              onClick={() => setSelectedRole("agent")}
+            >
+              Agent
+            </button>
+          </div>
+          <form className="mt-8" onSubmit={handleRegister}>
+            <div className="relative">
+              <input
+                type="text"
+                className="border rounded-lg pl-12 pr-8 py-2 w-9/12 mb-5"
+                placeholder="Full Name"
+                value={inputName}
+                onChange={(e) => setNameValue(e.target.value)}
+              />
+              <input
+                type="text"
+                className="border rounded-lg pl-12 pr-8 py-2 w-9/12"
+                placeholder={
+                  auth.userResult?.mobileNumber !== undefined
+                    ? auth.userResult?.mobileNumber
+                    : "Mobile Number"
+                }
+                value={mobileNumber}
+                onChange={(e) => setMobileNumber(e.target.value)}
+                defaultValue={auth.userResult?.mobileNumber} // Autofill mobile number if available
+                disabled={auth.userResult?.mobileNumber !== undefined} // Disable input if mobile number is present
+              />
+
+              <span className="absolute right-3 top-1/2 transform -translate-y-1/2">
+                {/* Add flag icon here */}
+              </span>
+
+              <input
+                type="text"
+                className="border rounded-lg pl-12 pr-8 py-2 w-9/12 mb-5 mt-5"
+                placeholder={
+                  auth.userResult?.email !== undefined
+                    ? auth.userResult?.email
+                    : "Email"
+                }
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                defaultValue={auth.userResult?.email}
+                disabled={auth.userResult?.email !== undefined}
+              />
+
+              <GooglePlaceDropdown
+                updateParentLocation={updateParentLocation}
+              />
+            </div>
+            <button className="w-9/12 bg-button text-white py-2 rounded-lg mt-4">
+              Register
+            </button>
+            <p className="mt-3">
+              Want to Login?{" "}
+              <Link
+                href="/login"
+                className="text-button underline cursor-pointer"
+              >
+                Login
+              </Link>
+            </p>
+          </form>
+        </div>
 
         <div className="mt-0">
           <Image
@@ -193,12 +199,12 @@ const RegisterUser = ({ selectedLocation }) => {
           />
         </div>
       </div>
-      <div className="w-1/2">
+      <div className={styles.rightContainer}>
         <Image
           src={right_side_image}
-          alt="footer-image"
-          height={1042}
-          width={710}
+          alt="right-side-image"
+          layout="fill"
+          objectFit="cover"
         />
       </div>
     </div>
