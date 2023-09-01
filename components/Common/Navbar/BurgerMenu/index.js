@@ -2,10 +2,9 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
-import downArrow from '../../assets/ButtonIcons/fluent_ios-arrow-24-filled.svg';
-import upArrow from '../../assets/ButtonIcons/upArrow.svg';
+import burgerMenuIcon from '@/assets/ButtonIcons/burgerMenuIcon.svg';
 
-const DropdownButton = ({optionName, menuItem}) => {
+const BurgerMenu = () => {
   const [anchorEl, setAnchorEl] = useState(null);
 
   const handleClick = (event) => {
@@ -25,12 +24,7 @@ const DropdownButton = ({optionName, menuItem}) => {
         variant="contained"
         className='flex'
       >
-        <p className='mr-1'>{optionName}</p>
-
-        {anchorEl ? 
-          <Image src={upArrow} width={13} alt='up arrow' style={{marginTop: "2px"}}/> 
-        : <Image src={downArrow} width={13} alt='down arrow' style={{marginTop: "2px"}} />
-        }
+          <Image src={burgerMenuIcon} width={25} height={50} className='md:w-[30px]'/>
         
       </button>
       <Menu
@@ -39,13 +33,19 @@ const DropdownButton = ({optionName, menuItem}) => {
         open={Boolean(anchorEl)}
         onClose={handleClose}
       >
-        {menuItem?.map((item)=>
-           <MenuItem onClick={handleClose}>{item}</MenuItem>
-        )}       
+        
+        <MenuItem onClick={handleClose} className='px-20px w-[200px]' >City</MenuItem>
+        <MenuItem onClick={handleClose}>Sell</MenuItem>
+        <MenuItem onClick={handleClose}>Rent</MenuItem>
+        <MenuItem onClick={handleClose}>Projects</MenuItem>
+        <MenuItem onClick={handleClose}>Agents</MenuItem>
+        <MenuItem onClick={handleClose}>Services</MenuItem>
+        <MenuItem onClick={handleClose}>Resources</MenuItem>
+             
         
       </Menu>
     </div>
   );
 };
 
-export default DropdownButton;
+export default BurgerMenu;

@@ -9,12 +9,16 @@ import MoresLogo from '../MoresLogo';
 import { useRouter } from 'next/router';
 import ProfileDropdownButton from '@/utils/ProfileDropdownButton/ProfileDropdownButton';
 import DropdownButton from '@/utils/DropdownButton/DropdownButton';
+import useWindowWidth from '@/context/useWindowWidth';
+import BurgerMenu from './BurgerMenu';
+import MobileMenu from './MobileMenu';
 
  
 const Navbar = () => {
     const [auth, setAuth] = useAuth();
 
     const router = useRouter();
+    const windowWidth = useWindowWidth();
 
     // List of paths where Navbar should be hidden
     const pathsWithoutNavbar = ['/login', '/register','/otpVerify'];
@@ -23,47 +27,69 @@ const Navbar = () => {
         return null; // Do not render the Navbar
     }
 
+    // for mobile view
+    if(windowWidth < 768){
+        return (
+            <>
+               <MobileMenu />
+            </>
+        )
+    }
+
     return ( 
         <div className={Styles.navbar}>
-           <div className={`flex w-8/12 items-center ml-5`}>
-                <MoresLogo />            
-                <div className={`flex justify-evenly w-8/12`}>
-                        <div className={Styles.optionName}>
-                            <DropdownButton optionName="City" menuItem={['random', 'data']} />  
-                        </div>
-                        <div className={Styles.optionName}>
-                            <DropdownButton optionName="Sell" menuItem={['random', 'data']} />  
-                        </div>
-                        <div className={Styles.optionName}>
-                            <DropdownButton optionName="Rent" menuItem={['random', 'data']} />  
-                        </div>
-                        <div className={Styles.optionName}>
-                            <DropdownButton optionName="Projects" menuItem={['random', 'data']} />  
-                        </div>
-                        <div className={Styles.optionName}>
-                            <DropdownButton optionName="Agents" menuItem={['random', 'data']} />  
-                        </div>
-                        <div className={Styles.optionName}>
-                            <DropdownButton optionName="services" menuItem={['random', 'data']} />  
-                        </div>
-                        <div className={Styles.optionName}>
-                            <DropdownButton optionName="Resources" menuItem={['random', 'data']} />  
-                        </div>
-                </div>                
-           </div>
-            <div className='w-4/12'>
+           <div className={`flex w-[100vw] ml-5 md:justify-between lg:justify-normal`}>
+                {(windowWidth >1024) ?
+                    <div className='w-[65vw] flex items-center'>
+                        <div className='w-[14vw]'>
+                            <MoresLogo />
+                        </div>            
+                        <div className={`flex justify-evenly mr-4 ml-4`}> 
+                            <div className={Styles.optionName}>
+                                <DropdownButton optionName="City" menuItem={['random', 'data']} />  
+                            </div>
+                            <div className={Styles.optionName}>
+                                <DropdownButton optionName="Sell" menuItem={['random', 'data']} />  
+                            </div>
+                            <div className={Styles.optionName}>
+                                <DropdownButton optionName="Rent" menuItem={['random', 'data']} />  
+                            </div>
+                            <div className={Styles.optionName}>
+                                <DropdownButton optionName="Projects" menuItem={['random', 'data']} />  
+                            </div>
+                            <div className={Styles.optionName}>
+                                <DropdownButton optionName="Agents" menuItem={['random', 'data']} />  
+                            </div>
+                            <div className={Styles.optionName}>
+                                <DropdownButton optionName="services" menuItem={['random', 'data']} />  
+                            </div>
+                            <div className={Styles.optionName}>
+                                <DropdownButton optionName="Resources" menuItem={['random', 'data']} />  
+                            </div>
+                        </div> 
+                    </div>
+                : 
+                <div className='flex w-[180px] justify-between mt-[10px]'>
+                    <BurgerMenu />
+                    <div className='w-[130px]'>
+                            <MoresLogo />
+                    </div>
+                </div>
+                }               
+           
+            <div className='md:w-[420px] lg:w-[420px]'>
                 {!auth.userResult ? 
-                    <div className='text-right mr-9 hover:opacity-95'>
+                    <div className='text-center hover:opacity-95 -mr-16'>
                         <Link href='/login'>
                             <button className={Styles.button}>Login Now</button> 
                         </Link>
                     </div>
                 :
-                    <div className='flex justify-evenly'>
-                        <button className={`mx-7 ${Styles.sellRentButton}`}>Sell & Rent Property</button>
-                        <Image src={fillHeart} width={28} height={28} className='mr-4'/>
+                    <div className='flex flex-start'>
+                        <button className={`mr-3 ${Styles.sellRentButton}`}>Sell & Rent Property</button>
+                        <Image src={fillHeart} width={24} height={28} className='mr-2'/>
 
-                        <Image src={notificationBell} width={21} height={21}/>
+                        <Image src={notificationBell} width={17} height={21}/>
                         <div className='relative pt-3 mr-4'>
                             <p className={Styles.counter}>{auth.userResult?.notification?.length ? auth.userResult?.notification?.length : 0}</p>
                         </div>
@@ -75,6 +101,7 @@ const Navbar = () => {
                         </div>
                     </div>
                 }
+            </div>
             </div>
         </div>
      );
