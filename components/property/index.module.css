@@ -1,0 +1,26 @@
+.tabview{
+    border-radius: 35px;
+    font-size: 14px;
+    font-weight: 400;
+    padding: 10px 15px;
+    background-color: rgb(1, 129, 145, 0.22);
+    margin: 0px 10px;
+}
+
+
+@media screen and (max-width: 1024px) {
+    .tabview {
+        font-size: 12px;
+        background-color: rgb(1, 129, 145, 0.22);
+        margin: 0px 2px;
+        padding: 20px;
+    }
+}
+
+@media screen and (max-width: 774px) {
+    .tabview {
+        font-size: 10px;
+        background-color: rgb(1, 129, 145, 0.22);
+        padding: 7px;
+    }
+}

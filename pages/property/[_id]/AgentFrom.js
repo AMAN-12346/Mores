@@ -1,104 +1,118 @@
-import React from 'react'
+// import { display } from 'html2canvas/dist/types/css/property-descriptors/display';
+import Image from 'next/image';
+import React, {useState}from 'react';
+import Styles from './style.module.css';
 
 const userId = {
-    name: "Johan Deep",
-    MobileNumber: "+91 858395348",
-    Images: "https://english.cdn.zeenews.com/sites/default/files/styles/zm_700x400/public/2017/11/17/639329-indian-men.jpg?im=Resize=(700,400)",
+    name: "Aman singh",
+    MobileNumber: "+91255644456",
+    Images: "https://images.pexels.com/photos/17901599/pexels-photo-17901599/free-photo-of-woman-in-traditional-peasant-clothing-picking-apples-from-grass.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     YearOfExprience: 7,
+    Propertforsale: 2,
+    propertforrent: 1,
+    totallistings: 3,
     onSellProperty: 8,
     onRentProperty: 12
 }
 export default function AgentFrom() {
+    const [view, setView] = useState(true);
+
+    const handleMobileView = () => {
+        setView(!view);
+    }
     const countryCodes = ['+1', '+44', '+91', '+86', '+81'];
     return (
         <div>
-            <div className="bg-[#A37F4F] rounded-t-lg shadow-md p-4">
+            <div className="bg-[#A37F4F] rounded-t-lg shadow-md p-2" onClick={handleMobileView}>
                 <div>
                     <h1 className="text-white text-2xl font-semibold">Agent Overview</h1>
                 </div>
             </div>
-            <div className="bg-white shadow-md">
-                <div className='w-12/12 mb-4 md:flex'>
-                    <div className='w-8/12 p-10'>
-                        <div className='lg:flex md:justify-start gap-10'>
-                            <div className='flex items-center '>
-                                <div>
-                                    <img
-                                        src={userId.Images}
-                                        alt="User Profile"
-                                        className="w-24 h-24 flex-shrink-0 border-2 border-primary rounded-full mr-4"
-                                    />
+            {view &&
+                <div className="bg-white">
+                    <div className='w-12/12 mb-4 md:flex'>
+                        <div className='w-8/12 p-4 sm:p-10'>
+                            <div className=' lg:flex md:justify-start gap-10 '>
+                                <div className={Styles.container} >
+                                    <div style={{ display: 'flex', height: '81px', width: '81px', }}>
+                                        <Image
+                                            src={userId.Images}
+                                            alt="User Profile"
+                                            width={80}
+                                            height={20}
+                                            className="  border-2 border-primary rounded-full ml-0 "
+                                        />
+                                    </div>
+                                    <div >
+                                        <p className="text-lg font-semibold ml-3 m-2">{userId.name}</p>
+                                        <p className="text-lg ml-2 pr-2 ">{userId.MobileNumber}</p>
+                                    </div>
                                 </div>
-                                <div>
-                                    <p className="text-lg font-semibold">{userId.name}</p>
-                                    <p className="text-lg">{userId.MobileNumber}</p>
+                                <div className=' bg-[#ddeae8] w-[70vw] md:w-[50vw] lg:w-[32vw] mt-6 ml-0 flex justify-start items-center rounded-lg'>
+                                    <div className='YEAREXPERI flex w-[30vw] items-center p-3 pl-1 sm:p-6'> <span className='p-1 px-3 text-center text-base md:text-lg font-semibold text-white border-1 border-primary rounded-full bg-[#018191] ml-2'>{userId.YearOfExprience}</span><p className='text-sm sm:text-lg font-semibold ml-2'>Year Of Exprience</p></div>
+                                    <div className='TOTALLISTINGS flex w-[30vw] items-center p-4 pl-1sm:p-6'> <span className='p-1 px-3 text-center text-base md:text-lg font-semibold text-white border-1 border-primary rounded-full bg-[#018191] ml-5'>{userId.totallistings}</span><p className='text-sm sm:text-lg font-semibold ml-2'>Total listings</p></div>
                                 </div>
                             </div>
-                            <div className=' bg-[#ddeae8] w-[450px] lg:w-[500px] h-24 mt-6 flex justify-start items-center rounded-lg'>
-                                <span className='w-[40px] h-[40px] text-center p-2 text-lg font-semibold text-white border-1 border-primary rounded-full bg-[#018191] ml-4'>{userId.YearOfExprience}</span><p className='text-lg font-semibold ml-2'>YearOfExprience</p>
-                                <span className='w-[40px] h-[40px] text-center p-2 text-lg font-semibold text-white border-1 border-primary rounded-full bg-[#018191] ml-5'>{userId.YearOfExprience}</span><p className='text-lg font-semibold ml-2'>YearOfExprience</p>
+                            <div className='pt-5'>
+                                <div className='border-primary-3 border w-[270px] h-16 flex justify-center items-center rounded-lg mb-5'>
+                                    <p className='text-lg font-semibold ml-2'>Property for Sale</p>
+                                    <span className='w-[40px] h-[40px] text-center p-2 text-lg font-semibold text-white border-1 border-primary rounded-full bg-[#018191] ml-4'>
+                                        {userId.Propertforsale}
+                                    </span>
+                                </div>
+                                <div className='border-primary-3 border w-[270px] h-16 flex justify-center items-center rounded-lg'>
+                                    <p className='text-lg font-semibold ml-2'>Property for Rent</p>
+                                    <span className='w-[40px] h-[40px] text-center p-2 text-lg font-semibold text-white border-1 border-primary rounded-full bg-[#018191] ml-4'>
+                                        {userId.propertforrent}
+                                    </span>
+                                </div>
                             </div>
                         </div>
-                        <div className='p-8'>
-                            <div className='border-primary-3 border w-[400px] h-16 flex justify-center items-center rounded-lg mb-5'>
-                                <p className='text-lg font-semibold ml-2'>YearOfExprience</p>
-                                <span className='w-[40px] h-[40px] text-center p-2 text-lg font-semibold text-white border-1 border-primary rounded-full bg-[#018191] ml-4'>
-                                    {userId.YearOfExprience}
-                                </span>
-                            </div>
-                            <div className='border-primary-3 border w-[400px] h-16 flex justify-center items-center rounded-lg'>
-                                <p className='text-lg font-semibold ml-2'>YearOfExprience</p>
-                                <span className='w-[40px] h-[40px] text-center p-2 text-lg font-semibold text-white border-1 border-primary rounded-full bg-[#018191] ml-4'>
-                                    {userId.YearOfExprience}
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="lg:w-4/12 w-6/12 mt-7 mb-7 mr-6">
-                        <form className="md:max-w-md p-11 rounded-lg shadow-lg" style={{ borderRadius: '17px', border: '1px solid rgba(0, 0, 0, 0.14)', background: '#FFF' }}>
-                            <div className="mb-4">
-                                <label className="block font-semibold mb-1">Name</label>
-                                <input
-                                    type="text"
-                                    className="w-full px-7 py-5 rounded-md border border-gray-300 focus:border-primary focus:ring focus:ring-primary" placeholder='Full Name'
-                                />
-                            </div>
-                            <div className="mb-4">
-                                <label className="block font-semibold mb-1">Email</label>
-                                <input
-                                    type="email"
-                                    className="w-full  px-7 py-5 rounded-md border focus:border-primary focus:ring focus:ring-primary" placeholder='Email Id'
-                                />
-                            </div>
-                            <div className="mb-4 relative">
-                                <label className="block font-semibold mb-1">Mobile Number</label>
-                                <div className="relative">
-                                    <select
-                                        className="absolute left-0 px-2 border rounded-l-m appearance-none h-full w-20 focus:outline-none focus:ring-primary"
-                                    >
-                                        {countryCodes.map((code) => (
-                                            <option key={code} value={code}>{code}</option>
-                                        ))}
-                                    </select>
+                        <div className=" xl:w-6/12 lg:w-6/12 md:w-6/12 sm:w-12/12 mr-1 ml-1 mt-7 mb-7 ">
+                            <form className=" p-11 rounded-lg shadow-lg " style={{ borderRadius: '17px', border: '1px solid rgba(0, 0, 0, 0.14)', background: '#FFF' }}>
+                                <div className="mb-4">
+                                    <label className="block font-semibold mb-1">Name</label>
                                     <input
-                                        type="tel"
-                                        className="pl-24 w-full py-2 rounded-r-md border border-l-0 focus:border-primary focus:ring focus:ring-primary" placeholder='Mobile Number'
+                                        type="text"
+                                        className="w-full px-7 py-5 rounded-md border border-gray-300 focus:border-primary focus:ring focus:ring-primary" placeholder='Full Name'
                                     />
                                 </div>
-                            </div>
-                            <div className="flex justify-center">
-                                <button
-                                    type="submit"
-                                    className="bg-primary text-white py-4 px-8 w-full rounded-md"
-                                    style={{ backgroundColor: '#931602' }}
-                                >
-                                    Contact Now
-                                </button>
-                            </div>
-                        </form>
+                                <div className="mb-4">
+                                    <label className="block font-semibold mb-1">Email</label>
+                                    <input
+                                        type="email"
+                                        className="w-full  px-7 py-5 rounded-md border focus:border-primary focus:ring focus:ring-primary" placeholder='Email Id'
+                                    />
+                                </div>
+                                <div className="mb-4 relative">
+                                    <label className="block font-semibold mb-1">Mobile Number</label>
+                                    <div className="relative">
+                                        <select
+                                            className="absolute left-0 px-2 border rounded-l-m appearance-none h-full w-20 focus:outline-none focus:ring-primary"
+                                        >
+                                            {countryCodes.map((code) => (
+                                                <option key={code} value={code}>{code}</option>
+                                            ))}
+                                        </select>
+                                        <input
+                                            type="tel"
+                                            className="pl-24 w-full py-2 rounded-r-md border border-l-0 focus:border-primary focus:ring focus:ring-primary" placeholder='Mobile Number'
+                                        />
+                                    </div>
+                                </div>
+                                <div className="flex justify-center">
+                                    <button
+                                        type="submit"
+                                        className="bg-primary text-white py-4 px-8 w-full rounded-md"
+                                        style={{ backgroundColor: '#931602' }}
+                                    >
+                                        Contact Now
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
-                </div>
-            </div>
+                </div>}
         </div>
     )
 }
