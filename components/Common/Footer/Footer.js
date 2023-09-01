@@ -8,10 +8,9 @@ import youtubeIcon from '../../../assets/socialIcons/youtube.svg';
 import addressIcon from '../../../assets/FooterIcons/placeholder.png';
 import gmailIcon from '../../../assets/FooterIcons/gmail.png';
 import phoneIcon from '../../../assets/FooterIcons/call.png';
-import leftButton from '@/assets/ButtonIcons/ExpandLeft.svg';
+import leftArrow from '@/assets/ButtonIcons/leftArrow.svg';
 import { useState } from 'react';
 import useWindowWidth from '@/context/useWindowWidth';
-import FooterButton from '@/utils/FooterButton';
 
 
 const Footer = () => {
@@ -19,9 +18,9 @@ const Footer = () => {
     const router = useRouter();
     const windowWidth = useWindowWidth();
 
-    const [quickLinks, setQuickLinks] = useState(false);
-    const [about, setAbout] = useState(false);
-    const [contacts, setContacts] = useState(false);
+    const [quickLinks, setQuickLinks] = useState(false)
+    const [about, setAbout] = useState(false)
+    const [contacts, setContacts] = useState(false)
 
     // List of paths where Navbar should be hidden
     const pathsWithoutNavbar = ['/login', '/register','/otpVerify'];
@@ -93,14 +92,23 @@ const Footer = () => {
             : 
             <>
                <div className="collapse -my-[20px]">
-                    <input type="checkbox" className="peer" /> 
+                    <input type="checkbox" className="peer"  onClick={()=> setQuickLinks(!quickLinks)} /> 
                     <div className="collapse-title text-white flex justify-between text-[15px] font-semibold peer-checked:text-white">
                         <div>Quick Links</div>   
-                        <div>
-                            <button className={Styles.RightSlideButton}>
-                                <Image src={leftButton} width={18} height={18} className='m-auto rotate-90'/>
-                            </button>
-                        </div>                                            
+                        {
+                            quickLinks ? 
+                            <div>
+                                <button className={Styles.RightSlideButton}>
+                                    <Image src={leftArrow} width={18} height={18} className="m-auto rotate-90"/>
+                                </button>
+                            </div> 
+                            :
+                            <div>
+                                <button className={Styles.RightSlideButton}>
+                                    <Image src={leftArrow} width={18} height={18} className="m-auto -rotate-90"/>
+                                </button>
+                            </div>  
+                        }                                          
                     </div>
                     <div className="collapse-content peer-checked:text-white block"> 
                         <div className="cursor-default">Properties</div> 
@@ -111,14 +119,23 @@ const Footer = () => {
                 </div>
                 
                 <div className="collapse -my-[20px]">
-                    <input type="checkbox" className="peer" /> 
+                    <input type="checkbox" className="peer" onClick={()=> setAbout(!about)}/> 
                     <div className="collapse-title text-white text-[15px] flex justify-between font-semibold peer-checked:text-white">
                         <div>About</div>   
-                        <div>
-                            <button className={Styles.RightSlideButton}>
-                                <Image src={leftButton} width={18} height={18} className='m-auto rotate-90'/>
-                            </button>
-                        </div> 
+                        {
+                            about ? 
+                            <div>
+                                <button className={Styles.RightSlideButton}>
+                                    <Image src={leftArrow} width={18} height={18} className="m-auto rotate-90"/>
+                                </button>
+                            </div> 
+                            :
+                            <div>
+                                <button className={Styles.RightSlideButton}>
+                                    <Image src={leftArrow} width={18} height={18} className="m-auto -rotate-90"/>
+                                </button>
+                            </div>  
+                        } 
                     </div>
                     <div className="collapse-content peer-checked:text-white block"> 
                         <div className="cursor-default">Career</div> 
@@ -127,14 +144,23 @@ const Footer = () => {
                     </div>
                 </div>
                 <div className="collapse -my-[20px]">
-                    <input type="checkbox" className="peer" /> 
+                    <input type="checkbox" className="peer" onClick={()=> setContacts(!contacts)}/> 
                     <div className="collapse-title text-white text-[15px] flex justify-between font-semibold peer-checked:text-white">
                         <div>Contacts</div>   
-                        <div>
-                            <button className={Styles.RightSlideButton}>
-                                <Image src={leftButton} width={18} height={18} className='m-auto rotate-90'/>
-                            </button>
-                        </div> 
+                        {
+                            contacts ? 
+                            <div>
+                                <button className={Styles.RightSlideButton}>
+                                    <Image src={leftArrow} width={18} height={18} className="m-auto rotate-90"/>
+                                </button>
+                            </div> 
+                            :
+                            <div>
+                                <button className={Styles.RightSlideButton}>
+                                    <Image src={leftArrow} width={18} height={18} className="m-auto -rotate-90"/>
+                                </button>
+                            </div>  
+                        } 
                     </div>
                     <div className="collapse-content peer-checked:text-white block"> 
                         <div className="cursor-default md:w-40 lg:w-80">

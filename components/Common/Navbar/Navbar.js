@@ -53,7 +53,7 @@ const Navbar = () => {
            </div>
             <div className='w-4/12'>
                 {!auth.userResult ? 
-                    <div className='text-right mr-5 hover:opacity-80'>
+                    <div className='text-right mr-9 hover:opacity-95'>
                         <Link href='/login'>
                             <button className={Styles.button}>Login Now</button> 
                         </Link>
