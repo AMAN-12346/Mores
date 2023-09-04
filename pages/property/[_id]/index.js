@@ -136,19 +136,19 @@ const SinglePropertyCard = () => {
             <div>
                 {/* Render areaDetails and Properties */}
                 <div>
-                    <div className='lg:flex w-12/12'>
+                    <div className='lg:flex w-12/12 lg:-mr-20'>
                         <div className='lg:w-4/12 md:12/12 sm:12/12 md:mr-5 md:ml-5 mr-5 ml-5 lg:ml-5 lg:mr-0'>
                             <Mscore_Mverifid Data={property} />
                         </div>
-                        <div className='lg:w-8/12 md:w-12/12 sm:12/12 lg:mt-0 lg:mr-0 mr-8 md:ml-0 md:mr-0 ml-8 md:mt-2 mt-5'>
+                        <div className='lg:w-8/12 md:w-12/12 sm:12/12 lg:mt-0 lg:mr-0 md:ml-0 md:mr-0 ml-8 md:mt-2 mt-5'>
                             <HighlightAmenities property={property} />
                         </div>
                     </div>
                 </div>
 
-                <div className="flex justify-between mt-4"> {/* Name and price */}
+                <div className="flex justify-between mt-4 lg:mr-11 md:mr-10 sm:mr-10"> {/* Name and price */}
                     <p className="lg:text-3xl md:3xl text-base font-bold px-8">{property?.propertyName}</p>
-                    <p className="lg:text-3xl md:3xl text-base font-bold mr-8">₹ {property?.price}</p>
+                    <p className="lg:text-3xl md:3xl text-base font-bold">₹ {property?.price}</p>
                 </div>
 
                 <div className="flex px-8 mt-5"> {/* Location */}
@@ -163,8 +163,8 @@ const SinglePropertyCard = () => {
                     </a>
                 </div>
 
-                <div className="lg:flex md:flex w-12/12 lg:ml-8 md:ml-8"> {/* amenities and two button */}
-                    <div className="flex lg:w-5/12 md:w-6/12 lg:justify-start md:justify-start justify-between lg:ml-0 lg:mr-0 md:ml-0 md:mr-0 ml-8 mr-8 mt-3">
+                <div className="lg:flex md:flex w-12/12 lg:ml-8 md:ml-8 md:mr-10"> {/* amenities and two button */}
+                    <div className="flex lg:w-5/12 md:w-6/12 lg:justify-start md:justify-start justify-between lg:ml-0 lg:mr-0 md:ml-0 md:mr-0 ml-8 mt-3">
                         <div className="flex items-center">
                             <Image
                                 className="bg-contain"
@@ -196,55 +196,57 @@ const SinglePropertyCard = () => {
                             <p className='p-2 items-center'>{property?.areaDetails.bedrooms} SqFt</p>
                         </div>
                     </div>
-                    <div className="flex lg:w-7/12 md:w-6/12 justify-end md:gap-2 gap-6 lg:ml-0 lg:mr-0 md:ml-0 md:mr-0 ml-8 mr-8 mt-3">
+                    <div className="flex lg:w-7/12 md:w-6/12 flex-col md:flex-row justify-end md:gap-2 gap-6 lg:ml-0 lg:mr-10 md:ml-0 md:mr-10 ml-8 mt-3">
                         <button
-                            className="bg-primary text-white lg:py-2 lg:px-8 px-8 rounded-md mr-4 text-center"
+                            className="bg-primary text-white py-2 px-8 rounded-md flex items-center justify-center"
                             disabled={!isLoggedIn}
                             style={{
                                 borderRadius: '7px',
                                 border: '1px solid rgba(0, 0, 0, 0.23)',
                                 background: 'rgba(245, 198, 198)',
-                                width: '100%', // Full width on small screens
+                                width: '100%',
+                                maxWidth: '300px',
                                 height: '70px',
                                 fontSize: '16px',
                                 fontWeight: '400',
                             }}
                         >
-                            <div className="flex items-center">
-                                <Image
-                                    src={InstantLoan}
-                                    alt="InstantLoan"
-                                    height={30}
-                                    width={30}
-                                />
-                                Apply for Loan
-                            </div>
+                            <Image
+                                src={InstantLoan}
+                                alt="InstantLoan"
+                                height={30}
+                                width={30}
+                            />
+                            <span className="ml-2">Apply for Loan</span>
                         </button>
 
                         <button
-                            className="bg-primary lg:py-2 lg:px-8 px-8 rounded-md mr-4 text-white text-center"
+                            className="bg-primary py-2 px-8 rounded-md text-white flex items-center justify-center mt-4 md:mt-0"
                             disabled={!isLoggedIn}
                             style={{
                                 borderRadius: '7px',
                                 border: '1px solid rgba(0, 0, 0, 0.23)',
                                 background: '#931602',
-                                width: '100%', // Full width on small screens
+                                width: '100%',
+                                maxWidth: '300px',
                                 height: '70px',
                                 fontSize: '16px',
                                 fontWeight: '400',
                             }}
                         >
-                            <div className="flex items-center">
-                                <Image
-                                    src={iconCall}
-                                    alt="iconCall"
-                                    height={30}
-                                    width={30}
-                                />
-                                Request for Call
-                            </div>
+                            <Image
+                                src={iconCall}
+                                alt="iconCall"
+                                height={30}
+                                width={30}
+                            />
+                            <span className="ml-2">Request for Call</span>
                         </button>
                     </div>
+
+
+
+
                 </div>
 
 
