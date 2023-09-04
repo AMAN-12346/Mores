@@ -68,7 +68,7 @@
   overflow: hidden;
 }
 .rightImage {
-  /* position: absolute; */
+  position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
@@ -79,7 +79,7 @@
 }
 
 @media (max-width: 767px) {
-  /* Mobile styles */
+  Mobile styles
   .loginContainer {
     flex-direction: column;
     align-items: center;
@@ -144,7 +144,7 @@
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
-  /* Tablet styles */
+  /* /* Tablet styles */
   .loginContainer {
     flex-direction: column;
     align-items: center;
@@ -185,7 +185,8 @@
   }
 
   .buttonContainer {
-    width: 90%;
+    width: 100%;
+    justify-content: center;
     display: flex;
   }
 
@@ -205,4 +206,4 @@
     height: auto;
     object-fit: contain;
   }
-}
+} 

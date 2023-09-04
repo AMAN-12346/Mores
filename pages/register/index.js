@@ -71,8 +71,8 @@ const RegisterUser = () => {
           <Image src={logo_image} alt="logo" height={30} width={130} />
         </div>
         <div className={styles.formContainer}>
-          <h1 className="text-2xl font-bold">Register</h1>
-          <p className="mt-2">Create a new account</p>
+          <h1 className={styles.heading}>Register</h1>
+          <p className={styles.slogan}>Create a new account</p>
           <div className={styles.buttonContainer}>
             <button
               className={`py-2 px-6 rounded-xl w-36 mt-3 ${

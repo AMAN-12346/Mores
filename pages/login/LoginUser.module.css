@@ -3,7 +3,27 @@
   height: 100vh;
   overflow: hidden;
 }
+.heading {
+    color: #000;
+    text-align: center;
+    font-family: Gotham;
+    font-size: 33px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 20px;
+  }
 
+  .slogan {
+    color: #000;
+    text-align: center;
+    font-family: Mazzard;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 20px;
+  }
 .leftContent {
   width: 50%;
   display: flex;
@@ -153,7 +173,7 @@
     align-items: center;
   }
   .logo {
-    margin-bottom: 200px;
+    margin-bottom: 180px;
   }
 
   .leftContent {
@@ -173,7 +193,6 @@
 
   .formContainer {
     padding: 25px;
-    width: 100%;
     text-align: center;
     margin-top: 100px;
     width: 90%;
@@ -184,33 +203,68 @@
     border: 1px solid #ccc;
     border-radius: 8px;
     padding: 10px;
-    width: 50%;
+    width: 462px;
+    height: 70px;
     margin: auto;
     margin-top: 15px;
   }
 
   .button {
     margin-top: 20px;
-    width: 50%;
+    width: 464px;
+    height: 72px;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
     text-align: center;
   }
 
   .buttonContainer {
-    width: 100%;
+    width: 720px;
+    height: 72px;
     text-align: center;
     justify-content: center;
     display: flex;
+  }
+
+  .heading {
+    color: #000;
+    text-align: center;
+    font-family: Gotham;
+    font-size: 33px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 20px;
+  }
+
+  .slogan {
+    color: #000;
+    text-align: center;
+    font-family: Mazzard;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 20px;
   }
 
   .footerImage {
     position: relative;
     width: 100%;
     margin: auto;
-    top: 7%;
+    top: 0%;
     bottom: 0;
-    left: 15%;
+    left: 18%;
     right: 0;
   }
+
+  /* .buttonSelect {
+    width: 400px;
+    height: 72px;
+    flex-shrink: 0;
+  } */
 
   .rightImage {
     position: relative;

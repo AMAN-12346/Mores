@@ -19,8 +19,8 @@ const Sidebar = () => {
   };
 
   return (
-    <div className="flex">
-      <div className="w-[280px] h-[1014px] border-10 border-black bg-white pl-10 overscroll-x-none ">
+    <div className="flex w-full">
+      <div className="w-[320px] h-[1014px] border-10 border-black bg-white pl-10 overscroll-x-none ">
         {data.map((item, index) => (
           <div
             className="flex mt-5 cursor-pointer "
@@ -37,9 +37,9 @@ const Sidebar = () => {
         ))}
       </div>
 
-      <div className="text-3xl">
+      <div className="bg-login_background p-10 w-full -mt-10">
         {/* Conditionally rendering the AddProperty component */}
-        {showAddProperty ? <AddProperty /> : profile && <h1>Profile</h1>}
+        {showAddProperty && <AddProperty />}
       </div>
     </div>
   );

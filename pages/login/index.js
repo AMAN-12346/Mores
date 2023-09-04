@@ -235,11 +235,11 @@ const LoginUser = () => {
           <Image src={logo_image} alt="logo" height={30} width={130} />
         </div>
         <div className={styles.formContainer}>
-          <h1 className="text-2xl font-bold">Login</h1>
-          <p className="mt-5">Access back to your account</p>
+          <h1 className={styles.heading}>Login</h1>
+          <p className={styles.slogan}>Access back to your account</p>
           <div className={styles.buttonContainer}>
             <button
-              className={`py-2 px-6 rounded-xl w-36 mt-3 ${
+              className={`${styles.button}py-2 px-6 rounded-xl w-36 mt-3 ${
                 selectedMethod === "email"
                   ? "bg-primary text-white"
                   : "bg-secondary text-black"
@@ -249,7 +249,7 @@ const LoginUser = () => {
               Email
             </button>
             <button
-              className={`-ml-3 py-2  px-6 rounded-xl w-36 mt-3 ${
+              className={`${styles.button}-ml-3 py-2  px-6 rounded-xl w-36 mt-3 ${
                 selectedMethod === "phone"
                   ? "bg-primary text-white"
                   : "bg-secondary text-black"

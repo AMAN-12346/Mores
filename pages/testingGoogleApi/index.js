@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { GoogleApiWrapper } from "google-maps-react";
-import { apiGooglePlace } from "../../../../config.js";
+import { apiGooglePlace } from "../../config.js";
 
 const GoogleMap = ({ google, updateParentLocation }) => {
   const [searchValue, setSearchValue] = useState("");
@@ -79,13 +79,13 @@ const GoogleMap = ({ google, updateParentLocation }) => {
   };
 
   return (
-    <div className="border rounded-lg w-full">
+    <div className="border rounded-lg">
       <input
         type="text"
         value={searchValue}
         onChange={onSearchInputChange}
-        placeholder="Search for a location"
-        className="border rounded-lg pl-12 pr-8 py-2 w-full"
+        placeholder="Search for a location in India..."
+        className="border rounded-lg pl-12 pr-8 py-2 w-9/12"
       />
       {autocompleteResults.length > 0 && (
         <ul>

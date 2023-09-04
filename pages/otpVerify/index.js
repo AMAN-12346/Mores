@@ -185,9 +185,9 @@ const VerifyOTP = () => {
           />
         </div>
         <div className={styles.formContainer}>
-          <h1 className="text-2xl font-bold">Verify OTP</h1>
-          <p className="mt-3 mb-2">Enter the 6 digit code you received.</p>
-          <div className="flex mt-3 w-72 -ml-3">
+          <h1 className={styles.heading}>Verify OTP</h1>
+          <p className={styles.slogan}>Enter the 6 digit code you received.</p>
+          <div className=" flex mt-3 w-72 -ml-3">
             {otp.map((value, index) => (
               <input
                 key={index}
@@ -203,10 +203,10 @@ const VerifyOTP = () => {
                 ref={(input) => (otpInputsRef.current[index] = input)}
               />
             ))}
-           </div>
+          </div>
 
           <p className="mt-3">
-            <span className="text-gray-500">Not get code yet?</span>
+            <span className={styles.notGet}>Not get code yet?</span>
             <a
               href="#"
               className="text-button underline ml-1"
@@ -217,7 +217,7 @@ const VerifyOTP = () => {
           </p>
           <div className={styles.buttonContainer}>
             <button
-              className="w-9/12 bg-button text-white py-2 rounded-lg mt-6"
+              className={`${styles.button} bg-button text-white py-2 rounded-lg mt-4`}
               onClick={handleVerifyOTP}
               disabled={loading}
             >

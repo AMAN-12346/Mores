@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import AddProperty from "..";
+import AdditionalDetail from "./AdditionalDetails";
 
-const AdditionalDetailsForm = () => {
+const AdditionalDetailsForm = ({ data, onChange }) => {
   const [additionalRooms, setAdditionalRooms] = useState([]);
 
   const [possessionStatus, setPossessionStatus] = useState("");
@@ -98,96 +100,105 @@ const AdditionalDetailsForm = () => {
     { value: "4", label: "4" },
     { value: "4+", label: "4+" },
   ];
-
   return (
     <div className="p-8">
-      {/* <h2 className="text-2xl font-semibold mb-4 border-b pb-2">
-        Additional Details
-      </h2> */}
+    {/* <AdditionalDetail/> */}
       {/* Additional Rooms */}
       <div className="mb-4">
         <label className="block font-semibold mb-2">Additional Rooms</label>
         <div className="flex space-x-4">
-          {renderButtons(
-            allAdditionalRooms,
-            additionalRooms,
-            setAdditionalRooms
+          {renderButtons(allAdditionalRooms, data.additionalRooms, (value) =>
+            onChange("additionalRooms", value)
           )}
         </div>
       </div>
+
       {/* Possession Status */}
       <div className="mb-4">
         <label className="block font-semibold mb-2">Possession Status</label>
         <div className="flex space-x-4">
           {renderButtons(
             possessionStatusOptions,
-            possessionStatus,
-            setPossessionStatus
+            data.possessionStatus,
+            (value) => onChange("possessionStatus", value)
           )}
         </div>
       </div>
+
       {/* Furnish Status */}
       <div className="mb-4">
         <label className="block font-semibold mb-2">Furnish Status</label>
         <div className="flex space-x-4">
-          {renderButtons(furnishStatusOptions, furnishStatus, setFurnishStatus)}
+          {renderButtons(furnishStatusOptions, data.furnishStatus, (value) =>
+            onChange("furnishStatus", value)
+          )}
         </div>
       </div>
+
       {/* Number of Bedrooms */}
       <div className="mb-4">
         <label className="block font-semibold mb-2">Number of Bedrooms</label>
         <div className="flex space-x-4">
-          {renderButtons(bedroomOptions, numBedrooms, setNumBedrooms)}
+          {renderButtons(bedroomOptions, data.numBedrooms, (value) =>
+            onChange("numBedrooms", value)
+          )}
         </div>
       </div>
+
       {/* Number of Bathrooms */}
       <div className="mb-4">
         <label className="block font-semibold mb-2">Number of Bathrooms</label>
         <div className="flex space-x-4">
-          {renderButtons(bathroomOptions, numBathrooms, setNumBathrooms)}
+          {renderButtons(bathroomOptions, data.numBathrooms, (value) =>
+            onChange("numBathrooms", value)
+          )}
         </div>
       </div>
+
       {/* Age of Property */}
       <div className="mb-4">
         <label className="block font-semibold mb-2">Age of Property</label>
         <div className="flex space-x-4">
-          {renderButtons(propertyAgeOptions, propertyAge, setPropertyAge)}
+          {renderButtons(propertyAgeOptions, data.propertyAge, (value) =>
+            onChange("propertyAge", value)
+          )}
         </div>
       </div>
+
       {/* Additional Balconies */}
       <div className="mb-4">
         <label className="block font-semibold mb-2">Additional Balconies</label>
         <div className="flex space-x-4">
-          {renderButtons(
-            allBalconyOptions,
-            additionalBalconies,
-            setAdditionalBalconies
+          {renderButtons(allBalconyOptions, data.additionalBalconies, (value) =>
+            onChange("additionalBalconies", value)
           )}
         </div>
       </div>
+
+      {/* Power Backup */}
       <div className="mb-4">
         <label className="block font-semibold mb-2">Power Backup</label>
         <div className="flex space-x-4">
           {renderButtons(
             allPowerBackupOptions,
-            powerBackupOption,
-            setPowerBackupOption
+            data.powerBackupOption,
+            (value) => onChange("powerBackupOption", value)
           )}
         </div>
-      </div>{" "}
+      </div>
+
       <div className="flex -mb-16">
         {/* First Column */}
         <div className="mb-4 flex-1 pr-4">
           <label className="block font-semibold mb-2">View</label>
           <select
             className="w-full border rounded-md px-4 py-2 focus:outline-none focus:border-primary"
-            value={balconyView}
-            onChange={(e) => setBalconyView(e.target.value)}
+            value={data.balconyView}
+            onChange={(e) => onChange("balconyView", e.target.value)}
           >
             <option value="">Select Balcony View</option>
             <option value="city">City View</option>
             <option value="garden">Garden View</option>
-            {/* Add more balcony view options */}
           </select>
 
           {/* Floor Number */}
@@ -196,8 +207,8 @@ const AdditionalDetailsForm = () => {
             <input
               type="text"
               className="w-full border rounded-md px-4 py-2 focus:outline-none focus:border-primary"
-              value={floorNumber}
-              onChange={(e) => setFloorNumber(e.target.value)}
+              value={data.floorNumber}
+              onChange={(e) => onChange("floorNumber", e.target.value)}
             />
           </div>
 
@@ -207,8 +218,8 @@ const AdditionalDetailsForm = () => {
             <input
               type="text"
               className="w-full border rounded-md px-4 py-2 focus:outline-none focus:border-primary"
-              value={towerBlock}
-              onChange={(e) => setTowerBlock(e.target.value)}
+              value={data.towerBlock}
+              onChange={(e) => onChange("towerBlock", e.target.value)}
             />
           </div>
         </div>
@@ -219,8 +230,8 @@ const AdditionalDetailsForm = () => {
           <input
             type="text"
             className="w-full border rounded-md px-4 py-2 focus:outline-none focus:border-primary"
-            value={flooringOption}
-            onChange={(e) => setFlooringOption(e.target.value)}
+            value={data.flooringOption}
+            onChange={(e) => onChange("flooringOption", e.target.value)}
           />
 
           {/* Total Floors */}
@@ -229,8 +240,8 @@ const AdditionalDetailsForm = () => {
             <input
               type="text"
               className="w-full border rounded-md px-4 py-2 focus:outline-none focus:border-primary"
-              value={totalFloors}
-              onChange={(e) => setTotalFloors(e.target.value)}
+              value={data.totalFloors}
+              onChange={(e) => onChange("totalFloors", e.target.value)}
             />
           </div>
 
@@ -240,21 +251,12 @@ const AdditionalDetailsForm = () => {
             <input
               type="text"
               className="w-full border rounded-md px-4 py-2 focus:outline-none focus:border-primary"
-              value={unitNumber}
-              onChange={(e) => setUnitNumber(e.target.value)}
+              value={data.unitNumber}
+              onChange={(e) => onChange("unitNumber", e.target.value)}
             />
           </div>
         </div>
       </div>
-      {/* Private Balcony */}
-      {/* <div className="mb-4">
-        <label className="block font-semibold mb-2">Private Balcony</label>
-        <input
-          type="checkbox"
-          checked={privateBalcony}
-          onChange={(e) => setPrivateBalcony(e.target.checked)}
-        />
-      </div> */}
     </div>
   );
 };

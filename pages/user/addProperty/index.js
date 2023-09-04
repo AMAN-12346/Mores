@@ -73,7 +73,7 @@ export default function AddProperty() {
     },
   };
   return (
-    <div className="bg-white ml-4  pt-10 pl-60">
+    <div className="bg-white ml-4  pt-10 ">
       {" "}
       {/* Apply Tailwind classes */}
       <Box sx={{ maxWidth: 800 }}>
