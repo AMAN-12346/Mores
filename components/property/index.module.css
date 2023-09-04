@@ -13,7 +13,7 @@
         font-size: 0.857rem;
         background-color: rgba(1, 129, 145, 0.22);
         margin: 0 2px;
-        padding: 20px;
+        padding: 10px 15px;
     }
 }
 
@@ -21,6 +21,6 @@
     .tabview {
         font-size: 0.714rem;
         background-color: rgba(1, 129, 145, 0.22);
-        padding: 7px;
+        padding: 10px 15px;
     }
 }

@@ -4,7 +4,7 @@ import Styles from "./index.module.css"
 export default function HighlightAmenities({ property }) {
     return (
         <div>
-            <div className="flex flex-wrap justify-between">
+            <div className="flex justify-between">
                 <p className={`${Styles.tabview}`}>Affordable</p>
                 <p className={`${Styles.tabview}`}>Newly build</p>
                 <p className={`${Styles.tabview}`}>{property?.propertySubType}</p>

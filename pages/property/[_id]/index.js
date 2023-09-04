@@ -60,13 +60,12 @@ const SinglePropertyCard = () => {
                 </div>
             </div>
 
-            <div className="rounded-lg shadow-md m-3">
-                <div className="grid grid-cols-2 gap-3">
-                    {/* let grid */}
-                    <div className="col-span-1">
-                        <div className="relative">
-                            <img src={property?.images[0]?.original} alt={property?.propertyName} className="w-full rounded-md" />
-                            <div className="absolute flex justify-center top-7 left-5 w-[150px] lg:w-[200px] text-white rounded-tl-md" style={{ borderRadius: "43px", background: "rgba(1, 129, 145, 0.20)", flexShrink: 0 }}>
+            <div className="m-2">
+                <div className="w-12/12 flex justify-between gap-2 m-3">
+                    {/* lelt grid */}
+                    <div className="w-8/12">
+                        <div className="relative rounded-md h-full" style={{ backgroundImage: `url(${property?.images[0]?.original})`, backgroundSize: 'cover'}}>
+                            <div className="absolute flex m-4 px-3 justify-center text-white" style={{ borderRadius: "43px", background: "rgba(1, 129, 145, 0.20)", flexShrink: 0 }}>
                                 <Image
                                     className="bg-contain md:py-5"
                                     src={EYE}
@@ -87,8 +86,8 @@ const SinglePropertyCard = () => {
                     </div>
 
                     {/* Right grid  */}
-                    <div className="col-span-1">
-                        <div className="grid grid-cols-2 gap-3">
+                    <div className="w-4/12">
+                        <div className="grid grid-cols-2 gap-1">
                             {/* Render first image */}
                             <div className="w-full rounded-md overflow-hidden">
                                 <img
@@ -131,7 +130,6 @@ const SinglePropertyCard = () => {
                     </div>
                 </div>
             </div>
-
 
             <div>
                 {/* Render areaDetails and Properties */}
