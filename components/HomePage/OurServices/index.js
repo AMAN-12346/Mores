@@ -4,11 +4,13 @@ import Card from './Card/Card';
 import Styles from './index.module.css';
 import { useRef, useState } from 'react';
 import OurServiceContent from '@/content/OurServices';
+import useWindowWidth from '@/context/useWindowWidth';
 
 const OurServices = () => {
 
     const [services, setServices] = useState(OurServiceContent)
     const scrollContainerRef = useRef(null);
+    const windowWidth = useWindowWidth()
 
     //scroll function
     const scroll = (scrollOffset) => {
@@ -18,24 +20,27 @@ const OurServices = () => {
 
 
     return ( 
-        <div className={Styles.servicesComponent}>     
+        <div className={`text-center md:text-left ${Styles.servicesComponent}`}>     
             <h1 className={Styles.heading}>
                 Our Services
-                <hr className={Styles.underline} />
+                <hr className={`m-auto md:m-0 ${Styles.underline}`} />
             </h1>       
-            <div className='my-7 flex justify-between ml-24'>
-                <p className={Styles.shortPara}>
+            <div className='my-2 md:my-7 flex justify-center md:justify-between ml-[8%]'>
+                <p className={`w-[100%] md:w-[60%] lg:w-[55%] ${Styles.shortPara}`}>
                     Empowering You with Our Diverse Services
                     Your Solutions, Our Expertise
                     Unveiling a Spectrum of Offerings
                     Customized to Meet Your Unique Demands
                 </p>
-                <LeftRightSlideButtons leftFunction={() => scroll(-400)} rightFunction={() => scroll(+400)} />
+                {(windowWidth > 768) && <LeftRightSlideButtons leftFunction={() => scroll(-400)} rightFunction={() => scroll(+400)} />}
             </div>
             <div className={Styles.wrapper} ref={scrollContainerRef}>
                 {Object.keys(services).map((service)=>
                     <Card name={service} imageSrc={services[service]} />
                 )}
+            </div>
+            <div>
+                <button className={Styles.exploreAll}>Explore All</button>
             </div>
         </div>
      );

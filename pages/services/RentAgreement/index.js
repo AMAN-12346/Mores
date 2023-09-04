@@ -127,6 +127,7 @@ const RentAgreement = () => {
     // handleAgrrement
     const handleAgreement = () => {
         setLoading(false);
+        window.scrollTo(0,0);
     }
 
     return (
@@ -134,7 +135,7 @@ const RentAgreement = () => {
         <div className="text-center items-center">
             {loading ?
                 <div className={Styles.outerDiv}>
-                    <h1 className="text-3xl font-bold mt-4 underline">Rent Agreement</h1>
+                    <h1 className="md:text-3xl font-bold mt-4 underline">Rent Agreement</h1>
                     <p className={Styles.paragraph}>Create rent agreement form in a easy free way !!!</p>
                     <details className={Styles.Details}>
                         <summary className={Styles.summary}>Enter City and Date</summary>
@@ -153,7 +154,7 @@ const RentAgreement = () => {
                     {/* landlord details */}
                     <details className={Styles.Details}>
                         <summary className={Styles.summary}>Landlord Details</summary>
-                        <div className={`flex justify-evenly flex-wrap ${Styles.innerSummary}`}>
+                        <div className={`flex justify-between flex-wrap ${Styles.innerSummary}`}>
                             <div>
                                 <h2>Title</h2>
                                 <InputValue value={ltitle} setValue={setLTitle} placeholder="Mr/Mrs/Miss" className={Styles.InputValue}/>
@@ -190,51 +191,51 @@ const RentAgreement = () => {
                     </details>
 
 
-                        {/* Renter form */}
-                        <details className={Styles.Details}>
-                            <summary className={Styles.summary}>Renter Details</summary>
-                            <div className={`flex justify-evenly flex-wrap ${Styles.innerSummary}`}>
-                                <div>
-                                    <h2>Title</h2>
-                                    <InputValue value={rtitle} setValue={setRTitle} placeholder="Mr/Mrs/Miss" className={Styles.InputValue}/>
-                                </div>
-                                <div>
-                                    <h2>Name</h2>
-                                    <InputValue value={rname} setValue={setRname} placeholder="Enter Name" className={Styles.InputValue} />
-                                </div>
-                                <div>
-                                    <h2>Parent Name</h2>
-                                    <InputValue value={rParentName} setValue={setRParentName} placeholder="Enter Parent Name" className={Styles.InputValue}/>
-                                </div>
-                                <div>
-                                    <h2>Mobile Number</h2>
-                                    <InputValue value={rMob} setValue={setRMob} placeholder="Enter Mobile Number" className={Styles.InputValue}/>
-                                </div>
-                                <div>
-                                    <h2>Email</h2>
-                                    <InputValue value={rEmail} setValue={setREmail} placeholder="Enter Email" className={Styles.InputValue}/>
-                                </div>
-                                <div>
-                                    <h2>Pan Card</h2>
-                                    <InputValue value={rPan} setValue={setRPan} placeholder="Enter Pan Number" className={Styles.InputValue}/>
-                                </div>
-                                <div>
-                                    <h2>Adhaar</h2>
-                                    <InputValue value={rAdhaar} setValue={setRAdhaar} placeholder="Enter Adhaar Number" className={Styles.InputValue}/>
-                                </div>
-                                <div>
-                                    <h2>Full Address</h2>
-                                    <InputValue value={rAddress} setValue={setRAddress} placeholder="Enter Address" className={Styles.InputValue}/>
-                                </div>                     
+                    {/* Renter form */}
+                    <details className={Styles.Details}>
+                        <summary className={Styles.summary}>Renter Details</summary>
+                        <div className={`flex justify-between flex-wrap ${Styles.innerSummary}`}>
+                            <div>
+                                <h2>Title</h2>
+                                <InputValue value={rtitle} setValue={setRTitle} placeholder="Mr/Mrs/Miss" className={Styles.InputValue}/>
                             </div>
-                        </details>
+                            <div>
+                                <h2>Name</h2>
+                                <InputValue value={rname} setValue={setRname} placeholder="Enter Name" className={Styles.InputValue} />
+                            </div>
+                            <div>
+                                <h2>Parent Name</h2>
+                                <InputValue value={rParentName} setValue={setRParentName} placeholder="Enter Parent Name" className={Styles.InputValue}/>
+                            </div>
+                            <div>
+                                <h2>Mobile Number</h2>
+                                <InputValue value={rMob} setValue={setRMob} placeholder="Enter Mobile Number" className={Styles.InputValue}/>
+                            </div>
+                            <div>
+                                <h2>Email</h2>
+                                <InputValue value={rEmail} setValue={setREmail} placeholder="Enter Email" className={Styles.InputValue}/>
+                            </div>
+                            <div>
+                                <h2>Pan Card</h2>
+                                <InputValue value={rPan} setValue={setRPan} placeholder="Enter Pan Number" className={Styles.InputValue}/>
+                            </div>
+                            <div>
+                                <h2>Adhaar</h2>
+                                <InputValue value={rAdhaar} setValue={setRAdhaar} placeholder="Enter Adhaar Number" className={Styles.InputValue}/>
+                            </div>
+                            <div>
+                                <h2>Full Address</h2>
+                                <InputValue value={rAddress} setValue={setRAddress} placeholder="Enter Address" className={Styles.InputValue}/>
+                            </div>                     
+                        </div>
+                    </details>
 
 
                     {/* create form for amenities details */}
                     <details className={`relative ${Styles.Details}`}>
                             <summary className={Styles.summary}>Amenity Details</summary>
                             <div className={``}>
-                              <div className={`flex justify-evenly flex-wrap ${Styles.innerSummary}`}>
+                              <div className={`flex justify-between flex-wrap ${Styles.innerSummary}`}>
                                 {Object.keys(assets).map((asset, index) =>
 
                                     <div className={Styles.amenityDetails}>
@@ -263,7 +264,7 @@ const RentAgreement = () => {
                         {/* Property details*/}
                          <details className={Styles.Details}>
                             <summary className={Styles.summary}>Property Details</summary>
-                            <div className={`flex justify-evenly flex-wrap ${Styles.innerSummary}`}>
+                            <div className={`flex justify-between flex-wrap ${Styles.innerSummary}`}>
                                 <div>
                                     <h2>Building Type</h2>
                                     <InputValue placeholder="Residential/Commercial" value={buildingType} setValue={setBuildingType} className={Styles.InputValue}/>
@@ -326,7 +327,7 @@ const RentAgreement = () => {
                         {/* Rent details*/}
                         <details className={Styles.Details}>
                             <summary className={Styles.summary}>Rent Details</summary>
-                            <div className={`flex justify-evenly flex-wrap ${Styles.innerSummary}`}>
+                            <div className={`flex justify-between flex-wrap ${Styles.innerSummary}`}>
                                 <div>
                                     <h2>Agreement Period</h2>
                                     <InputValue placeholder="In months" value={rentPeriod} setValue={setRentPeriod} type="Number" className={Styles.InputValue}/>
@@ -400,7 +401,7 @@ const RentAgreement = () => {
                             Whereas on the request of the Lessee, the Lessor has agreed to let out the Demised Premises to the LESSEE, and the LESSEE has agreed to take it on rent for a period of {rentPeriod} Month(s) w.e.f. {startDate}  for its bonafide Residential use. Whereas the LESSOR has represented that the Demised Premises is free from all encumbrances and the LESSOR has a clean and unrestricted right to the Demised Premises. Whereas the Lessor and Lessee both represented that they are legally competent to enter into this Lease Agreement on the terms and conditions contained herein.
                         </p>
 
-                        <h1 className="mb-5 text-xs font-semibold">Now, these present witnesses as under:</h1>
+                        <h1 className="mb-5 font-semibold">Now, these present witnesses as under:</h1>
                         <ol className={`mb-5 text-xs ${Styles.Lines}`}>
                             <li>That the second party shall pay the monthly rent of Rs {rent} in respect of the Demised Premises located at 2354,12,chood,mamura,Noida,201301 .</li>
 
