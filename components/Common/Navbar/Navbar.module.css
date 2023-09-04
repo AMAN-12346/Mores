@@ -42,9 +42,9 @@
 
 .sellRentButton{
     display: flex;
-    width: 160px;
-    height: 49px;
-    padding: 4px 10px;
+    width: 145px;
+    height: 45px;
+    padding: 4px 6px;
     justify-content: center;
     align-items: center;
     font-weight: 500;

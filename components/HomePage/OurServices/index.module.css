@@ -1,7 +1,7 @@
 .servicesComponent{
     width: 95%;
     margin-top: 90px;
-    padding-bottom: 70px;
+    padding-bottom: 0px;
     margin-right: 0px;
 }
 
@@ -44,23 +44,23 @@
 
 .exploreAll{
     display: flex;
-width: 187px;
-height: 61px;
-padding: 17px 22px;
-justify-content: center;
-align-items: center;
-gap: 10px;
-flex-shrink: 0;
-border-radius: 11px;
-background: #89A190;
-color: #F9FAFC;
-font-family: Poppins;
-font-size: 18px;
-font-style: normal;
-font-weight: 500;
-line-height: 20px; /* 111.111% */
-margin: auto;
-margin-top: 50px;
+    width: 170px;
+    height: 50px;
+    padding: 17px 22px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    border-radius: 11px;
+    background: #89A190;
+    color: #F9FAFC;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px; /* 111.111% */
+    margin: auto;
+    margin-top: 50px;
 }
 
 @media screen and (max-width: 768px) {

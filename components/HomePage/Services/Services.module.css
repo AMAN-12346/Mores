@@ -42,6 +42,10 @@
     }   
     .wrapper {
         flex-wrap: nowrap;
+        overflow-x: scroll;
+    }
+    .wrapper::-webkit-scrollbar{
+        display: none;
     }
 }
   
@@ -55,7 +59,11 @@
     }   
     .wrapper {
         flex-wrap: nowrap;
+        overflow-x: scroll;
     } 
+    .wrapper::-webkit-scrollbar{
+        display: none;
+    }
 }
   
 

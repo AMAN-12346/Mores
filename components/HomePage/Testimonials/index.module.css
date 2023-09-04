@@ -41,6 +41,10 @@
     }
     .wrapper {
         margin-top: 40px;
+        overflow-x: scroll;
+    }
+    .wrapper::-webkit-scrollbar{
+        display: none;
     }
 }
 

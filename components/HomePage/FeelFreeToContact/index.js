@@ -25,8 +25,8 @@ const FeelFreeToContact = () => {
             <h1 className={`text-[24px] md:text-[30px] lg:text-[37px] ${Styles.heading}`}>
                 Feel Free To Contact
             </h1>       
-            <p className={`text-[11px] md:text-[15px] lg:text-[17px] ${Styles.paragraph}`}>Enter the following Details to reach us.</p>
-            <form className='mt-12'>
+            <p className={`text-[11px] md:text-[15px] ${Styles.paragraph}`}>Enter the following Details to reach us.</p>
+            <form className='mt-9'>
                 <div className='flex justify-evenly flex-wrap'>
                     <div>
                         <p className={Styles.fieldName}>First Name</p>
@@ -40,7 +40,7 @@ const FeelFreeToContact = () => {
                         <p className={Styles.fieldName}>Email Address</p>
                         <InputValue className={Styles.inputField}/>
                     </div>
-                    <div className='mt-5 md:mt-0 md:my-12'>
+                    <div className='mt-5 md:mt-0 md:my-6'>
                         <p className={Styles.fieldName}>Phone Number</p>
                         <PhoneNumberInput  value={phoneNumber}
                             onChange={handlePhoneNumberChange}
@@ -50,9 +50,9 @@ const FeelFreeToContact = () => {
                         />                                        
                     </div>
                 </div>
-                <div className='ml-[4vw] md:ml-[6vw]'>
+                <div className='ml-[7.5vw] max-sm:mt-[15px] md:ml-[10vw]'>
                     <p className={Styles.fieldName}>Message</p>
-                    <textarea rows={10} cols={50} className={Styles.textArea} placeholder='Write Message here'/>
+                    <textarea rows={6} cols={55} className={Styles.textArea} />
                 </div>
                 <div className='text-center mb-4 mt-12'>
                     <button className={Styles.button}>Send Message</button>

@@ -1,7 +1,7 @@
 .servicesComponent{
     width: 100%;
     margin: auto;
-    padding: 5%;
+    padding: 2%;
     background-color: #9DACA1;
 }
 
@@ -19,43 +19,44 @@
     color: #FFF;
     text-align: center;
     font-style: normal;
-    margin-top: 2%;
-    font-weight: 400;
-    line-height: 27px; /* 135% */
+    margin-top: 5px;
+    font-weight: 300;
 }
 
 .fieldName{
     color: #FFF;
     font-variant-numeric: lining-nums proportional-nums;
-    font-size: 15px;
+    font-size: 14px;
     font-style: normal;
     font-weight: 500;
     line-height: 22px; /* 137.5% */
-    margin-bottom: 12px;
+    margin-bottom: 8px;
+    margin-top: 1%;
 }
 
 .inputField{
-    width: 35vw;
-    height: 52px;
+    width: 32vw;
+    height: 40px;
     flex-shrink: 0;
     background-color: #9DACA1;
     border: 2px solid white;
     border-radius: 7px;
     color: white;
-    padding-left: 5px;
+    padding-left: 7px;
 }
 .inputField:focus{
     outline: none;
 }
 .textArea{
-    width: 76vw;
-    height: 240px;
+    width: 74.5vw;
+    height: 180px;
     flex-shrink: 0;
     border-radius: 8px;
     border: 2px solid #FFF;
     background-color: #9DACA1;
     color: white;
     padding: 5px;
+    
 }
 .textArea:focus{
     outline: none;
@@ -64,10 +65,10 @@
 
 .button{
     display: inline-flex;
-    padding: 18.344px 37px 16.656px 44px;
+    padding: 14px 34px;
     justify-content: flex-end;
     align-items: center;
-    border-radius: 11px;
+    border-radius: 6px;
     background: #FFF;
     color: #000;
     font-size: 15px;

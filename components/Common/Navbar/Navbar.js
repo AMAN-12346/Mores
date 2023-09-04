@@ -12,10 +12,13 @@ import DropdownButton from '@/utils/DropdownButton/DropdownButton';
 import useWindowWidth from '@/context/useWindowWidth';
 import BurgerMenu from './BurgerMenu';
 import MobileMenu from './MobileMenu';
+import { useState } from 'react';
+import navbarContent from '@/content/Navbar';
 
  
 const Navbar = () => {
     const [auth, setAuth] = useAuth();
+    const [navbarContentData, setNavbarContentData] = useState(navbarContent);
 
     const router = useRouter();
     const windowWidth = useWindowWidth();
@@ -41,10 +44,19 @@ const Navbar = () => {
            <div className={`flex w-[100vw] ml-5 md:justify-between lg:justify-normal`}>
                 {(windowWidth >1024) ?
                     <div className='w-[65vw] flex items-center'>
-                        <div className='w-[14vw]'>
+                        <div className='w-[13vw]'>
                             <MoresLogo />
-                        </div>            
-                        <div className={`flex justify-evenly mr-4 ml-4`}> 
+                        </div>
+
+                        <div className={`flex justify-evenly mr-4 ml-7`}> 
+                        {Object.keys(navbarContentData).map((content)=> 
+                            <div className={Styles.optionName}>
+                               <DropdownButton optionName={content} menuItem={navbarContentData[content]} />  
+                            </div>
+                        )}
+                        </div> 
+                                    
+                        {/* <div className={`flex justify-evenly mr-4 ml-7`}> 
                             <div className={Styles.optionName}>
                                 <DropdownButton optionName="City" menuItem={['random', 'data']} />  
                             </div>
@@ -66,7 +78,7 @@ const Navbar = () => {
                             <div className={Styles.optionName}>
                                 <DropdownButton optionName="Resources" menuItem={['random', 'data']} />  
                             </div>
-                        </div> 
+                        </div>  */}
                     </div>
                 : 
                 <div className='flex w-[180px] justify-between mt-[10px]'>
