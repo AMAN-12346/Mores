@@ -12,6 +12,7 @@ module.exports = {
         secondary: 'rgba(1, 129, 145, 0.17)',
          secondary: 'rgba(1, 129, 145, 0.17)',
          iconBackground: 'rgba(1, 129, 145, 0.17)',
+         nearme:'#01819140',
         button: "#931602",
         login_background:"#FAEEE0",
         featuredTorquoise:'#003E71',
@@ -21,6 +22,14 @@ module.exports = {
         SearchResultText:'#78828a',
         Text:'#F0E4F4',
         paginationButton:"#A37F4F"
+      },
+      fontSize:{
+        'custom':'3.39375rem',
+        'custom1':'1.1875rem'
+      },
+      fontWeight:{
+        'custom':'800',
+        'custom1':'400'
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

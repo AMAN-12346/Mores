@@ -12,7 +12,7 @@ const OurServices = () => {
 
     //scroll function
     const scroll = (scrollOffset) => {
-        console.log("-->",scrollContainerRef.current)
+        // console.log("-->",scrollContainerRef.current)
         scrollContainerRef.current.scrollLeft += scrollOffset;
     };
 
