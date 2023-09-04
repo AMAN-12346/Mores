@@ -8,6 +8,7 @@ import footer_image from "../register/assets/footer-image.png";
 import right_side_image from "../register/assets/right_side_image.png";
 import logo_image from "../register/assets/logo_image.png";
 import Link from "next/link";
+import { formHelperTextClasses } from "@mui/material";
 
 const RegisterUser = () => {
   const [selectedMethod, setSelectedMethod] = useState("email");
@@ -15,6 +16,7 @@ const RegisterUser = () => {
   const router = useRouter(); // Get the router instance
   const [error, setError] = useState("");
   const [otpSuccess, setOtpSuccess] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const handleRegister = async (event) => {
     event.preventDefault(); // Prevent default form submission behavior
@@ -28,6 +30,7 @@ const RegisterUser = () => {
 
     try {
       console.log(">>>>>>>>>>>from register");
+      setLoading(true);
 
       // Send POST request to the API endpoint
       const response = await axios.post(
@@ -35,7 +38,7 @@ const RegisterUser = () => {
         payload
       );
 
-        if (response.data?.responseCode === 200) {
+      if (response.data?.responseCode === 200) {
         localStorage.setItem("userID", inputValue);
         // If the response is successful, navigate to the "otpVerify" path
         setOtpSuccess(true); // Set the login success state to true
@@ -49,14 +52,15 @@ const RegisterUser = () => {
         setTimeout(() => {
           setError("");
         }, 3000);
+        setLoading(false);
       }
     } catch (error) {
       setError(error.response.data.responseMessage);
       setTimeout(() => {
         setError("");
       }, 3000);
-      console.error("Error logging in:",error );
-
+      console.error("Error logging in:", error);
+      setLoading(false);
     }
   };
 
@@ -117,8 +121,11 @@ const RegisterUser = () => {
               {/* Add flag icon here */}
             </span>
           </div>
-          <button className="w-9/12 bg-button text-white py-2 rounded-lg mt-4">
-            Register
+          <button
+            className="w-9/12 bg-button text-white py-2 rounded-lg mt-4"
+            disabled={loading}
+          >
+            {loading ? "Loading..." : "Register"}
           </button>
           <p className="mt-3">
             Already have an account?{" "}

@@ -1,37 +1,44 @@
 import React, { useState } from "react";
 import Styles from "./Sidebar.module.css";
-import ProfileForm from "./ProfileForm"
+import ProfileForm from "./ProfileForm";
 
 const Sidebar = () => {
   const [profile, setProfile] = useState(false);
   const handleProfileClick = () => {
     setProfile(!profile);
   };
+
   const IconComponent = ({ icon }) => {
     return <div dangerouslySetInnerHTML={{ __html: icon }} />;
   };
+
   return (
     <div className="flex">
-      <div className="w-1/5 h-screen border-10 border-black bg-white pl-10 ">
+
+      <div className={`w-1/5 md:w-1/4 lg:w-[280px] flex-col h-screen border-10 border-black bg-white pl-5 py-4 max-lg:hidden`}>
         {data.map((item, index) => (
           <div
-            className="flex py-3 cursor-pointer"    
+            key={index} // Make sure to add a unique key for each item in the map function.
+            className="flex py-3 cursor-pointer w-[300px]"
             onClick={handleProfileClick}
           >
-            <div className="bg-secondary rounded-full p-2 ">
-              <IconComponent icon={item.icon} />
+            <div className="bg-secondary rounded-full p-2 h-[38px]">
+              <IconComponent icon={item.icon}/>
             </div>
 
-            <span className="ml-7 pt-2 text-lg">{item.title}</span>
+            <span className="ml-4  pt-1 ">{item.title}</span>
           </div>
         ))}
-
-        
       </div>
-      <div className="text-3xl">{profile && <ProfileForm/>}</div>
+      <div className="text-3xl  md:text-4xl lg:text-5xl xl:text-6xl">
+        {profile && <ProfileForm />}
+      </div>
     </div>
   );
 };
+
+// export default Sidebar;
+
 
 const data = [
   {

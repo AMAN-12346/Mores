@@ -9,3 +9,10 @@
     border-color: black;
     /* background-color: black; */
 }
+
+@media screen and (min-width: 768px) {
+    .hid{
+        display: hidden;
+    }
+  }
+  

@@ -18,6 +18,7 @@ const LoginUser = () => {
   const router = useRouter(); // Get the router instance
   const [otpSuccess, setOtpSuccess] = useState(false);
   const [error, setError] = useState("");
+  const[loading,setLoading] = useState(false)
 
   const handleLogin = async (event) => {
     event.preventDefault(); // Prevent default form submission behavior
@@ -30,6 +31,7 @@ const LoginUser = () => {
     }
 
     try {
+      setLoading(true)
       console.log("i am in login");
       // Send POST request to the API endpoint
       const response = await axios.post(
@@ -41,6 +43,7 @@ const LoginUser = () => {
       if (response.data?.responseCode === 200) {
         localStorage.setItem("userID", inputValue);
         setOtpSuccess(true); // Set the login success state to true
+        setLoading(false)
         setTimeout(() => {
           setOtpSuccess(false); // Reset the login success state after a timeout
           router.push("/otpVerify");
@@ -50,15 +53,16 @@ const LoginUser = () => {
         setTimeout(() => {
           setError("");
         }, 3000);
+        setLoading(false)
+
       }
     } catch (error) {
+      setError(error.response.data.responseMessage);
+      setTimeout(() => {
+        setError("");
+      }, 3000);
       console.error("Error logging in:", error);
-
-      if (error.response) {
-        setError(error.response.data?.responseMessage);
-      } else {
-        setError("An error occurred");
-      }
+      setLoading(false);
     }
   };
   return (
@@ -120,10 +124,8 @@ const LoginUser = () => {
               {/* Add flag icon here */}
             </span>
           </div>
-          <button className=" bg-button text-white w-full lg:w-9/12 py-3 lg:py-4 rounded-lg mt-4 overflow-hidden">
-            <span class="text-sm md:text-base lg:text-lg xl:text-xl">
-              Login
-            </span>
+          <button className="w-9/12 bg-button text-white py-2 rounded-lg mt-4" disabled={loading}>
+            {loading ? "Loading..." : "Login"}
           </button>
 
           {/* <Button variant="contained">
@@ -139,10 +141,12 @@ const LoginUser = () => {
             </Link>
           </p>
         </form>
+        <div>
         {otpSuccess && (
           <p className="text-green-500 mt-2">Otp sent successfully!</p>
         )}
         {error && <p className="text-red-500 mt-2">{error}</p>}
+        </div>
 
         <div className="mt-0">
           <Image

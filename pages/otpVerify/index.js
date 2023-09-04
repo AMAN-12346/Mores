@@ -17,6 +17,7 @@ const VerifyOTP = () => {
   const [auth, setAuth] = useAuth();
   const [backendError, setError] = useState("");
   const [resendOtpMessage, setResendOtpMessage] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const otpInputsRef = useRef([
     { current: null },
@@ -76,6 +77,7 @@ const VerifyOTP = () => {
     };
     console.log("payload from verify : ", payload);
     try {
+      setLoading(true);
       // Send POST request to verify OTP
       const response = await axios.post(
         "http://localhost:1950/api/v1/user/verifyOTP",
@@ -94,12 +96,14 @@ const VerifyOTP = () => {
         // Delete the userID from local storage
         localStorage.removeItem("userID");
         setLoginSuccess(true); // Set the login success state to true
+        setLoading(false);
         setTimeout(() => {
           setLoginSuccess(false); // Reset the login success state after a timeout
           router.push("/");
         }, 1000);
       } else {
         setError(response.data?.responseMessage);
+        setLoading(false);
         setTimeout(() => {
           setError("");
         }, 3000);
@@ -107,6 +111,7 @@ const VerifyOTP = () => {
       }
     } catch (error) {
       console.error("Error logging in:", error);
+      setLoading(false);
     }
   };
   const handleResendOTP = async () => {
@@ -120,6 +125,7 @@ const VerifyOTP = () => {
     };
 
     try {
+      setLoading(true);
       // Send PUT request to resendOTP
       const response = await axios.put(
         "http://localhost:1950/api/v1/user/resendOTP",
@@ -141,17 +147,20 @@ const VerifyOTP = () => {
           }
         });
         setResendOtpMessage(response.data?.responseMessage);
+        setLoading(false);
         setTimeout(() => {
           setResendOtpMessage("");
         }, 3000);
         router.push("/otpVerify");
       } else {
         setError(response.data?.responseMessage);
+        setLoading(false);
         setTimeout(() => {
           setError("");
         }, 3000);
       }
     } catch (error) {
+      setLoading(false);
       console.log(error);
     }
   };
@@ -201,8 +210,9 @@ const VerifyOTP = () => {
         <button
           className="w-9/12 bg-button text-white py-2 rounded-lg mt-6"
           onClick={handleVerifyOTP}
+          disabled={loading}
         >
-          Verify
+          {loading ? "Loading..." : "Verify"}
         </button>
 
         {loginSuccess && (
