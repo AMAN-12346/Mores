@@ -20,7 +20,7 @@ import InstantLoan from "../../../assets/moreIcon/InstantLoan.svg"
 import iconCall from "../../../assets/moreIcon/iconCall.svg"
 import AgentFrom from './AgentFrom';
 import Review from './Review';
-import FeaturesSectionCard from '@/components/HomePage/FeaturedPropertiesSection/FeaturesSectionCard';
+import FeaturesSectionCard from '@/components/HomePage/FeaturedPropertiesSection/FeaturedSection';
 import RecommenedCard from '../RecommenedCard';
 import LikeShareButtons from '@/components/LikeShear/Component';
 import Footer from '@/components/Common/Footer/Footer';

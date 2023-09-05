@@ -1,6 +1,6 @@
 import React from 'react'
-import FeaturesSectionCard from '@/components/HomePage/FeaturedPropertiesSection/FeaturesSectionCard';
-export default function RecommenedCard({Data}) {
+import FeaturesSectionCard from '@/components/HomePage/FeaturedPropertiesSection/FeaturedSection';
+export default function RecommenedCard() {
 
   return (
     <div>

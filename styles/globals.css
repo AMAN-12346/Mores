@@ -15,6 +15,10 @@ body {
   font-family: "Poppins";
   /* font-family: 'Telegrafico'; */
   overflow-x: hidden;
+.overlow-scroll::-webkit-scrollbar{
+    display: none;
+}
+
 }
 
 
