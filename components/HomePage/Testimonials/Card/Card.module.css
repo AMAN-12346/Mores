@@ -1,6 +1,4 @@
 .card{
-    width: 30%;
-    height: 60vh;
     max-height: 40%;
     flex-shrink: 0;
     background-color: #FFF;
@@ -11,6 +9,7 @@
 
 .imageNameDiv{
     display: flex;
+    width: 100%;
     margin-top: 8%;
     margin-left: 6%;
     position: relative;
@@ -34,11 +33,14 @@
 
 .story{
     display: -webkit-box;
-    -webkit-line-clamp: 8; /* Number of lines to display */
+    -webkit-line-clamp: 7; /* Number of lines to display */
     -webkit-box-orient: vertical;
-    overflow: hidden;
+    overflow: scroll;
     text-overflow: ellipsis;
     color: #666;
+}
+.story::-webkit-scrollbar{
+    display: none;
 }
 
 .cityTag{
@@ -47,11 +49,29 @@
     left: 10%;
     font-size: 14px;
     font-weight: 600;
+    margin-top: 15px;
 }
 .cityUnderline{
     width: 91px;
     height: 4px;
     flex-shrink: 0;
-    margin-top: 5px;
     background: #A37F4F;
+}
+
+@media screen and (max-width: 768px) {
+    .image{
+        width: 50px;
+        height: 50px; 
+    }
+    .name{
+        margin-left: 6%;
+        position: absolute;
+        font-size: 14px;
+        top: 28%;
+        left: 18%;
+    }
+    .story{
+        font-size: 14px;
+        line-height: 21px;
+    }    
 }

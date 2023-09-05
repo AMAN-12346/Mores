@@ -1,22 +1,23 @@
 
 .flag{
     display: flex;
-    width: 500px;
- 
+    width: 500px; 
+    margin-left: -50px;
+    margin-top: -5px;
 }
 
 .flag div{
     width: 120px;
     display: flex;
     flex-direction: row-reverse;
-    margin-left: -15px;
+    margin-left: 5px;                   /* increase this value to increase flag size */  
     padding-left: 0;
-    margin-right: 15px;
+    margin-right: 5px;
    
 }
 .flag div select{
     width: 20px;
-    height: 50px;
+    height: 45px;                          /* height for flag arrow */       
     color: rgb(97, 94, 94);
     background-color: transparent;
 }

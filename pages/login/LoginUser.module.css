@@ -41,7 +41,7 @@
   flex-direction: column;
   align-items: left;
   text-align: center;
-  margin-top: -100px;
+  margin-top: -130px;
   /* padding-left: 60px; */
 }
 
@@ -74,11 +74,10 @@
 .footerImage {
   position: absolute;
   width: 50%;
-  margin-bottom: 50px;
-  margin: auto;
+  /* margin: auto; */
   text-align: center;
-  bottom: 0%;
-  top: 60%;
+  bottom: 0;
+  top: 80%;
   left: 25%;
 }
 

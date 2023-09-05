@@ -74,14 +74,14 @@
 }
 
 .footerImage {
-  position: absolute;
-  width: 50%;
-  margin-bottom: 50px;
-  margin: auto;
-  text-align: center;
-  bottom: 0%;
-  top: 60%;
-  left: 25%;
+    position: absolute;
+    width: 50%;
+    /* margin: auto; */
+    text-align: center;
+    bottom: 0;
+    top: 67%;
+    left: 25%;
+    height: fit-content;
 }
 
 .rightContainer {

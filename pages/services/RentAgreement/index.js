@@ -135,7 +135,7 @@ const RentAgreement = () => {
         <div className="text-center items-center">
             {loading ?
                 <div className={Styles.outerDiv}>
-                    <h1 className="text-3xl font-bold mt-4 underline">Rent Agreement</h1>
+                    <h1 className="md:text-3xl font-bold mt-4 underline">Rent Agreement</h1>
                     <p className={Styles.paragraph}>Create rent agreement form in a easy free way !!!</p>
                     <details className={Styles.Details}>
                         <summary className={Styles.summary}>Enter City and Date</summary>
@@ -401,7 +401,7 @@ const RentAgreement = () => {
                             Whereas on the request of the Lessee, the Lessor has agreed to let out the Demised Premises to the LESSEE, and the LESSEE has agreed to take it on rent for a period of {rentPeriod} Month(s) w.e.f. {startDate}  for its bonafide Residential use. Whereas the LESSOR has represented that the Demised Premises is free from all encumbrances and the LESSOR has a clean and unrestricted right to the Demised Premises. Whereas the Lessor and Lessee both represented that they are legally competent to enter into this Lease Agreement on the terms and conditions contained herein.
                         </p>
 
-                        <h1 className="mb-5 text-xs font-semibold">Now, these present witnesses as under:</h1>
+                        <h1 className="mb-5 font-semibold">Now, these present witnesses as under:</h1>
                         <ol className={`mb-5 text-xs ${Styles.Lines}`}>
                             <li>That the second party shall pay the monthly rent of Rs {rent} in respect of the Demised Premises located at 2354,12,chood,mamura,Noida,201301 .</li>
 

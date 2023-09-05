@@ -229,7 +229,6 @@ const LoginUser = () => {
 
   return (
     <div className={styles.loginContainer}>
-    
       <div className={styles.leftContent}>
         <div className={styles.logo}>
           <Image src={logo_image} alt="logo" height={30} width={130} />
@@ -239,7 +238,9 @@ const LoginUser = () => {
           <p className={styles.slogan}>Access back to your account</p>
           <div className={styles.buttonContainer}>
             <button
-              className={`${styles.button}py-2 px-6  md:rounded-l-lg  xs:rounded-l-xl w-36 mt-3 ${
+              className={`${
+                styles.button
+              }py-2 px-6  md:rounded-l-lg  xs:rounded-l-xl w-36 mt-3 ${
                 selectedMethod === "email"
                   ? "bg-primary text-white"
                   : "bg-secondary text-black"
@@ -249,7 +250,9 @@ const LoginUser = () => {
               Email
             </button>
             <button
-              className={`${styles.button}-ml-3 py-2 sm:rounded-r-lg md:rounded-r-lg  px-6  w-36 mt-3 ${
+              className={`${
+                styles.button
+              }-ml-3 py-2 sm:rounded-r-lg md:rounded-r-lg  px-6  w-36 mt-3 ${
                 selectedMethod === "phone"
                   ? "bg-primary text-white"
                   : "bg-secondary text-black"
@@ -286,15 +289,17 @@ const LoginUser = () => {
             >
               {loading ? "Loading..." : "Login"}
             </button>
-            <p className="mt-3">
-              Don't have an account?{" "}
-              <Link
-                href="/register"
-                className="text-button underline cursor-pointer"
-              >
-                Register
-              </Link>
-            </p>
+            <div>
+              <p className="mt-3">
+                Don't have an account?{" "}
+                <Link
+                  href="/register"
+                  className="text-button underline cursor-pointer"
+                >
+                  Register
+                </Link>
+              </p>
+            </div>
           </form>
         </div>
         {otpSuccess && (
@@ -303,7 +308,9 @@ const LoginUser = () => {
         {error && <p className="text-red-500 mt-2">{error}</p>}
         <div></div>
         <div className={styles.footerImage}>
-          <Image src={footer_image} alt="footer-image" />
+          <Image src={footer_image} alt="right-side-image"
+          layout="fill"
+          objectFit="cover" />
         </div>
       </div>
       <div className={styles.rightContainer}>

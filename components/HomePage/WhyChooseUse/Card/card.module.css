@@ -1,6 +1,6 @@
 .card{
     width: 28%;
-    height: fit-content;
+    height: 53vh;
     flex-shrink: 0;
     background-color: #FFF;
     border: 3px solid #003E71;
@@ -16,4 +16,34 @@
     border-radius: 50%;
     margin-top: 12%;
     position: relative;
+}
+
+/* Small screens */
+@media screen and (max-width: 767px) {
+    .card{
+        width: 85%;
+        height: 50vh;
+        margin: 0 5%;
+    }
+    .imageDiv{
+        width: 65px;
+        height: 65px;
+        margin-top: 12%;
+        position: relative;
+    }
+}
+  
+/* Medium screens*/
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .card{
+        width: 33%;
+        height: 50vh;
+        margin: 0px 10px;
+    }
+    .imageDiv{
+        width: 65px;
+        height: 65px;
+        margin-top: 12%;
+        position: relative;
+    }
 }
