@@ -239,7 +239,7 @@ const LoginUser = () => {
           <p className={styles.slogan}>Access back to your account</p>
           <div className={styles.buttonContainer}>
             <button
-              className={`${styles.button}py-2 px-6 rounded-xl w-36 mt-3 ${
+              className={`${styles.button}py-2 px-6  md:rounded-l-lg  xs:rounded-l-xl w-36 mt-3 ${
                 selectedMethod === "email"
                   ? "bg-primary text-white"
                   : "bg-secondary text-black"
@@ -249,7 +249,7 @@ const LoginUser = () => {
               Email
             </button>
             <button
-              className={`${styles.button}-ml-3 py-2  px-6 rounded-xl w-36 mt-3 ${
+              className={`${styles.button}-ml-3 py-2 sm:rounded-r-lg md:rounded-r-lg  px-6  w-36 mt-3 ${
                 selectedMethod === "phone"
                   ? "bg-primary text-white"
                   : "bg-secondary text-black"

@@ -1,0 +1,35 @@
+
+.cardContainer{
+    width: 300px;
+    
+}
+
+.mainHeading {
+  color: #000;
+  font-family: Poppins;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 143%; /* 34.32px */
+  letter-spacing: -0.24px;
+}
+
+/* Media query for large screens */
+@media screen and (min-width: 768px) {
+  /* Cards will display adjacent to each other on screens wider than 768px */
+  .cardContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+
+/* Reset styles for mobile screens */
+@media screen and (max-width: 767px) {
+ .cardContainer{
+    width:fit-content;
+    align-items: center;
+    justify-content: center;
+ }
+
+}

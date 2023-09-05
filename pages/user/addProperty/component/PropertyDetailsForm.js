@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { apiGooglePlace } from "@/config.js";
 import GooglePlaceDropdown from "../../../register/registerAs/components/GooglePlaceDropdown";
-
+import styles from "./PropertyDetails.module.css"; // Import the CSS module
 const PropertyDetailsForm = ({ data, onChange }) => {
   //state
 
@@ -16,11 +16,12 @@ const PropertyDetailsForm = ({ data, onChange }) => {
   const [buildingLocation, setBuildingLocation] = useState("");
   const [buildingLongitude, setBuildingLongitude] = useState("");
   const [buildingLatitude, setBuildingLatitude] = useState("");
+
   const renderButtons = (options, selectedValue, onChangeHandler) => {
     return options.map((option) => (
       <button
         key={option.value}
-        className={`px-4 py-2 h-9 w-30 rounded-full ${
+        className={`px-4 mt-2 py-2 h-9 w-30 rounded-full ${
           selectedValue === option.value
             ? "bg-primary text-white"
             : "bg-white text-gray-600"
@@ -77,122 +78,82 @@ const PropertyDetailsForm = ({ data, onChange }) => {
   };
 
   return (
-    <div className="p-8 w-full">
-      {/* <h2 className="text-2xl font-semibold mb-4 border-b-2 border-solid border-primary pb-2 inline-block">
-        Provide details about your Property
-      </h2> */}
-
-      <div className="mb-4">
-        <label className="block font-semibold mb-2">Property Listing</label>
-        <div className="flex space-x-4">
+    <div className={styles.property_form}>
+      <div>
+        <label className={styles.property_label}>Property Listing</label>
+        <div className={`flex flex-wrap ${styles.property_button}`}>
           {renderButtons(
             propertyListingOptions,
-            data.propertyListing, // Get the value from data
-            (value) => onChange("propertyListing", value) // Call onChange with property name and value
+            data.propertyListing,
+            (value) => onChange("propertyListing", value)
           )}
         </div>
       </div>
-      <div className="mb-4">
-        <label className="block font-semibold mb-2">Property Category</label>
-        <div className="flex space-x-4">
+      <div className="mt-4">
+        <label className={styles.property_label}>Property Category</label>
+        <div className={`flex flex-wrap ${styles.property_button}`}>
           {renderButtons(
             propertyCategoryOptions,
-            data.propertyCategory, // Get the value from data
-            (value) => onChange("propertyCatagory", value) // Call onChange with property name and value
+            data.propertyCategory,
+            (value) => onChange("propertyCategory", value)
           )}
         </div>
       </div>
 
-      <div className="mb-6">
-        <label className="block font-semibold mb-2">Property Type</label>
-        <div className="flex space-x-4 h-14">
-          {renderButtons(
-            propertyTypeOptions,
-            data.propertyType, // Get the value from data
-            (value) => onChange("propertyType", value) // Call onChange with property name and value
+      <div className="sm:grid grid-col-2">
+        <label className={styles.property_label}>Property Type</label>
+        <div className={`flex flex-wrap ${styles.property_button}`}>
+          {renderButtons(propertyTypeOptions, data.propertyType, (value) =>
+            onChange("propertyType", value)
           )}
         </div>
       </div>
-
-      <div className="flex mt-4">
-        <div className="flex-1 pr-4">
-          {/* City */}
-          {/* <div className="mb-4">
-            <label className="block font-semibold mb-2">City</label>
-            <input
-              type="text"
-              name="city"
-              className="w-full border rounded-md px-4 py-2 focus:outline-none focus:border-primary"
-              value={data.city}
-              onChange={(e) => onChange("city", e.target.value)}
-            />
-          </div> */}
-
-          <div className="mb-4">
-            <label className="block font-semibold mb-2">City</label>
-            <GooglePlaceDropdown
-              updateParentLocation={updateCityLocation}
-              type="text"
-              name="city"
-              className="w-full border rounded-md px-4 py-2 focus:outline-none focus:border-primary"
-              value={data.city}
-              onChange={(e) => onChange("city", e.target.value)}
-            />
-          </div>
-
-          {/* Price */}
-          <div className="mb-4">
-            <label className="block font-semibold mb-2">Price</label>
-            <input
-              type="number"
-              name="price"
-              className="w-full border rounded-md px-4 py-2 focus:outline-none focus:border-primary"
-              value={data.price}
-              onChange={(e) => onChange("price", e.target.value)}
-            />
-          </div>
+      <div className="grid sm:grid-cols-1 md:grid-cols-2 sm:gap-2 md:gap-5 ">
+        <div className="mt-4">
+          <label className={styles.property_label}>City</label>
+          <GooglePlaceDropdown
+            updateParentLocation={updateCityLocation}
+            type="text"
+            name="city"
+            className="w-full border rounded-md px-4 py-2 focus:outline-none focus:border-primary"
+            value={data.city}
+            onSelect={(e) => onChange("city", e.target.value)}
+            placeholder="Select City"
+          />
         </div>
-
-        <div className="flex-1 pl-4">
-          {/* Project/Building Name */}
-          <div className="mb-4">
-            <label className="block font-semibold mb-2">
-              Project/Building Name
-            </label>
-
-            <GooglePlaceDropdown
-              updateParentLocation={updateBuildingLocation}
-              type="text"
-              name="projectName" // Make sure this matches the property name
-              className="w-full border rounded-md px-4 py-2 focus:outline-none focus:border-primary"
-              value={data.projectName} // Get the value from data
-              onChange={(e) => onChange("projectName", e.target.value)} // Call onChange with property name and value
-              placeholder="Enter Project/Building Name"
-            />
-            {/* <input
-              type="text"
-              name="projectName" // Make sure this matches the property name
-              className="w-full border rounded-md px-4 py-2 focus:outline-none focus:border-primary"
-              value={data.projectName} // Get the value from data
-              onChange={(e) => onChange("projectName", e.target.value)} // Call onChange with property name and value
-              placeholder="Enter Project/Building Name"
-            /> */}
-          </div>
-
-          {/* Locality */}
-          <div className="mb-4">
-            <label className="block font-semibold mb-2">Locality</label>
-
-            <GooglePlaceDropdown
-              updateParentLocation={updateLocalityLocation}
-              type="text"
-              name="locality" //Make sure this matches the property name
-              className="w-full border rounded-md px-4 py-2 focus:outline-none focus:border-primary"
-              value={data.locality} // Get the value from data
-              onChange={(e) => onChange("locality", e.target.value)} // Call onChange with property name and value
-              placeholder="Enter Locality"
-            />
-          </div>
+        <div className="mt-4">
+          <label className={styles.property_label}>Price</label>
+          <input
+            type="number"
+            name="price"
+            className="w-full border rounded-md px-4 py-2 focus:outline-none focus:border-primary"
+            value={data.price}
+            onChange={(e) => onChange("price", e.target.value)}
+          />
+        </div>
+        <div className="mt-4">
+          <label className={styles.property_label}>Project/Building Name</label>
+          <GooglePlaceDropdown
+            updateParentLocation={updateBuildingLocation}
+            type="text"
+            name="projectName"
+            className="w-full border rounded-md px-4 py-2 focus:outline-none focus:border-primary"
+            value={data.projectName}
+            onChange={(e) => onChange("projectName", buildingLocation)}
+            placeholder="Enter Project/Building Name"
+          />
+        </div>
+        <div className="mt-4">
+          <label className={styles.property_label}>Locality</label>
+          <GooglePlaceDropdown
+            updateParentLocation={updateLocalityLocation}
+            type="text"
+            name="locality"
+            className="w-full border rounded-md px-4 py-2 focus:outline-none focus:border-primary"
+            value={data.locality}
+            onChange={(e) => onChange("locality", e.target.value)}
+            placeholder="Enter Locality"
+          />
         </div>
       </div>
     </div>
