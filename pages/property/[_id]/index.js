@@ -139,7 +139,7 @@ const SinglePropertyCard = () => {
                             <Mscore_Mverifid Data={property} />
                         </div>
                         <div className='lg:w-8/12 md:w-12/12 sm:12/12 lg:mt-0 lg:mr-0 md:ml-0 md:mr-0 ml-8 md:mt-2 mt-5'>
-                            <HighlightAmenities property={property} />
+                            <HighlightAmenities property={property} /> 
                         </div>
                     </div>
                 </div>
