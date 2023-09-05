@@ -6,6 +6,7 @@ import MainAccordion from "./MainAccordion";
 import MinimumDistanceSlider from "./SliderComponent";
 import shield from '../../../assets/moreIcon/Shield.svg'
 import Image from "next/image";
+import SortByDropdown from "./SortByDropdown";
 const FilterSection = () => {
   const [isFilterOpen, setIsFilterOpen] = useState(false);
   const itemPerPage = 4;
@@ -59,6 +60,10 @@ const FilterSection = () => {
           </div>
         </div>
         <div className="w-5/6 ml-8 h-fit">
+          <div className="flex justify-between ml-10 mt-5 ">
+              <h1 className="font-semibold text-lg"> 456 Properties </h1>
+              <SortByDropdown/>
+          </div>
           {rows.map((row, index) => (
             <SearchResultCard key={index} property={row} />
           ))}

@@ -1,21 +1,20 @@
 import Image from "next/image"
 import shield from '../../../assets/moreIcon/Shield.svg'
-import mores from '../../../assets/moreIcon/mores.png'
+import mscore from '../../../assets/moreIcon/m-score.png'
 const RightSection=({details})=>{
     return(
         <div>
         <div className="flex justify-between mt-2 ">
-          <div className="flex gap-2 p-1">
+          <div className="flex gap-2 p-1 items-center">
               <Image src={shield} alt='icon'/>
             <h1 className="text-searchPageText font-semibold">Resendential</h1>
           </div>
-          <div className="flex items-center align-middle text-center gap-4 text-searchPageText p-1">
-            <div className="flex gap-2 items-center text-center align-middle">
-            <h1 className="font-semibold">M-score</h1>
-            <div className="bg-Background rounded-2xl px-4 py-1 items-center">
+          <div className="flex items-center align-middle text-center gap-4 text-button p-1">
+            <div className="flex bg-Mscorebg rounded-2xl px-4 py-1 items-center align-middle gap-2">
+              <Image src={mscore} alt='icon' />
               <h1 className="font-semibold">100</h1>
             </div>
-            </div>
+            
             <div className="flex gap-4 pr-6">
               <div className="bg-gray-200 rounded-full p-2">
               <svg

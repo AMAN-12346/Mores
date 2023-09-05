@@ -271,9 +271,6 @@ const SinglePropertyCard = () => {
             <div className='mt-11'>
                 <RecommenedCard data={property} />
             </div>
-            <div>
-                <Footer />
-            </div>
         </>
     );
 };
