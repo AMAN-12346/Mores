@@ -2,8 +2,11 @@
     height: 72px;
     background-color: var(--primary-bg);
     display: flex;
-    justify-content: start;
     align-items: center;
+}
+
+.outerDiv{
+    width: -webkit-fill-available;
 }
 
 .navLogo{
