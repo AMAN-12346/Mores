@@ -1,5 +1,5 @@
 import React from 'react'
-import FeaturesSectionCard from '@/components/HomePage/FeaturedPropertiesSection/FeaturesSectionCard';
+import FeaturesSectionCard from '@/components/HomePage/FeaturedPropertiesSection/FeaturedSection';
 export default function RecommenedCard() {
 
   const similarPropertiesData = [
