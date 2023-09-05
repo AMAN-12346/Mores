@@ -14,7 +14,7 @@ const OurServices = () => {
 
     //scroll function
     const scroll = (scrollOffset) => {
-        console.log("-->",scrollContainerRef.current)
+        // console.log("-->",scrollContainerRef.current)
         scrollContainerRef.current.scrollLeft += scrollOffset;
     };
 
@@ -39,7 +39,7 @@ const OurServices = () => {
                     <Card name={service} imageSrc={services[service]} />
                 )}
             </div>
-            <div>
+            <div className='w-[100vw]'>
                 <button className={Styles.exploreAll}>Explore All</button>
             </div>
         </div>

@@ -37,7 +37,7 @@ const Sidebar = () => {
         ))}
       </div>
 
-      <div className="bg-login_background p-10 w-full -mt-10">
+      <div className="bg-login_background px-10 w-full">
         {/* Conditionally rendering the AddProperty component */}
         {showAddProperty && <AddProperty />}
       </div>

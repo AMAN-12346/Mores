@@ -32,7 +32,7 @@ const FeelFreeToContact = () => {
                         <p className={Styles.fieldName}>First Name</p>
                         <InputValue className={Styles.inputField}/>
                     </div>
-                    <div className='my-5 md:mt-0'>
+                    <div className='my-5 md:mt-0 md:mx-5'>
                         <p className={Styles.fieldName}>Last Name</p>
                         <InputValue className={Styles.inputField}/>
                     </div>
@@ -40,7 +40,7 @@ const FeelFreeToContact = () => {
                         <p className={Styles.fieldName}>Email Address</p>
                         <InputValue className={Styles.inputField}/>
                     </div>
-                    <div className='mt-5 md:mt-0 md:my-6'>
+                    <div className='mt-5 md:mt-0 md:my-6 md:mx-5'>
                         <p className={Styles.fieldName}>Phone Number</p>
                         <PhoneNumberInput  value={phoneNumber}
                             onChange={handlePhoneNumberChange}
@@ -50,7 +50,7 @@ const FeelFreeToContact = () => {
                         />                                        
                     </div>
                 </div>
-                <div className='ml-[7.5vw] max-sm:mt-[15px] md:ml-[10vw]'>
+                <div className='ml-[7.5vw] max-sm:mt-[15px] md:ml-[9vw]'>
                     <p className={Styles.fieldName}>Message</p>
                     <textarea rows={6} cols={55} className={Styles.textArea} />
                 </div>

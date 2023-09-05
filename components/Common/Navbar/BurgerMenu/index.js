@@ -34,7 +34,7 @@ const BurgerMenu = () => {
         onClose={handleClose}
       >
         
-        <MenuItem onClick={handleClose} className='px-20px w-[200px]' >City</MenuItem>
+        <MenuItem onClick={handleClose} className='w-[200px]' >City</MenuItem>
         <MenuItem onClick={handleClose}>Sell</MenuItem>
         <MenuItem onClick={handleClose}>Rent</MenuItem>
         <MenuItem onClick={handleClose}>Projects</MenuItem>
