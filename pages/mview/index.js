@@ -9,7 +9,8 @@ import RightSectionMview from '@/components/SearchResultPage/FilterSection/Right
 const hello = () => {
   const arr = ['https://images.pexels.com/photos/2980955/pexels-photo-2980955.jpeg?auto=compress&cs=tinysrgb&w=600','https://images.pexels.com/photos/2980955/pexels-photo-2980955.jpeg?auto=compress&cs=tinysrgb&w=600','https://www.pexels.com/photo/brown-and-white-concrete-2-storey-house-1694360/']
   return (
-    <div className='flex flex-col w-full bg-white rounded-xl'  >
+    <div className='flex-row'>
+    <div className='flex flex-col w-full m-5 bg-white rounded-xl'  >
         <div className='p-3'>
         <LeftSectionCarouselMview images = {arr}/>
         </div>
@@ -17,6 +18,15 @@ const hello = () => {
         <RightSectionMview details={PropertyListingData}/>
         </div>        
     </div>
+    <div className='flex flex-col w-full m-5 bg-white rounded-xl'  >
+    <div className='p-3'>
+    <LeftSectionCarouselMview images = {arr}/>
+    </div>
+    <div className=' px-5'>
+    <RightSectionMview details={PropertyListingData}/>
+    </div>        
+</div>
+</div>
   )
 }
 

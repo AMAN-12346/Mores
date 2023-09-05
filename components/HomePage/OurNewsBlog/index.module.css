@@ -1,5 +1,4 @@
 .heading{
-    font-size: 33px;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
@@ -21,4 +20,35 @@
     font-style: normal;
     font-weight: 500;
     line-height: 20px; /* 111.111% */
+}
+.cardsDiv{
+    display: flex;
+    justify-content: left;
+    margin: 0 10%;
+}
+
+/* media queries */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .button{
+        width: 130px;
+        height: 45px;
+    }
+    .cardsDiv{
+        overflow-x: scroll;
+    }
+    .cardsDiv::-webkit-scrollbar{
+        display: none;
+    }
+}
+@media screen and (max-width: 768px) {
+    .button{
+        width: 130px;
+        height: 45px;
+    }
+    .cardsDiv{
+        overflow-x: scroll;
+    }
+    .cardsDiv::-webkit-scrollbar{
+        display: none;
+    }
 }

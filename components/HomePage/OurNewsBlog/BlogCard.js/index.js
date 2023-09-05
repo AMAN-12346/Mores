@@ -1,12 +1,12 @@
 "use client";
-import Image from "next/image";
+import Image from 'next/image';
 import Styles from "./index.module.css";
 
 const BlogCard = ({description}) => {
     return ( 
         <div className={Styles.parentDiv}>
-            <div className={Styles.imageDiv}>
-               <img src={description.imageFile} alt="blog-image"/>
+            <div className={Styles.imageDiv}>              
+               <img src={description.imageFile} width={60} height={60} className={Styles.imageBlog} alt="blog-image"/>
             </div>
             <div className={Styles.childDiv}>
                 <div className={Styles.title}>

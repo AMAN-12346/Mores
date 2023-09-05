@@ -2,9 +2,10 @@
     width: 32%;
     height: 26rem;
     position: relative;
+    margin: 0px 20px;
 }
 
-.imageDiv img{
+.imageBlog{
     width: 100%;
     height: 22rem;
     border-radius: 8px;
@@ -12,7 +13,7 @@
 
 .childDiv{
     width: 92%;
-    height: 50%;
+    height: 52%;
     background-color: white;
     position: absolute;
     bottom: 0px;
@@ -30,7 +31,7 @@
     font-size: 16px;
     font-weight: 600;
     margin: auto;
-    margin-top: 20px;
+    margin-top: 15px;
 }
 
 .storyContainer {
@@ -40,18 +41,20 @@
 }
 .story{
     width: 85%;
-    /* height: 30%;
-    max-height: 30%; */
     display: -webkit-box;
-    -webkit-line-clamp: 2; /* Number of lines to display */
+    -webkit-line-clamp: 3; /* Number of lines to display */
     -webkit-box-orient: vertical;
     color: #818181;
     font-size: 12px;
     font-weight: 400;
     line-height: 22px; /* 162.5% */
     margin: auto;
-    overflow: hidden;
+    margin-bottom: 10px;
+    overflow: scroll;
     text-overflow: ellipsis;
+}
+.story::-webkit-scrollbar{
+    display: none;
 }
 
 .button{
@@ -66,4 +69,76 @@
     position: absolute;
     left: 6%;
     bottom: 8%;
+}
+
+
+/* All media Queries */
+/* tablet view */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .parentDiv{
+        width: 400px;
+        margin-right: 20px;
+    }
+    .imageDiv{
+        width: 35vw;
+        height: 26rem;
+    }
+    .title{
+        font-size: 14px;
+    }    
+}
+
+/* mobile view */
+@media screen and (max-width: 550px) {
+    .title{
+        font-size: 14px;
+        max-height: fit-content;
+    }
+    .parentDiv{
+        width: 350px;
+        height: 24rem;
+        margin: 0 25px;
+        margin-left: 9%;
+    }
+    .storyContainer{
+        margin-top: -10px;
+        margin-bottom: 5px;
+    }
+    .imageDiv{
+        width: 65vw;
+        height: 20vh;
+    }
+    .button{
+        display: inline-flex;
+        padding: 2% 7%;
+        align-items: flex-start;
+        border-radius: 7px;
+        background: #931602;
+        color: #FFF;
+        font-size: 12px;
+        line-height: 32px; /* 200% */
+        position: absolute;
+        left: 6%;
+        bottom: 8%;
+    }
+}
+@media screen and (min-width: 551px) and (max-width: 768px) {
+    .title{
+        font-size: 15px;
+        max-height: fit-content;
+    }
+    .parentDiv{
+        width: 450px;
+        height: 24rem;
+        margin: 0 25px;
+        margin-left: 9%;
+    }
+    .storyContainer{
+        margin-top: -15px;
+        margin-bottom: 10px;
+    }
+    .imageDiv{
+        width: 65vw;
+        height: 20vh;
+    }
 }

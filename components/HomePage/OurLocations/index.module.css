@@ -1,7 +1,7 @@
 .servicesComponent{
     width: 95%;
     margin-top: 90px;
-    padding-bottom: 70px;
+    padding-bottom: 20px;
     margin-right: 0px;
 }
 
@@ -16,7 +16,7 @@
 }
 
 .underline{
-    width: 13%;
+    width: 176px;
     height: 6px;
     flex-shrink: 0;
     border-radius: 15px;
@@ -24,7 +24,6 @@
 }
 
 .shortPara{
-    width: 45%;
     color: rgba(0, 0, 0, 0.46);
     font-size: 15px;
     font-style: normal;
@@ -44,4 +43,15 @@
 }
   
 
+@media screen and (max-width: 768px) {
+    .servicesComponent{
+        margin-top: 40px;
+    }
+    .wrapper{
+        margin-top: 10px;
+    }
+    .heading{
+        font-size: 28px;
+    }
+}
   

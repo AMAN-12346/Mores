@@ -54,7 +54,7 @@
 
 .sideDiv{
     height: 80%;
-    width: 80%;
+    width: 45%;
     text-align: center;
 }
 
@@ -64,4 +64,63 @@
     margin-top: 50px;
     color: #095c69;
     font-weight: 600;
+}
+
+
+/* media queries */
+
+/* (phones) */
+@media only screen and (max-width: 767px){
+    .calculatorDiv{
+        width: 70%;
+        margin-left: auto;
+        border-radius: 4px;
+        border: 1px solid #018191; 
+    }
+    .formInput{
+        border: 1px solid #018191;
+        width: 85%;
+        margin: 12px;
+        border-radius: 3px;
+        padding: 4px 6px;
+        font-size: 13px;
+        color: rgb(13, 65, 110);
+    }
+    .emiDiv{
+        margin-left: 15%;   
+    }
+    .sideDiv{
+        height: 80%;
+        width: 300px;
+        margin: auto;
+        margin-bottom: 8%;
+    }
+    .Md_quotes{
+        font-size: 18px;
+        width: 300px;
+        margin: 6% 0;
+    }
+}
+  
+/* (tablets) */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+    .formInput{
+        width: 70%;
+        padding: 4px 6px;
+    }
+    .sideDiv{
+        height: 80%;
+        width: 40%;
+        text-align: center;
+        margin-left: 5%;
+    }
+    .Md_quotes{
+        font-size: 24px;
+        width: 300px;
+        margin: auto;
+        margin-top: 15%;
+    }
+    .emiDiv{
+        font-size: 13px;        
+    }
 }

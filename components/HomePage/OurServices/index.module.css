@@ -1,14 +1,13 @@
 .servicesComponent{
     width: 95%;
-    margin-top: 40px;
-    padding-bottom: 70px;
+    margin-top: 90px;
+    padding-bottom: 0px;
     margin-right: 0px;
 }
 
 .heading{
-    color: var(--black-black-70, #283646);
+    color: #283646;
     font-variant-numeric: lining-nums proportional-nums;
-    /* font-family: Poppins; */
     font-size: 35px;
     font-style: normal;
     font-weight: 600;
@@ -17,7 +16,7 @@
 }
 
 .underline{
-    width: 13%;
+    width: 176px;
     height: 6px;
     flex-shrink: 0;
     border-radius: 15px;
@@ -25,9 +24,7 @@
 }
 
 .shortPara{
-    width: 45%;
     color: rgba(0, 0, 0, 0.46);
-    font-family: Poppins;
     font-size: 15px;
     font-style: normal;
     font-weight: 400;
@@ -44,6 +41,44 @@
     margin-top: 50px;
     margin-left: 6%;
 }
-  
 
+.exploreAll{
+    display: flex;
+    width: 170px;
+    height: 50px;
+    padding: 17px 22px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    border-radius: 11px;
+    background: #89A190;
+    color: #F9FAFC;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px; /* 111.111% */
+    margin: auto;
+    margin-top: 50px;
+}
+
+@media screen and (max-width: 768px) {
+    .servicesComponent{
+        margin-top: 40px;
+    }
+    .exploreAll{       
+        width: 150px;
+        height: 50px;
+        padding: 8px 12px;
+        border-radius: 11px;
+        margin-top: 20px;
+    }
+    .wrapper{
+        margin-top: 10px;
+    }
+    .heading{
+        font-size: 28px;
+    }
+}
   
