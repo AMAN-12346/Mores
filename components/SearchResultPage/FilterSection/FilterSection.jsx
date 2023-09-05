@@ -9,7 +9,7 @@ import Image from "next/image";
 import SortByDropdown from "./SortByDropdown";
 const FilterSection = () => {
   const [isFilterOpen, setIsFilterOpen] = useState(false);
-  const itemPerPage = 4;
+  const itemPerPage = 5;
   const [currentPage, setCurrentPage] = useState(0);
   const rows = properties.slice(
     currentPage * itemPerPage,
@@ -60,7 +60,7 @@ const FilterSection = () => {
           </div>
         </div>
         <div className="w-5/6 ml-8 h-fit">
-          <div className="flex justify-between ml-10 mt-5 ">
+          <div className="flex justify-between ml-10 mt-5 mr-5">
               <h1 className="font-semibold text-lg"> 456 Properties </h1>
               <SortByDropdown/>
           </div>
