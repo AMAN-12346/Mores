@@ -71,7 +71,7 @@ const FilterSection = () => {
             </div>
           </div>
         </div>
-        <div className="w-2/3 ml-8">
+        <div className="w-2/3 ml-8 h-fit">
           {rows.map((row, index) => (
             <SearchResultCard key={index} property={row} />
           ))}

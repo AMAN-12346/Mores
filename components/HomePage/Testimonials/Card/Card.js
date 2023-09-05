@@ -3,7 +3,7 @@ import Styles from "./Card.module.css";
 
 const Card = ({description}) => {
     return ( 
-        <div className={Styles.card}>
+        <div className={`w-[75%] mx-5 md:w-[45%] md:mx-5 lg:w-[30%] sm:h-[55vh] md:[60vh] lg:[60vh] ${Styles.card}`}>
             <div className={Styles.imageNameDiv}>
                 <Image src={description.imageFile} 
                     alt="icon" 
@@ -13,7 +13,7 @@ const Card = ({description}) => {
                 <p className={Styles.name}>{description.name}</p>
             </div>
             <div className={Styles.storyContainer}>
-                <p className={`mb-10 text-sm w-[80%] m-auto mt-5 ${Styles.story}`}>
+                <p className={`mb-16 text-xs md:text-sm w-[80%] h-[24vh] m-auto mt-5 ${Styles.story}`}>
                     {description.story}
                 </p>
                 <div className={Styles.cityTag}>

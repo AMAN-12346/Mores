@@ -1,0 +1,68 @@
+.dropDown{
+    position: relative;
+    display: inline-block;
+}
+
+.dropdownMenu{
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    min-width: fit-content;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 0px 0px 8px 8px;
+    padding: 10px 20px 30px;
+}
+
+.dropdownMenu a{
+    padding: 6px 0px;
+    font-size: 13px;
+    font-weight: 400;
+    text-decoration: none;
+    font-family: "Inter";
+    display: block;
+    color: rgba(0, 0, 0, 0.46);
+}
+
+/* rotate the downside arrow */
+.dropDown:hover .image{
+    transform: rotate(180deg);
+}
+
+/* Change color of dropdown menu items on hover */
+.dropdownMenu a:hover {
+    color: #018191;
+}
+
+/* Show the dropdown menu when hovering over the dropdown button */
+.dropDown:hover .dropdownMenu {
+    display: block;
+}
+
+
+
+/* ------------------------------- Listing ---------------------------------------- */
+
+.headTag{
+    height: 30px;
+    flex-shrink: 0;
+    color: var(--black-black-70, #283646);
+    font-variant-numeric: lining-nums proportional-nums;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 25px; /* 426.56% */
+}
+.underline{
+    width: 85px;
+    height: 3px;
+    flex-shrink: 0;
+    margin-bottom: 10px;
+    border-radius: 11px;
+    background: #018191;
+}
+
+.innerDiv{
+   width: 250px;
+}

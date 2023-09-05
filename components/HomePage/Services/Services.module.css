@@ -7,7 +7,6 @@
 .heading{
     color: var(--black-black-70, #283646);
     font-variant-numeric: lining-nums proportional-nums;
-    /* font-family: Poppins; */
     font-size: 40px;
     font-style: normal;
     font-weight: 600;
@@ -29,11 +28,42 @@
     margin: auto;
     width: 96vw;
     flex-wrap: wrap;
-    /* display: grid;
-    grid-template-columns: repeat(3, 1fr); */
-    /* grid-auto-rows: 320px; */
     gap: 24px 2%;
     margin-top: 50px;
+}
+
+/* Small screens */
+@media screen and (max-width: 767px) {
+    .heading{
+        font-size: 22px;
+    }
+    .underline{
+        width: 180px;        
+    }   
+    .wrapper {
+        flex-wrap: nowrap;
+        overflow-x: scroll;
+    }
+    .wrapper::-webkit-scrollbar{
+        display: none;
+    }
+}
+  
+/* Medium screens */
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .heading{
+        font-size: 26px;
+    }
+    .underline{
+        width: 280px;        
+    }   
+    .wrapper {
+        flex-wrap: nowrap;
+        overflow-x: scroll;
+    } 
+    .wrapper::-webkit-scrollbar{
+        display: none;
+    }
 }
   
 

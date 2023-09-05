@@ -11,28 +11,25 @@
 .heading{
     color: #000;
     font-variant-numeric: lining-nums proportional-nums;
-    font-family: "Poppins";
     font-size: 19px;
     font-style: normal;
     font-weight: 500;
-    line-height: 48px; /* 252.632% */
     margin-left: 30px;
-    margin-top: 10px;
+    margin-top: 10%;
 }
 .unorderedList{
     width: 90%;
-    height: 93px;
+    height: 97px;
     margin-left: 40px;
     margin-top: 10px;
 }
 .listItem{
     color: var(--text-body, #818181);
-    font-family: Poppins;
-    font-size: 15px;
+    font-size: 14px;
     font-style: normal;
     font-weight: 400;
-    line-height: 30px; /* 200% */
     list-style-type: disc;
+    margin: 5px 0px;
 }
 
 .iconDiv{
@@ -54,4 +51,53 @@
 
 .serviceIcon{
    margin: auto !important;
+}
+
+/* Small screens */
+@media screen and (max-width: 767px) {
+    .card{
+        width: 78%;
+        height: 250px;
+        margin: 0px 0px 0px 20px;
+    }
+    .heading{
+        font-size: 15px;
+        font-weight: 600;
+        margin-left: 30px;
+        margin-top: 10%;
+    }
+    .unorderedList{
+        height: 67px;
+    }
+    .listItem{
+        font-size: 12px;
+    }
+}
+/* screens */
+@media screen and (min-width: 568px) and (max-width: 767px) {
+    .card{
+        width: 48%;
+        height: 280px;
+        margin: 0px 0px 0px 20px;
+    }
+    .heading{
+        font-size: 19px;
+        font-weight: 600;
+        margin-left: 30px;
+        margin-top: 5%;
+    }
+    .unorderedList{
+        height: 77px;
+    }
+    .listItem{
+        font-size: 15px;
+    }
+}
+  
+/* Medium screens */
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .card{
+        width: 42%;
+        margin: 0px 5px;
+    }
 }

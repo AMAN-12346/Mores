@@ -3,7 +3,7 @@ const RightSection=({details})=>{
     return(
         <div>
         <div className="flex justify-between mt-2 ">
-          <div className="flex gap-2 p-2">
+          <div className="flex gap-2 p-1">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="26"
@@ -60,11 +60,11 @@ const RightSection=({details})=>{
             </div>
           </div>
         </div>
-        <div className="flex font-semibold text-2xl justify-between mt-4 pr-16">
+        <div className="flex font-semibold text-2xl justify-between mt-1 pr-14">
           <h1>{details.propertyName}</h1>
           <h1> ₹{details.price}</h1>
         </div>
-        <div className="flex gap-24 mt-4 text-SearchResultText text-lg items-center">
+        <div className="flex gap-14 mt-4 text-SearchResultText text-lg items-center">
           <div className="flex items-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -193,10 +193,10 @@ const RightSection=({details})=>{
         </div>
         <div className="flex gap-56 mt-4 ">
           <div className="flex gap-2">
-            <Image src={'https://s3-alpha-sig.figma.com/img/9ef8/cb32/9b949267cc8214b6727067c4a13af4b4?Expires=1693785600&Signature=VZulMf5XWj~jiKNnOhGXLk~PILEffDT6sG8yhRn60oA10-76rml16OO8yaUHswNVNmX45jm1suE2KJRThE4NmSU5USefrpzins~YkGgVTHA3HX0LZWBfhQQF6B2ZW8IBDwjh5kvX-9xL1sRYtNiE3oeMMIxnCiNRUDtmeGX8jkfntBQhRgxCxFfH3wquHlF7Z-EDa-RHO1w0MHIBdOcx8t~fabQggqHG8CirxuQWSdLe~Ev4KCbGEylJFgXEksegvsqeO3Fa8O3Kn2zk06gOaiLXVE1dfiJt04seMcAKKv4ua3dG6ytLm8VdiWwQgIX6qgYELSOzC-Z~PeatdiZfPQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4'}
+            <Image src={'https://s3-alpha-sig.figma.com/img/9ef8/cb32/9b949267cc8214b6727067c4a13af4b4?Expires=1694995200&Signature=C2R9xsmtmBp3lkABrH-d7wMkad1hoa-qiYtA-DEr1ARlzn8zszgDvNsG2OgkjT24~r-PcUcGvZfv7aZ0729OKvTT-mtrxuNm~Vc~Co6tGEQevMjcIp~Di7ZMiEIQH6cNiB6s1L0Eh35q4tbz4i86Cqlw6uaa-RZPsLfRv04DiwgUMsUx4u2x8metqGFW3abBcccka~Vpf0ie84B-6R4v-dGC0Qq-kx7v8-3Kbkw-z9eEvJUtSvQGvYkjfAuoXzzThkEV6UPr5vYT9IngtMXmJKCzASsd1WGlJrFA5YttFd-NAhp3AG140bIZcyauqkmHRo5ISO86b1i8DaFXncq2Ag__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4'}
             alt="owner Image"
-            height={50}
-            width={50}
+            height={40}
+            width={40}
             className="rounded-full"
             />
             <div>
@@ -204,7 +204,7 @@ const RightSection=({details})=>{
               <p className="text-sm font-extralight">Owner</p>
             </div>
           </div>
-          <div className="flex text-center bg-featuredBackground p-2 px-9 text-white rounded-md">
+          <div className="flex text-center bg-featuredBackground p-1 px-6 text-white rounded-md">
             <button>Contact</button>
           </div>
         </div>

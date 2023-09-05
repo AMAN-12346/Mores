@@ -5,11 +5,22 @@
 }
 
 .underline{
-    width: 174px;
+    width: 20vw;
     height: 5px;
     flex-shrink: 0;
     border-radius: 16px;
     background: #FFF;
     margin: auto;
     margin-top: 10px;
+}
+
+/* Small screens */
+@media screen and (max-width: 767px) {
+    .cardsDiv{
+        overflow-x: scroll;
+        justify-content: left;
+    }
+    .cardsDiv::-webkit-scrollbar{
+        display: none;
+    }
 }
