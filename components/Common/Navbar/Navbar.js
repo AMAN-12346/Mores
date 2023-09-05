@@ -41,7 +41,7 @@ const Navbar = () => {
 
     return ( 
         <div className={Styles.navbar}>
-           <div className={`flex pl-4 md:justify-between lg:justify-normal`}>
+           <div className={`flex pl-4 md:justify-between lg:justify-normal ${Styles.outerDiv}`}>
                 {(windowWidth >1024) ?
                     <div className='w-[64vw] flex items-center'>
                         <div className='w-[150px]'>
@@ -67,7 +67,7 @@ const Navbar = () => {
            
             <div className='md:w-[420px] lg:w-[420px]'>
                 {!auth.userResult ? 
-                    <div className='text-center hover:opacity-95 -mr-40 mt-[7px]'>
+                    <div className='text-center hover:opacity-95 absolute right-9 lg:mt-[7px]'>
                         <Link href='/login'>
                             <button className={Styles.button}>Login Now</button> 
                         </Link>

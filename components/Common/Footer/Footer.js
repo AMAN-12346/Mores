@@ -79,7 +79,7 @@ const Footer = () => {
                 </div> 
                 <div className='w-[200px]'>
                     <span className={`cursor-default block ${Styles.spanHeading}`}>Contact</span> 
-                    <a className="cursor-default block md:w-40 lg:w-80">
+                    <a className="cursor-default block md:w-40 lg:w-[23vw]">
                         CORPORATE OFFICE
                         5th Floor , Unit No. 503 , Tower 4, 
                         Assotech Business Cresterra, Sector 135,
@@ -167,7 +167,7 @@ const Footer = () => {
                     {
                         contacts &&
                         <div className="block"> 
-                            <div className="cursor-default md:w-40 lg:w-80 mt-4 ">
+                            <div className="cursor-default md:w-40 lg:w-[200px] mt-4 ">
                             CORPORATE OFFICE
                             5th Floor , Unit No. 503 , Tower 4, 
                             Assotech Business Cresterra, Sector 135,
