@@ -55,30 +55,6 @@ const Navbar = () => {
                             </div>
                         )}
                         </div> 
-                                    
-                        {/* <div className={`flex justify-evenly mr-4 ml-7`}> 
-                            <div className={Styles.optionName}>
-                                <DropdownButton optionName="City" menuItem={['random', 'data']} />  
-                            </div>
-                            <div className={Styles.optionName}>
-                                <DropdownButton optionName="Sell" menuItem={['random', 'data']} />  
-                            </div>
-                            <div className={Styles.optionName}>
-                                <DropdownButton optionName="Rent" menuItem={['random', 'data']} />  
-                            </div>
-                            <div className={Styles.optionName}>
-                                <DropdownButton optionName="Projects" menuItem={['random', 'data']} />  
-                            </div>
-                            <div className={Styles.optionName}>
-                                <DropdownButton optionName="Agents" menuItem={['random', 'data']} />  
-                            </div>
-                            <div className={Styles.optionName}>
-                                <DropdownButton optionName="services" menuItem={['random', 'data']} />  
-                            </div>
-                            <div className={Styles.optionName}>
-                                <DropdownButton optionName="Resources" menuItem={['random', 'data']} />  
-                            </div>
-                        </div>  */}
                     </div>
                 : 
                 <div className='flex w-[180px] justify-between mt-[10px]'>
@@ -91,7 +67,7 @@ const Navbar = () => {
            
             <div className='md:w-[420px] lg:w-[420px]'>
                 {!auth.userResult ? 
-                    <div className='text-center hover:opacity-95 -mr-16'>
+                    <div className='text-center hover:opacity-95 -mr-40 mt-[7px]'>
                         <Link href='/login'>
                             <button className={Styles.button}>Login Now</button> 
                         </Link>
