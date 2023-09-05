@@ -8,7 +8,6 @@ import Testimonials from "@/components/HomePage/Testimonials";
 import WhyChooseUs from "@/components/HomePage/WhyChooseUse";
 import SearchSection from "@/components/HomePage/SearchSection";
 import { Inter } from "next/font/google";
-// import Footer from "@/components/Common/Footer/Footer";
 import FeaturedProperties from "@/components/HomePage/FeaturedPropertiesSection/FeaturedProperties";
 
 const inter = Inter({ subsets: ["latin"] });
