@@ -23,7 +23,7 @@ const Testimonials = () => {
             {/* conditional rendering of dots for tab view */}
             {(1024 > windowWidth > 768) && 
               <div>
-                <button className={Styles.dot}>fgdehw</button>
+                <button className={Styles.dot}>.</button>
               </div>
             }
         </div>

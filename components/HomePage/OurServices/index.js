@@ -39,7 +39,7 @@ const OurServices = () => {
                     <Card name={service} imageSrc={services[service]} />
                 )}
             </div>
-            <div>
+            <div className='w-[100vw]'>
                 <button className={Styles.exploreAll}>Explore All</button>
             </div>
         </div>

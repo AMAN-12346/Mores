@@ -1,0 +1,87 @@
+/* PropertyDetailsForm.module.css */
+.property_form {
+  padding: 2rem;
+}
+
+.property_label {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.property_button {
+  border-radius: 2rem;
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.property-button-selected {
+  background-color: #3490dc;
+  color: #ffffff;
+  border: 2px solid #3490dc;
+}
+
+.property-button-unselected {
+  background-color: #ffffff;
+  color: #6b7280;
+  border: 2px solid #3490dc;
+}
+
+.input-row {
+  display: flex;
+  flex-direction: row;
+}
+
+/* Media query for tablets and larger screens */
+@media screen and (min-width: 768px) {
+  .input-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .input-row input[type="text"],
+  .input-row input[type="number"] {
+    flex: calc(50% - 0.5rem); /* Two inputs per row with some spacing */
+    margin-right: 1rem; /* Add margin between inputs in a row */
+  }
+
+  /* .mt-4 {
+    margin-top: 1rem;
+  } */
+}
+
+/* Media query for laptops and larger screens */
+
+/* Media query for laptops and larger screens */
+@media screen and (min-width: 1024px) {
+  .input-row {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .input-row input[type="text"],
+  .input-row input[type="number"] {
+    flex: 1; /* One input per row on larger screens */
+    margin-right: 1rem; /* Add margin between inputs in a row */
+  }
+
+  .mt-4 {
+    margin-top: 1rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  /* Display inputs stacked vertically on mobile */
+  .input-row {
+    display: block;
+    margin-bottom: 1rem;
+  }
+  .property_label {
+    text-align: left;
+  }
+  .property_button {
+    align-items: center;
+    justify-content: center;
+  }
+}

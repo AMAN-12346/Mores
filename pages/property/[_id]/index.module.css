@@ -3,3 +3,7 @@
     height: 69px;
     flex-shrink: 0;
 }
+
+.para::-webkit-scrollbar{
+    display: none;
+}

@@ -41,14 +41,14 @@ const Navbar = () => {
 
     return ( 
         <div className={Styles.navbar}>
-           <div className={`flex w-[100vw] ml-5 md:justify-between lg:justify-normal`}>
+           <div className={`flex pl-4 md:justify-between lg:justify-normal`}>
                 {(windowWidth >1024) ?
-                    <div className='w-[65vw] flex items-center'>
-                        <div className='w-[13vw]'>
+                    <div className='w-[64vw] flex items-center'>
+                        <div className='w-[150px]'>
                             <MoresLogo />
                         </div>
 
-                        <div className={`flex justify-evenly mr-4 ml-7`}> 
+                        <div className={`flex justify-evenly ml-7`}> 
                         {Object.keys(navbarContentData).map((content)=> 
                             <div className={Styles.optionName}>
                                <DropdownButton optionName={content} menuItem={navbarContentData[content]} />  
@@ -97,7 +97,7 @@ const Navbar = () => {
                         </Link>
                     </div>
                 :
-                    <div className='flex flex-start'>
+                    <div className='flex flex-start mt-[7px]'>
                         <button className={`mr-3 ${Styles.sellRentButton}`}>Sell & Rent Property</button>
                         <Image src={fillHeart} width={24} height={28} className='mr-2'/>
 
