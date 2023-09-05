@@ -1,21 +1,12 @@
 import Image from "next/image"
+import shield from '../../../assets/moreIcon/Shield.svg'
+import mores from '../../../assets/moreIcon/mores.png'
 const RightSection=({details})=>{
     return(
         <div>
         <div className="flex justify-between mt-2 ">
           <div className="flex gap-2 p-1">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="26"
-              height="32"
-              viewBox="0 0 26 32"
-              fill="none"
-            >
-              <path
-                d="M12.75 0L0 5.66667V14.1667C0 22.0292 5.44 29.3817 12.75 31.1667C20.06 29.3817 25.5 22.0292 25.5 14.1667V5.66667L12.75 0ZM9.91667 22.6667L4.25 17L6.2475 15.0025L9.91667 18.6575L19.2525 9.32167L21.25 11.3333L9.91667 22.6667Z"
-                fill="#003E71"
-              />
-            </svg>
+              <Image src={shield} alt='icon'/>
             <h1 className="text-searchPageText font-semibold">Resendential</h1>
           </div>
           <div className="flex items-center align-middle text-center gap-4 text-searchPageText p-1">
@@ -191,7 +182,7 @@ const RightSection=({details})=>{
             <span className="underline text-black">Read More</span>
           </p>
         </div>
-        <div className="flex gap-56 mt-4 ">
+        <div className="flex justify-between mt-4 ">
           <div className="flex gap-2">
             <Image src={'https://s3-alpha-sig.figma.com/img/9ef8/cb32/9b949267cc8214b6727067c4a13af4b4?Expires=1694995200&Signature=C2R9xsmtmBp3lkABrH-d7wMkad1hoa-qiYtA-DEr1ARlzn8zszgDvNsG2OgkjT24~r-PcUcGvZfv7aZ0729OKvTT-mtrxuNm~Vc~Co6tGEQevMjcIp~Di7ZMiEIQH6cNiB6s1L0Eh35q4tbz4i86Cqlw6uaa-RZPsLfRv04DiwgUMsUx4u2x8metqGFW3abBcccka~Vpf0ie84B-6R4v-dGC0Qq-kx7v8-3Kbkw-z9eEvJUtSvQGvYkjfAuoXzzThkEV6UPr5vYT9IngtMXmJKCzASsd1WGlJrFA5YttFd-NAhp3AG140bIZcyauqkmHRo5ISO86b1i8DaFXncq2Ag__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4'}
             alt="owner Image"
@@ -204,7 +195,7 @@ const RightSection=({details})=>{
               <p className="text-sm font-extralight">Owner</p>
             </div>
           </div>
-          <div className="flex text-center bg-featuredBackground p-1 px-6 text-white rounded-md">
+          <div className="flex text-center bg-featuredBackground p-1 px-6 mr-12 text-white rounded-md">
             <button>Contact</button>
           </div>
         </div>
