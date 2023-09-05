@@ -3,24 +3,21 @@ import { useRouter } from 'next/router';
 import axios from 'axios';
 // import property from '@/DummyData/data';
 import Image from 'next/image';
-import mVerified from '../../../assets/moreIcon/mVerified.svg'
-import EYE from '../../../assets/moreIcon/mdiEye.svg'
-import IconLocation from '../../../assets/moreIcon/location.svg'
-import bathtub from '../../../assets/moreIcon/bathtub.svg'
-import bedRoom from '../../../assets/moreIcon/doubleBed.svg'
-import measured from '../../../assets/moreIcon/measured.svg'
-import OverView from './OverView';
-import Amenities from './Amenities';
-import PropertyInformation from './PropertyInformation';
-import { colors, textFieldClasses } from '@mui/material';
-import InstantLoan from "../../../assets/moreIcon/InstantLoan.svg"
-import iconCall from "../../../assets/moreIcon/iconCall.svg"
-import AgentFrom from './AgentFrom';
-import Review from './Review';
-import FeaturesSectionCard from '@/components/HomePage/FeaturedPropertiesSection/FeaturedSection';
+// import mVerified from '../../../assets/AmenitiesIcons/mVerified.svg' 
+import EYE from '../../../assets/AmenitiesIcons/mdiEye.svg'
+import IconLocation from '../../../assets/AmenitiesIcons/location.svg'
+import bathtub from '../../../assets/AmenitiesIcons/bathtub.svg'
+import bedRoom from '../../../assets/AmenitiesIcons/doubleBed.svg'
+import measured from '../../../assets/AmenitiesIcons/measured.svg'
+import OverView from '../../../components/property/OverView';
+import Amenities from '../../../components/property/Amenities';
+import PropertyInformation from '../../../components/property/PropertyInformation';
+import InstantLoan from "../../../assets/AmenitiesIcons/InstantLoan.svg"
+import iconCall from "../../../assets/AmenitiesIcons/iconCall.svg"
+import AgentFrom from '../../../components/property/AgentFrom';
+import Review from '../../../components/property/Review';
 import RecommenedCard from '../RecommenedCard';
 import LikeShareButtons from '@/components/LikeShear/Component';
-import Footer from '@/components/Common/Footer/Footer';
 import Mscore_Mverifid from '@/components/property/Mscore_Mverifid';
 import HighlightAmenities from '@/components/property/HighlightAmenities';
 // import SimpleMap from '@/components/GoogleMapo/Using_Lat_Log'; 
@@ -270,9 +267,6 @@ const SinglePropertyCard = () => {
 
             <div className='mt-11'>
                 <RecommenedCard data={property} />
-            </div>
-            <div>
-                <Footer />
             </div>
         </>
     );

@@ -1,5 +1,5 @@
 import React from 'react'
-import mVerified from '../../assets/moreIcon/mVerified.svg'
+import mVerified from '../../assets/AmenitiesIcons/mVerified.svg'
 import Image from 'next/image';
 import Styles from "./index.module.css"
 

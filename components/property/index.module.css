@@ -1,26 +1,9 @@
-.tabview {
-    align-items: center; /* Align text vertically in the center */
-    border-radius: 35px;
-    font-size: 1rem;
-    font-weight: 400;
-    padding: 10px 15px;
-    background-color: rgba(1, 129, 145, 0.22);
-    margin: 0 10px;
+.Viwers {
+    width: 194px;
+    height: 69px;
+    flex-shrink: 0;
 }
 
-@media screen and (max-width: 1024px) {
-    .tabview {
-        font-size: 0.857rem;
-        background-color: rgba(1, 129, 145, 0.22);
-        margin: 0 2px;
-        padding: 10px 15px;
-    }
-}
-
-@media screen and (max-width: 774px) {
-    .tabview {
-        font-size: 0.714rem;
-        background-color: rgba(1, 129, 145, 0.22);
-        padding: 10px 15px;
-    }
+.para::-webkit-scrollbar{
+    display: none;
 }
