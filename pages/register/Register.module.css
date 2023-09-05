@@ -1,0 +1,277 @@
+.loginContainer {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.heading {
+    color: #000;
+    text-align: center;
+    font-family: Gotham;
+    font-size: 33px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 20px;
+  }
+
+  .slogan {
+    color: #000;
+    text-align: center;
+    font-family: Mazzard;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 20px;
+  }
+
+.leftContent {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 24px;
+  background-color: #faeee0;
+  position: relative;
+}
+
+.formContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
+  margin-bottom: 160px;
+  /* padding-left: 60px; */
+}
+
+.inputField {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  width: 100%;
+  margin: auto;
+  margin-top: -15px;
+}
+
+.button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #931602;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+}
+.buttonContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: -8px;
+}
+
+.footerImage {
+  position: absolute;
+  width: 50%;
+  margin-bottom: 50px;
+  margin: auto;
+  text-align: center;
+  bottom: 0%;
+  top: 60%;
+  left: 25%;
+}
+
+.rightContainer {
+  width: 50%;
+  position: relative;
+  overflow: hidden;
+}
+.rightImage {
+  /* position: absolute; */
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+@media (max-width: 767px) {
+  /* Mobile styles */
+  .loginContainer {
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    margin: auto;
+  }
+
+  .leftContent {
+    position: relative;
+    width: 100%;
+    align-items: center;
+    padding: 16px;
+    text-align: center;
+  }
+
+  .rightContainer {
+    /* position: relative; */
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .formContainer {
+    text-align: center;
+    padding: 25px;
+    width: 100%;
+    margin-top: 150px;
+  }
+
+  .inputField {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    width: 90%;
+    margin: auto;
+    margin-top: 15px;
+  }
+  .button {
+    margin-top: 20px;
+    width: 90%;
+  }
+
+  .buttonContainer {
+    width: 100%;
+    justify-content: center;
+    display: flex;
+  }
+
+  .footerImage {
+    position: relative;
+    width: 100%;
+    margin: auto;
+    top: -9%;
+    bottom: 0;
+    left: 3%;
+    right: 0;
+  }
+
+  .rightImage {
+    position: relative;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    /* Tablet styles */
+    .loginContainer {
+      flex-direction: column;
+      align-items: center;
+    }
+    .logo {
+      margin-bottom: 180px;
+    }
+  
+    .leftContent {
+      position: relative;
+      width: 100%;
+      margin: auto;
+      align-items: center;
+      padding: 16px;
+      text-align: center;
+    }
+  
+    .rightContainer {
+      position: relative;
+      width: 100%;
+      margin-top: 20px;
+    }
+  
+    .formContainer {
+      padding: 25px;
+      text-align: center;
+      margin-top: 100px;
+      width: 90%;
+      margin: auto;
+    }
+  
+    .inputField {
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 10px;
+      width: 462px;
+      height: 70px;
+      margin: auto;
+      margin-top: 15px;
+    }
+  
+    .button {
+      margin-top: 20px;
+      width: 464px;
+      height: 72px;
+      font-size: 22px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      text-align: center;
+    }
+  
+    .buttonContainer {
+      width: 720px;
+      height: 72px;
+      text-align: center;
+      justify-content: center;
+      display: flex;
+    }
+  
+    .heading {
+      color: #000;
+      text-align: center;
+      font-family: Gotham;
+      font-size: 33px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      margin-bottom: 20px;
+    }
+  
+    .slogan {
+      color: #000;
+      text-align: center;
+      font-family: Mazzard;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      margin-bottom: 20px;
+    }
+  
+    .footerImage {
+      position: relative;
+      width: 100%;
+      margin: auto;
+      top: -2%;
+      bottom: 0;
+      left: 18%;
+      right: 0;
+    }
+  
+    /* .buttonSelect {
+      width: 400px;
+      height: 72px;
+      flex-shrink: 0;
+    } */
+  
+    .rightImage {
+      position: relative;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+  }
+
+/* uefefoiwdefd dpood wjd3ndj  kjcne kjenf iejf iuefie lwoifuwoiceoijfce oiewoieoifjwfe oivefwlks eoefpeock;lcoiw lwociewlkfc pofkewcewoiewfee epokefkw;lEWMW  POEWFKWFEF EWFEPOFEF;LEEF OIEFIFPOELF;EF poewfoewfoweofk;lwfopwefolkokvpeqkflv pokoijfewok;l wpovkpffoijfklcpofw epofkfpofkwefkowlfw;fkowjfiorokpoekfijore;flkdsa/a/m,fkjiovrioepok;ldsv  oijffkld9ikeflke9fiifwoldewkfoif fmeoijwfekllkmscjweiolkewmcmkewcoiwecjkl oefijewlkmfoiffoijlkefewf oifjfe94fuekoijfqoijfqfolejf ofeoijfklewifweuwiojwjef fiewjkfiewofi oifefuiowfejweifjfolewjewfhuifjkljureiqkjvdrhrekvndslmlkjihvfkjdnkdljsjhvfiueoifjdslknmx njsdhu8e9roidjskm jfhureoijlkvdsmkjbhu8u34oijwlkvnjfvhtg98u534oiewjflkvdsnfhu83oijfewlkvdnsfjbhugu853oirlkmvdsjfbhut8orilkmvdsjfdiug8orijfwlkdsmvfjiu8orifewpldmvkjfut89oirfewdsoijvenfijreuilkjrufijkfnkjfi9reuijkefrueivf ,ds metadata roijrfrrfurjiuhkjenkjciiuvklwcniwjjkqlmkqijqkjwqc,qkcijqukjqiqovuqlkjnmnkjdivvkljcleirouvjlkds ,mdkljiubhfdjkslm., cmknijeoruilhflkjvdsm .,mfkjioeug8ij;lfdsmnkjoireu8gy78hreoiuamds,fdnkijeog9i4pwqoef;klmvnbhutkjnvsmdlknvjhug8ip9ewd'lkcsjdafndjtugep89orenjbgurgt9i0pokfed.jriuj9irlkmfdjuru039ipewofk.mz?<Xdhu8094ir2p3o    :LKA.MDS KJQU09IWPEOF;LK.MVDSKHU8UG93O4FWELKJNJFKDLIUR80934POIFEWLKVMS.FDJUE8EOIRWLKVDSJLUE8ORIJLKVDSNJFHIU8OILKNVSIUEORLKMSVLIUQOIELJFWif89reu0ipolkje98uroijlkfhu8ure9vojlkdjfiu893oijrekf nlrljfknrefljiute89oi4lkfewvu89yu;lkjdsmvkjiu98t5yoijrealkdsvnure895yiugjrelfkdviju8rekldsnjvuknvds.kjvuervkndsm,lk;ijrnkjfure8ikjsvdmlodilkvds jiuoirel ,mckjiuroev lkndmldkskj .,mcfkjieurolkvdsioekjvflhuitvkndslj,mjiut ,mcxjuiojfd kcxnjiun mcxkjilkfd cjijfkd ncxkjlkfd kjlfd ,mcxlkijdlkf,mv cxjhuifdjlks,m juifdjlskvdnhuiofdalkjvsnjhuoirelkjmvdsoijurelkjvsiur8eoilkjv;oiureqgjkn,mremvkndsvjhuvkjenfdlvsamnjriefkjdslndijeurekjlwmf,dkjiewfvdskkm ,ckjeiujkldsm,nkjireouithekjrl;dsvmknjireuikjflvds.m,/mkjiegukmvds,njireougkvsergjknkjiplkejvhuoraijlkregjiureiojkreqnglkovljnire8ug9oilkmahu8ur9goilke,mkjirgelkrgiherglkvhuiwlkijre8ugrfmkewo98ugoiewjre98gelkdsjearg[0l,,sdmvaogeoalkjehreqolkkoieq8guoieqlkjdakvdsvmeaoivureg;lmlmeR8G8UMMDV'LERGIUEQO.,MDSC9REQOGOIJEQOIURGOIJIJRELMEEOJG9UREQOEWJLREALKIGO          LRKJIEQ98POLQRGOIL;W        orjeigoeqrpogkreijp98ugoirejgiuelvlre8greoijrerlkvijeljvreqoij98uglkkjvre8ugljre/g.mloiuegmeroirea;ijoijreqgojjrelk;ouaflka;lkjewoigjpreqi oiwejewfkjjcceencnskcoiwdn jeffiu4fe8uid437yufjkjcwy6f74jfhyw7eygueuy8uyfev8uw09u8ehvfuew098uiwhj   wyefguewfjytewvfog8wpuife287 jwdfyu387t32rwouefikjqaWFEG1 eviuewkjmsndjvio38t749rekjsdsz efwef984387t7t43yufjdwe7f67eiywhkjcurey6gregikds  437678wuscdshiueyugdsj iuweufy7843wuefcjkjsaldf kjwFEU37482RYUFGJEWAKDSCW78RFWYUAIEKJDS kerhue74394iuewlkjnseu98g j37ywiuefkjdsviuew98iur    vfiue90uigfreu098218ufiylkfjewuif98ifkweuifikfiuwiflo438guikkju43yiuoewuofjklcjhrey7giwljkvjfeyqgewfiyreq7grk    iegfyq97t79843oifewjoeurioj3q8t  iuwcnjjewlfuy871t0p92307r8ty43ewkjcwdew   jewfykjjw897  OIFMEQFLKOIQFO3QKOQI9 orki9wrggoieqrflqoijf8uqoifklewfi8r9ugfolkefoi98uoklweifj8u90iopkeif890w-poiwe9f0ipokcewp0fidoire904wu8t5ireokflkjvoir905i8uoijg4trepik;lojri09t5uirepokoivf9rflkelpew;flore0f9ipokl;kdoi0fr9iokfi9r0pokfewijc90rfpokcowpeokcesri0-poiewk;cop0e-i9rokvpocr9okdcor0rfldoc0ielecp0igrpcldloke0fepfwpokv90rg0-weokfkoewf09i43oewif m  09fpoek90fopoq[ie9f0i4o  fe30fpkie0i9r0f9e-opwkoeif  epofeo9icdiokfrpokdi9043piewokdcp0edpklcoi poefklew;qpokrpi ekpoefie9f0eokfoeoefewqfkoewfk[pifewpoefpoqwefwepofewlf;kpoewifplefpowekfekfw;ldso0;lkfew0poew;lkdsoopfew;lkdso0wpoife;lkeo0poikwdo04poifew09poifewe09poifw0f9iporkvm  poefief9430pokfej43u4309iwopefefjjkmvnfj4iogif0943oiq0eflewqof90ewlkwjfrjliregjrejorqo[oif[09g43qqjore8fq3jewloijw4g4ngefenfefuniufefnjewiwq  jdeeifewkewjifkewifojweflmf32rhjbehwiefuefewjmeffjkewcjioeweclkmewfirjrjrfjrfjjjjjggghhhfffjfjfjfhghghgfjnrnrejvvvbbbnvnnvhghghgvvoimrnvvnvvnnvnuvnruvrjvrvjrvuhvnjvuvrevker8vh3vwmckeijc8ijkwmclmr8oijreqalkmu3ffiefefjewfijfoijewecmkrgiujiefomf.kwceeeeeeeeeeeeeeeeeeemaefmrgun-ejfeofef94j45dklscjwioidwcefwflscmewwfkwsckw9iefewlkdsockji9efwockewjwejwapokewefpokkpoewfpowkc  pofepw90i   ojfilkew    foiw    eoifpopiew0opoi;j   powdklc9ew  fLKCwkjcoi9e'kewojiewfhopkd;lckioucijkewiuiowkcj9oeiioiew   9vpojlki0polkpcookjoicpk lmoji0okcm okppokclm opicj lkmld;kok;alm kl9ipokjec';lmdwcoewclkweclowoijdcekoijecdclmkdvcjovWDLMEWJIVO'PACQWFWOKwdwfffhufejlkf.,mwkdjwdhuwknfffffefefefefefegfefefefnjevewicuvnjdcvekjcwscwoijdouedoilkxmkiwoijxcieowfjwlksoicioufoijekciuojkrufiojewlskjiu98yrufiljdskmcknji8ygiroewjfkvrguireurehuiojc9iojd09odijoisodjsc9wu89roiewjci90ciojkkdsoi0okoikoci90ioj3qwaeklk jidju8f9urejdslkkd9urf89uguoirekniu98fr9uy7gureoijdskniu8r9y7guerokjvif8ur9y7grueoioiuoikljdcwefouirljdksiuoirjlkroeioj i foiklvjrjlkjoiojokredsrfldcliwaufoffoijoiewqfoiewf[oijqewoiwefoijwoij   ewfij   wefoijfoijewfoiewfeoijewefijfewoijoefoijf   epoijwoijfew    foijewfm    fm ifoijfokw    lfijwqofjkoipfjopkedslkciuojlkvdsokiurioj;lkdskmijvu8rejpokdslkmvij9r0u8oijrepkfewjgr8yu9h5grijeokfmdjvu8revjldskmkjfu8hrevflkdsm,miuerlkjdsm.,ihvoekjvnlmdsv, miukjenfdlms,vkjfhuhurelmvdskjfdlbuhkjtnelmrfgouriejnijvofewlkfndchuoirejwlfkdcnjeioclknxklmjoslkfdnvijokdlmcknjiosdnlk oijjlknijoejrlknsvdij90eojru98te05irejpiht98gu5revlkjdscdnckjoiuf84y8ghurejew;lakdip8u48012e9u37409oiu4jfewkl;*/

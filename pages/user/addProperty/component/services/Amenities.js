@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import bathtub from '../../../../../assets/moreIcon/bathtub.svg';
 import doubleBed from '../../../../../assets/moreIcon/doubleBed.svg';
@@ -54,44 +54,50 @@ const amenityIcons = {
     sofa : sofa,
     Jogging : Jogging,
 };
-export default function Amenities() {
-    const [selectedAmenities, setSelectedAmenities] = useState([]);
-  
-    const toggleAmenity = (amenity) => {
-      if (selectedAmenities.includes(amenity)) {
-        setSelectedAmenities(selectedAmenities.filter(item => item !== amenity));
-      } else {
-        setSelectedAmenities([...selectedAmenities, amenity]);
-      }
-    };
-  
-    return (
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-2">
-        {Object.keys(amenityIcons).map((amenity) => (
+export default function Amenities({ selected, onUpdateAmenities }) {
+  const [selectedAmenities, setSelectedAmenities] = useState(selected);
+
+  useEffect(() => {
+    onUpdateAmenities(selectedAmenities);
+  }, [selectedAmenities, onUpdateAmenities]);
+
+  const toggleAmenity = (amenity) => {
+    if (selectedAmenities.includes(amenity)) {
+      setSelectedAmenities(selectedAmenities.filter((item) => item !== amenity));
+    } else {
+      setSelectedAmenities([...selectedAmenities, amenity]);
+    }
+  };
+
+  return (
+    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-2">
+      {Object.keys(amenityIcons).map((amenity) => (
+        <div
+          key={amenity}
+          className={`flex items-center space-x-2 cursor-pointer ${
+            selectedAmenities.includes(amenity) ? 'text-primary' : 'text-gray-800'
+          }`}
+          onClick={() => toggleAmenity(amenity)}
+        >
           <div
-            key={amenity}
-            className={`flex items-center space-x-2 cursor-pointer ${
-              selectedAmenities.includes(amenity) ? 'text-primary' : 'text-gray-800'
+            className={`w-10 h-10 flex items-center justify-center rounded-full ${
+              selectedAmenities.includes(amenity) ? 'bg-secondary' : ''
             }`}
-            onClick={() => toggleAmenity(amenity)}
           >
-            <div
-              className={`w-10 h-10 flex items-center justify-center rounded-full ${
-                selectedAmenities.includes(amenity) ? 'bg-secondary' : ''
+            <Image
+              src={amenityIcons[amenity]}
+              alt={amenity}
+              width={20}
+              height={20}
+              className={`rounded-md ${
+                selectedAmenities.includes(amenity) ? 'bg-white' : ''
               }`}
-            >
-              <Image
-                src={amenityIcons[amenity]}
-                alt={amenity}
-                width={20}
-                height={20}
-                className={`rounded-md ${selectedAmenities.includes(amenity) ? 'bg-white' : ''}`}
-              />
-            </div>
-            <span>{amenity}</span>
+            />
           </div>
-        ))}
-      </div>
-    );
-  }
+          <span>{amenity}</span>
+        </div>
+      ))}
+    </div>
+  );
+}
   

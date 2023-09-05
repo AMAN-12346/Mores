@@ -18,7 +18,6 @@ import property from "@/DummyData/data";
 import AdditionalDetailsForm from "./component/AdditionalDetailsForm";
 //TODO map function in step 1.
 
-
 export default function AddProperty() {
   const [activeStep, setActiveStep] = React.useState(0);
 
@@ -55,9 +54,8 @@ export default function AddProperty() {
     },
     // Add more steps' data objects as needed
   });
-  const [consolidatedPropertyData, setConsolidatedPropertyData] = React.useState(
-    {}
-  );
+  const [consolidatedPropertyData, setConsolidatedPropertyData] =
+    React.useState({});
   const handleStep2InputChange = (event) => {
     const { name, value } = event.target;
     setFormData((prevData) => ({
@@ -89,26 +87,31 @@ export default function AddProperty() {
       },
     }));
   };
-  
 
   const steps = [
     {
       label: "Whats your plan",
       component: (
-        <div style={{ display: "flex" }} className="mb-3 mt-2">
-          <div className="p-4 border-2 border-button bg-white rounded-lg">
+        <div className="mb-5 mt-5 lg:flex">
+        <div className="flex flex-col mb-0 mr-4 lg:mb-0">
+          <div className="p-4 border-2 border-button bg-white rounded-lg mb-12">
             <StepOneCard
               mainHeading="Sell or Rent Your Home With MORES Expert"
               definition="Lorem ipsum dolor sit amet consectetur. Et ut orci morbi Vulputate pretium sem. Justo sollicitudin lacus interdum Sit in sollicitudin vestibulum ultricies duis. Malesuada fusce sit lorem aliquam."
             />
           </div>
-          <div className="p-4 border-2 border-primary bg-white rounded-lg ml-5">
+        </div>
+        <div className="flex flex-col">
+          <div className="p-4 border-2 border-primary bg-white rounded-lg">
             <StepOneCard
               mainHeading="Sell or Rent Your Home Directly"
               definition="Lorem ipsum dolor sit amet consectetur. Et ut orci morbi Vulputate pretium sem. Justo sollicitudin lacus interdum Sit in sollicitudin vestibulum ultricies duis. Malesuada fusce sit lorem aliquam."
             />
           </div>
         </div>
+      </div>
+      
+      
       ),
     },
     {
@@ -148,7 +151,6 @@ export default function AddProperty() {
           selected={propertyDetails.step4Data.amenities}
           onUpdateAmenities={handleStep4InputChange}
         />
-      
       ),
     },
   ];
@@ -167,13 +169,13 @@ export default function AddProperty() {
       // Step 4
       // Display step 4 data on the console
       console.log("Step 3 Data:", propertyDetails.step4Data);
-    }else if (activeStep === 4) {
+    } else if (activeStep === 4) {
       // Step 4
       // Display step 4 data on the console
       console.log("Step 4 Data:", propertyDetails.step4Data);
     }
-     // Consolidate property data when clicking "Post Property"
-     if (activeStep === steps.length - 1) {
+    // Consolidate property data when clicking "Post Property"
+    if (activeStep === steps.length - 1) {
       const consolidatedData = {
         ...propertyDetails.step2Data,
         ...propertyDetails.step3Data,
@@ -189,8 +191,9 @@ export default function AddProperty() {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
   };
 
-  const handleReset = () => {//!abhi reset pe hora hai last me post property pe krna hai
-    console.log(consolidatedPropertyData, "whole data of property")
+  const handleReset = () => {
+    //!abhi reset pe hora hai last me post property pe krna hai
+    console.log(consolidatedPropertyData, "whole data of property");
     setActiveStep(0);
     setPropertyDetails({
       step2Data: {},
@@ -200,7 +203,7 @@ export default function AddProperty() {
       },
     });
   };
-  
+
   const buttonStyle = {
     backgroundColor: "#931602", // Replace with your desired button color
     "&:hover": {
@@ -208,13 +211,15 @@ export default function AddProperty() {
     },
   };
   return (
-    <div className="bg-white p-5">
+    <div className="bg-white p-5 w-full">
       {" "}
       {/* Apply Tailwind classes */}
       <Box sx={{ maxWidth: 1000 }}>
         <Stepper activeStep={activeStep} orientation="vertical">
           {steps.map((step, index) => (
             <Step key={step.label}>
+              {/* <span>{step.label}</span> */}
+
               <StepLabel
                 className="font-extrabold p-2 rounded bg-white border"
                 optional={
@@ -232,14 +237,14 @@ export default function AddProperty() {
                   "& .MuiStepLabel-iconContainer": {
                     "& .MuiStepIcon-root": {
                       color: "#018191", // Change color for step index circle
-
                     },
                   },
                 }}
               >
                 {step.label}
               </StepLabel>
-              <StepContent>
+
+              <StepContent className="text-center md:text-left">
                 <Typography>{step.description}</Typography>
                 {step.component ? step.component : ""}
                 <Box sx={{ mb: 2 }}>
