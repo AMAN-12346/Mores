@@ -24,7 +24,7 @@ const FeaturedSection=({data})=>{
           </div>
         ):(
           <div
-          className={`grid grid-cols-4 md:grid-cols-5 lg-grid-cols-4 ${Styles.gridDivs}`}
+          className={`mt-10 grid grid-cols-4 md:grid-cols-5 lg-grid-cols-4  ${Styles.gridDivs}`}
         >
           {
               data.length >0 && 
