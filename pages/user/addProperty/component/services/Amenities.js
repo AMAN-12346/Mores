@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import Image from 'next/image';
 import bathtub from '../../../../../assets/moreIcon/bathtub.svg';
 import doubleBed from '../../../../../assets/moreIcon/doubleBed.svg';
@@ -56,6 +57,8 @@ const amenityIcons = {
 };
 export default function Amenities({ selected, onUpdateAmenities }) {
   const [selectedAmenities, setSelectedAmenities] = useState(selected);
+  const [showAll, setShowAll] = useState(false);
+  const numAmenitiesToShow = showAll ? Object.keys(amenityIcons).length : 6;
 
   useEffect(() => {
     onUpdateAmenities(selectedAmenities);
@@ -70,34 +73,55 @@ export default function Amenities({ selected, onUpdateAmenities }) {
   };
 
   return (
-    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-2">
-      {Object.keys(amenityIcons).map((amenity) => (
-        <div
-          key={amenity}
-          className={`flex items-center space-x-2 cursor-pointer ${
-            selectedAmenities.includes(amenity) ? 'text-primary' : 'text-gray-800'
-          }`}
-          onClick={() => toggleAmenity(amenity)}
-        >
+    <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-2 mb-2">
+      {Object.keys(amenityIcons).map((amenity, index) => (
+        // Check if the index is less than the number to show or show all if "View More" is clicked
+        (showAll || index < numAmenitiesToShow) && (
           <div
-            className={`w-10 h-10 flex items-center justify-center rounded-full ${
-              selectedAmenities.includes(amenity) ? 'bg-secondary' : ''
+            key={amenity}
+            className={`flex items-center space-x-2 cursor-pointer ${
+              selectedAmenities.includes(amenity) ? 'text-primary' : 'text-gray-800'
             }`}
+            onClick={() => toggleAmenity(amenity)}
           >
-            <Image
-              src={amenityIcons[amenity]}
-              alt={amenity}
-              width={20}
-              height={20}
-              className={`rounded-md ${
-                selectedAmenities.includes(amenity) ? 'bg-white' : ''
+            <div
+              className={`w-10 h-10 flex items-center justify-center rounded-full ${
+                selectedAmenities.includes(amenity) ? 'bg-secondary' : ''
               }`}
-            />
+            >
+              <Image
+                src={amenityIcons[amenity]}
+                alt={amenity}
+                width={20}
+                height={20}
+                className={`rounded-md ${
+                  selectedAmenities.includes(amenity) ? 'bg-white' : ''
+                }`}
+              />
+            </div>
+            <span>{amenity}</span>
           </div>
-          <span>{amenity}</span>
-        </div>
+        )
       ))}
+      {/* Render the "View More" button if there are more than 6 amenities */}
+      {Object.keys(amenityIcons).length > 6 && (
+        <div
+        className="flex items-center justify-center w-50 h-10 rounded-full bg-white cursor-pointer"
+        onClick={() => setShowAll(!showAll)}
+      >
+        <span className="text-primary -ml-24">
+          {showAll ? 'view less ▲' : 'view all ▼'} {/* Up and down arrow icons */}
+        </span>
+      </div>
+      )}
     </div>
   );
-}
+};
+
+Amenities.propTypes = {
+  selected: PropTypes.arrayOf(PropTypes.string).isRequired,
+  onUpdateAmenities: PropTypes.func.isRequired,
+};
+
+
   

@@ -1,0 +1,40 @@
+/* filename.module.css */
+
+/* Default button styles */
+.button {
+    padding: 8px 16px;
+    border: 2px solid #007bff;
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 5px;
+    width:fit-content;
+    height: 35px;
+    background-color: #ffffff;
+  
+  }
+
+  
+  /* Button styles for selected state */
+  .button.selected {
+    background-color: #007bff;
+    color: #ffffff;
+    border: 2px solid #007bff;
+  }
+  
+  @media (max-width: 768px) {
+    /* Use grid layout for buttons on mobile */
+    .button_container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); /* Two columns */
+      gap: 5px; /* Spacing between grid items */
+    }
+
+    /* .cardContainer{
+        margin-bottom: 20p;
+        margin-right: 50px;
+    } */
+  }
+  
