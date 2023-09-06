@@ -4,7 +4,7 @@ import rent from '../../../assets/SearchFilterIcons/rent.svg'
 import commercial from '../../../assets/SearchFilterIcons/commercial.svg'
 import findAgent from '../../../assets/SearchFilterIcons/findagent.svg'
 import newProject from '../../../assets/SearchFilterIcons/newproject.svg'
-import moreOptions from '../../../assets/SearchFilterIcons/newProject.svg'
+// import moreOptions from '../../../assets/SearchFilterIcons/newProject.svg'
 import plotAndLand from '../../../assets/SearchFilterIcons/plotland.svg'
 import { useEffect, useState } from "react";
 import SearchBox from "./SearchBox";
@@ -45,7 +45,7 @@ const SearchSection = () => {
             <FilterButtons name={"Rent"} icon={rent} />
             <FilterButtons name={"New Project"} icon={newProject} />
             <FilterButtons name={"Plot and land"} icon={plotAndLand} />
-            <FilterButtons name={"More Options"} icon={moreOptions}  />
+            {/* <FilterButtons name={"More Options"} icon={moreOptions}  />  */}
           </> : (
             <>
               <FilterButtons name={"Buy"} icon={buy} />
