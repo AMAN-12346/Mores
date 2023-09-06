@@ -2,6 +2,7 @@
     width: 90vw;
     margin: auto;
     margin-bottom: 70px;
+    margin-top: 40px;
 }
 
 .heading{
@@ -26,7 +27,8 @@
 .wrapper {
     display: flex;
     margin: auto;
-    width: 96vw;
+    width: 100%;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 24px 2%;
     margin-top: 50px;
