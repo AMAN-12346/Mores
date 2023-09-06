@@ -95,7 +95,7 @@
 }
   
 /* Medium screens */
-@media screen and (min-width: 768px) and (max-width: 991px) {
+@media screen and (min-width: 768px) and (max-width: 1023px) {
     .card{
         width: 42%;
         margin: 0px 5px;

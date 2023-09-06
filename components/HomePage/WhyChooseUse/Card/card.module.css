@@ -22,7 +22,7 @@
 @media screen and (max-width: 767px) {
     .card{
         width: 85%;
-        height: 50vh;
+        height: 280px;
         margin: 0 5%;
     }
     .imageDiv{
@@ -37,7 +37,7 @@
 @media screen and (min-width: 768px) and (max-width: 1023px) {
     .card{
         width: 33%;
-        height: 50vh;
+        height: 300px;
         margin: 0px 10px;
     }
     .imageDiv{

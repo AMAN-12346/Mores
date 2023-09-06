@@ -1,82 +1,56 @@
 import Image from "next/image";
+import Mscore from "../../../assets/moreIcon/m-score.png";
+// import Mverified from "../../../assets/moreIcon/m-score.png"
+import Mverified from "../../../assets/moreIcon/mVerified.svg";
+import Like from "../../../assets/moreIcon/likeHeart.svg";
+import Share from "../../../assets/moreIcon/share.svg";
 const RightSectionMview = ({ details }) => {
   console.log(details);
   return (
     <div>
-      <div className="flex justify-between mt-2 ">
-        <div className="flex gap-2 p-2">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="26"
-            height="32"
-            viewBox="0 0 26 32"
-            fill="none"
-          >
-            <path
-              d="M12.75 0L0 5.66667V14.1667C0 22.0292 5.44 29.3817 12.75 31.1667C20.06 29.3817 25.5 22.0292 25.5 14.1667V5.66667L12.75 0ZM9.91667 22.6667L4.25 17L6.2475 15.0025L9.91667 18.6575L19.2525 9.32167L21.25 11.3333L9.91667 22.6667Z"
-              fill="#003E71"
-            />
-          </svg>
-          <h1 className="text-searchPageText font-semibold">Resendential</h1>
+      <div className="flex justify-between m-1  ">
+        <div className="flex gap-2 text-base ">
+          {/* height={20} width={20} */}
+          <Image src={Mverified} height={20} width={20} alt="icon" />
+          <h5 className="text-searchPageText font-semibold pt-1">
+            Resendential
+          </h5>
         </div>
-        <div className="flex items-center align-middle text-center gap-4 text-searchPageText p-1">
-          <div className="flex gap-2 items-center text-center align-middle">
-            
-            <div className="bg-Background rounded-2xl px-4 py-1 items-center">
-              
-              <h1 className="font-semibold">100</h1>
+        <div className="flex items-center align-middle text-center gap-4 text-searchPageText ">
+          <div className="flex gap-2 items-center justify-between align-middle">
+            <div className=" flex gap-2 bg-Background text-base rounded-3xl p-1  items-center">
+              <Image
+                style={{ height: 19, width: 17 }}
+                src={Mscore}
+                alt="icon"
+              />
+              <h1 className="font-bold text-red-700 ">100</h1>
             </div>
-            <h1>score</h1>
+            <h1 className="text-black">score</h1>
           </div>
-          
         </div>
       </div>
-      <div className="flex flex-col font-semibold text-2xl justify-between my-2 pr-16">
+      <div className="flex flex-col font-semibold text-xl justify-between mt-2 pr-16">
         <h1>{details[0].propertyName}</h1>
-
-        
       </div>
-      
+
       <div className="flex justify-between">
-        <div className="flex flex-col font-semibold text-2xl justify-between  pr-3">
+        <div className="flex flex-col font-semibold text-xl justify-between  pr-3">
           <h1> ₹{details[0].price}</h1>
         </div>
-        <div className="flex gap-5  text-SearchResultText text-lg items-center">
+        <div className="flex gap-2  text-SearchResultText text-base items-center">
           <div className="me-3">
             <h1>1.5 BHK</h1>
           </div>
-          <div className=" bg-slate-100 rounded-full p-1.5 h-[36px] w-[36px]">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="26"
-              height="26"
-              viewBox="0 0 26 26"
-              fill="none"
-            >
-              {" "}
-              <path
-                d="M12.8691 6.13849L12.3099 6.67696C12.3823 6.75212 12.4692 6.81191 12.5653 6.85275C12.6613 6.89358 12.7647 6.91463 12.8691 6.91463C12.9734 6.91463 13.0768 6.89358 13.1728 6.85275C13.2689 6.81191 13.3558 6.75212 13.4282 6.67696L12.8691 6.13849ZM7.69253 17.4463C7.53324 17.3153 7.32844 17.2529 7.12317 17.2729C6.91791 17.2929 6.729 17.3936 6.598 17.5529C6.46699 17.7122 6.40464 17.917 6.42464 18.1223C6.44464 18.3276 6.54536 18.5165 6.70465 18.6475L7.69253 17.4463ZM2.86808 14.3304C2.91704 14.4199 2.98314 14.4989 3.06261 14.5628C3.14208 14.6267 3.23336 14.6744 3.33125 14.703C3.42914 14.7317 3.53171 14.7408 3.63311 14.7298C3.73451 14.7188 3.83276 14.688 3.92223 14.639C4.01171 14.5901 4.09067 14.524 4.1546 14.4445C4.21854 14.365 4.26619 14.2737 4.29485 14.1758C4.3235 14.078 4.33259 13.9754 4.32161 13.874C4.31062 13.7726 4.27977 13.6743 4.23082 13.5849L2.86808 14.3304ZM3.29057 9.90465C3.29057 7.6783 4.54872 5.81024 6.26663 5.02428C7.93588 4.26111 10.1788 4.46304 12.3099 6.67696L13.4282 5.60106C10.9016 2.97397 7.96487 2.54009 5.62047 3.61185C3.32785 4.66082 1.7373 7.09634 1.7373 9.90465H3.29057ZM9.24166 20.6357C9.77287 21.054 10.3424 21.4993 10.9192 21.8368C11.496 22.1734 12.1545 22.4478 12.8691 22.4478V20.8945C12.548 20.8945 12.1711 20.7703 11.7031 20.4959C11.234 20.2225 10.7483 19.8456 10.2036 19.4158L9.24166 20.6357ZM16.4964 20.6357C17.9731 19.4707 19.8619 18.137 21.3426 16.4688C22.8514 14.7705 24.0008 12.6653 24.0008 9.90465H22.4475C22.4475 12.1797 21.5156 13.9338 20.1818 15.4374C18.8201 16.9699 17.1043 18.1784 15.5345 19.4158L16.4964 20.6357ZM24.0008 9.90465C24.0008 7.09634 22.4113 4.66082 20.1176 3.61185C17.7732 2.54009 14.8386 2.97397 12.3099 5.60003L13.4282 6.67696C15.5593 4.46407 17.8022 4.26111 19.4715 5.02428C21.1894 5.81024 22.4475 7.67726 22.4475 9.90465H24.0008ZM15.5345 19.4158C14.9898 19.8456 14.5041 20.2225 14.035 20.4959C13.567 20.7692 13.1901 20.8945 12.8691 20.8945V22.4478C13.5836 22.4478 14.2421 22.1734 14.8189 21.8368C15.3967 21.4993 15.9652 21.054 16.4964 20.6357L15.5345 19.4158ZM10.2036 19.4158C9.37938 18.7666 8.54165 18.1452 7.69253 17.4463L6.70465 18.6475C7.56413 19.3547 8.47331 20.0299 9.24166 20.6357L10.2047 19.4158H10.2036ZM4.23082 13.5859C3.60703 12.4597 3.28325 11.192 3.29057 9.90465H1.7373C1.7373 11.6008 2.17222 13.0588 2.86808 14.3304L4.23082 13.5849V13.5859Z"
-                fill="black"
-              />
-            </svg>
+          <div className=" bg-slate-100 rounded-full p-1 h-[30px] w-[30px]">
+            <Image height={50} width={50} src={Like} alt="heartIcon" />
           </div>
-          <div className=" bg-slate-100 rounded-full p-1.5 h-[36px] w-[36px]">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-            >
-              <path
-                d="M17.5001 2.5C17.0408 2.49982 16.5876 2.60508 16.1755 2.80768C15.7633 3.01028 15.4032 3.3048 15.1228 3.66855C14.8424 4.0323 14.6493 4.45556 14.5583 4.90572C14.4674 5.35588 14.481 5.82092 14.5981 6.265C14.5256 6.28031 14.4559 6.30626 14.3911 6.342L11.6341 7.845L8.12807 9.85C8.09297 9.86996 8.05953 9.8927 8.02807 9.918C7.54032 9.62955 6.98084 9.48514 6.41442 9.50149C5.84799 9.51784 5.29778 9.69428 4.82747 10.0104C4.35717 10.3265 3.98601 10.7693 3.75697 11.2876C3.52792 11.806 3.45036 12.3785 3.53325 12.9391C3.61614 13.4997 3.85611 14.0253 4.22536 14.4551C4.59461 14.885 5.07805 15.2014 5.61972 15.3679C6.16138 15.5343 6.73911 15.544 7.28602 15.3957C7.83294 15.2474 8.32668 14.9473 8.71007 14.53L11.6361 16.157L14.5901 17.768C14.4112 18.476 14.4968 19.2248 14.8306 19.8743C15.1644 20.5237 15.7236 21.0291 16.4034 21.2956C17.0832 21.5622 17.8369 21.5717 18.5232 21.3224C19.2095 21.073 19.7813 20.5819 20.1314 19.9411C20.4815 19.3003 20.5859 18.5538 20.4249 17.8416C20.264 17.1293 19.8489 16.5002 19.2573 16.0722C18.6657 15.6442 17.9383 15.4466 17.2114 15.5165C16.4846 15.5864 15.8082 15.919 15.3091 16.452L12.3621 14.844L9.41607 13.208C9.59532 12.4654 9.4852 11.6824 9.10807 11.018L12.3661 9.156L15.1091 7.659C15.1743 7.62367 15.234 7.57885 15.2861 7.526C15.623 7.89393 16.0463 8.17203 16.5178 8.33513C16.9892 8.49823 17.4939 8.54119 17.9862 8.46012C18.4784 8.37904 18.9427 8.17649 19.3369 7.8708C19.7311 7.56511 20.0429 7.16593 20.244 6.70939C20.4451 6.25285 20.5292 5.75336 20.4887 5.25614C20.4481 4.75892 20.2842 4.27966 20.0118 3.86174C19.7394 3.44382 19.367 3.10043 18.9284 2.86266C18.4899 2.62489 17.9989 2.50024 17.5001 2.5Z"
-                fill="black"
-              />
-            </svg>
+          <div className=" bg-slate-100 rounded-full p-1 h-[30px] w-[30px]">
+            <Image height={50} width={50} src={Share} alt="share" />
           </div>
         </div>
       </div>
-      <div className="flex mt-4 text-SearchResultText text-lg items-center">
+      <div className="flex mt-1 text-SearchResultText text-sm items-center">
         <div className="flex items-center">
           <svg //location
             xmlns="http://www.w3.org/2000/svg"
@@ -93,14 +67,14 @@ const RightSectionMview = ({ details }) => {
           <p className="underline"> {details[0].locality}</p>
         </div>
       </div>
-      
+
       <div className="mt-4">
         <p>
           {details[0].description}
           <span className="underline text-black">Read More</span>
         </p>
       </div>
-      <div className="flex flex-col  mt-4 ">
+      <div className="flex flex-col  mt-2 ">
         <div className="flex my-3 gap-2">
           <Image
             src={
@@ -116,8 +90,10 @@ const RightSectionMview = ({ details }) => {
             <p className="text-sm font-extralight">Owner</p>
           </div>
         </div>
-        <div className="flex text-center  bg-featuredBackground p-2 my-2 px-9 text-white rounded-md">
-          <button >Contact</button>
+        <div className="flex justify-center  bg-featuredBackground p-2 my-2 px-9 text-white rounded-md">
+          <button>
+            <div>Contact</div>
+          </button>
         </div>
       </div>
     </div>

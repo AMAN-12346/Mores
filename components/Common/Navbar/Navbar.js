@@ -41,44 +41,20 @@ const Navbar = () => {
 
     return ( 
         <div className={Styles.navbar}>
-           <div className={`flex w-[100vw] ml-5 md:justify-between lg:justify-normal`}>
+           <div className={`flex pl-4 md:justify-between lg:justify-normal`}>
                 {(windowWidth >1024) ?
-                    <div className='w-[65vw] flex items-center'>
-                        <div className='w-[13vw]'>
+                    <div className='w-[64vw] flex items-center'>
+                        <div className='w-[150px]'>
                             <MoresLogo />
                         </div>
 
-                        <div className={`flex justify-evenly mr-4 ml-7`}> 
+                        <div className={`flex justify-evenly ml-7`}> 
                         {Object.keys(navbarContentData).map((content)=> 
                             <div className={Styles.optionName}>
                                <DropdownButton optionName={content} menuItem={navbarContentData[content]} />  
                             </div>
                         )}
                         </div> 
-                                    
-                        {/* <div className={`flex justify-evenly mr-4 ml-7`}> 
-                            <div className={Styles.optionName}>
-                                <DropdownButton optionName="City" menuItem={['random', 'data']} />  
-                            </div>
-                            <div className={Styles.optionName}>
-                                <DropdownButton optionName="Sell" menuItem={['random', 'data']} />  
-                            </div>
-                            <div className={Styles.optionName}>
-                                <DropdownButton optionName="Rent" menuItem={['random', 'data']} />  
-                            </div>
-                            <div className={Styles.optionName}>
-                                <DropdownButton optionName="Projects" menuItem={['random', 'data']} />  
-                            </div>
-                            <div className={Styles.optionName}>
-                                <DropdownButton optionName="Agents" menuItem={['random', 'data']} />  
-                            </div>
-                            <div className={Styles.optionName}>
-                                <DropdownButton optionName="services" menuItem={['random', 'data']} />  
-                            </div>
-                            <div className={Styles.optionName}>
-                                <DropdownButton optionName="Resources" menuItem={['random', 'data']} />  
-                            </div>
-                        </div>  */}
                     </div>
                 : 
                 <div className='flex w-[180px] justify-between mt-[10px]'>
@@ -91,13 +67,13 @@ const Navbar = () => {
            
             <div className='md:w-[420px] lg:w-[420px]'>
                 {!auth.userResult ? 
-                    <div className='text-center hover:opacity-95 -mr-16'>
+                    <div className='text-center hover:opacity-95 -mr-40 mt-[7px]'>
                         <Link href='/login'>
                             <button className={Styles.button}>Login Now</button> 
                         </Link>
                     </div>
                 :
-                    <div className='flex flex-start'>
+                    <div className='flex flex-start mt-[7px]'>
                         <button className={`mr-3 ${Styles.sellRentButton}`}>Sell & Rent Property</button>
                         <Image src={fillHeart} width={24} height={28} className='mr-2'/>
 

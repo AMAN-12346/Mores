@@ -1,5 +1,5 @@
 .gridDivs{
-    padding: 10px;
+    padding:2px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -9,7 +9,7 @@
 
 .divCardSize{
     width:  23rem;
-    padding: 25px;
+    padding: 18px;
 }
 
 .cardBorder{

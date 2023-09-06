@@ -33,7 +33,7 @@
 
 .wrapper {
     display: flex;
-    width: 100%;
+    width: 99%;
     overflow: hidden;
     scroll-behavior: smooth;
     gap: 3%;
@@ -44,8 +44,8 @@
 
 .exploreAll{
     display: flex;
-    width: 170px;
-    height: 50px;
+    width: 150px;
+    height: 42px;
     padding: 17px 22px;
     justify-content: center;
     align-items: center;
@@ -55,7 +55,7 @@
     background: #89A190;
     color: #F9FAFC;
     font-family: Poppins;
-    font-size: 16px;
+    font-size: 13px;
     font-style: normal;
     font-weight: 500;
     line-height: 20px; /* 111.111% */

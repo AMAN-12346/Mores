@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import bathtub from '../../../assets/moreIcon/bathtub.svg';
 import doubleBed from '../../../assets/moreIcon/doubleBed.svg';
@@ -49,6 +49,12 @@ const amenityIconsess = {
 
 export default function Amenities({ props }) {
     const allAmenities = Object.assign({}, props?.perks?.Sports, props?.perks?.safety);
+
+    const [openview, setOpenview] = useState(true);
+
+    const handleMobileView = () => {
+        setOpenview(!openview);
+    }
 
     // Create a function to map amenity values to their respective image info
     const mapAmenityToImage = (amenity) => {
@@ -190,32 +196,35 @@ export default function Amenities({ props }) {
 
     return (
         <div className="bg-white shadow-md">
-            <div className="bg-[#018191] rounded-t-lg shadow-md p-4">
+            <div className="bg-[#018191] rounded-t-lg shadow-md p-4" onClick={handleMobileView}>
                 <div>
                     <h1 className="text-white text-2xl font-semibold">Amenities</h1>
                 </div>
             </div>
-            <div className="flex flex-wrap p-9 text-sm">
-                {rows.map((row, rowIndex) => (
-                    <div key={rowIndex} className="md:w-1/2 lg:w-1/3 px-3 p-5">
-                        <div className="flex flex-col gap-2 justify-center"> {/* Added justify-center */}
-                            {row.map(({ amenity, imageInfo }) => (
-                                <div key={amenity} className="flex items-center gap-4">
-                                    {imageInfo && (
-                                        <Image
-                                            src={imageInfo.image}
-                                            alt={`${amenity} Icon`}
-                                            height={24}
-                                            width={24}
-                                        />
-                                    )}
-                                    <p className="font-semibold">{imageInfo ? imageInfo.name : amenity}</p>
-                                </div>
-                            ))}
+            {
+                openview &&
+                <div className="flex flex-wrap p-9 text-sm">
+                    {rows.map((row, rowIndex) => (
+                        <div key={rowIndex} className="md:w-1/2 lg:w-1/3 px-3 p-5">
+                            <div className="flex flex-col gap-2 justify-center"> {/* Added justify-center */}
+                                {row.map(({ amenity, imageInfo }) => (
+                                    <div key={amenity} className="flex items-center gap-4">
+                                        {imageInfo && (
+                                            <Image
+                                                src={imageInfo.image}
+                                                alt={`${amenity} Icon`}
+                                                height={24}
+                                                width={24}
+                                            />
+                                        )}
+                                        <p className="font-semibold">{imageInfo ? imageInfo.name : amenity}</p>
+                                    </div>
+                                ))}
+                            </div>
                         </div>
-                    </div>
-                ))}
-            </div>
+                    ))}
+                </div>
+            }
 
         </div>
     );

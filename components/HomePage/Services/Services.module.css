@@ -43,6 +43,7 @@
     .wrapper {
         flex-wrap: nowrap;
         overflow-x: scroll;
+        width: 95vw;
     }
     .wrapper::-webkit-scrollbar{
         display: none;
@@ -50,7 +51,7 @@
 }
   
 /* Medium screens */
-@media screen and (min-width: 768px) and (max-width: 991px) {
+@media screen and (min-width: 768px) and (max-width: 1023px) {
     .heading{
         font-size: 26px;
     }
@@ -60,6 +61,7 @@
     .wrapper {
         flex-wrap: nowrap;
         overflow-x: scroll;
+        width: 95vw;
     } 
     .wrapper::-webkit-scrollbar{
         display: none;

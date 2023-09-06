@@ -16,7 +16,7 @@ const LeftSectionCarouselMview=({images})=>{
       }
     return(
       // min-h-[290px]  min-w-[300px]
-        <div className=" h-[200px] px-4 relative group">
+        <div className=" h-[150px] px-4 relative group">
         <div
           style={{
             backgroundImage: `url(${images[index]})`,
@@ -26,7 +26,7 @@ const LeftSectionCarouselMview=({images})=>{
         ></div>
         <div
           onClick={prevSlide}
-          className="group block absolute top-[50%] -translate-x-0 -translate-y-[50%] left-5 text-2xl rounded-full p-2 bg-white/70 text-white cursor-pointer"
+          className="group block absolute top-[50%] -translate-x-0 -translate-y-[50%] left-5 text-2xl rounded-full p-1 bg-white/70 text-white cursor-pointer"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -44,7 +44,7 @@ const LeftSectionCarouselMview=({images})=>{
         </div>
         <div
           onClick={nextSlide}
-          className="group block absolute top-[50%] -translate-x-0 -translate-y-[50%] right-5 text-2xl rounded-full p-2 bg-white/70 text-white cursor-pointer"
+          className="group block absolute top-[50%] -translate-x-0 -translate-y-[50%] right-5 text-2xl rounded-full p-1 bg-white/70 text-white cursor-pointer"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

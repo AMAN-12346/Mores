@@ -24,6 +24,8 @@ import FeaturesSectionCard from '@/components/HomePage/FeaturedPropertiesSection
 import RecommenedCard from '../RecommenedCard';
 import LikeShareButtons from '@/components/LikeShear/Component';
 import Footer from '@/components/Common/Footer/Footer';
+import Mscore_Mverifid from '@/components/property/Mscore_Mverifid';
+import HighlightAmenities from '@/components/property/HighlightAmenities';
 // import SimpleMap from '@/components/GoogleMapo/Using_Lat_Log'; 
 
 const SinglePropertyCard = () => {
@@ -44,7 +46,6 @@ const SinglePropertyCard = () => {
     useEffect(() => {
         ShowCard()
     }, []);
-    const topLinestyle = { borderRadius: '35px', background: 'rgba(1, 129, 145, 0.22)', fontFamily: 'Poppins', fontSize: '16px', fontStyle: 'normal', fontWeight: 400, lineHeight: 'normal', }
     const MScore = {
         width: '100px',
         height: '50px',
@@ -62,13 +63,12 @@ const SinglePropertyCard = () => {
                 </div>
             </div>
 
-            <div className="rounded-lg shadow-md m-3">
-                <div className="grid grid-cols-2 gap-3">
-                    {/* let grid */}
-                    <div className="col-span-1">
-                        <div className="relative">
-                            <img src={property?.images[0]?.original} alt={property?.propertyName} className="w-full rounded-md" />
-                            <div className="absolute flex justify-center top-7 left-5 w-[150px] lg:w-[200px] text-white rounded-tl-md" style={{ borderRadius: "43px", background: "rgba(1, 129, 145, 0.20)", flexShrink: 0 }}>
+            <div className="m-2">
+                <div className="w-12/12 flex justify-between gap-2 m-3">
+                    {/* lelt grid */}
+                    <div className="w-8/12">
+                        <div className="relative rounded-md h-full" style={{ backgroundImage: `url(${property?.images[0]?.original})`, backgroundSize: 'cover'}}>
+                            <div className="absolute flex m-4 px-3 justify-center text-white" style={{ borderRadius: "43px", background: "rgba(1, 129, 145, 0.20)", flexShrink: 0 }}>
                                 <Image
                                     className="bg-contain md:py-5"
                                     src={EYE}
@@ -89,8 +89,8 @@ const SinglePropertyCard = () => {
                     </div>
 
                     {/* Right grid  */}
-                    <div className="col-span-1">
-                        <div className="grid grid-cols-2 gap-3">
+                    <div className="w-4/12">
+                        <div className="grid grid-cols-2 gap-1">
                             {/* Render first image */}
                             <div className="w-full rounded-md overflow-hidden">
                                 <img
@@ -135,54 +135,21 @@ const SinglePropertyCard = () => {
             </div>
 
             <div>
-                {/* Render areaDetails properties */}
-                <div className='mr-8 mt-5'>
-                    <div className='flex flex-col md:flex-row gap-4 w-full'>
-                        <div className='md:w-4/12 py-3'>
-                            <div className="md:mr-4 flex justify-start items-center">
-                                <div className='flex text-xl font-bold md:px-8' style={{ color: '#018191' }}>
-                                    <Image
-                                        className="bg-contain md:mr-2"
-                                        src={mVerified}
-                                        alt="M-verified"
-                                        height={22}
-                                        width={23}
-                                    />
-                                    {property?.propertyType}
-                                </div>
-                                <div className='flex text-xl font-bold md:px-8' style={{ color: '#018191' }}>M Score <div className='md:px-7'> 100</div></div>
-                            </div>
+                {/* Render areaDetails and Properties */}
+                <div>
+                    <div className='lg:flex w-12/12 lg:-mr-20'>
+                        <div className='lg:w-4/12 md:12/12 sm:12/12 md:mr-5 md:ml-5 mr-5 ml-5 lg:ml-5 lg:mr-0'>
+                            <Mscore_Mverifid Data={property} />
                         </div>
-                        <div className='md:w-8/12'>
-                            <div>
-                                <div className="flex flex-wrap gap-1 md:gap-4 justify-between">
-                                    <p className="py-3 px-5 md:py-3 md:px-7 text-center" style={topLinestyle}>
-                                        Affordable
-                                    </p>
-                                    <p className="py-3 px-5 md:py-3 md:px-7 text-center" style={topLinestyle}>
-                                        Newly build
-                                    </p>
-                                    <p className="py-3 px-5 md:py-3 md:px-7 text-center" style={topLinestyle}>
-                                        {property?.propertySubType}
-                                    </p>
-                                    <p className="py-3 px-5 md:py-3 md:px-7 text-center" style={topLinestyle}>
-                                        {property?.action}
-                                    </p>
-                                    <p className="py-3 px-5 md:py-3 md:px-7 text-center" style={topLinestyle}>
-                                        {property?.allowance}
-                                    </p>
-                                    <p className="py-3 px-5 md:py-3 md:px-7 text-center" style={topLinestyle}>
-                                        {property?.furniture}
-                                    </p>
-                                </div>
-                            </div>
+                        <div className='lg:w-8/12 md:w-12/12 sm:12/12 lg:mt-0 lg:mr-0 md:ml-0 md:mr-0 ml-8 md:mt-2 mt-5'>
+                            <HighlightAmenities property={property} />
                         </div>
                     </div>
                 </div>
 
-                <div className="flex justify-between mt-4"> {/* Name and price */}
-                    <p className="text-3xl font-bold px-8">{property?.propertyName}</p>
-                    <p className="text-3xl font-bold mr-8">₹ {property?.price}</p>
+                <div className="flex justify-between mt-4 lg:mr-11 md:mr-10 sm:mr-10"> {/* Name and price */}
+                    <p className="lg:text-3xl md:3xl text-base font-bold px-8">{property?.propertyName}</p>
+                    <p className="lg:text-3xl md:3xl text-base font-bold">₹ {property?.price}</p>
                 </div>
 
                 <div className="flex px-8 mt-5"> {/* Location */}
@@ -197,9 +164,9 @@ const SinglePropertyCard = () => {
                     </a>
                 </div>
 
-                <div className="flex flex-col md:flex-row justify-between md:items-center mr-8"> {/* amenities and two button */}
-                    <div className="flex flex-col md:flex-row px-8 mt-4 md:mt-0">
-                        <div className="flex items-center mb-4 md:mb-0 md:mr-4">
+                <div className="lg:flex md:flex w-12/12 lg:ml-8 md:ml-8 md:mr-10"> {/* amenities and two button */}
+                    <div className="flex lg:w-5/12 md:w-6/12 lg:justify-start md:justify-start justify-between lg:ml-0 lg:mr-0 md:ml-0 md:mr-0 ml-8 mt-3">
+                        <div className="flex items-center">
                             <Image
                                 className="bg-contain"
                                 src={bedRoom}
@@ -209,7 +176,7 @@ const SinglePropertyCard = () => {
                             />
                             <p className='p-2 items-center md:mr-4'>{property?.bedrooms} Bed's</p>
                         </div>
-                        <div className="flex items-center mb-4 md:mb-0 md:mr-4">
+                        <div className="flex items-center">
                             <Image
                                 className="bg-contain"
                                 src={bathtub}
@@ -230,60 +197,57 @@ const SinglePropertyCard = () => {
                             <p className='p-2 items-center'>{property?.areaDetails.bedrooms} SqFt</p>
                         </div>
                     </div>
-                    <div className="flex flex-col md:flex-row mt-4 md:mt-8 gap-4 md:gap-14">
-                        <div>
-                            <button
-                                className="bg-primary text-white py-2 px-8 rounded-md mr-4 mb-4 md:mb-0 text-center"
-                                disabled={!isLoggedIn}
-                                style={{
-                                    borderRadius: '7px',
-                                    border: '1px solid rgba(0, 0, 0, 0.23)',
-                                    background: 'rgba(245, 198, 198)',
-                                    width: '100%', // Full width on small screens
-                                    height: '70px',
-                                    fontSize: '16px',
-                                    fontWeight: '400',
-                                }}
-                            >
-                                <div className="flex items-center">
-                                    <Image
-                                        src={InstantLoan}
-                                        alt="InstantLoan"
-                                        height={30}
-                                        width={30}
-                                        className="mr-2"
-                                    />
-                                    Get Instant Home Loan
-                                </div>
-                            </button>
-                        </div>
-                        <div>
-                            <button
-                                className="bg-primary text-white py-2 px-8 rounded-md mr-4 text-center"
-                                disabled={!isLoggedIn}
-                                style={{
-                                    borderRadius: '7px',
-                                    border: '1px solid rgba(0, 0, 0, 0.23)',
-                                    background: '#931602',
-                                    width: '100%', // Full width on small screens
-                                    height: '70px',
-                                    fontSize: '16px',
-                                    fontWeight: '400',
-                                }}
-                            >
-                                <div className="flex items-center">
-                                    <Image
-                                        src={iconCall}
-                                        alt="iconCall"
-                                        height={30}
-                                        width={30}
-                                        className="mr-2"
-                                    />
-                                    Request for Call
-                                </div>
-                            </button>
-                        </div>
+                    <div className="flex lg:w-7/12 md:w-6/12 flex-col md:flex-row justify-end md:gap-2 gap-6 lg:ml-0 lg:mr-10 md:ml-0 md:mr-10 ml-8 mt-3">
+                        <button
+                            className="bg-primary text-white py-2 px-8 rounded-md flex items-center justify-center"
+                            disabled={!isLoggedIn}
+                            style={{
+                                borderRadius: '7px',
+                                border: '1px solid rgba(0, 0, 0, 0.23)',
+                                background: 'rgba(245, 198, 198)',
+                                width: '100%',
+                                maxWidth: '300px',
+                                height: '70px',
+                                fontSize: '16px',
+                                fontWeight: '400',
+                            }}
+                        >
+                            <Image
+                                src={InstantLoan}
+                                alt="InstantLoan"
+                                height={30}
+                                width={30}
+                            />
+                            <span className="ml-2">Apply for Loan</span>
+                        </button>
+
+                        <button
+                            className="bg-primary py-2 px-8 rounded-md text-white flex items-center justify-center mt-4 md:mt-0"
+                            disabled={!isLoggedIn}
+                            style={{
+                                borderRadius: '7px',
+                                border: '1px solid rgba(0, 0, 0, 0.23)',
+                                background: '#931602',
+                                width: '100%',
+                                maxWidth: '300px',
+                                height: '70px',
+                                fontSize: '16px',
+                                fontWeight: '400',
+                            }}
+                        >
+                            <Image
+                                src={iconCall}
+                                alt="iconCall"
+                                height={30}
+                                width={30}
+                            />
+                            <span className="ml-2">Request for Call</span>
+                        </button>
                     </div>
+
+
+
+
                 </div>
 
 
@@ -306,6 +270,7 @@ const SinglePropertyCard = () => {
                     </div>
                 </div>
             </div >
+
             <div className='mt-11'>
                 <RecommenedCard data={property} />
             </div>

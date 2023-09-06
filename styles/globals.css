@@ -14,11 +14,6 @@ body {
   background-color: var(--primary-bg);
   font-family: "Poppins";
   /* font-family: 'Telegrafico'; */
-  overflow-x: hidden;
-.overlow-scroll::-webkit-scrollbar{
-    display: none;
-}
-
 }
 
 

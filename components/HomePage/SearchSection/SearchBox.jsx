@@ -1,5 +1,6 @@
 import Image from "next/image";
 import nearme from "../../../assets/SearchBoxIcon/nearme.svg";
+import magnifyingGlass from "../../../assets/SearchBoxIcon/magnifyglass.svg"
 import { useState } from "react";
 const SearchBox = () => {
   const [budget, setBudget] = useState("");
@@ -12,10 +13,10 @@ const SearchBox = () => {
     setPropertyType(event.target.value);
   };
   return (
-    <div className="flex bg-white rounded-xl p-6 mt-4">
+    <div className="flex bg-white rounded-xl p-4 mt-4 justify-evenly">
       <div className="flex bg-nearme rounded-md p-2 gap-2 items-center">
         <Image src={nearme} alt="icon" />
-        <button className="text-primary"> Near Me </button>
+        <button className="text-primary sm:w-24"> Near Me </button>
       </div>
       <div className="flex items-center">
         <div className="flex items-center">
@@ -29,7 +30,7 @@ const SearchBox = () => {
             <option value="100000-200000">₹100,000 - ₹200,000</option>
             <option value="200000-300000">₹200,000 - ₹300,000</option>
           </select>
-          <svg
+          <svg className="hidden md:block"
             xmlns="http://www.w3.org/2000/svg"
             width="17"
             height="9"
@@ -46,13 +47,13 @@ const SearchBox = () => {
           <select
             value={propertyType}
             onChange={handlePropertyChange}
-            className="appearance-none w-full px-4 py-2 rounded-lg leading-tight focus:outline-none focus:shadow-outline font-bold"
+            className="md:hidden appearance-none w-full px-4 py-2 rounded-lg leading-tight focus:outline-none focus:shadow-outline font-bold"
           >
             <option value="">Property Type</option>
             <option value="option1">Resendential</option>
             <option value="option2">Commercial</option>
           </select>
-          <svg
+          <svg className="md:hidden sm:hidden"
             xmlns="http://www.w3.org/2000/svg"
             width="17"
             height="9"
@@ -64,6 +65,13 @@ const SearchBox = () => {
               fill="black"
             />
           </svg>
+        </div>
+        <div className="ml-10"> 
+            <input type="text" placeholder="Enter the location" className="px-4 py-2 focus:border-gray-200"/>
+        </div>
+        <div className="bg-primary px-4 py-2 ml-36 rounded-md flex text-white">
+            <Image src={magnifyingGlass} alt="icon" height={30} width={30}/>
+            <button className="md:hidden">Search</button>
         </div>
       </div>
     </div>
