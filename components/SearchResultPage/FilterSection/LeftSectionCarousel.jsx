@@ -15,7 +15,7 @@ const LeftSectionCarousel=({images})=>{
         setIndex(slideIndex);
       }
     return(
-        <div className="min-h-[290px] min-w-[300px] px-4 relative group">
+        <div className="h-[300px] w-[300px] min-h-[300px] min-w-[290px] px-4 relative group">
         <div
           style={{
             backgroundImage: `url(${images[index]})`,

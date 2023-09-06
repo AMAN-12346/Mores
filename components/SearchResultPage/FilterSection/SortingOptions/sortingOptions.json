@@ -1,0 +1,22 @@
+[
+    {
+        "value": "default",
+        "label": "Sort by"
+    },
+    {
+        "value": "priceLowToHigh",
+        "label": "Price: Low to High"
+    },
+    {
+        "value": "priceHighToLow",
+        "label": "Price: High to Low"
+    },
+    {
+        "value": "dateNewestFirst",
+        "label": "Date: Newest First"
+    },
+    {
+        "value": "dateOldestFirst",
+        "label": "Date: Oldest First"
+    }
+]

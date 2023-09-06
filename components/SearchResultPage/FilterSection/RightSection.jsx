@@ -1,30 +1,20 @@
 import Image from "next/image"
+import shield from '../../../assets/moreIcon/Shield.svg'
+import mscore from '../../../assets/moreIcon/m-score.png'
 const RightSection=({details})=>{
     return(
         <div>
         <div className="flex justify-between mt-2 ">
-          <div className="flex gap-2 p-2">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="26"
-              height="32"
-              viewBox="0 0 26 32"
-              fill="none"
-            >
-              <path
-                d="M12.75 0L0 5.66667V14.1667C0 22.0292 5.44 29.3817 12.75 31.1667C20.06 29.3817 25.5 22.0292 25.5 14.1667V5.66667L12.75 0ZM9.91667 22.6667L4.25 17L6.2475 15.0025L9.91667 18.6575L19.2525 9.32167L21.25 11.3333L9.91667 22.6667Z"
-                fill="#003E71"
-              />
-            </svg>
+          <div className="flex gap-2 p-1 items-center">
+              <Image src={shield} alt='icon'/>
             <h1 className="text-searchPageText font-semibold">Resendential</h1>
           </div>
-          <div className="flex items-center align-middle text-center gap-4 text-searchPageText p-1">
-            <div className="flex gap-2 items-center text-center align-middle">
-            <h1 className="font-semibold">M-score</h1>
-            <div className="bg-Background rounded-2xl px-4 py-1 items-center">
+          <div className="flex items-center align-middle text-center gap-4 text-button p-1">
+            <div className="flex bg-Mscorebg rounded-2xl px-4 py-1 items-center align-middle gap-2">
+              <Image src={mscore} alt='icon' />
               <h1 className="font-semibold">100</h1>
             </div>
-            </div>
+            
             <div className="flex gap-4 pr-6">
               <div className="bg-gray-200 rounded-full p-2">
               <svg
@@ -60,11 +50,11 @@ const RightSection=({details})=>{
             </div>
           </div>
         </div>
-        <div className="flex font-semibold text-2xl justify-between mt-4 pr-16">
+        <div className="flex font-semibold text-2xl justify-between mt-1 pr-14">
           <h1>{details.propertyName}</h1>
           <h1> ₹{details.price}</h1>
         </div>
-        <div className="flex gap-24 mt-4 text-SearchResultText text-lg items-center">
+        <div className="flex gap-14 mt-4 text-SearchResultText text-lg items-center">
           <div className="flex items-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -191,12 +181,12 @@ const RightSection=({details})=>{
             <span className="underline text-black">Read More</span>
           </p>
         </div>
-        <div className="flex gap-56 mt-4 ">
+        <div className="flex justify-between mt-4 ">
           <div className="flex gap-2">
-            <Image src={'https://s3-alpha-sig.figma.com/img/9ef8/cb32/9b949267cc8214b6727067c4a13af4b4?Expires=1693785600&Signature=VZulMf5XWj~jiKNnOhGXLk~PILEffDT6sG8yhRn60oA10-76rml16OO8yaUHswNVNmX45jm1suE2KJRThE4NmSU5USefrpzins~YkGgVTHA3HX0LZWBfhQQF6B2ZW8IBDwjh5kvX-9xL1sRYtNiE3oeMMIxnCiNRUDtmeGX8jkfntBQhRgxCxFfH3wquHlF7Z-EDa-RHO1w0MHIBdOcx8t~fabQggqHG8CirxuQWSdLe~Ev4KCbGEylJFgXEksegvsqeO3Fa8O3Kn2zk06gOaiLXVE1dfiJt04seMcAKKv4ua3dG6ytLm8VdiWwQgIX6qgYELSOzC-Z~PeatdiZfPQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4'}
+            <Image src={'https://s3-alpha-sig.figma.com/img/9ef8/cb32/9b949267cc8214b6727067c4a13af4b4?Expires=1694995200&Signature=C2R9xsmtmBp3lkABrH-d7wMkad1hoa-qiYtA-DEr1ARlzn8zszgDvNsG2OgkjT24~r-PcUcGvZfv7aZ0729OKvTT-mtrxuNm~Vc~Co6tGEQevMjcIp~Di7ZMiEIQH6cNiB6s1L0Eh35q4tbz4i86Cqlw6uaa-RZPsLfRv04DiwgUMsUx4u2x8metqGFW3abBcccka~Vpf0ie84B-6R4v-dGC0Qq-kx7v8-3Kbkw-z9eEvJUtSvQGvYkjfAuoXzzThkEV6UPr5vYT9IngtMXmJKCzASsd1WGlJrFA5YttFd-NAhp3AG140bIZcyauqkmHRo5ISO86b1i8DaFXncq2Ag__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4'}
             alt="owner Image"
-            height={50}
-            width={50}
+            height={40}
+            width={40}
             className="rounded-full"
             />
             <div>
@@ -204,7 +194,7 @@ const RightSection=({details})=>{
               <p className="text-sm font-extralight">Owner</p>
             </div>
           </div>
-          <div className="flex text-center bg-featuredBackground p-2 px-9 text-white rounded-md">
+          <div className="flex text-center bg-featuredBackground p-1 px-6 mr-12 text-white rounded-md">
             <button>Contact</button>
           </div>
         </div>

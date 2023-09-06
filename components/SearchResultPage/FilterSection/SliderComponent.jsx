@@ -44,7 +44,7 @@ export default function MinimumDistanceSlider() {
   };
 
   return (
-    <Box sx={{ width: 300 }}>
+    <Box sx={{ width: 200 }} style={{marginTop : '40px'}}>
       <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '10px',marginLeft:"30px"}}>
         <div>
         <span className='font-semibold'>M Score</span>

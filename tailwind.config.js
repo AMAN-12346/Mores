@@ -21,7 +21,9 @@ module.exports = {
         Background:'#01819140',
         SearchResultText:'#78828a',
         Text:'#F0E4F4',
-        paginationButton:"#A37F4F"
+        paginationButton:"#A37F4F",
+        Mscorebg:"#93160240",
+        sortbybg:"#0181911f"
       },
       fontSize:{
         'custom':'3.39375rem',
