@@ -12,7 +12,8 @@
     padding: 10px 20px 30px; 
     max-width: 0;
     max-height: 0;
-    /* animation: dropdownFade 1s ease; */
+    /* animation: dropdownFade 1s ease;
+    transition: dropdownFade 1s ease; */
 }
 
 
