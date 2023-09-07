@@ -21,9 +21,9 @@ const SearchSection = () => {
       </div>
       </div>
 
-      <div className={`flex lg:justify-center md:justify-start pt-12 sm:justify-center max-lg:ml-5 ${isMobileView ? 'flex-wrap' : ''}`}>
+      <div className={`flex lg:justify-center md:justify-start pt-12 sm:justify-center  max-lg:ml-5 ${isMobileView ? 'flex-wrap justify-center mx-3' : ''}`}>
         {isMobileView ? (
-          <div className="flex items-center justify-center">
+          <div className="flex items-center">
             <FilterButtons name={"Buy"} icon={buy} isMobileView={isMobileView} />
             <FilterButtons name={"Rent"} icon={rent} isMobileView={isMobileView} />
             <FilterButtons name={"New Project"} icon={newProject} isMobileView={isMobileView} />
