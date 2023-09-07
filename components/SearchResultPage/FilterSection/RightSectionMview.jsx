@@ -24,7 +24,7 @@ const RightSectionMview = ({ details }) => {
                 src={Mscore}
                 alt="icon"
               />
-              <h1 className="font-bold text-red-700 text-sm">100</h1>
+              <h1 className="font-bold text-searchPageText text-sm">100</h1>
             </div>
             <h1 className="text-black">score</h1>
           </div>

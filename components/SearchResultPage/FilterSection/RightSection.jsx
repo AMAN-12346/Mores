@@ -14,7 +14,7 @@ const RightSection = ({ details }) => {
         <div className=" flex justify-between gap-2 align-middle text-center text-button p-1">
           <div className="flex bg-searchPageText2 rounded-2xl px-4 py-1 items-center align-middle gap-2">
             <Image src={mscore} alt="icon" />
-            <h1 className="font-semibold">100</h1>
+            <h1 className="font-semibold text-searchPageText">100</h1>
           </div>
 
           <div className="bg-gray-200 max-md:hidden rounded-full p-2">
@@ -49,7 +49,7 @@ const RightSection = ({ details }) => {
       </div>
       <div className="flex max-md:flex-col font-semibold text-2xl justify-between mt-1 ">
         <h1>{details.propertyName}</h1>
-        <h1> ₹{details.price}</h1>
+        <h1 className="max-md:pt-3"> ₹{details.price}</h1>
       </div>
       <div className="flex gap-14 mt-4 text-SearchResultText text-lg justify-between">
         <div className="flex items-center">
