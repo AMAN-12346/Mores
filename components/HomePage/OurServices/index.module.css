@@ -34,12 +34,15 @@
 .wrapper {
     display: flex;
     width: 99%;
-    overflow: hidden;
+    overflow: scroll;
     scroll-behavior: smooth;
     gap: 3%;
     padding: 20px 20px;
     margin-top: 50px;
     margin-left: 6%;
+}
+.wrapper::-webkit-scrollbar{
+    display: none;
 }
 
 .exploreAll{

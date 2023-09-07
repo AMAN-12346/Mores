@@ -41,7 +41,7 @@
     }
     .wrapper {
         margin-top: 40px;
-        overflow-x: scroll;
+        overflow: scroll;
     }
     .wrapper::-webkit-scrollbar{
         display: none;
@@ -50,7 +50,7 @@
 @media screen and (min-width:768px) and (max-width:1023px){
     
     .wrapper {
-        overflow-x: scroll;
+        overflow: scroll;
     }
     .wrapper::-webkit-scrollbar{
         display: none;

@@ -9,7 +9,7 @@ import Navbar from "@/components/Common/Navbar/Navbar";
 import Footer from "@/components/Common/Footer/Footer";
 import { useRouter } from 'next/router';
 import Head from "next/head";
-import FavImage from '../assets/moreIcon/FaviconMores.svg';
+import FavImage from '../public/footer-image.png';
 
 
 function MyApp({ Component, pageProps }) {
@@ -22,7 +22,8 @@ function MyApp({ Component, pageProps }) {
   return (
     <AuthProvider>
       <Head>
-        <link rel="icon" href='https://cdn-icons-png.flaticon.com/128/11086/11086535.png' sizes="6x6 32x32" />
+        {/* <link rel="icon" href='https://cdn-icons-png.flaticon.com/128/11086/11086535.png' sizes="6x6 32x32" /> */}
+        <link rel="icon" href='../assets/moreIcon/MoresSvg.svg' sizes="16x16 32x32" />
         <title>Mores</title>
       </Head>
       <Script

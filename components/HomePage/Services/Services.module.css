@@ -44,7 +44,7 @@
     }   
     .wrapper {
         flex-wrap: nowrap;
-        overflow-x: scroll;
+        overflow: scroll;
         justify-content: left;
         width: 95vw;
     }
@@ -64,7 +64,7 @@
     .wrapper {
         flex-wrap: nowrap;
         justify-content: left;
-        overflow-x: scroll;
+        overflow: scroll;
         width: 95vw;
     } 
     .wrapper::-webkit-scrollbar{

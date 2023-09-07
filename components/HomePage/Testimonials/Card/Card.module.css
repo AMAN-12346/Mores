@@ -33,11 +33,12 @@
 }
 
 .story{
-    display: -webkit-box;
+    /* display: -webkit-box; */
     -webkit-line-clamp: 7; /* Number of lines to display */
     -webkit-box-orient: vertical;
     overflow: scroll;
     text-overflow: ellipsis;
+    cursor: pointer;
     color: #666;
 }
 .story::-webkit-scrollbar{

@@ -22,6 +22,9 @@
     color: white;
     background-color: #018191;
 }
+.serviceButton button{
+    letter-spacing: 0.5px;
+}
 
 
 /* Small screens */
