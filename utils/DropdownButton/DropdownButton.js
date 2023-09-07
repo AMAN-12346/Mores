@@ -10,7 +10,7 @@ const DropdownButton = ({optionName, menuItem}) => {
   return (
         <div className={Styles.dropDown}>
           <button
-            className='flex h-[60px] items-center mr-1'
+            className='flex h-[60px] items-center mr-3'
           >
             <p className='mr-1'>{optionName}</p>    
           
