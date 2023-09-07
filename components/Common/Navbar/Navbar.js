@@ -12,13 +12,14 @@ import DropdownButton from '@/utils/DropdownButton/DropdownButton';
 import useWindowWidth from '@/context/useWindowWidth';
 import BurgerMenu from './BurgerMenu';
 import MobileMenu from './MobileMenu';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import navbarContent from '@/content/Navbar';
 
  
 const Navbar = () => {
     const [auth, setAuth] = useAuth();
     const [navbarContentData, setNavbarContentData] = useState(navbarContent);
+    const [lastScrollY, setLastScrollY] = useState(0);
 
     const router = useRouter();
     const windowWidth = useWindowWidth();
@@ -39,6 +40,8 @@ const Navbar = () => {
         )
     }
 
+
+
     return ( 
         <div className={Styles.navbar}>
            <div className={`flex pl-4 md:justify-between lg:justify-normal ${Styles.outerDiv}`}>
@@ -48,7 +51,7 @@ const Navbar = () => {
                             <MoresLogo />
                         </div>
 
-                        <div className={`flex justify-evenly ml-7`}> 
+                        <div className={`flex justify-evenly ml-9`}> 
                         {Object.keys(navbarContentData).map((content)=> 
                             <div className={Styles.optionName}>
                                <DropdownButton optionName={content} menuItem={navbarContentData[content]} />  
@@ -67,16 +70,16 @@ const Navbar = () => {
            
             <div className='md:w-[420px] lg:w-[420px]'>
                 {!auth.userResult ? 
-                    <div className='text-center flex hover:opacity-95 absolute right-9 lg:mt-[7px]'>
+                    <div className='text-center flex hover:opacity-95 absolute right-9 lg:mt-[9px]'>
                         <button className={`mr-3 ${Styles.sellRentButton}`}>Sell & Rent Property</button>
                         <Link href='/login'>
                             <button className={Styles.button}>Login Now</button> 
                         </Link>
                     </div>
                 :
-                    <div className='flex flex-start mt-[7px]'>
-                        <button className={`mr-3 ${Styles.sellRentButton}`}>Sell & Rent Property</button>
-                        <Image src={fillHeart} width={24} height={28} className='mr-2'/>
+                    <div className='flex flex-start md:mt-[1px] lg:mt-[7px]'>
+                        <button className={`mr-4 mt-[2px] ${Styles.sellRentButton}`}>Sell & Rent Property</button>
+                        <Image src={fillHeart} width={24} height={28} className='mr-4'/>
 
                         <Image src={notificationBell} width={17} height={21}/>
                         <div className='relative pt-3 mr-4'>

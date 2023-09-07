@@ -1,9 +1,6 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
 import downArrow from '../../assets/ButtonIcons/fluent_ios-arrow-24-filled.svg';
-import upArrow from '../../assets/ButtonIcons/upArrow.svg';
 import Styles from './index.module.css';
 import Link from 'next/link';
 
@@ -13,11 +10,11 @@ const DropdownButton = ({optionName, menuItem}) => {
   return (
         <div className={Styles.dropDown}>
           <button
-            className='flex h-[60px] items-center'
+            className='flex h-[60px] items-center mr-1'
           >
             <p className='mr-1'>{optionName}</p>    
           
-            <Image src={downArrow} className={Styles.image} width={11} alt='down arrow' style={{marginTop: "2px"}} />
+            <Image src={downArrow} className={Styles.image} width={11} alt='down arrow' style={{marginTop: "1px"}} />
             
           </button>
           <div class={Styles.dropdownMenu}>
