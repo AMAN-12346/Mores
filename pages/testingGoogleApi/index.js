@@ -8,12 +8,12 @@ const GoogleMap = ({ google, updateParentLocation }) => {
   const [selectedLocation, setSelectedLocation] = useState({});
 
   useEffect(() => {
-    updateParentLocation(
-      selectedLocation.city,
-      selectedLocation.longitude,
-      selectedLocation.latitude
-    );
-  }, [selectedLocation, updateParentLocation]);
+    // updateParentLocation(
+    //   selectedLocation.city,
+    //   selectedLocation.longitude,
+    //   selectedLocation.latitude
+    // );
+  }, [selectedLocation]);
   const onSearchInputChange = (event) => {
     console.log("changeddddd")
     const value = event.target.value;

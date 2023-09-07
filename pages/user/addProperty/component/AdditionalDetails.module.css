@@ -12,17 +12,13 @@
     margin-bottom: 5px;
     width:fit-content;
     height: 35px;
-    background-color: #ffffff;
+    /* background-color: #ffffff; */
   
   }
 
   
   /* Button styles for selected state */
-  .button.selected {
-    background-color: #007bff;
-    color: #ffffff;
-    border: 2px solid #007bff;
-  }
+ 
   
   @media (max-width: 768px) {
     /* Use grid layout for buttons on mobile */

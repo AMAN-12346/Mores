@@ -20,6 +20,60 @@ import AdditionalDetailsForm from "./component/AdditionalDetailsForm";
 
 export default function AddProperty() {
   const [activeStep, setActiveStep] = React.useState(0);
+  const [uplodedPhoto, setUploadPhoto] = useState([]);
+  const [uplodedVideo, setUploadVideo] = useState([]);
+
+  const [locationData, setLocationData] = React.useState({
+    city: "",
+    cityLongitude: "",
+    cityLatitude: "",
+    locality: "",
+    localityLongitude: "",
+    localityLatitude: "",
+    buildingLocation: "",
+    buildingLongitude: "",
+    buildingLatitude: "",
+  });
+
+  const handlePhotoUplod = (data) => {
+    console.log("recieved photos at add property", data);
+
+    setUploadPhoto((prevData) => ({
+      ...prevData,
+      ...data,
+    }));
+  };
+
+  const handleVideoUplod = (data) => {
+    console.log("recieved video at add property", data);
+
+    setUploadVideo((prevData) => ({
+      ...prevData,
+      ...data,
+    }));
+  };
+
+  const handleLocationChange = (data) => {
+    console.log("Received location data:", data);
+
+    // Update the locationData state with the received data
+    setLocationData((prevData) => ({
+      ...prevData,
+      ...data,
+    }));
+
+    // Update the consolidatedPropertyData with the received location data
+    const updatedConsolidatedData = {
+      ...propertyDetails.step2Data,
+      ...propertyDetails.step3Data,
+      ...propertyDetails.step4Data,
+      ...data, // Include the location data
+    };
+
+    console.log("Updated consolidated data:", updatedConsolidatedData);
+
+    setConsolidatedPropertyData(updatedConsolidatedData);
+  };
 
   const [propertyDetails, setPropertyDetails] = React.useState({
     step2Data: {
@@ -56,6 +110,7 @@ export default function AddProperty() {
   });
   const [consolidatedPropertyData, setConsolidatedPropertyData] =
     React.useState({});
+
   const handleStep2InputChange = (event) => {
     const { name, value } = event.target;
     setFormData((prevData) => ({
@@ -93,38 +148,37 @@ export default function AddProperty() {
       label: "Whats your plan",
       component: (
         <div className="mb-5 mt-5 lg:flex">
-        <div className="flex flex-col mb-0 mr-4 lg:mb-0">
-          <div className="p-4 border-2 border-button bg-white rounded-lg mb-12">
-            <StepOneCard
-              mainHeading="Sell or Rent Your Home With MORES Expert"
-              definition="Lorem ipsum dolor sit amet consectetur. Et ut orci morbi Vulputate pretium sem. Justo sollicitudin lacus interdum Sit in sollicitudin vestibulum ultricies duis. Malesuada fusce sit lorem aliquam."
-            />
+          <div className="flex flex-col mb-0 mr-4 lg:mb-0">
+            <div className="p-4 border-2 border-button bg-white rounded-lg mb-12">
+              <StepOneCard
+                mainHeading="Sell or Rent Your Home With MORES Expert"
+                definition="Lorem ipsum dolor sit amet consectetur. Et ut orci morbi Vulputate pretium sem. Justo sollicitudin lacus interdum Sit in sollicitudin vestibulum ultricies duis. Malesuada fusce sit lorem aliquam."
+              />
+            </div>
+          </div>
+          <div className="flex flex-col">
+            <div className="p-4 border-2 border-primary bg-white rounded-lg">
+              <StepOneCard
+                mainHeading="Sell or Rent Your Home Directly"
+                definition="Lorem ipsum dolor sit amet consectetur. Et ut orci morbi Vulputate pretium sem. Justo sollicitudin lacus interdum Sit in sollicitudin vestibulum ultricies duis. Malesuada fusce sit lorem aliquam."
+              />
+            </div>
           </div>
         </div>
-        <div className="flex flex-col">
-          <div className="p-4 border-2 border-primary bg-white rounded-lg">
-            <StepOneCard
-              mainHeading="Sell or Rent Your Home Directly"
-              definition="Lorem ipsum dolor sit amet consectetur. Et ut orci morbi Vulputate pretium sem. Justo sollicitudin lacus interdum Sit in sollicitudin vestibulum ultricies duis. Malesuada fusce sit lorem aliquam."
-            />
-          </div>
-        </div>
-      </div>
-      
-      
       ),
     },
     {
       label: "Property Details",
       component: (
         <PropertyDetailsForm
-          data={propertyDetails.step2Data} // Error occurs here
+          data={propertyDetails.step2Data}
           onChange={(name, value) =>
             setPropertyDetails({
               ...propertyDetails,
               step2Data: { ...propertyDetails.step2Data, [name]: value },
             })
           }
+          onLocationChange={handleLocationChange} // Make sure you pass onLocationChange prop
         />
       ),
     },
@@ -140,6 +194,8 @@ export default function AddProperty() {
               step3Data: { ...propertyDetails.step3Data, [name]: value },
             })
           }
+          onPhotoChange={handlePhotoUplod}
+          onVideoChange={handleVideoUplod}
         />
       ),
     },
@@ -180,6 +236,9 @@ export default function AddProperty() {
         ...propertyDetails.step2Data,
         ...propertyDetails.step3Data,
         ...propertyDetails.step4Data,
+        ...locationData,
+        ...uplodedPhoto,
+        ...uplodedVideo,
       };
       setConsolidatedPropertyData(consolidatedData);
     }
@@ -254,9 +313,7 @@ export default function AddProperty() {
                       onClick={handleNext}
                       style={buttonStyle} // Use inline style for button
                     >
-                      {index === steps.length - 1
-                        ? "Post Property"
-                        : "Continue"}
+                      {index === steps.length - 1 ? "Continue" : "Continue"}
                     </Button>
                     <Button
                       disabled={index === 0}
@@ -274,8 +331,17 @@ export default function AddProperty() {
         {activeStep === steps.length && (
           <Paper square elevation={0} sx={{ p: 3 }}>
             <Typography>All steps completed - you&apos;re finished</Typography>
-            <Button onClick={handleReset} sx={{ mt: 1, mr: 1 }}>
-              Reset
+            <Button
+              onClick={handleReset}
+              sx={{ mt: 1, mr: 1, color: "#931602" }}
+            >
+              Add Property
+            </Button>
+            <Button
+              onClick={handleBack}
+              //   sx={}
+            >
+              Back
             </Button>
           </Paper>
         )}

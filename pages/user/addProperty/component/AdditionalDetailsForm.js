@@ -1,12 +1,24 @@
 import React, { useState } from "react";
-import AddProperty from "..";
-import AdditionalDetail from "./AdditionalDetails";
 import StepThreeCard from "./cards/StepThreeCard";
 import Image from "next/image";
-import photo from "../component/services/assets/photo.png";
-import video from "../component/services/assets/vedio.png";
+import video from "../component/services/assets/photo.png";
+import photo from "../component/services/assets/vedio.png";
 import styles from "./AdditionalDetails.module.css";
-const AdditionalDetailsForm = ({ data, onChange }) => {
+import axios from "axios";
+import { API } from "@/config.js";
+const AdditionalDetailsForm = ({
+  data,
+  onChange,
+  onPhotoChange,
+  onVideoChange,
+}) => {
+  const [videoURLs, setVideoURLs] = useState([]);
+  const [photoURLs, setPhotoURLs] = useState([]);
+  const [photoUploadLoading, setPhotoUploadLoading] = useState(false);
+  const [videoUploadLoading, setVideoUploadLoading] = useState(false);
+
+  const [uploadMessage, setUploadMessage] = useState(""); // State for upload message
+
   const [additionalRooms, setAdditionalRooms] = useState([]);
 
   const [possessionStatus, setPossessionStatus] = useState("");
@@ -31,23 +43,134 @@ const AdditionalDetailsForm = ({ data, onChange }) => {
     input.accept = "image/*";
     input.multiple = true;
 
-    input.addEventListener("change", (event) => {
+    input.addEventListener("change", async (event) => {
       const files = Array.from(event.target.files);
-      setSelectedPhotos(files);
+
+      // Create a FormData object to send files
+      const formData = new FormData();
+      files.forEach((file, index) => {
+        formData.append(`photo${index}`, file);
+      });
+
+      try {
+        setPhotoUploadLoading(true);
+        // Send a POST request to your API endpoint
+        const response = await axios.post(`${API}user/awsImage`, formData, {
+          headers: {
+            "Content-Type": "multipart/form-data", // Set the content type for file upload
+          },
+        });
+        console.log(response);
+        const photoUrls = response.data.result;
+        const mappedPhotoUrls = photoUrls.map((url, index) => ({
+          id: index, // You can assign a unique ID if needed
+          url: url,
+        }));
+
+        setPhotoURLs(mappedPhotoUrls);
+        console.log(mappedPhotoUrls, "urls from add photo");
+
+        // Call onVideoChange with the mapped URLs
+        onPhotoChange({ photoURLs: mappedPhotoUrls });
+
+        console.log(photoURLs, "photo upload response");
+
+        setPhotoUploadLoading(false);
+        setUploadMessage(`${mappedPhotoUrls.length} Photos uploaded successfully!`);
+
+
+        // Clear success message after 3 seconds
+        setTimeout(() => {
+          setUploadMessage("");
+        }, 3000);
+      } catch (error) {
+        console.error("Error uploading files:", error);
+        setPhotoUploadLoading(false);
+        // Show error message
+        setUploadMessage("Error uploading photos. Please try again.");
+
+        // Clear error message after 3 seconds
+        setTimeout(() => {
+          setUploadMessage("");
+        }, 3000);
+      }
     });
 
     input.click();
   };
 
-  const handleVideoSelect = () => {
+  const handleVideoSelect = async () => {
     const input = document.createElement("input");
     input.type = "file";
     input.accept = "video/*";
     input.multiple = true;
 
-    input.addEventListener("change", (event) => {
+    input.addEventListener("change", async (event) => {
       const files = Array.from(event.target.files);
-      setSelectedVideos(files);
+
+      const formData = new FormData();
+      files.forEach((file, index) => {
+        formData.append(`video${index}`, file);
+      });
+
+      try {
+        setVideoUploadLoading(true);
+        const response = await axios.post(`${API}user/awsVideo`, formData, {
+          headers: {
+            "Content-Type": "multipart/form-data", // Set the content type for video upload
+          },
+        });
+        console.log(response, "videos????????????????");
+
+        if (response.data.responseCode === 200) {
+          const videoUrls = response.data.result; // Assuming response.data.result is an array of URLs
+
+          // Map the URLs and set them in the state
+          const mappedVideoUrls = videoUrls.map((url, index) => ({
+            id: index, // You can assign a unique ID if needed
+            url: url,
+          }));
+
+          setVideoURLs(mappedVideoUrls);
+          console.log(mappedVideoUrls, "urls from add video");
+
+          // Call onVideoChange with the mapped URLs
+          onVideoChange({ videoURLs: mappedVideoUrls });
+
+          console.log(response.data.responseMessage);
+          setVideoUploadLoading(false);
+          // Show success message
+          setUploadMessage(`${videoURLs.length} Videos uploaded successfully!`);
+
+          // Clear success message after 3 seconds
+          setTimeout(() => {
+            setUploadMessage("");
+          }, 3000);
+        } else {
+          console.error(
+            "Error uploading videos:",
+            response.data.responseMessage
+          );
+          setVideoUploadLoading(false);
+          // Show error message
+          setUploadMessage("Error uploading videos. Please try again.");
+
+          // Clear error message after 3 seconds
+          setTimeout(() => {
+            setUploadMessage("");
+          }, 3000);
+        }
+      } catch (error) {
+        console.error("Error uploading videos:", error);
+        setVideoUploadLoading(false);
+        // Show error message
+        setUploadMessage("Error uploading videos. Please try again.");
+
+        // Clear error message after 3 seconds
+        setTimeout(() => {
+          setUploadMessage("");
+        }, 3000);
+      }
     });
 
     input.click();
@@ -140,32 +263,62 @@ const AdditionalDetailsForm = ({ data, onChange }) => {
       {/* Additional Rooms */}
       <label className="block font-semibold mb-2">Upload Photo/Video</label>
 
-      <div className="block md:flex justify-center gap-8">
+      <div className="block md:flex justify-center w-fit gap-8">
         <StepThreeCard
           icon={
             <div className="flex items-center justify-center rounded-full bg-iconBackground p-4 w-20 m-auto">
-              <Image src={video} alt="Video" width={80} height={80} />
+              <Image src={photo} alt="Photo" width={80} height={80} />
             </div>
           }
           definition="Property Listing with more than 5 photos gets more views"
           buttonLabel="Attach Photos"
           onSelect={handlePhotoSelect}
+          onPhotoUpload={photoUploadLoading}
         />
         <StepThreeCard
           icon={
             <div className="flex items-center justify-center rounded-full bg-iconBackground p-4 w-20 h-20 m-auto">
-              <Image src={photo} alt="Photo" width={80} height={50} />
+              <Image src={video} alt="Video" width={80} height={50} />
             </div>
           }
           definition="Property Listing with video gets 3X more views"
           buttonLabel="Attach Videos"
           onSelect={handleVideoSelect}
+          onVideoUpload={videoUploadLoading}
         />
       </div>
+      {uploadMessage && (
+        <div
+          className={`text-center mt-2 ${
+            uploadMessage.includes("Error") ? "text-red-500" : "text-green-500"
+          }`}
+        >
+          {uploadMessage}
+        </div>
+      )}
+      {/* {Array.isArray(photoURLs) && photoURLs.map((photoURL, index) => (
+          <div key={`photo_${index}`} className="mb-2">
+            <img src={photoURL} alt={`Uploaded Photo ${index}`} />
+            hello
+          </div>
+        ))} */}
+      {/* <div className="flex justify-end pr-10 pl-10">
+        {videoURLs.map((videoURL, index) => (
+          
+          <div key={`video_${index}`} className="mb-2 ml-3 ">
+            <video controls width="180" height="120">
+              <source src={videoURL} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          
+        ))}
+        </div> */}
       <div className="mb-4 mt-4">
-        <label className="block font-semibold mb-2 w-fit">Additional Rooms</label>
+        <label className="block font-semibold mb-2 w-fit">
+          Additional Rooms
+        </label>
         <div className="flex flex-wrap gap-2">
-
           {renderButtons(allAdditionalRooms, data.additionalRooms, (value) =>
             onChange("additionalRooms", value)
           )}
@@ -174,9 +327,10 @@ const AdditionalDetailsForm = ({ data, onChange }) => {
 
       {/* Possession Status */}
       <div className="mb-4">
-        <label className="block font-semibold mb-2 w-fit">Possession Status</label>
+        <label className="block font-semibold mb-2 w-fit">
+          Possession Status
+        </label>
         <div className="flex flex-wrap gap-2">
-
           {renderButtons(
             possessionStatusOptions,
             data.possessionStatus,
@@ -189,7 +343,6 @@ const AdditionalDetailsForm = ({ data, onChange }) => {
       <div className="mb-4">
         <label className="block font-semibold mb-2 w-fit">Furnish Status</label>
         <div className="flex flex-wrap gap-2">
-
           {renderButtons(furnishStatusOptions, data.furnishStatus, (value) =>
             onChange("furnishStatus", value)
           )}
@@ -198,9 +351,10 @@ const AdditionalDetailsForm = ({ data, onChange }) => {
 
       {/* Number of Bedrooms */}
       <div className="mb-4">
-        <label className="block font-semibold mb-2 w-fit">Number of Bedrooms</label>
+        <label className="block font-semibold mb-2 w-fit">
+          Number of Bedrooms
+        </label>
         <div className="flex flex-wrap gap-2">
-
           {renderButtons(bedroomOptions, data.numBedrooms, (value) =>
             onChange("numBedrooms", value)
           )}
@@ -209,9 +363,10 @@ const AdditionalDetailsForm = ({ data, onChange }) => {
 
       {/* Number of Bathrooms */}
       <div className="mb-4">
-        <label className="block font-semibold mb-2 w-fit">Number of Bathrooms</label>
+        <label className="block font-semibold mb-2 w-fit">
+          Number of Bathrooms
+        </label>
         <div className="flex flex-wrap gap-2">
-
           {renderButtons(bathroomOptions, data.numBathrooms, (value) =>
             onChange("numBathrooms", value)
           )}
@@ -220,7 +375,9 @@ const AdditionalDetailsForm = ({ data, onChange }) => {
 
       {/* Age of Property */}
       <div className="mb-4">
-        <label className="block font-semibold mb-2 w-fit">Age of Property</label>
+        <label className="block font-semibold mb-2 w-fit">
+          Age of Property
+        </label>
         <div className="flex flex-wrap gap-2">
           {renderButtons(propertyAgeOptions, data.propertyAge, (value) =>
             onChange("propertyAge", value)
@@ -230,9 +387,10 @@ const AdditionalDetailsForm = ({ data, onChange }) => {
 
       {/* Additional Balconies */}
       <div className="mb-4">
-        <label className="block font-semibold mb-2 w-fit">Additional Balconies</label>
+        <label className="block font-semibold mb-2 w-fit">
+          Additional Balconies
+        </label>
         <div className="flex flex-wrap gap-3">
-
           {renderButtons(allBalconyOptions, data.additionalBalconies, (value) =>
             onChange("additionalBalconies", value)
           )}
@@ -267,7 +425,9 @@ const AdditionalDetailsForm = ({ data, onChange }) => {
 
           {/* Floor Number */}
           <div className="mb-4 mt-4">
-            <label className="block font-semibold mb-2 w-fit">Floor Number</label>
+            <label className="block font-semibold mb-2 w-fit">
+              Floor Number
+            </label>
             <input
               type="text"
               className="w-full border rounded-md px-4 py-2 focus:outline-none focus:border-primary"
@@ -278,7 +438,9 @@ const AdditionalDetailsForm = ({ data, onChange }) => {
 
           {/* Tower/Block */}
           <div className="mb-4">
-            <label className="block font-semibold mb-2 w-fit">Tower/Block</label>
+            <label className="block font-semibold mb-2 w-fit">
+              Tower/Block
+            </label>
             <input
               type="text"
               className="w-full border rounded-md px-4 py-2 focus:outline-none focus:border-primary"
@@ -290,7 +452,9 @@ const AdditionalDetailsForm = ({ data, onChange }) => {
 
         {/* Second Column */}
         <div className="mb-4 flex-1 pl-4">
-          <label className="block font-semibold mb-2 w-fit">Flooring Option</label>
+          <label className="block font-semibold mb-2 w-fit">
+            Flooring Option
+          </label>
           <input
             type="text"
             className="w-full border rounded-md px-4 py-2 focus:outline-none focus:border-primary"
@@ -313,7 +477,9 @@ const AdditionalDetailsForm = ({ data, onChange }) => {
 
           {/* Unit Number */}
           <div className="">
-            <label className="block font-semibold mb-2 w-fit">Unit Number</label>
+            <label className="block font-semibold mb-2 w-fit">
+              Unit Number
+            </label>
             <input
               type="text"
               className="w-full border rounded-md px-4 py-2 focus:outline-none focus:border-primary"

@@ -83,7 +83,7 @@ export default function AdditionalDetail() {
           }
           definition="Property Listing with more than 5 photos gets more views"
           buttonLabel="Attach Photos"
-          onSelect={handlePhotoSelect}
+          onSelect={handleVideoSelect}
         />
         <StepThreeCard
           icon={
@@ -98,7 +98,7 @@ export default function AdditionalDetail() {
           }
           definition="Property Listing with video gets 3X more views"
           buttonLabel="Attach Videos"
-          onSelect={handleVideoSelect}
+          onSelect={handlePhotoSelect}
         />
       </div>
 
