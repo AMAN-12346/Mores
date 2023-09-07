@@ -22,8 +22,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <AuthProvider>
       <Head>
-        {/* <link rel="icon" href='https://cdn-icons-png.flaticon.com/128/11086/11086535.png' sizes="6x6 32x32" /> */}
-        <link rel="icon" href='../assets/moreIcon/MoresSvg.svg' sizes="16x16 32x32" />
+        <link rel="icon" href='https://cdn-icons-png.flaticon.com/128/11086/11086535.png' sizes="6x6 32x32" />
         <title>Mores</title>
       </Head>
       <Script
