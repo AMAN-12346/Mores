@@ -24,7 +24,7 @@ const BurgerMenu = () => {
         variant="contained"
         className='flex'
       >
-          <Image src={burgerMenuIcon} width={25} height={50} className='md:w-[30px]'/>
+          <Image src={burgerMenuIcon} width={25} height={50} className='md:w-[30px]' alt='icon'/>
         
       </button>
       <Menu

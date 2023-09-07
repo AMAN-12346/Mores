@@ -21,6 +21,7 @@
     border-radius: 50%;
     border: 1.5px solid #003E71;
     padding: 2px;
+    object-fit: cover;
 }
 
 .name{

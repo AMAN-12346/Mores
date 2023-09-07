@@ -32,10 +32,10 @@ const MainAccordion = ({ hname, htype, filters}) => {
       </div>
       <AnimatePresence>
         {show && (
-          <motion.div initial={{height:0}} animate={{height:"auto"}} exit={{height:0}} transiton={{duration:0.3}} className="overflow-clip">
+          <motion.div initial={{height:0}} animate={{height:"auto"}} exit={{height:0}} transiton={{duration:0.3}} className="">
             {
                 htype==="budget" &&(
-                    <div className="flex justify-evenly mt-4 text-base">
+                    <div className="flex justify-evenly mt-4 gap-4 text-base">
                     <div className="flex items-start border border-solid border-searchPageText rounded-md pl-2 pr-16 py-2 ">
                       <h1 className="text-searchPageText font-medium">Min</h1>
                     </div>

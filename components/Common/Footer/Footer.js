@@ -2,6 +2,7 @@
 import Styles from './Footer.module.css';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
+import moresFooterLogo from '../../../assets/moreIcon/MoresFooter.svg';
 import facebookIcon from '../../../assets/socialIcons/facebook.svg';
 import twitterIcon from '../../../assets/socialIcons/x-twitter.svg';
 import youtubeIcon from '../../../assets/socialIcons/youtube.svg';
@@ -32,11 +33,12 @@ const Footer = () => {
     return ( 
         <footer className={`footer md:flex p-10 bg-base-200 text-base-content sm:text-[11px] md:text-[11px] lg:text-[14px] relative ${Styles.footer}`}>
             <div className='w-[40vw] md:w-[30vw] mr-[5vw] md:text-[11px] lg:text-[12px]'>
-                <img 
+                <Image src={moresFooterLogo} alt='Mores-Footer-Logo' width={143} className='w-40 h-9 mt-7'/>
+                {/* <img 
                    className='w-40 h-9 mt-7'
                    src="https://s3-alpha-sig.figma.com/img/e7aa/0378/04e2d5856f135d6d10a0aaa5c453113e?Expires=1693180800&Signature=pMdNl8b3K9wO1Qgb1NnF1mZd-c80RlqzE8AfEsVdq3VsR7CaH4AW-Of~YP3wVhM868wvwhLQwvMIh1~LSe7-~jdFr3lO4BP9vmZFYK8mQXqpK-jbKnNRjA7DiZUEUtoLSrU1JI12qnkZp-rCJjP-51bTkRDiMl-U-h57xIhIFQzkoq6Esxgxj7QnlRfE5kxhbSixMLmbUU7gBtkQnxmb43fNGE9vNFINtSVuOkf--u~RA4obc3PiW4dg5vFFrI4F4BZy8MZHGGaVi~1JFMDSXJL9CBsU1ayh3OvOcD8-ve1wPZ25piZELjUSiVwewXHEc5BSKGesiJ-fKQ1Bt~0krw__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"
                    alt='Mores-logo' 
-                />
+                /> */}
                 <p className='my-2 text-[11px] w-[40vw] md:w-[30vw]'>Everyone has dreams and aspirations, but most of us don’t have the first idea about how to make them come true</p>
                 <div className='inline-flex'>
                     <Image
@@ -79,7 +81,7 @@ const Footer = () => {
                 </div> 
                 <div className='w-[200px]'>
                     <span className={`cursor-default block ${Styles.spanHeading}`}>Contact</span> 
-                    <a className="cursor-default block md:w-40 lg:w-80">
+                    <a className="cursor-default block md:w-40 lg:w-[23vw]">
                         CORPORATE OFFICE
                         5th Floor , Unit No. 503 , Tower 4, 
                         Assotech Business Cresterra, Sector 135,
@@ -159,7 +161,7 @@ const Footer = () => {
                             :
                             <div>
                                 <button className={Styles.RightSlideButton}>
-                                    <Image src={leftArrow} width={18} height={18} className="m-auto -rotate-90"/>
+                                    <Image src={leftArrow} width={18} height={18} className="m-auto -rotate-90 " alt='icon'/>
                                 </button>
                             </div>  
                         }                                          
@@ -167,7 +169,7 @@ const Footer = () => {
                     {
                         contacts &&
                         <div className="block"> 
-                            <div className="cursor-default md:w-40 lg:w-80 mt-4 ">
+                            <div className="cursor-default md:w-40 lg:w-[200px] mt-4 ">
                             CORPORATE OFFICE
                             5th Floor , Unit No. 503 , Tower 4, 
                             Assotech Business Cresterra, Sector 135,

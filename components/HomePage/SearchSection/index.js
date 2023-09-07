@@ -43,17 +43,17 @@ const SearchSection = () => {
           {isTabletView ? <>
             <FilterButtons name={"Buy"} icon={buy} />
             <FilterButtons name={"Rent"} icon={rent} />
-            <FilterButtons name={"New Project"} icon={newProject} isTabletView={isTabletView}/>
-            <FilterButtons name={"Plot and land"} icon={plotAndLand} isTabletView={isTabletView}/>
-            <FilterButtons name={"More Options"} icon={moreOptions} isTabletView={isTabletView} />
+            <FilterButtons name={"New Project"} icon={newProject} />
+            <FilterButtons name={"Plot and land"} icon={plotAndLand} />
+            <FilterButtons name={"More Options"} icon={moreOptions}  />
           </> : (
             <>
-              <FilterButtons name={"Buy"} icon={buy} isTabletView={isTabletView}/>
-              <FilterButtons name={"Rent"} icon={rent} isTabletView={isTabletView} />
-              <FilterButtons name={"New Project"} icon={newProject} isTabletView={isTabletView} />
-              <FilterButtons name={"Plot and land"} icon={plotAndLand} isTabletView={isTabletView} />
-              <FilterButtons name={"Commercial"} icon={commercial} isTabletView={isTabletView} />
-              <FilterButtons name={"Find Agent"} icon={findAgent} isTabletView={isTabletView}/>
+              <FilterButtons name={"Buy"} icon={buy} />
+              <FilterButtons name={"Rent"} icon={rent}  />
+              <FilterButtons name={"New Project"} icon={newProject}  />
+              <FilterButtons name={"Plot and land"} icon={plotAndLand}  />
+              <FilterButtons name={"Commercial"} icon={commercial}  />
+              <FilterButtons name={"Find Agent"} icon={findAgent} />
             </>
           )}
  

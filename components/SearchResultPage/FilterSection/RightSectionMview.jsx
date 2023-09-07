@@ -18,39 +18,39 @@ const RightSectionMview = ({ details }) => {
         </div>
         <div className="flex items-center align-middle text-center gap-4 text-searchPageText ">
           <div className="flex gap-2 items-center justify-between align-middle">
-            <div className=" flex gap-2 bg-Background text-base rounded-3xl p-1  items-center">
+            <div className=" flex gap-2 bg-Background text-base rounded-2xl p-1 ps-2 items-center">
               <Image
-                style={{ height: 19, width: 17 }}
+                style={{ height: 15, width: 14 }}
                 src={Mscore}
                 alt="icon"
               />
-              <h1 className="font-bold text-red-700 ">100</h1>
+              <h1 className="font-bold text-red-700 text-sm">100</h1>
             </div>
             <h1 className="text-black">score</h1>
           </div>
         </div>
       </div>
-      <div className="flex flex-col font-semibold text-xl justify-between mt-2 pr-16">
+      <div className="flex flex-col font-semibold text-lg justify-between mt-2 pr-16">
         <h1>{details[0].propertyName}</h1>
       </div>
 
-      <div className="flex justify-between">
-        <div className="flex flex-col font-semibold text-xl justify-between  pr-3">
+      <div className="flex justify-between mt-3">
+        <div className="flex flex-col font-semibold text-lg justify-between  pr-3">
           <h1> ₹{details[0].price}</h1>
         </div>
-        <div className="flex gap-2  text-SearchResultText text-base items-center">
+        <div className="flex gap-2  text-SearchResultText text-sm items-center">
           <div className="me-3">
             <h1>1.5 BHK</h1>
           </div>
-          <div className=" bg-slate-100 rounded-full p-1 h-[30px] w-[30px]">
-            <Image height={50} width={50} src={Like} alt="heartIcon" />
+          <div className=" bg-slate-100 rounded-full p-1 h-[27px] w-[27px]">
+            <Image height={40} width={40} src={Like} alt="heartIcon" />
           </div>
-          <div className=" bg-slate-100 rounded-full p-1 h-[30px] w-[30px]">
+          <div className=" bg-slate-100 rounded-full p-1 h-[27px] w-[27px]">
             <Image height={50} width={50} src={Share} alt="share" />
           </div>
         </div>
       </div>
-      <div className="flex mt-1 text-SearchResultText text-sm items-center">
+      <div className="flex my-4 text-SearchResultText text-xs items-center">
         <div className="flex items-center">
           <svg //location
             xmlns="http://www.w3.org/2000/svg"
@@ -68,10 +68,10 @@ const RightSectionMview = ({ details }) => {
         </div>
       </div>
 
-      <div className="mt-4">
+      <div className="mt-4 text-sm">
         <p>
           {details[0].description}
-          <span className="underline text-black">Read More</span>
+          <span className="underline text-black text-sm">Read More</span>
         </p>
       </div>
       <div className="flex flex-col  mt-2 ">
@@ -81,13 +81,13 @@ const RightSectionMview = ({ details }) => {
               "https://s3-alpha-sig.figma.com/img/9ef8/cb32/9b949267cc8214b6727067c4a13af4b4?Expires=1694995200&Signature=C2R9xsmtmBp3lkABrH-d7wMkad1hoa-qiYtA-DEr1ARlzn8zszgDvNsG2OgkjT24~r-PcUcGvZfv7aZ0729OKvTT-mtrxuNm~Vc~Co6tGEQevMjcIp~Di7ZMiEIQH6cNiB6s1L0Eh35q4tbz4i86Cqlw6uaa-RZPsLfRv04DiwgUMsUx4u2x8metqGFW3abBcccka~Vpf0ie84B-6R4v-dGC0Qq-kx7v8-3Kbkw-z9eEvJUtSvQGvYkjfAuoXzzThkEV6UPr5vYT9IngtMXmJKCzASsd1WGlJrFA5YttFd-NAhp3AG140bIZcyauqkmHRo5ISO86b1i8DaFXncq2Ag__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"
             }
             alt="owner Image"
-            height={50}
-            width={50}
+            height={40}
+            width={44}
             className="rounded-full"
           />
           <div>
-            <p className="font-semibold text-base">Ralph Rechards</p>
-            <p className="text-sm font-extralight">Owner</p>
+            <p className="font-semibold text-sm">Ralph Rechards</p>
+            <p className="text-xs font-extralight">Owner</p>
           </div>
         </div>
         <div className="flex justify-center  bg-featuredBackground p-2 my-2 px-9 text-white rounded-md">

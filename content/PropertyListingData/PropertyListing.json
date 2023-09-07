@@ -48,7 +48,7 @@
                 "UnderConstruction": "12-12-2023"
             }
         ],
-        "furniture": "SEMI_FURNISHED",
+        "furniture": "SEMI FURNISHED",
         "action": "RENT",
         "floorNumber": "23",
         "cityName": "Bareilly",
@@ -109,7 +109,7 @@
         "propertyName": "Royal Palms",
         "propertyType": "RESIDENTIAL",
         "propertySubType": "PENT_HOUSE",
-        "price": "1200000",
+        "price": "12,00,000",
         "bedrooms": "3",
         "bathrooms": "3",
         "balconies": "PERSONAL",
@@ -154,7 +154,7 @@
                 "UnderConstruction": "12-12-2023"
             }
         ],
-        "furniture": "SEMI_FURNISHED",
+        "furniture": "SEMI FURNISHED",
         "action": "RENT",
         "floorNumber": "23",
         "cityName": "Ghaziabad",
@@ -215,7 +215,7 @@
         "propertyName": "Miro Residence",
         "propertyType": "RESIDENTIAL",
         "propertySubType": "PENT_HOUSE",
-        "price": "1200000",
+        "price": "12,00,000",
         "bedrooms": "3",
         "bathrooms": "3",
         "balconies": "PERSONAL",
@@ -260,7 +260,7 @@
                 "UnderConstruction": "12-12-2023"
             }
         ],
-        "furniture": "SEMI_FURNISHED",
+        "furniture": "SEMI FURNISHED",
         "action": "RENT",
         "floorNumber": "23",
         "cityName": "Gorakhpur",
@@ -321,7 +321,7 @@
         "propertyName": "Royal Residence",
         "propertyType": "RESIDENTIAL",
         "propertySubType": "PENT_HOUSE",
-        "price": "1200000",
+        "price": "12,00,000",
         "bedrooms": "3",
         "bathrooms": "3",
         "balconies": "PERSONAL",
@@ -366,7 +366,7 @@
                 "UnderConstruction": "12-12-2023"
             }
         ],
-        "furniture": "SEMI_FURNISHED",
+        "furniture": "SEMI FURNISHED",
         "action": "RENT",
         "floorNumber": "23",
         "cityName": "Kanpur",
@@ -427,7 +427,7 @@
         "propertyName": "Blue Berry House",
         "propertyType": "RESIDENTIAL",
         "propertySubType": "PENT_HOUSE",
-        "price": "1200000",
+        "price": "12,00,000",
         "bedrooms": "3",
         "bathrooms": "3",
         "balconies": "PERSONAL",
@@ -472,7 +472,7 @@
                 "UnderConstruction": "12-12-2023"
             }
         ],
-        "furniture": "SEMI_FURNISHED",
+        "furniture": "SEMI FURNISHED",
         "action": "RENT",
         "floorNumber": "23",
         "cityName": "Kanpur",
@@ -533,7 +533,7 @@
         "propertyName": "Retro House",
         "propertyType": "RESIDENTIAL",
         "propertySubType": "PENT_HOUSE",
-        "price": "1200000",
+        "price": "12,00,000",
         "bedrooms": "3",
         "bathrooms": "3",
         "balconies": "PERSONAL",
@@ -578,7 +578,7 @@
                 "UnderConstruction": "12-12-2023"
             }
         ],
-        "furniture": "SEMI_FURNISHED",
+        "furniture": "SEMI FURNISHED",
         "action": "RENT",
         "floorNumber": "23",
         "cityName": "Kanpur",
@@ -639,7 +639,7 @@
         "propertyName": "Mullberry Inn",
         "propertyType": "RESIDENTIAL",
         "propertySubType": "PENT_HOUSE",
-        "price": "1200000",
+        "price": "12,00,000",
         "bedrooms": "3",
         "bathrooms": "3",
         "balconies": "PERSONAL",
@@ -745,7 +745,7 @@
         "propertyName": "Maestro Villa",
         "propertyType": "RESIDENTIAL",
         "propertySubType": "PENT_HOUSE",
-        "price": "1200000",
+        "price": "12,00,000",
         "bedrooms": "3",
         "bathrooms": "3",
         "balconies": "PERSONAL",

@@ -66,10 +66,10 @@ export default function AdditionalDetail() {
   };
 
   return (
-    <div className="p-8 h">
+    <div className="p-8">
      <label className="block font-semibold mb-2">Upload Photo/Video</label>
 
-      <div className="flex justify-center gap-8">
+      <div className="flex justify-center gap-8 cardContainer">
         <StepThreeCard
           icon={
             <div className="rounded-full bg-iconBackground p-4 w-20 m-auto">

@@ -72,7 +72,7 @@ const VerifyOTP = () => {
     const enteredOTP = otp.join("");
 
     // If the userID starts with "+91", it's a mobile number
-    const isMobileNumber = userID.startsWith("+91");
+    const isMobileNumber = userID?.startsWith("+91");
 
     const payload = {
       userID,
