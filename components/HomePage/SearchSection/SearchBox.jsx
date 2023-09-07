@@ -52,7 +52,7 @@ const SearchBox = ({ isMobileView }) => {
               value={budget}
               onClick={handleClick}
               onChange={handleBudgetChange}
-              className={`appearance-none ${hidden?'w-[70px]':'w-fit'} text-sm px-1 py-1 rounded-lg leading-tight focus:outline-none focus:shadow-outline font-bold max-lg:w-auto`}
+              className={`appearance-none ${hidden?'lg:w-[70px] md:w-[70px]':'lg:w-fit md:w-fit'} text-sm px-1 py-1 rounded-lg leading-tight focus:outline-none focus:shadow-outline font-bold max-lg:w-auto`}
             >
               <option value="">Budget</option>
               <option value="0-100000">₹0-₹100000</option>
