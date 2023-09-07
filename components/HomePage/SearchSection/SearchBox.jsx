@@ -25,7 +25,7 @@ const SearchBox = ({ isMobileView }) => {
       className={`flex ${
         isMobileView
           ? "flex"
-          : "bg-white rounded-xl p-3 mt-4 lg:justify-between lg:w-[1000px] lg:ml-10 md:w-[750px] md:justify-between "
+          : "bg-white rounded-xl p-3 mt-4 lg:justify-between lg:w-[1000px] lg:ml-10 md:w-[740px] md:justify-between md:ml-4 "
       }`}
     >
      { !isMobileView &&(
