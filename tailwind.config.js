@@ -27,7 +27,9 @@ module.exports = {
       },
       fontSize:{
         'custom':'3.39375rem',
-        'custom1':'1.1875rem'
+        'custom1':'1.1875rem',
+        'custom2':'2.5rem',
+        'custom3':'1rem'
       },
       fontWeight:{
         'custom':'800',
