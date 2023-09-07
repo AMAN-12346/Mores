@@ -796,7 +796,7 @@
         "cityName": "Kanpur",
         "description": "React component for emoji/svg country flags. ... Start using react-country-flag in your project by running `npm i react-country-flag",
         "status": "ACTIVE",
-        "images": ["https://images.pexels.com/photos/2282445/pexels-photo-2282445.jpeg?auto=compress&cs=tinysrgb&w=600","https://images.pexels.com/photos/1559825/pexels-photo-1559825.jpeg?auto=compress&cs=tinysrgb&w=600","https://images.pexels.com/photos/2816284/pexels-photo-2816284.jpeg?auto=compress&cs=tinysrgb&w=600"],
+        "images": ["https://images.pexels.com/photos/1559825/pexels-photo-1559825.jpeg?auto=compress&cs=tinysrgb&w=600"],
         "locality": "6391 Elgin St. Celina, Delaware 10299",
         "location": {
             "type": "Point",
