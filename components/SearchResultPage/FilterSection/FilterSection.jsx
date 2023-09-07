@@ -4,7 +4,7 @@ import properties from "../../../content/PropertyListingData/PropertyListing.jso
 import filterOptions from "../AccordionFilters/const.json";
 import MainAccordion from "./MainAccordion";
 import MinimumDistanceSlider from "./SliderComponent";
-import shield from '../../../assets/moreIcon/Shield.svg'
+import shield from "../../../assets/moreIcon/Shield.svg";
 import Image from "next/image";
 import SortByDropdown from "./SortByDropdown";
 const FilterSection = () => {
@@ -26,43 +26,50 @@ const FilterSection = () => {
 
   return (
     <div>
-      <div className="flex">
-        <div className="h-fit w-1/4 ml-8 mt-6 bg-white overflow-hidden rounded-md pb-20 pr-4">
-          <div className="bg-white overflow-hidden">
-            <div className="ml-8 mt-6">
+      <div className="flex max-lg:flex-col">
+         {/* change w-1/4*/}
+        <div className="h-fit w-4/4 ml-8 mt-6   bg-white  rounded-md pb-20 max-lg:pb-3 pr-4">
+          <div className="bg-white  overflow-hidden">
+            <div className="ml-8 mt-6 max-lg:hidden">
               <h1 className="text-4xl font-bold">Filter</h1>
               <div className="flex items-center mt-3 text-sm gap-1">
-                <Image src={shield} alt='icon'/>
-                <p >Show M-Verified Properties</p>
+                <Image src={shield} alt="icon" />
+                <p>Show M-Verified Properties</p>
                 <input className="h-6 w-6 ml-2" type="checkbox" />
               </div>
-              
-               <MinimumDistanceSlider/>
+
+              <MinimumDistanceSlider />
             </div>
-            {filterOptions.map((option, index) => (
-              <MainAccordion
-                key={index}
-                hname={option.heading}
-                htype={option.key}
-                filters={option.filters}
-              />
-            ))}
-            <div className="flex justify-center text-center mt-6">
+            <div className="max-lg:flex justify-between max-md:flex-col">
+              {filterOptions.map((option, index) => (
+                <div className="">
+                  <MainAccordion
+                    key={index}
+                    hname={option.heading}
+                    htype={option.key}
+                    filters={option.filters}
+                  />
+                </div>
+              ))}
+            </div>
+            <div className="flex flex-col">
+            <div className="flex max-lg:hidden justify-center text-center ms-4 mt-6">
               <button className="bg-featuredBackground px-24 py-5 rounded-md text-white text-base font-semibold">
                 Refine Search
               </button>
             </div>
-            <div className="flex justify-center text-center mt-6">
+            <div className="flex max-lg:hidden justify-center text-center ms-4 mt-6">
               <button className="bg-white px-24 py-5 rounded-md text-gray-400 text-base font-semibold border border-solid-gray-500">
                 Remove Filter
               </button>
             </div>
+            </div>
           </div>
         </div>
-        <div className="w-5/6 ml-8 h-fit">
+        <div className=" max-lg:w-6/6 max-lg:ml-0 ml-4 h-fit">
           <div className="flex justify-between ml-10 mt-5 mr-5">
-              <h1 className="font-semibold text-lg"> 456 Properties </h1>
-              <SortByDropdown/>
+            <h1 className="font-semibold text-lg"> 456 Properties </h1>
+            <SortByDropdown />
           </div>
           {rows.map((row, index) => (
             <SearchResultCard key={index} property={row} />

@@ -18,6 +18,7 @@ module.exports = {
         featuredTorquoise:'#003E71',
         featuredBackground:'#931602',
         searchPageText:'#018191',
+        searchPageText2:'#0181911f',
         Background:'#01819140',
         SearchResultText:'#78828a',
         Text:'#F0E4F4',
