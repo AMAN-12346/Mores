@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { apiGooglePlace } from "@/config.js";
 import GooglePlaceDropdown from "../../../register/registerAs/components/GooglePlaceDropdown";
 import styles from "./PropertyDetails.module.css"; // Import the CSS module
-const PropertyDetailsForm = ({ data, onChange }) => {
+const PropertyDetailsForm = ({ data, onChange, onLocationChange }) => {
   //state
 
   const [city, setCity] = useState("");
@@ -60,21 +60,42 @@ const PropertyDetailsForm = ({ data, onChange }) => {
     setCity(city);
     setCityLongitude(longitude);
     setCityLatitude(latitude);
-    console.log(city, longitude, latitude, "from step 2 city details");
+    // console.log(city, longitude, latitude, "from step 2 city details");
+
+    // Call the prop function to pass the location data to the parent component
+    onLocationChange({
+      city,
+      cityLongitude,
+      cityLatitude,
+    });
   };
 
   const updateLocalityLocation = (city, longitude, latitude) => {
     setLocality(city);
     setLocalityLongitude(longitude);
     setLocalityLatitude(latitude);
-    console.log(city, longitude, latitude, "from step 2 locaity details");
+    // console.log(city, longitude, latitude, "from step 2 locality details");
+
+    // Call the prop function to pass the location data to the parent component
+    onLocationChange({
+      locality,
+      localityLongitude,
+      localityLatitude,
+    });
   };
 
   const updateBuildingLocation = (city, longitude, latitude) => {
     setBuildingLocation(city);
     setBuildingLongitude(longitude);
     setBuildingLatitude(latitude);
-    console.log(city, longitude, latitude, "from step 2 building location");
+    // console.log(city, longitude, latitude, "from step 2 building location");
+
+    // Call the prop function to pass the location data to the parent component
+    onLocationChange({
+      buildingLocation,
+      buildingLongitude,
+      buildingLatitude,
+    });
   };
 
   return (
