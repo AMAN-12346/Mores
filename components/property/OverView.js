@@ -17,7 +17,7 @@ export default function OverView({ props }) {
         <div>
             <div className="bg-[#931602] rounded-t-lg shadow-md p-4" onClick={handleMobileView}>
                 <div>
-                    <h1 className="text-white text-2xl font-semibold">Overview</h1>
+                    <h1 className="text-white text-lg font-semibold">Overview</h1>
                 </div>
             </div>
             {

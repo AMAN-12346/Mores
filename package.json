@@ -23,6 +23,7 @@
     "eslint": "8.46.0",
     "eslint-config-next": "13.4.12",
     "framer-motion": "^10.16.3",
+    "google-map-react": "^2.2.1",
     "google-maps-react": "^2.0.6",
     "html2canvas": "^1.4.1",
     "jspdf": "^2.5.1",
