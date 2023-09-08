@@ -38,7 +38,7 @@ const SearchBox = ({ isMobileView }) => {
       >
         <Image src={nearme} width={15} alt="icon" />
         <button
-          className={`text-primary text-sm ${isMobileView ? "mt-2" : ""}`}
+          className={`text-primary text-xs ${isMobileView ? "mt-2" : ""}`}
         >
           Near Me
         </button>
@@ -52,7 +52,7 @@ const SearchBox = ({ isMobileView }) => {
               value={budget}
               onClick={handleClick}
               onChange={handleBudgetChange}
-              className={`appearance-none ${hidden?'lg:w-[70px] md:w-[70px]':'lg:w-fit md:w-fit'} text-sm px-1 py-1 rounded-lg leading-tight focus:outline-none focus:shadow-outline font-bold max-lg:w-auto`}
+              className={`appearance-none ${hidden?'lg:w-[70px] md:w-[70px]':'lg:w-fit md:w-fit'} text-xs px-1 py-1 rounded-lg leading-tight focus:outline-none focus:shadow-outline font-bold max-lg:w-auto`}
             >
               <option value="">Budget</option>
               <option value="0-100000">₹0-₹100000</option>
@@ -65,7 +65,7 @@ const SearchBox = ({ isMobileView }) => {
             <select
               value={propertyType}
               onChange={handlePropertyChange}
-              className="max-lg:hidden appearance-none text-sm w-full px-4 py-2 rounded-lg leading-tight focus:outline-none focus:shadow-outline font-bold"
+              className="max-lg:hidden appearance-none text-xs w-full px-4 py-2 rounded-lg leading-tight focus:outline-none focus:shadow-outline font-bold"
             >
               <option value="">Property Type</option>
               <option value="option1">Residential</option>
@@ -85,7 +85,7 @@ const SearchBox = ({ isMobileView }) => {
               />
             </svg>
           </div>
-          <div className={`ml-10 `}>
+          <div className={`ml-10 text-xs`}>
         <input
           type="text"
           placeholder="Enter the location"
@@ -93,7 +93,7 @@ const SearchBox = ({ isMobileView }) => {
         />
       </div>
       <div
-        className={`bg-primary px-4 py-2 ml-36 rounded-md flex text-white`}
+        className={`bg-primary text-xs px-4 py-2 ml-36 rounded-md flex text-white`}
       >
         <Image src={magnifyingGlass} alt="icon" height={10} width={16} />
         <button
