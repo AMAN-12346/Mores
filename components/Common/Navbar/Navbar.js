@@ -28,7 +28,7 @@ const Navbar = () => {
     const pathsWithoutNavbar = ['/login', '/register','/otpVerify'];
 
     if (pathsWithoutNavbar.includes(router.pathname)) {
-        return null; // Do not render the Navbar
+        return null;
     }
 
     // for mobile view
@@ -71,14 +71,18 @@ const Navbar = () => {
             <div className='md:w-[420px] lg:w-[420px]'>
                 {!auth.userResult ? 
                     <div className='text-center flex hover:opacity-95 absolute right-9 lg:mt-[9px]'>
-                        <button className={`mr-3 ${Styles.sellRentButton}`}>Sell & Rent Property</button>
+                        <Link href='/login'>
+                           <button className={`mr-3 ${Styles.sellRentButton}`}>Sell & Rent Property</button>
+                        </Link>
                         <Link href='/login'>
                             <button className={Styles.button}>Login Now</button> 
                         </Link>
                     </div>
                 :
                     <div className='flex flex-start md:mt-[1px] lg:mt-[7px]'>
-                        <button className={`mr-4 mt-[2px] ${Styles.sellRentButton}`}>Sell & Rent Property</button>
+                        <Link href='/login'>
+                           <button className={`mr-3 ${Styles.sellRentButton}`}>Sell & Rent Property</button>
+                        </Link>
                         <Image src={fillHeart} width={24} height={28} className='mr-4'/>
 
                         <Image src={notificationBell} width={17} height={21}/>
