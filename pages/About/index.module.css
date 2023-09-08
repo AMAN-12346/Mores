@@ -4,7 +4,13 @@
     background-repeat: no-repeat;
     background-position: center center;
     width: 100%;
-    min-height: 100vh;
+    min-height: 40vh;
     height: fit-content;
     opacity: 0.4;
+}
+
+.heading{
+    color: #035252;
+    font-size: 32px;
+    text-align: center;
 }
