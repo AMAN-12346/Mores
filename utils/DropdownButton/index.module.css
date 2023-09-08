@@ -1,14 +1,16 @@
 .dropDown{
     position: relative;
     display: inline-block;
+    height: 50px;
 }
 
 /* white triangle */
 .whiteTriangle{
     position: absolute;
     display: none;
-    bottom: -3%;
+    bottom: -3.5vh;
     left: 5%;
+    margin-top: 20px;
     animation: dropdownFade 2s ease;
 }
 
@@ -22,6 +24,7 @@
     padding: 9px 5px 17px; 
     max-width: 0;
     max-height: 0;
+    margin-top: 19px;
     animation: dropdownFade 1s ease-in-out;
 }
 
@@ -58,7 +61,7 @@
 
 /* Show the dropdown menu when hovering over the dropdown button */
 .dropDown:hover .dropdownMenu{
-    display: block;  
+    display: block; 
     max-width: fit-content;
     max-height: fit-content;
 }

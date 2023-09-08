@@ -94,7 +94,7 @@ const Navbar = () => {
            
             <div className='md:w-[420px] lg:w-[420px]'>
                 {!auth.userResult ? 
-                    <div className='text-center flex hover:opacity-95 absolute right-9 lg:mt-[9px]'>
+                    <div className='text-center flex hover:opacity-95 absolute right-9 lg:mt-[20px]'>
                         <Link href='/user'>
                            <button className={`mr-3 ${Styles.sellRentButton}`}>Sell & Rent Property</button>
                         </Link>
@@ -103,7 +103,7 @@ const Navbar = () => {
                         </Link>
                     </div>
                 :
-                    <div className='flex flex-start md:mt-[1px] lg:mt-[7px]'>
+                    <div className='flex flex-start md:mt-[1px] lg:mt-[20px]'>
                         <Link href='/user'>
                            <button className={`mr-3 ${Styles.sellRentButton}`}>Sell & Rent Property</button>
                         </Link>

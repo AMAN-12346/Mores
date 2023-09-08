@@ -12,6 +12,7 @@ import phoneIcon from '../../../assets/FooterIcons/call.png';
 import leftArrow from '@/assets/ButtonIcons/leftArrow.svg';
 import { useState } from 'react';
 import useWindowWidth from '@/context/useWindowWidth';
+import Link from 'next/link';
 
 
 const Footer = () => {
@@ -64,7 +65,7 @@ const Footer = () => {
                     
                     <span className={`cursor-default block ${Styles.spanHeading}`}>Quick Links</span>                                        
                     <a className="cursor-default block">Properties</a> 
-                    <a className="cursor-default block my-3">About us</a> 
+                    <Link className="cursor-default block my-3" href='/about'>About us</Link> 
                     <a className="cursor-default block ">Blog</a> 
                     <a className="cursor-default block my-3">Contact us</a>
                 </div> 
