@@ -10,11 +10,11 @@ const LeftRightSlideButtons = ({leftFunction, rightFunction}) => {
     return ( 
         <div className={`md:w-[150px] lg:w-[200px] ${Styles.outerDiv}`}>
             <button className={`${Styles.slideButton}`} onClick={leftFunction}>
-                <Image src={leftButton} width={40} height={40} className='m-auto'/>
+                <Image src={leftButton} width={32} height={32} className='m-auto'/>
             </button>
         
             <button className={Styles.RightSlideButton} onClick={rightFunction}>
-                <Image src={leftButton} width={40} height={40} className='m-auto'/>
+                <Image src={leftButton} width={32} height={32} className='m-auto'/>
             </button>
         </div>
     );

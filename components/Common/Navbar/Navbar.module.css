@@ -24,7 +24,7 @@
 .optionName{
     color: rgba(0, 0, 0, 0.75);
     width: fit-content;
-    font-size: 14px;
+    font-size: 13px;
     font-style: normal;
     font-weight: 600;
     line-height: 20px;
@@ -33,15 +33,15 @@
 
 .button{
     display: inline-flex;
-    width: 120px;
-    padding: 10px 12px;
+    width: 100px;
+    padding: 9px 12px;
     justify-content: center;
     gap: 10px;
     border-radius: 8px;
     background: #931602;
     color: #F9FAFC;
     font-size: 12px;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
     font-style: normal;
     font-weight: 600;
     line-height: 20px; /* 125% */
@@ -50,11 +50,10 @@
 .sellRentButton{
     display: flex;
     width: 150px;
-    height: 42px;
+    height: 38px;
     padding: 4px 9px;
     justify-content: center;
     align-items: center;
-    font-weight: 500;
     gap: 10px;
     flex-shrink: 0;
     border-radius: 8px;

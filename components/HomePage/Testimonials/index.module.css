@@ -16,8 +16,8 @@
 }
 
 .underline{
-    width: 160px;
-    height: 6px;
+    width: 140px;
+    height: 5px;
     flex-shrink: 0;
     border-radius: 15px;
     background: #C88E20;
