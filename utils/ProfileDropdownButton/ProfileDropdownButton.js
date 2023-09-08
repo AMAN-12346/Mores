@@ -58,7 +58,7 @@ const ProfileDropdownButton = () => {
         open={Boolean(anchorEl)}
         onClose={handleClose}
       >
-        <button className='px-5 py-2' onClick={handleLogout}>Logout</button>
+      <button className='px-10 py-1' onClick={handleLogout}>Logout</button>
         
       </Menu>
     </div>

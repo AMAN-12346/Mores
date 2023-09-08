@@ -12,7 +12,7 @@ const MobileMenu = () => {
     return ( 
         <div className='w-[100vw]'>
             {/* top */}
-            <div className="mx-[15px] flex h-[55px] ">
+            <div className="mx-[15px] flex h-[45px] ">
                 <div className='pt-[12px]'>
                    <BurgerMenu />
                 </div>
@@ -22,7 +22,7 @@ const MobileMenu = () => {
             </div>
 
             {/* Bottom menu */}
-            <div className='fixed bottom-0 z-10 w-[100vw] h-[60px] pt-3 bg-white flex text-[11px] font-semibold justify-evenly shadow-lg shadow-gray-950'>
+            <div className='fixed bottom-0 z-10 w-[100vw] h-[48px] pt-[8px] bg-white flex text-[10px] font-semibold justify-evenly tracking-wide shadow-lg shadow-gray-950'>
                 <div className={Styles.itemDiv}>
                     <Image src={bottomHome} width={18} height={20}  className='m-auto mb-1'/>
                     Home
@@ -38,10 +38,6 @@ const MobileMenu = () => {
                 <div>
                     <Image src={notificationBell} width={16} height={20} className='m-auto mb-1' />
                     Notification
-                </div>
-                <div>
-                    <Image src={bottomProfile} width={20} height={20} className='m-auto mb-1' />
-                    Profile
                 </div>
             </div>
         </div>

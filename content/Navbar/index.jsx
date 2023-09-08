@@ -5,7 +5,7 @@ const navbarContent = () => {
             "City":{   
                     "India": ["Delhi", "Noida", "Gurugram", "Kolkata", "Mumbai", "Lucknow", "Kanpur", "Pune"]
             },
-            "Sell":{   
+            "Buy":{   
                 "Popular Searches": 
                     [ "Property for Sale in Inida",
                     "Furnished Properties for Sale",

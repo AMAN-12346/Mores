@@ -15,10 +15,11 @@
 
 .name{
     position: absolute;
-    width: 150px;
+    width: 140px;
     top: 24%;
     left: 5%;
     text-align: center;
+    letter-spacing: 0.8px;
     color: white;
 }
 

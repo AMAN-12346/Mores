@@ -8,16 +8,15 @@
 .heading{
     color: var(--black-black-70, #283646);
     font-variant-numeric: lining-nums proportional-nums;
-    font-size: 40px;
-    font-style: normal;
+    font-size: 32px;
     font-weight: 600;
     line-height: 160%; /* 160% */
     text-align: center;
 }
 
 .underline{
-    width: 351px;
-    height: 6px;
+    width: 271px;
+    height: 5px;
     flex-shrink: 0;
     border-radius: 10px;
     background: #C88E20;
@@ -37,14 +36,14 @@
 /* Small screens */
 @media screen and (max-width: 767px) {
     .heading{
-        font-size: 22px;
+        font-size: 21px;
     }
     .underline{
         width: 180px;        
     }   
     .wrapper {
         flex-wrap: nowrap;
-        overflow-x: scroll;
+        overflow: scroll;
         justify-content: left;
         width: 95vw;
     }
@@ -64,7 +63,7 @@
     .wrapper {
         flex-wrap: nowrap;
         justify-content: left;
-        overflow-x: scroll;
+        overflow: scroll;
         width: 95vw;
     } 
     .wrapper::-webkit-scrollbar{

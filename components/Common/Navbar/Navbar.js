@@ -12,22 +12,48 @@ import DropdownButton from '@/utils/DropdownButton/DropdownButton';
 import useWindowWidth from '@/context/useWindowWidth';
 import BurgerMenu from './BurgerMenu';
 import MobileMenu from './MobileMenu';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import navbarContent from '@/content/Navbar';
 
  
 const Navbar = () => {
     const [auth, setAuth] = useAuth();
     const [navbarContentData, setNavbarContentData] = useState(navbarContent);
-
+    const [prevScrollPos, setPrevScrollPos] = useState(0);
     const router = useRouter();
     const windowWidth = useWindowWidth();
+
+    // hide navbar in desktop and tablet view only
+    useEffect(() => {
+        const handleScroll = () => {
+          const currentScrollPos = window.scrollY;
+        //   console.log("--->", window)
+          if (prevScrollPos > currentScrollPos) {
+            // Show the navbar
+            document.getElementById("navbar").style.top = "0";
+          } else {
+            // Hide the navbar
+            document.getElementById("navbar").style.top = "-100px";
+          }
+          setPrevScrollPos(currentScrollPos);
+          if (prevScrollPos == currentScrollPos) {
+
+            console.log("screen stopped")
+          }
+        };
+    
+        window.addEventListener("scroll", handleScroll);
+    
+        return () => {
+          window.removeEventListener("scroll", handleScroll);
+        };
+      }, [prevScrollPos]);
 
     // List of paths where Navbar should be hidden
     const pathsWithoutNavbar = ['/login', '/register','/otpVerify'];
 
     if (pathsWithoutNavbar.includes(router.pathname)) {
-        return null; // Do not render the Navbar
+        return null;
     }
 
     // for mobile view
@@ -39,8 +65,9 @@ const Navbar = () => {
         )
     }
 
+
     return ( 
-        <div className={Styles.navbar}>
+        <div className={Styles.navbar} id="navbar">
            <div className={`flex pl-4 md:justify-between lg:justify-normal ${Styles.outerDiv}`}>
                 {(windowWidth >1024) ?
                     <div className='w-[64vw] flex items-center'>
@@ -48,7 +75,7 @@ const Navbar = () => {
                             <MoresLogo />
                         </div>
 
-                        <div className={`flex justify-evenly ml-7`}> 
+                        <div className={`flex justify-evenly ml-9`}> 
                         {Object.keys(navbarContentData).map((content)=> 
                             <div className={Styles.optionName}>
                                <DropdownButton optionName={content} menuItem={navbarContentData[content]} />  
@@ -67,15 +94,20 @@ const Navbar = () => {
            
             <div className='md:w-[420px] lg:w-[420px]'>
                 {!auth.userResult ? 
-                    <div className='text-center hover:opacity-95 absolute right-9 lg:mt-[7px]'>
+                    <div className='text-center flex hover:opacity-95 absolute right-9 lg:mt-[20px]'>
+                        <Link href='/user'>
+                           <button className={`mr-3 ${Styles.sellRentButton}`}>Sell & Rent Property</button>
+                        </Link>
                         <Link href='/login'>
                             <button className={Styles.button}>Login Now</button> 
                         </Link>
                     </div>
                 :
-                    <div className='flex flex-start mt-[7px]'>
-                        <button className={`mr-3 ${Styles.sellRentButton}`}>Sell & Rent Property</button>
-                        <Image src={fillHeart} width={24} height={28} className='mr-2'/>
+                    <div className='flex flex-start md:mt-[1px] lg:mt-[20px]'>
+                        <Link href='/user'>
+                           <button className={`mr-3 ${Styles.sellRentButton}`}>Sell & Rent Property</button>
+                        </Link>
+                        <Image src={fillHeart} width={24} height={28} className='mr-4'/>
 
                         <Image src={notificationBell} width={17} height={21}/>
                         <div className='relative pt-3 mr-4'>

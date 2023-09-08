@@ -33,7 +33,7 @@ const Card = ({name,imageSrc}) => {
                 width={2000} height={1200}
                 className={Styles.image}
             />
-            <div className="text-lg md:text-lg font-semibold absolute bottom-5 left-5" onClick={handleClick}>
+            <div className="text-[14px] md:text-[16px] font-semibold absolute bottom-5 left-5" onClick={handleClick}>
                 <Image src={amoebaButton} 
                     alt="icon" 
                     width={200} height={72}
