@@ -5,7 +5,7 @@ const FilterButtons=({name, icon,isMobileView})=>{
     return(
         !isMobileView ? 
         (<div className='flex'>
-        <div className={`flex gap-1 px-4 py-2 border border-solid rounded-full text-white text-sm ${active ?'':'bg-primary border border-transparent'} `} >
+        <div className={`flex gap-1 px-4 py-2 border border-solid border-searchFilterButtonBorder rounded-full text-white text-xs ${active ?'bg-searchFilterButton':'bg-primary border border-transparent'} `} >
         <div className='bg-white rounded-full p-1'>
             <Image
             src={icon}
@@ -18,7 +18,7 @@ const FilterButtons=({name, icon,isMobileView})=>{
       </div>
       ) :
       (<div className='flex mx-1'>
-      <div className={`flex gap-1 px-1 py-1 border border-solid  rounded-full text-white text-xs ${active ?'':'bg-primary border border-transparent'} `} >
+      <div className={`flex gap-1 px-1 py-1 border border-solid  rounded-full text-white text-xs ${active ?'bg-searchFilterButton':'bg-primary border border-transparent'} `} >
       <div className='bg-white rounded-full p-1'>
           <Image
           src={icon}
