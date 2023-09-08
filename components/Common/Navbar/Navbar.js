@@ -19,10 +19,35 @@ import navbarContent from '@/content/Navbar';
 const Navbar = () => {
     const [auth, setAuth] = useAuth();
     const [navbarContentData, setNavbarContentData] = useState(navbarContent);
-    const [lastScrollY, setLastScrollY] = useState(0);
-
+    const [prevScrollPos, setPrevScrollPos] = useState(0);
     const router = useRouter();
     const windowWidth = useWindowWidth();
+
+    // hide navbar in desktop and tablet view only
+    useEffect(() => {
+        const handleScroll = () => {
+          const currentScrollPos = window.scrollY;
+        //   console.log("--->", window)
+          if (prevScrollPos > currentScrollPos) {
+            // Show the navbar
+            document.getElementById("navbar").style.top = "0";
+          } else {
+            // Hide the navbar
+            document.getElementById("navbar").style.top = "-100px";
+          }
+          setPrevScrollPos(currentScrollPos);
+          if (prevScrollPos == currentScrollPos) {
+
+            console.log("screen stopped")
+          }
+        };
+    
+        window.addEventListener("scroll", handleScroll);
+    
+        return () => {
+          window.removeEventListener("scroll", handleScroll);
+        };
+      }, [prevScrollPos]);
 
     // List of paths where Navbar should be hidden
     const pathsWithoutNavbar = ['/login', '/register','/otpVerify'];
@@ -41,9 +66,8 @@ const Navbar = () => {
     }
 
 
-
     return ( 
-        <div className={Styles.navbar}>
+        <div className={Styles.navbar} id="navbar">
            <div className={`flex pl-4 md:justify-between lg:justify-normal ${Styles.outerDiv}`}>
                 {(windowWidth >1024) ?
                     <div className='w-[64vw] flex items-center'>
@@ -71,7 +95,7 @@ const Navbar = () => {
             <div className='md:w-[420px] lg:w-[420px]'>
                 {!auth.userResult ? 
                     <div className='text-center flex hover:opacity-95 absolute right-9 lg:mt-[9px]'>
-                        <Link href='/login'>
+                        <Link href='/user'>
                            <button className={`mr-3 ${Styles.sellRentButton}`}>Sell & Rent Property</button>
                         </Link>
                         <Link href='/login'>
@@ -80,7 +104,7 @@ const Navbar = () => {
                     </div>
                 :
                     <div className='flex flex-start md:mt-[1px] lg:mt-[7px]'>
-                        <Link href='/login'>
+                        <Link href='/user'>
                            <button className={`mr-3 ${Styles.sellRentButton}`}>Sell & Rent Property</button>
                         </Link>
                         <Image src={fillHeart} width={24} height={28} className='mr-4'/>
