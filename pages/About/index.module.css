@@ -1,0 +1,10 @@
+.about {
+    background-image: url('../../assets/Images/About/about.jpg');
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 100%;
+    min-height: 100vh;
+    height: fit-content;
+    opacity: 0.4;
+}

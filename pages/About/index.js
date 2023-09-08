@@ -1,9 +1,10 @@
-"use client"
+"use client";
+import Styles from './index.module.css';
 
 const About = () => {
     return ( 
-       <div>
-        sdfkl;l
+       <div className={Styles.about}>
+        sdfgjk
        </div>
     );
 }
