@@ -240,7 +240,7 @@ const LoginUser = () => {
             <button
               className={`${
                 styles.buttonSelect
-              }py-2 px-6  md:rounded-l-lg  rounded-l-xl lg:w-36 w-60 mt-3 ${
+              }py-2 px-6  md:rounded-l-lg  rounded-l-xl lg:w-36 w-60 mt-3 z-40  ${
                 selectedMethod === "email"
                   ? "bg-primary text-white"
                   : "bg-secondary text-black"
@@ -252,7 +252,7 @@ const LoginUser = () => {
             <button
               className={`${
                 styles.buttonSelect
-              }-ml-3 py-2  md:rounded-r-lg rounded-r-lg px-6 lg:w-36 w-60 mt-3 ${
+              } py-2  md:rounded-r-lg rounded-r-lg px-6 lg:w-36 w-60 mt-3 ${
                 selectedMethod === "phone"
                   ? "bg-primary text-white"
                   : "bg-secondary text-black"

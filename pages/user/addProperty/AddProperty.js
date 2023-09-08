@@ -147,12 +147,12 @@ export default function AddProperty() {
     {
       label: "Whats your plan",
       component: (
-        <div className="mb-5 mt-5 lg:flex">
+        <div className="mb-4 mt-5 lg:flex">
           <div className="flex flex-col mb-0 mr-4 lg:mb-0">
-            <div className="p-4 border-2 border-button bg-white rounded-lg mb-12">
+            <div className="p-4 border-2 border-button bg-white rounded-lg mb-2">
               <StepOneCard
                 mainHeading="Sell or Rent Your Home With MORES Expert"
-                definition="Lorem ipsum dolor sit amet consectetur. Et ut orci morbi Vulputate pretium sem. Justo sollicitudin lacus interdum Sit in sollicitudin vestibulum ultricies duis. Malesuada fusce sit lorem aliquam."
+                definition="Lorem ipsum dolor sit amet consectetur. Et ut orci morbi Vulputate pretium sem. Justo sollicitudin lacus interdum Sit in."
               />
             </div>
           </div>
@@ -160,7 +160,7 @@ export default function AddProperty() {
             <div className="p-4 border-2 border-primary bg-white rounded-lg">
               <StepOneCard
                 mainHeading="Sell or Rent Your Home Directly"
-                definition="Lorem ipsum dolor sit amet consectetur. Et ut orci morbi Vulputate pretium sem. Justo sollicitudin lacus interdum Sit in sollicitudin vestibulum ultricies duis. Malesuada fusce sit lorem aliquam."
+                definition="Lorem ipsum dolor sit amet consectetur. Et ut orci morbi Vulputate pretium sem. jfnwqpqd lkqwdojiqd kjwejfoi2"
               />
             </div>
           </div>
@@ -268,6 +268,9 @@ export default function AddProperty() {
     "&:hover": {
       backgroundColor: "#931602", // Replace with your desired hover color
     },
+    fontSize: "12px",
+    height: "25px",
+ 
   };
   return (
     <div className="bg-white p-5 w-full">
@@ -280,7 +283,7 @@ export default function AddProperty() {
               {/* <span>{step.label}</span> */}
 
               <StepLabel
-                className="font-extrabold p-2 rounded bg-white border"
+                className="font-extrabold  p-2 rounded bg-white border"
                 optional={
                   index === 3 ? (
                     <Typography variant="caption">Last step</Typography>
@@ -288,7 +291,7 @@ export default function AddProperty() {
                 }
                 sx={{
                   "& .MuiStepLabel-label": {
-                    fontSize: "18px",
+                    fontSize: "14px",
                     fontWeight: "bold",
                     color: "",
                     // ... other custom styles

@@ -80,20 +80,20 @@ export default function Amenities({ selected, onUpdateAmenities }) {
           <div
             key={amenity}
             className={`flex items-center space-x-2 cursor-pointer ${
-              selectedAmenities.includes(amenity) ? 'text-primary' : 'text-gray-800'
+              selectedAmenities.includes(amenity) ? 'text-primary text-xs' : 'text-gray-800 text-xs'
             }`}
             onClick={() => toggleAmenity(amenity)}
           >
             <div
-              className={`w-10 h-10 flex items-center justify-center rounded-full ${
-                selectedAmenities.includes(amenity) ? 'bg-secondary' : ''
+              className={`w-10 h-10 flex items-center justify-center rounded-full text-xs ${
+                selectedAmenities.includes(amenity) ? 'bg-secondary text-xs' : ''
               }`}
             >
               <Image
                 src={amenityIcons[amenity]}
                 alt={amenity}
                 width={20}
-                height={20}
+                height={15}
                 className={`rounded-md ${
                   selectedAmenities.includes(amenity) ? 'bg-white' : ''
                 }`}
@@ -109,7 +109,7 @@ export default function Amenities({ selected, onUpdateAmenities }) {
         className="flex items-center justify-center w-50 h-10 rounded-full bg-white cursor-pointer"
         onClick={() => setShowAll(!showAll)}
       >
-        <span className="text-primary -ml-24">
+        <span className="text-primary -ml-24 text-xs">
           {showAll ? 'view less ▲' : 'view all ▼'} {/* Up and down arrow icons */}
         </span>
       </div>

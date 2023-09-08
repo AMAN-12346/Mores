@@ -85,7 +85,7 @@ const GoogleMap = ({ google, updateParentLocation }) => {
         value={searchValue}
         onChange={onSearchInputChange}
         placeholder="Search for a location"
-        className="border rounded-lg pl-12 pr-8 py-2 w-full"
+        className="border rounded-lg h-[30px] w-full"
       />
       {autocompleteResults.length > 0 && (
         <ul>
