@@ -12,7 +12,7 @@ export default function PropertyInformation({ property }) {
         <div>
             <div className="bg-[#9DACA1] rounded-t-lg shadow-lg p-4" onClick={handleMobileView}>
                 <div>
-                    <h1 className="text-white text-2xl font-semibold">Property Information</h1>
+                    <h1 className="text-white text-lg font-semibold">Property Information</h1>
                 </div>
             </div>
             {

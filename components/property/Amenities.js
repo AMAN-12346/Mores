@@ -4,7 +4,7 @@ import bathtub from '../../assets/AmenitiesIcons/bathtub.svg';
 import doubleBed from '../../assets/AmenitiesIcons/doubleBed.svg';
 import school from '../../assets/AmenitiesIcons/school.svg';
 import testing from '../../assets/AmenitiesIcons/testing.svg';
-// import Gymnasium from '../../assets/AmenitiesIcons/Gymnasium.png'; 
+import Gymnasium from '../../assets/AmenitiesIcons/Gymnasium.png'; 
 import Lift from '../../assets/AmenitiesIcons/Lift.png';
 import CCTV from '../../assets/AmenitiesIcons/CCTV.png';
 import FireFightingSystems from '../../assets/AmenitiesIcons/FireFightingSystems.png';
@@ -198,7 +198,7 @@ export default function Amenities({ props }) {
         <div className="bg-white shadow-md">
             <div className="bg-[#018191] rounded-t-lg shadow-md p-4" onClick={handleMobileView}>
                 <div>
-                    <h1 className="text-white text-2xl font-semibold">Amenities</h1>
+                    <h1 className="text-white text-lg font-semibold">Amenities</h1>
                 </div>
             </div>
             {

@@ -25,16 +25,16 @@ export default function AgentFrom() {
         <div>
             <div className="bg-[#A37F4F] rounded-t-lg shadow-md p-4" onClick={handleMobileView}>
                 <div>
-                    <h1 className="text-white text-2xl font-semibold">Agent Overview</h1>
+                    <h1 className="text-white text-lg font-semibold">Agent Overview</h1>
                 </div>
             </div>
             {view &&
                 <div className="bg-white">
-                    <div className="w-full lg:flex">
+                    <div className="w-[12/12] lg:flex md:flex ">
                         {/* Left Section */}
-                        <div className="lg:w-8/12 sm:p-10 md:w-7/12 md:justify-center sm:w-12/12">
-                            <div className="w-full lg:flex md:flex justify-between gap-3 md:-mt-3 sm:-m-5">
-                                <div className={`w-4/12 p-7 ${Styles.container}`}>
+                        <div className="lg:w-5/12 lg:p-10 md:w-5/12 md:p-10 sm:p-7 p-3 w-[12/12]">
+                            <div className=''>
+                                <div className={`w-3/12 ${Styles.container}`}>
                                     <div style={{ display: 'flex', height: '70px', width: '70px' }}>
                                         <Image
                                             src={userId.Images}
@@ -49,40 +49,41 @@ export default function AgentFrom() {
                                         <p className="text-base pr-2">{userId.MobileNumber}</p>
                                     </div>
                                 </div>
-                                <div className="w-8/12 bg-[#ddeae8] flex justify-start items-center rounded-lg relative">
-                                    <div className="flex items-center p-3 pl-1 sm:p-6">
-                                        <span className="p-1 px-3 text-center text-base md:text-lg font-semibold text-white border-1 border-primary rounded-full bg-[#018191] ml-2">
-                                            {userId.YearOfExprience}
+                                <div className="pt-5 sm:mt-3">
+                                    <div className="border-primary-3 border w-[270px] h-16 flex justify-center items-center rounded-lg mb-5">
+                                        <p className="text-lg font-semibold ml-2">Property for Sale</p>
+                                        <span className="w-[40px] h-[40px] text-center p-2 text-lg font-semibold text-white border-1 border-primary rounded-full bg-[#018191] ml-4">
+                                            {userId.Propertforsale}
                                         </span>
-                                        <p className="text-sm sm:text-lg font-semibold ml-2">Year Of Experience</p>
                                     </div>
-                                    <div className="flex w-[30vw] items-center p-4 pl-1 sm:p-6">
-                                        <span className="p-1 px-3 text-center text-base md:text-lg font-semibold text-white border-1 border-primary rounded-full bg-[#018191] ml-5">
-                                            {userId.totallistings}
+                                    <div className="border-primary-3 border w-[270px] h-16 flex justify-center items-center rounded-lg">
+                                        <p className="text-lg font-semibold ml-2">Property for Rent</p>
+                                        <span className="w-[40px] h-[40px] text-center p-2 text-lg font-semibold text-white border-1 border-primary rounded-full bg-[#018191] ml-4">
+                                            {userId.propertforrent}
                                         </span>
-                                        <p className="text-sm sm:text-lg font-semibold ml-2">Total Listings</p>
                                     </div>
-                                </div>
-                            </div>
-                            <div className="pt-5 sm:mt-3">
-                                <div className="border-primary-3 border w-[270px] h-16 flex justify-center items-center rounded-lg mb-5">
-                                    <p className="text-lg font-semibold ml-2">Property for Sale</p>
-                                    <span className="w-[40px] h-[40px] text-center p-2 text-lg font-semibold text-white border-1 border-primary rounded-full bg-[#018191] ml-4">
-                                        {userId.Propertforsale}
-                                    </span>
-                                </div>
-                                <div className="border-primary-3 border w-[270px] h-16 flex justify-center items-center rounded-lg">
-                                    <p className="text-lg font-semibold ml-2">Property for Rent</p>
-                                    <span className="w-[40px] h-[40px] text-center p-2 text-lg font-semibold text-white border-1 border-primary rounded-full bg-[#018191] ml-4">
-                                        {userId.propertforrent}
-                                    </span>
                                 </div>
                             </div>
                         </div>
 
                         {/* Right Section */}
-                        <div className="lg:w-4/12 md:w-6/12 sm:w-12/12 p-10">
-                            <form className="p-10 rounded-lg md:order-1 shadow-lg" style={{ borderRadius: '17px', border: '1px solid rgba(0, 0, 0, 0.14)', background: '#FFF' }}>
+                        <div className="w-[9/12]">
+                            <div className="bg-[#ddeae8] m-5 flex justify-center items-center rounded-lg">
+                                <div className="flex items-center pl-1 sm:p-6">
+                                    <span className="p-1 px-3 text-center text-base md:text-lg font-semibold text-white border-1 border-primary rounded-full bg-[#018191] ml-2">
+                                        {userId.YearOfExprience}
+                                    </span>
+                                    <p className="text-sm sm:text-lg font-semibold ml-2">Year Of Experience</p>
+                                </div>
+                                <div className="flex items-center p-4 pl-1 sm:p-6">
+                                    <span className="p-1 px-3 text-center text-base md:text-lg font-semibold text-white border-1 border-primary rounded-full bg-[#018191] ml-5">
+                                        {userId.totallistings}
+                                    </span>
+                                    <p className="text-sm sm:text-lg font-semibold ml-2">Total Listings</p>
+                                </div>
+                            </div>
+
+                            <form className="p-10 m-5 rounded-lg md:order-1 shadow-lg" style={{ borderRadius: '17px', border: '1px solid rgba(0, 0, 0, 0.14)', background: '#FFF' }}>
                                 <div className="mb-4">
                                     <label className="block font-semibold mb-1">Name</label>
                                     <input

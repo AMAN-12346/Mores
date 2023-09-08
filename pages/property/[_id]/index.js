@@ -20,10 +20,12 @@ import RecommenedCard from '../RecommenedCard';
 import LikeShareButtons from '@/components/LikeShear/Component';
 import Mscore_Mverifid from '@/components/property/Mscore_Mverifid';
 import HighlightAmenities from '@/components/property/HighlightAmenities';
+import SimpleMap from '@/components/GoogleMapo/Using_Lat_Log';
 // import SimpleMap from '@/components/GoogleMapo/Using_Lat_Log'; 
 
 const SinglePropertyCard = () => {
-    const _id = "64e87f603838555b05ec5cb9"
+    // const _id = "64e2f50633e52febc315572c"
+    const _id = "64fac05b304ac2351c113157"
     const [property, setProperty] = useState();
     const ShowCard = async () => {
         try {
@@ -57,12 +59,12 @@ const SinglePropertyCard = () => {
                 </div>
             </div>
 
-            <div className="m-2">
+            <div>
                 <div className="w-12/12 flex justify-between gap-2 m-3">
                     {/* lelt grid */}
                     <div className="w-8/12">
-                        <div className="relative rounded-md h-full" style={{ backgroundImage: `url(${property?.images[0]?.original})`, backgroundSize: 'cover'}}>
-                            <div className="absolute flex m-4 px-3 justify-center text-white" style={{ borderRadius: "43px", background: "rgba(1, 129, 145, 0.20)", flexShrink: 0 }}>
+                        <div className="relative rounded-md h-full" style={{ backgroundImage: `url(${property?.images[0]?.original})`, backgroundSize: 'cover' }}>
+                            <div className="absolute flex m-4 px-4 justify-center text-white" style={{ borderRadius: "43px", background: "rgba(1, 129, 145, 0.20)", flexShrink: 0 }}>
                                 <Image
                                     className="bg-contain md:py-5"
                                     src={EYE}
@@ -70,14 +72,13 @@ const SinglePropertyCard = () => {
                                     height={25}
                                     width={24}
                                 />
-                                <span className="mr-1 py-2 text-sm md:py-5 lg:text-xl font-semibold" style={{ color: "#FFF", fontWeight: 600 }}>100+</span>
-                                <span className="text-sm py-2 md:py-5 lg:text-xl font-semibold" style={{ color: "#FFF", fontWeight: 600 }}>Views</span>
+                                <span className="text-sm py-1 md:py-5 lg:text-xl font-semibold" style={{ color: "#FFF", }}>100+ Views</span>
                             </div>
                             <div className="absolute flex justify-center top-7 right-5 w-[150px] lg:w-[200px] text-white rounded-tl-md">
                                 <LikeShareButtons />
                             </div>
                             <div className="absolute flex justify-center bottom-7 right-5 w-[150px] lg:w-[200px] text-white rounded-tl-md" style={{ borderRadius: "43px", background: "rgba(147, 22, 2, 0.20)", flexShrink: 0 }}>
-                                <span className="text-sm py-2 md:py-5 lg:text-xl font-semibold" style={{ color: "#FFF", fontWeight: 600 }}>Already Seen</span>
+                                <span className="text-sm py-1 md:py-5 lg:text-xl font-semibold" style={{ color: "#FFF" }}>Already Seen</span>
                             </div>
                         </div>
                     </div>
@@ -86,7 +87,7 @@ const SinglePropertyCard = () => {
                     <div className="w-4/12">
                         <div className="grid grid-cols-2 gap-1">
                             {/* Render first image */}
-                            <div className="w-full rounded-md overflow-hidden">
+                            <div className="w-full rounded-md  overflow-hidden">
                                 <img
                                     src={property?.images[1]?.original}
                                     alt="First Image"
@@ -103,13 +104,26 @@ const SinglePropertyCard = () => {
                                 />
                             </div>
 
-                            {/* Display Google Map */}
+                            {/* Render 3rd image */}
                             <div className="w-full rounded-md overflow-hidden">
                                 <img
                                     src={property?.images[3]?.original}
                                     alt="Second Image"
                                     className="w-full h-full object-cover"
                                 />
+                            </div>
+                            {/* Render 4th image */}
+                            <div className="w-full rounded-md overflow-hidden">
+                                <img
+                                    src={property?.images[4]?.original}
+                                    alt="Second Image"
+                                    className="w-full h-full object-cover"
+                                />
+                            </div>
+
+                            {/* Display Google Map */}
+                            <div className="w-full rounded-md overflow-hidden">
+                                <SimpleMap/>
                             </div>
 
                             {/* Display the image count */}
@@ -131,19 +145,19 @@ const SinglePropertyCard = () => {
             <div>
                 {/* Render areaDetails and Properties */}
                 <div>
-                    <div className='lg:flex w-12/12 lg:-mr-20'>
-                        <div className='lg:w-4/12 md:12/12 sm:12/12 md:mr-5 md:ml-5 mr-5 ml-5 lg:ml-5 lg:mr-0'>
+                    <div className='lg:flex w-12/12'>
+                        <div className='lg:w-4/12 md:12/12 12/12'>
                             <Mscore_Mverifid Data={property} />
                         </div>
-                        <div className='lg:w-8/12 md:w-12/12 sm:12/12 lg:mt-0 lg:mr-0 md:ml-0 md:mr-0 ml-8 md:mt-2 mt-5'>
-                            <HighlightAmenities property={property} /> 
+                        <div className='lg:w-8/12 md:w-12/12 12/12 overflow-hidden'>
+                            <HighlightAmenities property={property} />
                         </div>
                     </div>
                 </div>
 
-                <div className="flex justify-between mt-4 lg:mr-11 md:mr-10 sm:mr-10"> {/* Name and price */}
+                <div className="flex justify-between mt-4  lg:mr-11 md:mr-10"> {/* Name and price */}
                     <p className="lg:text-3xl md:3xl text-base font-bold px-8">{property?.propertyName}</p>
-                    <p className="lg:text-3xl md:3xl text-base font-bold">₹ {property?.price}</p>
+                    <p className="lg:text-3xl md:3xl text-base  mr-8 font-bold">₹ {property?.price}</p>
                 </div>
 
                 <div className="flex px-8 mt-5"> {/* Location */}
@@ -159,7 +173,7 @@ const SinglePropertyCard = () => {
                 </div>
 
                 <div className="lg:flex md:flex w-12/12 lg:ml-8 md:ml-8 md:mr-10"> {/* amenities and two button */}
-                    <div className="flex lg:w-5/12 md:w-6/12 lg:justify-start md:justify-start justify-between lg:ml-0 lg:mr-0 md:ml-0 md:mr-0 ml-8 mt-3">
+                    <div className="flex lg:w-5/12 md:w-6/12 ient-to-tr sm:z-0 lg:justify-start md:justify-start justify-start lg:ml-0 lg:mr-0 md:ml-0 md:mr-0 ml-8 mt-3">
                         <div className="flex items-center">
                             <Image
                                 className="bg-contain"
@@ -188,12 +202,12 @@ const SinglePropertyCard = () => {
                                 height={22}
                                 width={23}
                             />
-                            <p className='p-2 items-center'>{property?.areaDetails.bedrooms} SqFt</p>
+                            <p className='p-2 items-center'>{property?.areaDetails.bedrooms ? property?.areaDetails.bedrooms : 1000} SqFt</p>
                         </div>
                     </div>
-                    <div className="flex lg:w-7/12 md:w-6/12 flex-col md:flex-row justify-end md:gap-2 gap-6 lg:ml-0 lg:mr-10 md:ml-0 md:mr-10 ml-8 mt-3">
+                    <div className="flex sm:z-0 lg:w-6/12 md:w-6/12 flex-col md:flex-row justify-end md:gap-2 gap-6 lg:ml-0 lg:mr-10 md:ml-0 md:mr-10 ml-8 mt-3">
                         <button
-                            className="bg-primary text-white py-2 px-8 rounded-md flex items-center justify-center"
+                            className="bg-primary text-white py-2 px-2 rounded-md flex items-center justify-center"
                             disabled={!isLoggedIn}
                             style={{
                                 borderRadius: '7px',
@@ -216,7 +230,7 @@ const SinglePropertyCard = () => {
                         </button>
 
                         <button
-                            className="bg-primary py-2 px-8 rounded-md text-white flex items-center justify-center mt-4 md:mt-0"
+                            className="bg-primary py-2 px-4 rounded-md text-white flex items-center justify-center mt-4 md:mt-0"
                             disabled={!isLoggedIn}
                             style={{
                                 borderRadius: '7px',
@@ -238,12 +252,7 @@ const SinglePropertyCard = () => {
                             <span className="ml-2">Request for Call</span>
                         </button>
                     </div>
-
-
-
-
                 </div>
-
 
 
                 <div className='px-8 mt-8'>  {/* Additional Component */}
@@ -265,9 +274,6 @@ const SinglePropertyCard = () => {
                 </div>
             </div >
 
-            <div className='mt-11'>
-                <RecommenedCard data={property} />
-            </div>
         </>
     );
 };

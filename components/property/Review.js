@@ -8,40 +8,39 @@ const reviewsData = [
         user: "User 1",
         rating: 4,
         userType: "AGNET",
-        review:
-            "Great experience, loved the place Great experience, loved the place.",
+        review: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sagittis, cursus aliquet dignissim enim. Lobortis ultrices purus, aliquam fames enim, proin integer leo. Vitae elit massa sed.",
+        city: "Owner"
     },
     {
         id: 2,
         user: "User 2",
         rating: 5,
         userType: "USER",
-        review:
-            "Excellent service and amen Great experience, loved the place Great experience, loved the place ities amen Great experience, loved the place Great experience, loved the place ities  amen Great experience, loved the place Great experience, loved the place ities  amen Great experience, loved the place Great experience, loved the place ities  amen Great experience, loved the place Great experience, loved the place ities  amen Great experience, loved the place Great experience, loved the place ities  amen Great experience, loved the place Great experience, loved the place ities  amen Great experience, loved the place Great experience, loved the place ities  ",
+        review: "Excellent service and amen Great experience, loved the place Great experience, loved the place ities amen Great experience, loved the place Great experience, loved the place ities  amen Great experience, loved the place Great experience, loved the place ities  amen Great experience, loved the place Great experience, loved the place ities  amen Great experience, loved the place Great experience, loved the place ities  amen Great experience, loved the place Great experience, loved the place ities  amen Great experience, loved the place Great experience, loved the place ities  amen Great experience, loved the place Great experience, loved the place ities  ",
+        city: "User"
     },
     {
         id: 3,
         user: "User 3",
         rating: 3,
         userType: "AGNET",
-        review:
-            "Decent place, but needs improvem Great experience, loved the place Great experience, loved the placeent.",
+        review: "Decent place, but needs improvem Great experience, loved the place Great experience, loved the placeent.",
+        city: "Agent"
     },
     {
         id: 4,
         user: "User 4",
         rating: 4,
         userType: "USER",
-        review:
-            "Great experience, loved the p Great experience, loved the place Great experience, loved the placelace.",
+        review: "Great experience, loved the p Great experience, loved the place Great experience, loved the placelace.",
+        city: "Admin"
     },
     {
         id: 5,
         user: "User 5",
         rating: 5,
         userType: "ADMIN",
-        review:
-            "Excellent service and amen Great experience, loved the place Great experience, loved the place ities  .",
+        review: "Excellent service and amen Great experience, loved the place Great experience, loved the place ities  .",
     },
     {
         id: 6,
@@ -55,8 +54,7 @@ const reviewsData = [
         user: "User 8",
         rating: 4,
         userType: "USER",
-        review:
-            "Great experience, loved th Great experience, loved the place e place.",
+        review: "Great experience, loved th Great experience, loved the place e place.",
     },
     {
         id: 8,
@@ -84,7 +82,7 @@ const Review = () => {
         setView(!view);
     }
 
-    const [itemsPerPage, setItemsPerPage] = useState(4);
+    const [itemsPerPage, setItemsPerPage] = useState(3);
     //   const itemsPerPage = window.innerWidth >= 768 ? 4 : 2;
     // Number of reviews per page
     const [currentPage, setCurrentPage] = useState(1);
@@ -93,7 +91,7 @@ const Review = () => {
         // const windowWidth = ;
         const handleResize = () => {
             if (window.innerWidth >= 1024) {
-                setItemsPerPage(4);
+                setItemsPerPage(3);
             }
             //   else if(windowWidth >= 768 && windowWidth < 1024){
             //     setItemsPerPage(2);
@@ -129,25 +127,24 @@ const Review = () => {
 
     return (
         <div className="relative shadow-md">
-            <div className="bg-[#9DACA1] rounded-t-lg shadow-lg p-4"onClick={handleMobileView}>
+            <div className="bg-[#9DACA1] flex justify-between rounded-t-lg shadow-lg p-4" onClick={handleMobileView}>
                 <div>
-                    <h1 className="text-white text-2xl font-semibold">Reviews</h1>
+                    <h1 className="text-white text-lg font-semibold">Reviews</h1>
+                </div>
+                <div>
+                    <h1 className="text-white text-lg font-semibold">View All</h1>
                 </div>
             </div>
             {
-            view &&
+                view &&
                 <div className="bg-white shadow-md ">
                     <div className="container">
-                        <div className=" flex justify-around ">
+                        <div className="flex justify-between">
                             {currentReviews.map((review) => (
-                                <div
-                                    key={review.id}
-                                    className="p-4 md:p-3 m-5 border border-gray-300 rounded-lg flex flex-col"
-                                    style={{ width: "300px", height: "200px" }}
-                                >
-                                    <div className="items-center">
+                                <div key={review.id} className="rounded-2xl border-solid border-2 border-[#003E71] shadow-md md:p-3 m-6 flex flex-col" style={{ width: "400px", height: "auto" }} >
+                                    <div className="items-center p-3">
                                         <h2 className="font-semibold">{review.user}</h2>
-                                        <div className="flex mt-2">
+                                        <div className="flex mt-2 mb-3">
                                             {Array.from({ length: review.rating }).map((_, index) => (
                                                 <svg
                                                     key={index}
@@ -166,26 +163,14 @@ const Review = () => {
                                         <div className={`overflow-y-scroll h-24 overflow-x-hidden ${Styles.para}`}>
                                             <p>{review.review}</p>
                                         </div>
+                                        
+                                        <div className="mt-5">
+                                            From {review?.city ? review?.city : "New User"}
+                                            <hr className={Styles.cityUnderline} />
+                                        </div>
                                     </div>
+
                                 </div>
-                            ))}
-                        </div>
-                    </div>
-                    <div>
-                        <div className="flex justify-center p-8">
-                            {Array.from({
-                                length: Math.ceil(reviewsData.length / itemsPerPage),
-                            }).map((_, index) => (
-                                <button
-                                    key={index}
-                                    className={`px-3 py-1 mx-1 rounded-md ${currentPage === index + 1
-                                            ? "bg-primary border-2 border-primary"
-                                            : "bg-gray-300 hover:bg-gray-400"
-                                        }`}
-                                    onClick={() => handlePageChange(index + 1)}
-                                >
-                                    {index + 1}
-                                </button>
                             ))}
                         </div>
                     </div>
