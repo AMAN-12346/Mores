@@ -24,7 +24,7 @@ const SearchBox = ({ isMobileView }) => {
     setPropertyType(event.target.value);
   };
   const handleClick = () => {
-    sethidden(false);
+    sethidden(!hidden);
   };
 
   const updateSearchLocation = (city, longitude, latitude) => {
