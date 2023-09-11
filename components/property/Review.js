@@ -86,12 +86,17 @@ const Review = () => {
     //   const itemsPerPage = window.innerWidth >= 768 ? 4 : 2;
     // Number of reviews per page
     const [currentPage, setCurrentPage] = useState(1);
+    const [Up, setUp] = useState(true);
+
 
     useEffect(() => {
         // const windowWidth = ;
         const handleResize = () => {
-            if (window.innerWidth >= 1024) {
+            if (window.innerWidth >= 750) {
                 setItemsPerPage(3);
+            }
+            else if (window.innerWidth >= 600) {
+                setItemsPerPage(2);
             }
             //   else if(windowWidth >= 768 && windowWidth < 1024){
             //     setItemsPerPage(2);
@@ -102,7 +107,7 @@ const Review = () => {
 
             //   }
             else {
-                setItemsPerPage(2);
+                setItemsPerPage(1);
             }
         };
         handleResize();

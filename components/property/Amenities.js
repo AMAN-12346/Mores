@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
-import bathtub from '../../assets/AmenitiesIcons/bathtub.svg'; 
+import bathtub from '../../assets/AmenitiesIcons/bathtub.svg';
 import doubleBed from '../../assets/AmenitiesIcons/doubleBed.svg';
 import school from '../../assets/AmenitiesIcons/school.svg';
 import testing from '../../assets/AmenitiesIcons/testing.svg';
-import Gymnasium from '../../assets/AmenitiesIcons/Gymnasium.png'; 
+import Gymnasium from '../../assets/AmenitiesIcons/Gymnasium.png';
 import Lift from '../../assets/AmenitiesIcons/Lift.png';
 import CCTV from '../../assets/AmenitiesIcons/CCTV.png';
 import FireFightingSystems from '../../assets/AmenitiesIcons/FireFightingSystems.png';
@@ -21,6 +21,9 @@ import Volleyball from '../../assets/AmenitiesIcons/Volleyball.png';
 import Yoga from '../../assets/AmenitiesIcons/Yoga.png';
 import PowerBackup from '../../assets/AmenitiesIcons/PowerBackup.png';
 import Jogging from '../../assets/AmenitiesIcons/Jogging.png';
+
+import { FaAngleDown, FaAngleUp } from 'react-icons/fa';
+import useWindowWidth from '@/context/useWindowWidth';
 
 
 // Example of amenityIcons object
@@ -51,6 +54,9 @@ export default function Amenities({ props }) {
     const allAmenities = Object.assign({}, props?.perks?.Sports, props?.perks?.safety);
 
     const [openview, setOpenview] = useState(true);
+    const [Up, setUp] = useState(true);
+
+    const windowWidth = useWindowWidth()
 
     const handleMobileView = () => {
         setOpenview(!openview);
@@ -70,7 +76,7 @@ export default function Amenities({ props }) {
             },
             PowerBackup: {
                 image: PowerBackup,
-                name: "PowerBackup"
+                name: "Power Backup"
             },
             Gymnasium: {
                 image: Gymnasium,
@@ -94,11 +100,11 @@ export default function Amenities({ props }) {
             },
             wifi: {
                 image: wifi,
-                name: "wifi"
+                name: "WIFI"
             },
             PowerBackup: {
                 image: PowerBackup,
-                name: "PowerBackup"
+                name: "Power Backup"
             },
             Security: {
                 image: Security,
@@ -114,7 +120,7 @@ export default function Amenities({ props }) {
             },
             KidsPool: {
                 image: school,
-                name: "KidsPool"
+                name: "Kids Pool"
             },
             BadmintonCourt: {
                 image: BadmintonCourt,
@@ -154,7 +160,7 @@ export default function Amenities({ props }) {
             },
             Basketball: {
                 image: Basketball,
-                name: "Basketball"
+                name: "Basket ball"
             },
             Cricket: {
                 image: Cricket,
@@ -196,10 +202,13 @@ export default function Amenities({ props }) {
 
     return (
         <div className="bg-white shadow-md">
-            <div className="bg-[#018191] rounded-t-lg shadow-md p-4" onClick={handleMobileView}>
+            <div className="bg-[#018191] flex justify-between rounded-t-lg shadow-md p-4" onClick={handleMobileView}>
                 <div>
                     <h1 className="text-white text-lg font-semibold">Amenities</h1>
                 </div>
+                {(windowWidth < 768 ) ? <div className='bg-white rounded-full w-[40px] h-[40px] pl-1 pt-1' onClick={() => setUp(!Up)}>
+                    <h1 className="text-black text-lg font-semibold">{Up ? <FaAngleUp size={30} /> : <FaAngleDown size={30} />}</h1>
+                </div> : ""}
             </div>
             {
                 openview &&
