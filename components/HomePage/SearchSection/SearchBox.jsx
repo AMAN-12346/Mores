@@ -98,7 +98,7 @@ const SearchBox = ({ isMobileView }) => {
               onClick={handleClick}
               onChange={handleBudgetChange}
               className={`${
-                hidden ? "lg:w-[70px] md:w-[70px]" : "lg:w-fit md:w-fit"
+                hidden ? "lg:w-[80px] md:w-[80px]" : "lg:w-fit md:w-fit"
               } text-xs px-1 py-1 rounded-lg leading-tight focus:outline-none focus:shadow-outline font-bold max-lg:w-auto`}
             >
               <option value="">Budget</option>

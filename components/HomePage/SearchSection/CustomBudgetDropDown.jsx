@@ -9,7 +9,7 @@ const CustomBudgetDropdown = ({ value, onChange, handleClick }) => {
         <select
           value={value}
         //   onChange={onChange}
-          className={`appearance-none lg:w-[70px] md:w-[70px]" : "lg:w-fit md:w-fit text-xs px-1 py-1 rounded-lg leading-tight focus:outline-none focus:shadow-outline font-bold max-lg:w-auto`}
+          className={`appearance-none lg:w-[80px] md:w-[70px]" : "lg:w-fit md:w-fit text-xs px-1 py-1 rounded-lg leading-tight focus:outline-none focus:shadow-outline font-bold max-lg:w-auto`}
         >
           <option value="">Budget</option>
           <option value="1000000-2000000">10lac-20lac</option>
