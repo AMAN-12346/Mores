@@ -111,12 +111,13 @@ const SearchBox = ({ isMobileView }) => {
             <select
               value={propertyType}
               onChange={handlePropertyChange}
-              className="max-lg:hidden text-xs w-full px-4 py-2 rounded-lg focus:outline-none leading-tight  font-bold"
+              className="max-lg:hidden text-xs w-full px-4 py-2 rounded-lg leading-tight  font-bold"
             >
               <option value="">Property Type</option>
               <option value="Resedential">Residential</option>
               <option value="Commercial">Commercial</option>
             </select>
+
           </div>
           <div className={`ml-10 text-xs`}>
             <GooglePlaceDropdown updateParentLocation={updateSearchLocation} />
