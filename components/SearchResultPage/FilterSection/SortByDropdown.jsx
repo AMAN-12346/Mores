@@ -12,10 +12,10 @@ const SortByDropdown = () => {
       <select
         value={selectedOption}
         onChange={handleOptionChange}
-        className="appearance-none bg-sortbybg  py-2 px-4 pr-8 leading-tight focus:outline-none focus:shadow-outline"
+        className="appearance-none bg-sortbybg  py-2 px-4 leading-tight focus:outline-none focus:shadow-outline"
       >
         {data.map((option) => (
-          <option key={option.value} value={option.value}>
+          <option className="text-sm" key={option.value} value={option.value}>
             {option.label}
           </option>
         ))}
