@@ -1,9 +1,16 @@
 import Image from "next/image";
 import shield from "../../../assets/moreIcon/Shield.svg";
 import mscore from "../../../assets/moreIcon/m-score.png";
+import MobileViewProperty from "@/assets/moreIcon/MobileViewProperty";
+import useWindowWidth from "@/context/useWindowWidth";
+// import { useDevice } from 'react-device-detect';
 import { useState, useEffect } from "react";
 
 const RightSection = ({ details }) => {
+  const windowWidth = useWindowWidth();
+
+ 
+
   return (
     <div className="px-5">
       <div className="flex justify-between mt-2 ">
@@ -31,7 +38,7 @@ const RightSection = ({ details }) => {
               />
             </svg>
           </div>
-          <div className="bg-gray-200 max-md:hidden rounded-full p-2">
+          <div className="bg-gray-200 max-md:hidden rounded-full  p-2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="25"
@@ -49,7 +56,13 @@ const RightSection = ({ details }) => {
       </div>
       <div className="flex max-md:flex-col font-semibold text-2xl justify-between mt-1 ">
         <h1>{details.propertyName}</h1>
+        <div className="flex justify-between">
         <h1 className="max-md:pt-3"> ₹{details.price}</h1>
+        {console.log(windowWidth)}
+        <div className="">
+        { windowWidth < 768 && <MobileViewProperty/>}
+        </div>
+        </div>
       </div>
       <div className="flex gap-14 mt-4 text-SearchResultText text-lg justify-between">
         <div className="flex items-center">

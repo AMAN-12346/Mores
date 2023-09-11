@@ -11,7 +11,7 @@ const Testimonials = () => {
 
     return ( 
         <div className={Styles.servicesComponent}>     
-            <h1 className={`text-[30px] md:text-[40px] ${Styles.heading}`}>
+            <h1 className={`text-[22px] md:text-[36px] ${Styles.heading}`}>
                 Testimonials
                 <hr className={Styles.underline} />
             </h1>       

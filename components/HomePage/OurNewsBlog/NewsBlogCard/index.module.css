@@ -37,12 +37,13 @@
 .storyContainer {
     height: 30%;
     max-height: 30%; /* Adjust the height as needed */
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 .story{
     width: 85%;
-    display: -webkit-box;
-    -webkit-line-clamp: 3; /* Number of lines to display */
+    height: 60px;
+    /* display: -webkit-box; */
+    -webkit-line-clamp: 3; 
     -webkit-box-orient: vertical;
     color: #818181;
     font-size: 12px;
@@ -50,16 +51,39 @@
     line-height: 22px; /* 162.5% */
     margin: auto;
     margin-bottom: 10px;
+    cursor: pointer;
     overflow: scroll;
+    overflow-x: hidden;
     text-overflow: ellipsis;
 }
-.story::-webkit-scrollbar{
+.story::-webkit-scrollbar {
     display: none;
+}
+/* width */
+.story:hover::-webkit-scrollbar {
+    width: 2px;
+    display: unset;
+}
+  
+  /* Track */
+.story::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 4px rgb(239, 238, 238); 
+    border-radius: 1px;
+  }
+   
+  /* Handle */
+.story::-webkit-scrollbar-thumb {
+    background: rgb(175, 175, 175); 
+    border-radius: 1px;
+}
+
+.story:hover{
+    display: inherit;
 }
 
 .button{
     display: inline-flex;
-    padding: 3% 9%;
+    padding: 2% 6%;
     align-items: flex-start;
     border-radius: 7px;
     background: #931602;

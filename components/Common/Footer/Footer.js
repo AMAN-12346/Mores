@@ -12,6 +12,7 @@ import phoneIcon from '../../../assets/FooterIcons/call.png';
 import leftArrow from '@/assets/ButtonIcons/leftArrow.svg';
 import { useState } from 'react';
 import useWindowWidth from '@/context/useWindowWidth';
+import Link from 'next/link';
 
 
 const Footer = () => {
@@ -31,14 +32,9 @@ const Footer = () => {
     }
 
     return ( 
-        <footer className={`footer md:flex p-10 bg-base-200 text-base-content sm:text-[11px] md:text-[11px] lg:text-[14px] relative ${Styles.footer}`}>
+        <footer className={`footer md:flex max-sm:mb-[50px] p-10 bg-base-200 text-base-content sm:text-[11px] md:text-[11px] lg:text-[14px] relative ${Styles.footer}`}>
             <div className='w-[40vw] md:w-[30vw] mr-[5vw] md:text-[11px] lg:text-[12px]'>
                 <Image src={moresFooterLogo} alt='Mores-Footer-Logo' width={143} className='w-40 h-9 mt-7'/>
-                {/* <img 
-                   className='w-40 h-9 mt-7'
-                   src="https://s3-alpha-sig.figma.com/img/e7aa/0378/04e2d5856f135d6d10a0aaa5c453113e?Expires=1693180800&Signature=pMdNl8b3K9wO1Qgb1NnF1mZd-c80RlqzE8AfEsVdq3VsR7CaH4AW-Of~YP3wVhM868wvwhLQwvMIh1~LSe7-~jdFr3lO4BP9vmZFYK8mQXqpK-jbKnNRjA7DiZUEUtoLSrU1JI12qnkZp-rCJjP-51bTkRDiMl-U-h57xIhIFQzkoq6Esxgxj7QnlRfE5kxhbSixMLmbUU7gBtkQnxmb43fNGE9vNFINtSVuOkf--u~RA4obc3PiW4dg5vFFrI4F4BZy8MZHGGaVi~1JFMDSXJL9CBsU1ayh3OvOcD8-ve1wPZ25piZELjUSiVwewXHEc5BSKGesiJ-fKQ1Bt~0krw__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"
-                   alt='Mores-logo' 
-                /> */}
                 <p className='my-2 text-[11px] w-[40vw] md:w-[30vw]'>Everyone has dreams and aspirations, but most of us don’t have the first idea about how to make them come true</p>
                 <div className='inline-flex'>
                     <Image
@@ -69,7 +65,7 @@ const Footer = () => {
                     
                     <span className={`cursor-default block ${Styles.spanHeading}`}>Quick Links</span>                                        
                     <a className="cursor-default block">Properties</a> 
-                    <a className="cursor-default block my-3">About us</a> 
+                    <Link className="cursor-default block my-3" href='/about'>About us</Link> 
                     <a className="cursor-default block ">Blog</a> 
                     <a className="cursor-default block my-3">Contact us</a>
                 </div> 

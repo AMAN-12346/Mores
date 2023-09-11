@@ -9,6 +9,8 @@ const SearchResultPage=()=>{
         <FilterSection/>
         <FeelFreeToContact/>
         <OurNewsBlog/>
+        
+
         </>
 
     )

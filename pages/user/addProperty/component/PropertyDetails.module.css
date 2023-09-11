@@ -34,14 +34,14 @@
 
 /* Media query for tablets and larger screens */
 @media screen and (min-width: 768px) {
-  .input-row {
+  .input_row {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
   }
 
-  .input-row input[type="text"],
-  .input-row input[type="number"] {
+  .input_row input[type="text"],
+  .input_row input[type="number"] {
     flex: calc(50% - 0.5rem); /* Two inputs per row with some spacing */
     margin-right: 1rem; /* Add margin between inputs in a row */
   }

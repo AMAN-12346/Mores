@@ -2,12 +2,12 @@
 import Image from 'next/image';
 import Styles from "./index.module.css";
 
-const BlogCard = ({description}) => {
+const NewsBlogCard = ({description}) => {
     return ( 
         <div className={Styles.parentDiv}>
             <div className={Styles.imageDiv}>  
-               {/* <Image src={description.imageFile} width={300} height={300} className={Styles.imageBlog} alt="blog-image" />              */}
-               <img src={description.imageFile} width={60} height={60} className={Styles.imageBlog} alt="blog-image"/>
+               <Image src={description.imageFile} width={350} height={300} className={Styles.imageBlog} alt="blog-image" />             
+               {/* <img src={description.imageFile} width={60} height={60} className={Styles.imageBlog} alt="blog-image"/> */}
             </div>
             <div className={Styles.childDiv}>
                 <div className={Styles.title}>
@@ -26,4 +26,4 @@ const BlogCard = ({description}) => {
      );
 }
  
-export default BlogCard;
+export default NewsBlogCard;
