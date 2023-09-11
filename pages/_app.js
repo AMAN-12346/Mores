@@ -9,6 +9,7 @@ import Navbar from "@/components/Common/Navbar/Navbar";
 import Footer from "@/components/Common/Footer/Footer";
 import { useRouter } from 'next/router';
 import Head from "next/head";
+import 'animate.css/animate.css';
 import FavImage from '../public/footer-image.png';
 
 
