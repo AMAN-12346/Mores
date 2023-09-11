@@ -30,7 +30,7 @@ const Career = () => {
             </div>
 
             {/* career section */} 
-            <div className='flex w-[75%] pt-9 m-auto justify-between'>
+            <div className='flex w-[75%] pt-24 m-auto justify-between'>
                 <div className='w-[58%] flex flex-wrap justify-center mr-12'>                    
                     <div className={Styles.oneDiv}>
                         <Image src={workspace} width={600} height={600} alt='icon-div' className={Styles.image}/>
@@ -56,7 +56,7 @@ const Career = () => {
 
             {/* Job Openings */}
 
-            <div className='w-[60%] m-auto mt-12'>
+            <div className='w-[60%] m-auto pt-36'>
                 <h4 className={Styles.h4heading}>Current Openings </h4>
                 <hr className={Styles.underline} />
                 {/* {careerContent.jobs.map((job)=> 

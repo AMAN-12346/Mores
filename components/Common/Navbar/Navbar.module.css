@@ -33,6 +33,17 @@
     margin-top: 29px;
 }
 
+.divName{
+    color: rgba(0, 0, 0, 0.75);
+    width: fit-content;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px;
+    margin-left: 5px;
+    margin-top: 13px;
+}
+
 .button{
     display: inline-flex;
     width: 100px;
@@ -85,7 +96,7 @@
     position: absolute;
     padding-top: 1.5px;
     box-shadow: 0px 0px 1px 1px white;
-    top: 0;
+    top: 18%;
     right: 0;
     margin-top: 8px;
     margin-right: -8px;
