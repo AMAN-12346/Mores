@@ -1,23 +1,41 @@
+import useWindowWidth from '@/context/useWindowWidth';
 import React, { useState } from 'react';
+import { FaAngleDown, FaAngleUp } from 'react-icons/fa';
 export default function PropertyInformation({ property }) {
 
     const [view, setView] = useState(true);
+
+    const [expanded, setExpanded] = useState(false); // Create a state variable
+    const [Up, setUp] = useState(true);
+
+    const windowWidth = useWindowWidth();
+
+
+    // Function to toggle the 'expanded' state
+    const togglePoints = () => {
+        setExpanded(!expanded); {/* style={{ display: expanded ? 'block' : 'none' }} */ }
+    };
 
     const handleMobileView = () => {
         setView(!view);
     }
 
+
     // const currentStatusString = property.current_status.ReadyToMove ? "Ready to Move" : `Under Construction: ${property.current_status.UnderConstruction}`;
     return (
         <div>
-            <div className="bg-[#9DACA1] rounded-t-lg shadow-lg p-4" onClick={handleMobileView}>
+            <div className="bg-[#9DACA1] flex justify-between rounded-t-lg shadow-lg p-4" onClick={handleMobileView}>
                 <div>
                     <h1 className="text-white text-lg font-semibold">Property Information</h1>
                 </div>
+                {(windowWidth < 768 ? <div className='bg-white rounded-full w-[40px] h-[40px] pl-1 pt-1' onClick={() => setUp(!Up)}>
+                    <h1 className="text-black text-lg font-semibold">{Up ? <FaAngleUp size={30} /> : <FaAngleDown size={30} />}</h1>
+                </div> : "")}
             </div>
             {
                 view &&
                 <div className="bg-white p-8 shadow-md">
+
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 text-sm">
                         {/* Left Column */}
                         <div className="grid-rows-1 space-y-4">
@@ -29,12 +47,12 @@ export default function PropertyInformation({ property }) {
 
                             <div>
                                 <label className="text-lg font-semibold">City</label>
-                                {/* <p className="mt-1">{property.cityName}</p>  */}
+                                <p className="mt-1">{property?.cityName ? property.cityName : "Noida"}</p>
                             </div>
                             <hr className="my-4  bg-gray-300" />
 
                             <div>
-                                <label className="text-lg font-semibold">price</label>
+                                <label className="text-lg font-semibold">Price</label>
                                 <p className="mt-1">{property?.price} Lac</p>
                             </div>
                             <hr className="my-4  bg-gray-300" />
@@ -82,7 +100,7 @@ export default function PropertyInformation({ property }) {
 
                             <div>
                                 <label className="text-lg font-semibold">Possession Status</label>
-                                {/* <p className="mt-1">{currentStatusString}</p>  */}
+                                <p className="mt-1">ON</p>
                             </div>
                             <hr className="my-4  bg-gray-300" />
 
@@ -159,7 +177,14 @@ export default function PropertyInformation({ property }) {
                             {/* Add more sections as needed */}
                         </div>
                     </div>
+                    {/* <div className="flex items-center justify-center mt-4" onClick={togglePoints}>
+                        <p className="cursor-pointer">Read More</p>
+                        <div className="w-10 h-10 rounded-full flex items-center justify-center mr-2 order-first border border-[#e8dfd6]">
+                            {expanded ? <FaAngleUp size={20} /> : <FaAngleDown size={20} />}
+                        </div>
+                    </div> */}
                 </div>
+
             }
         </div>
     )

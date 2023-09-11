@@ -6,7 +6,7 @@ import Styles from "./index.module.css"
 
 export default function Mscore_Mverifid({ Data }) {
     return (
-        <div className='flex lg:justify-start md:justify-between justify-between lg:gap-24 m-4'>
+        <div className='flex lg:justify-start justify-between lg:gap-20 m-2 lg:text-lg md:text-lg text-sm'>
             <div className={`${Styles.Mscore_Mverifid}`}>
                 <div className='flex gap-1 px-3 py-2'>
                     <Image
@@ -22,7 +22,7 @@ export default function Mscore_Mverifid({ Data }) {
                 </div>
             </div>
             <div>
-                <div className='flex gap-1 bg-[#a7d6dd] rounded-full px-5 py-2'>
+                <div className='flex gap-1 bg-[#01819138] rounded-full px-7 py-2'>
                     <Image
                         className="bg-contain"
                         src={MScore}
@@ -30,7 +30,7 @@ export default function Mscore_Mverifid({ Data }) {
                         height={22}
                         width={23}
                     />
-                    <p className='text-[#358a97] font-bold'>100</p>
+                    <p className='text-[#018191] font-bold'>100</p>
                 </div>
             </div>
         </div>

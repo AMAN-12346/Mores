@@ -2,6 +2,7 @@
 // import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import property from '@/DummyData/data';
 import React, { useEffect, useState } from 'react';
+import Styles from "./index.module.css";
 import { useRouter } from 'next/router';
 import axios from 'axios';
 // import property from '@/DummyData/data';
@@ -24,6 +25,8 @@ import LikeShareButtons from '@/components/LikeShear/Component';
 import Mscore_Mverifid from '@/components/property/Mscore_Mverifid';
 import HighlightAmenities from '@/components/property/HighlightAmenities';
 import SimpleMap from '@/components/GoogleMapo/Using_Lat_Log';
+import data from '../../../content/FeaturedProperties/featuredProperties.json'
+import FeaturedSection from '@/components/HomePage/FeaturedPropertiesSection/FeaturedSection';
 // import SimpleMap from '@/components/GoogleMapo/Using_Lat_Log'; 
 
 const SinglePropertyCard = () => {
@@ -63,32 +66,32 @@ const SinglePropertyCard = () => {
             </div>
 
             <div>
-                <div className="w-12/12 flex justify-between gap-2 m-3">
+                <div className="w-12/12 flex justify-between lg:gap-2 gap-1 m-3">
                     {/* lelt grid */}
                     <div className="w-8/12">
                         <div className="relative rounded-md h-full" style={{ backgroundImage: `url(${property?.images[0]?.original})`, backgroundSize: 'cover' }}>
-                            <div className="absolute flex m-4 px-4 justify-center text-white" style={{ borderRadius: "43px", background: "rgba(1, 129, 145, 0.20)", flexShrink: 0 }}>
+                            <div className="absolute flex m-4 px-6 justify-center text-white" style={{ borderRadius: "43px", background: "rgba(1, 129, 145, 0.20)", flexShrink: 0 }}>
                                 <Image
                                     className="bg-contain md:py-5"
                                     src={EYE}
                                     alt="eye SVG"
-                                    height={25}
-                                    width={24}
+                                    height={20}
+                                    width={20}
                                 />
-                                <span className="text-sm py-1 md:py-5 lg:text-xl font-semibold" style={{ color: "#FFF", }}>100+ Views</span>
+                                <span className="text-sm md:py-5 lg:text-base font-semibold" style={{ color: "#FFF", }}>25 Views</span>
                             </div>
                             <div className="absolute flex justify-center top-7 right-5 w-[150px] lg:w-[200px] text-white rounded-tl-md">
                                 <LikeShareButtons />
                             </div>
-                            <div className="absolute flex justify-center bottom-7 right-5 w-[150px] lg:w-[200px] text-white rounded-tl-md" style={{ borderRadius: "43px", background: "rgba(147, 22, 2, 0.20)", flexShrink: 0 }}>
-                                <span className="text-sm py-1 md:py-5 lg:text-xl font-semibold" style={{ color: "#FFF" }}>Already Seen</span>
+                            <div className="absolute px-6 flex justify-center bottom-7 right-5 text-white rounded-tl-md" style={{ borderRadius: "43px", background: "rgba(147, 22, 2, 0.20)", flexShrink: 0 }}>
+                                <span className="text-sm md:py-5 lg:text-base font-semibold" style={{ color: "#FFF" }}>Already Seen</span>
                             </div>
                         </div>
                     </div>
 
                     {/* Right grid  */}
                     <div className="w-4/12">
-                        <div className="grid grid-cols-2 gap-1">
+                        <div className="grid grid-cols-2 lg:gap-3 gap-1">
                             {/* Render first image */}
                             <div className="w-full rounded-md  overflow-hidden">
                                 <img
@@ -126,7 +129,7 @@ const SinglePropertyCard = () => {
 
                             {/* Display Google Map */}
                             <div className="w-full rounded-md overflow-hidden">
-                                <SimpleMap/>
+                                <SimpleMap />
                             </div>
 
                             {/* Display the image count */}
@@ -148,19 +151,19 @@ const SinglePropertyCard = () => {
             <div>
                 {/* Render areaDetails and Properties */}
                 <div>
-                    <div className='lg:flex w-12/12'>
-                        <div className='lg:w-4/12 md:12/12 12/12'>
+                    <div className='lg:flex w-12/12 justify-between'>
+                        <div className='lg:w-4/12 w-12/12'>
                             <Mscore_Mverifid Data={property} />
                         </div>
-                        <div className='lg:w-8/12 md:w-12/12 12/12 overflow-hidden'>
+                        <div className='lg:w-8/12 w-[100%] flex-wrap p-4 md:flex-wrap-reverse'>
                             <HighlightAmenities property={property} />
                         </div>
                     </div>
                 </div>
 
-                <div className="flex justify-between mt-4  lg:mr-11 md:mr-10"> {/* Name and price */}
-                    <p className="lg:text-3xl md:3xl text-base font-bold px-8">{property?.propertyName}</p>
-                    <p className="lg:text-3xl md:3xl text-base  mr-8 font-bold">₹ {property?.price}</p>
+                <div className="flex justify-between mt-4 lg:mr-11 md:mr-10 mr-8 ml-8 lg:text-lg md:text-lg text-sm"> {/* Name and price */}
+                    <p className="font-bold">{property?.propertyName}</p>
+                    <p className="font-bold">₹ 12,00000</p>
                 </div>
 
                 <div className="flex px-8 mt-5"> {/* Location */}
@@ -168,21 +171,21 @@ const SinglePropertyCard = () => {
                         className="bg-contain"
                         src={IconLocation}
                         alt="IconLocation"
-                        height={22}
+                        height={23}
                         width={23}
-                    /><a href="#" className="underline color:var(--neutral-grayscale-70, #78828A) hover:underline text-lg font-medium px-2">
+                    /><a href="#" className="underline color:var(--neutral-grayscale-70, #78828A) hover:underline lg:text-lg md:text-lg text-sm px-2">
                         {property?.locality}
                     </a>
                 </div>
 
-                <div className="lg:flex md:flex w-12/12 lg:ml-8 md:ml-8 md:mr-10"> {/* amenities and two button */}
-                    <div className="flex lg:w-5/12 md:w-6/12 ient-to-tr sm:z-0 lg:justify-start md:justify-start justify-start lg:ml-0 lg:mr-0 md:ml-0 md:mr-0 ml-8 mt-3">
+                <div className="lg:flex w-12/12 lg:ml-8 md:ml-3 justify-between"> {/* amenities and two button */}
+                    <div className="flex lg:w-6/12 w-12/12 lg:justify-start justify-start lg:ml-0 lg:mr-0 mr-6 ml-8 lg:mt-3 mt-2 lg:text-lg md:text-lg text-sm">
                         <div className="flex items-center">
                             <Image
                                 className="bg-contain"
                                 src={bedRoom}
                                 alt="Bedroom Icon"
-                                height={22}
+                                height={23}
                                 width={23}
                             />
                             <p className='p-2 items-center md:mr-4'>{property?.bedrooms} Bed's</p>
@@ -205,22 +208,29 @@ const SinglePropertyCard = () => {
                                 height={22}
                                 width={23}
                             />
-                            <p className='p-2 items-center'>{property?.areaDetails.bedrooms ? property?.areaDetails.bedrooms : 1000} SqFt</p>
+                            <p className='p-2 items-center md:mr-4'>{property?.areaDetails.bedrooms ? property?.areaDetails.bedrooms : 1000} SqFt</p>
                         </div>
+                        {/* <div className="flex items-center">
+                            <Image
+                                className="bg-contain"
+                                src={measured}
+                                alt="Measured Icon"
+                                height={22}
+                                width={23}
+                            />
+                            <p className='p-2 items-center'>Unfurnished</p>
+                        </div> */}
                     </div>
-                    <div className="flex sm:z-0 lg:w-6/12 md:w-6/12 flex-col md:flex-row justify-end md:gap-2 gap-6 lg:ml-0 lg:mr-10 md:ml-0 md:mr-10 ml-8 mt-3">
+                    <div className="flex lg:w-4/12 w-12/12 lg:justify-end justify-between lg:gap-6 lg:ml-0 lg:mr-10 ml-7 mr-10 mt-3 gap-4">
                         <button
-                            className="bg-primary text-white py-2 px-2 rounded-md flex items-center justify-center"
+                            className="bg-primary text-white py-2 px-2 lg:text-lg md:text-lg text-sm rounded-md flex items-center justify-center"
                             disabled={!isLoggedIn}
                             style={{
                                 borderRadius: '7px',
                                 border: '1px solid rgba(0, 0, 0, 0.23)',
                                 background: 'rgba(245, 198, 198)',
-                                width: '100%',
-                                maxWidth: '300px',
-                                height: '70px',
-                                fontSize: '16px',
-                                fontWeight: '400',
+                                height: '60px',
+                                width: '200px'
                             }}
                         >
                             <Image
@@ -233,17 +243,15 @@ const SinglePropertyCard = () => {
                         </button>
 
                         <button
-                            className="bg-primary py-2 px-4 rounded-md text-white flex items-center justify-center mt-4 md:mt-0"
+                            className="bg-primary py-2 px-4 rounded-md text-white flex items-center justify-center  md:mt-0"
                             disabled={!isLoggedIn}
                             style={{
                                 borderRadius: '7px',
                                 border: '1px solid rgba(0, 0, 0, 0.23)',
                                 background: '#931602',
-                                width: '100%',
-                                maxWidth: '300px',
-                                height: '70px',
-                                fontSize: '16px',
-                                fontWeight: '400',
+                                height: '60px',
+                                width: '200px'
+                              
                             }}
                         >
                             <Image
@@ -271,8 +279,13 @@ const SinglePropertyCard = () => {
                     <div className='lg:-mt-40 mt-7 lg:p-24'>
                         <AgentFrom />
                     </div>
-                    <div className='lg:-mt-40 mt-7 lg:p-24'>
+                    <div className='lg:-mt-40 mt-7 lg:p-24 lg:mb-8 mb-5'>
                         <Review />
+                    </div>
+                    <div className='lg:-mt-40 md:mt-36 mt-7 lg:p-24 text-center'>
+                        <h3 className='justify-center lg:text-[36px] md:text-[36px] text-2xl font-extrabold text-[#283646]'>Recommened For You</h3>
+                        <hr className="my-2 w-[260px] h-[5px] rounded-full m-auto bg-[#C88E20]" />
+                        <FeaturedSection data={data} />
                     </div>
                 </div>
             </div >

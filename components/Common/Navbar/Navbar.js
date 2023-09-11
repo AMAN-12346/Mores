@@ -28,7 +28,7 @@ const Navbar = () => {
         const handleScroll = () => {
           const currentScrollPos = window.scrollY;
         //   console.log("--->", window)
-          if (prevScrollPos > currentScrollPos) {
+          if (prevScrollPos > currentScrollPos && windowWidth >768) {
             // Show the navbar
             document.getElementById("navbar").style.top = "0";
           } else {

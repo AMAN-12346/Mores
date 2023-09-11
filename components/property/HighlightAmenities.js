@@ -3,15 +3,13 @@ import Styles from "./index.module.css"
 
 export default function HighlightAmenities({ property }) {
     return (
-        <div>
-            <div className="flex justify-between m-4">
-                <p className={`bg-[#a7d6dd] px-3 py-2 rounded-full shadow-md`}>Affordable</p>
-                <p className={`bg-[#a7d6dd] px-3 py-2 rounded-full shadow-md`}>Newly build</p>
-                <p className={`bg-[#a7d6dd] px-3 py-2 rounded-full shadow-md`}>{property?.propertySubType}</p>
-                <p className={`bg-[#a7d6dd] px-3 py-2 rounded-full shadow-md`}>{property?.action}</p>
-                <p className={`bg-[#a7d6dd] px-3 py-2 rounded-full shadow-md`}>{property?.allowance}</p>
-                <p className={`bg-[#a7d6dd] px-3 py-2 rounded-full shadow-md`}>{property?.furniture}</p>
-            </div>
+        <div className='flex max-sm:flex-wrap md:justify-center lg:justify-end lg:gap-6 gap-4 lg:text-lg md:text-lg text-sm'>
+            <butoon className="bg-[#01819138] text-[#018191] text-center px-7 py-2 rounded-full shadow-md`">Affordable</butoon>
+            <butoon className="bg-[#01819138] text-[#018191] text-center px-7 py-2 rounded-full shadow-md`">{property?.propertySubType}</butoon>
+            <butoon className="bg-[#01819138] text-[#018191] text-center px-7 py-2 rounded-full shadow-md`">{property?.action}</butoon>
+            <butoon className="bg-[#01819138] text-[#018191] text-center px-7 py-2 rounded-full shadow-md`">{property?.allowance}</butoon>
+            <butoon className="bg-[#01819138] text-[#018191] text-center px-7 py-2 rounded-full shadow-md`">{property?.allowance}</butoon>
+            <butoon className="bg-[#01819138] text-[#018191] text-center px-7 py-2 rounded-full shadow-md`">{property?.furniture}</butoon>
         </div>
     );
 }
