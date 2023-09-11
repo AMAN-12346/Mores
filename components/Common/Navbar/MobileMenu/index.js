@@ -12,7 +12,7 @@ const MobileMenu = () => {
     return ( 
         <div className='w-[100vw]'>
             {/* top */}
-            <div className="mx-[15px] flex h-[45px] ">
+            <div className="mx-[15px] flex h-[45px]" id="navbar">
                 <div className='pt-[12px]'>
                    <BurgerMenu />
                 </div>
