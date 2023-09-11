@@ -22,23 +22,23 @@ const AdditionalDetailsForm = ({
 
   const [uploadMessage, setUploadMessage] = useState(""); // State for upload message
 
-  const [additionalRooms, setAdditionalRooms] = useState([]);
+  // const [additionalRooms, setAdditionalRooms] = useState([]);
 
-  const [possessionStatus, setPossessionStatus] = useState("");
-  const [furnishStatus, setFurnishStatus] = useState("");
-  const [propertyAge, setPropertyAge] = useState("");
-  const [additionalBalconies, setAdditionalBalconies] = useState([]);
-  const [balconyView, setBalconyView] = useState(""); // State for Balcony View
-  const [viewOption, setViewOption] = useState("");
-  const [flooringOption, setFlooringOption] = useState("");
-  const [floorNumber, setFloorNumber] = useState("");
-  const [towerBlock, setTowerBlock] = useState("");
-  const [totalFloors, setTotalFloors] = useState("");
-  const [unitNumber, setUnitNumber] = useState("");
-  const [privateBalcony, setPrivateBalcony] = useState(false);
-  const [numBedrooms, setNumBedrooms] = useState("");
-  const [numBathrooms, setNumBathrooms] = useState("");
-  const [powerBackupOption, setPowerBackupOption] = useState("");
+  // const [possessionStatus, setPossessionStatus] = useState("");
+  // const [furnishStatus, setFurnishStatus] = useState("");
+  // const [propertyAge, setPropertyAge] = useState("");
+  // const [additionalBalconies, setAdditionalBalconies] = useState([]);
+  // const [balconyView, setBalconyView] = useState(""); // State for Balcony View
+  // const [viewOption, setViewOption] = useState("");
+  // const [flooringOption, setFlooringOption] = useState("");
+  // const [floorNumber, setFloorNumber] = useState("");
+  // const [towerBlock, setTowerBlock] = useState("");
+  // const [totalFloors, setTotalFloors] = useState("");
+  // const [unitNumber, setUnitNumber] = useState("");
+  // const [privateBalcony, setPrivateBalcony] = useState(false);
+  // const [numBedrooms, setNumBedrooms] = useState("");
+  // const [numBathrooms, setNumBathrooms] = useState("");
+  // const [powerBackupOption, setPowerBackupOption] = useState("");
 
   const handlePhotoSelect = () => {
     const input = document.createElement("input");
@@ -371,7 +371,7 @@ const AdditionalDetailsForm = ({
               onPhotoUpload={photoUploadLoading}
             />
           </div>
-          <div className="flex justify-end ">
+          <div className="flex justify-end">
             <div className="grid grid-cols-3 gap-2">
               {photoURLs.slice(0, 5).map((photoURL, index) => (
                 <div key={`photo_${index}`} className="mb-2">
@@ -385,9 +385,9 @@ const AdditionalDetailsForm = ({
           </div>
           {photoURLs.length > 5 && (
             <div className="flex justify-end  mt-2">
-              <div className="grid grid-cols-3 gap-2">
+              <div className="grid grid-cols-3 gap-2 h-2">
                 {photoURLs.slice(5).map((photoURL, index) => (
-                  <div key={`photo_${index}`} className="mb-2">
+                  <div key={`photo_${index}`} className="mb-2 h-2">
                     <img src={photoURL.url} alt={`Uploaded Photo ${index}`} />
                     <button onClick={() => deletePhoto(index,photoURL.url)}>
                       <FontAwesomeIcon icon={faTrash} /> {/* Trash icon */}
