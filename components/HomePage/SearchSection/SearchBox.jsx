@@ -102,9 +102,9 @@ const SearchBox = ({ isMobileView }) => {
               } text-xs px-1 py-1 rounded-lg leading-tight focus:outline-none focus:shadow-outline font-bold max-lg:w-auto`}
             >
               <option value="">Budget</option>
-              <option value="1000000-2000000 ">₹10lac-₹20lac</option>
-              <option value="2000000-3000000">₹20lac-₹30lac</option>
-              <option value="3000000-4000000">₹30lac-₹40lac</option>
+              <option value="1000000-2000000 ">₹10 lac-₹20 lac</option>
+              <option value="2000000-3000000">₹20 lac-₹30 lac</option>
+              <option value="3000000-4000000">₹30 lac-₹40 lac</option>
             </select>
           </div>
           <div className="flex items-center">
