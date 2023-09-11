@@ -6,6 +6,7 @@ const GoogleMap = ({ google, updateParentLocation }) => {
   const [searchValue, setSearchValue] = useState("");
   const [autocompleteResults, setAutocompleteResults] = useState([]);
   const [selectedLocation, setSelectedLocation] = useState({});
+  const [showDropdown, setShowDropdown] = useState(false); // Control dropdown visibility
 
   useEffect(() => {
     updateParentLocation(
@@ -15,7 +16,7 @@ const GoogleMap = ({ google, updateParentLocation }) => {
     );
   }, [selectedLocation, updateParentLocation]);
   const onSearchInputChange = (event) => {
-    console.log("changeddddd")
+    console.log("changeddddd");
     const value = event.target.value;
     setSearchValue(value);
 
@@ -31,8 +32,10 @@ const GoogleMap = ({ google, updateParentLocation }) => {
         (predictions, status) => {
           if (status === google.maps.places.PlacesServiceStatus.OK) {
             setAutocompleteResults(predictions);
+            setShowDropdown(true);
           } else {
             setAutocompleteResults([]);
+            setShowDropdown(false);
           }
         }
       );
@@ -44,7 +47,7 @@ const GoogleMap = ({ google, updateParentLocation }) => {
   const onLocationSelect = (place) => {
     setSearchValue(place.description);
     setAutocompleteResults([]);
-
+    setShowDropdown(false);
     fetchPlaceDetails(place.place_id)
       .then((placeResult) => {
         const location = placeResult.geometry.location;
@@ -79,7 +82,7 @@ const GoogleMap = ({ google, updateParentLocation }) => {
   };
 
   return (
-    <div className="border rounded-lg w-full">
+    <div className="relative border rounded-lg w-full">
       <input
         type="text"
         value={searchValue}
@@ -87,7 +90,7 @@ const GoogleMap = ({ google, updateParentLocation }) => {
         placeholder="Search for a location"
         className="border rounded-lg h-[30px] w-full"
       />
-      {autocompleteResults.length > 0 && (
+      <div className="absolute z-30 bg-white w-full"> {autocompleteResults.length > 0 && (
         <ul>
           {autocompleteResults.map((result) => (
             <li
@@ -99,7 +102,8 @@ const GoogleMap = ({ google, updateParentLocation }) => {
             </li>
           ))}
         </ul>
-      )}
+      )}</div>
+     
       {selectedLocation && (
         <div>
           {/* <p>Selected City: {selectedLocation.city}</p>

@@ -151,6 +151,7 @@ const PropertyDetailsForm = ({ data, onChange, onLocationChange }) => {
             className="w-full  border rounded-md px-4 py-2 h-[30px] focus:outline-none focus:border-primary"
             value={data.price}
             onChange={(e) => onChange("price", e.target.value)}
+            min={0}
           />
         </div>
         <div className="mt-4">
