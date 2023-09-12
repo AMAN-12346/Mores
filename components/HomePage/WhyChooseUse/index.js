@@ -9,11 +9,11 @@ const WhyChooseUs = () => {
     return ( 
         <div className={`${Styles.container}`}>
             <div>
-                <h1 className='text-white normal font-semibold text-center text-2xl md:text-3xl lg:text-4xl pt-[20px] lg:pt-[50px]'>
+                <h1 className='text-white normal font-semibold text-center text-xl md:text-3xl lg:text-[30px] pt-[20px] lg:pt-[50px]'>
                   Why Choose Us
                   <hr className={Styles.underline}/>
                 </h1>
-                <p className='w-[300px] md:w-[490px] lg:w-[600px] text-center m-auto text-white text-[11px] md:text-[13px] lg:text-[16px] mt-5'> 
+                <p className='w-[300px] md:w-[490px] lg:w-[600px] text-center m-auto text-white text-[11px] md:text-[12px] lg:text-[14px] mt-5'> 
                 Taking the time to truly understand our customer’s needs and then make sure they consistently get that is what makes us different
                 </p>
             </div>

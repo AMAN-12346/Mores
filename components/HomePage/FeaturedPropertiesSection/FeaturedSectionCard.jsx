@@ -15,7 +15,7 @@ const FeaturedSectionCard=({singlePropertyData,key})=>{
             height={400}
             alt="property"
           />
-   
+  
         </div >
         <div className="bg-white py-4 rounded-b-md">
           <div className="flex justify-around ">

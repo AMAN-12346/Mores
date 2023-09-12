@@ -1,14 +1,14 @@
 .servicesComponent{
     width: 95%;
-    margin-top: 90px;
-    padding-bottom: 0px;
+    margin-top: 50px;
+    padding-bottom: 40px;
     margin-right: 0px;
 }
 
 .heading{
     color: #283646;
     font-variant-numeric: lining-nums proportional-nums;
-    font-size: 35px;
+    font-size: 32px;
     font-style: normal;
     font-weight: 600;
     line-height: 160%; /* 160% */
@@ -16,8 +16,8 @@
 }
 
 .underline{
-    width: 176px;
-    height: 6px;
+    width: 146px;
+    height: 5px;
     flex-shrink: 0;
     border-radius: 15px;
     background: #C88E20;
@@ -25,21 +25,23 @@
 
 .shortPara{
     color: rgba(0, 0, 0, 0.46);
-    font-size: 15px;
+    font-size: 14px;
     font-style: normal;
-    font-weight: 400;
     line-height: 162%; /* 32.4px */
 }
 
 .wrapper {
     display: flex;
     width: 99%;
-    overflow: hidden;
+    overflow: scroll;
     scroll-behavior: smooth;
     gap: 3%;
     padding: 20px 20px;
     margin-top: 50px;
     margin-left: 6%;
+}
+.wrapper::-webkit-scrollbar{
+    display: none;
 }
 
 .exploreAll{
