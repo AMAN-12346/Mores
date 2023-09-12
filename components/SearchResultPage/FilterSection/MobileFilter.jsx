@@ -7,11 +7,12 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import filterOptions from "../AccordionFilters/const.json";
 import MainAccordion from "./MainAccordion";
 import Tags from "./Tags";
+import Box from '@mui/material/Box';
 import { Tag } from "@mui/icons-material";
 
 export default function BasicAccordion() {
   return (
-    <div className="me-3">
+    <Box sx={{ minWidth: 100, maxWidth: 200 }}>
       <Accordion>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
@@ -39,6 +40,6 @@ export default function BasicAccordion() {
         
         </AccordionDetails>
       </Accordion>
-    </div>
+      </Box>
   );
 }

@@ -48,7 +48,7 @@ const FilterSection = ({data}) => {
             <div>
               {windowWidth < 1024 ? (
                 <div className="max-lg:pb-7 h-10 w-10">
-                  <div className=" flex justify-between absolute z-10 h-max">
+                  <div className=" flex justify-between absolute  gap-5 z-10 h-max">
                     <div className="">
                       <BasicAccordion />
                     </div>
