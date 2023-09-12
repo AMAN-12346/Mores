@@ -148,7 +148,7 @@ const SearchBox = ({ isMobileView }) => {
           </div>
         </div>
       ) : (
-        <MobileViewSearchBox />
+        <MobileViewSearchBox onSearchButtonClick={onSearchButtonClick} />
       )}
     </div>
   );

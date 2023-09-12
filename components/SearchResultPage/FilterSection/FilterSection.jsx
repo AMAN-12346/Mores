@@ -33,7 +33,6 @@ const FilterSection = ({data}) => {
   return (
     <div>
       <div className="flex max-lg:flex-col">
-        {/* change w-1/4*/}
         <div className="h-fit w-4/4 ml-8 mt-6 lg:bg-white rounded-md pb-20 max-lg:pb-3 pr-4">
           <div className="lg:bg-white  overflow-hidden">
             <div className="ml-8 mt-6 max-lg:hidden">

@@ -3,7 +3,7 @@ import magnify from '../../../assets/SearchBoxIcon/magnifyglass.svg';
 import GooglePlaceDropdown from "@/pages/register/registerAs/components/GooglePlaceDropdown";
 import { useState } from "react";
 
-const MobileViewSearchBox = () => {
+const MobileViewSearchBox = ({onSearchButtonClick}) => {
   const[locationLatitude ,setLocationLatitude] = useState("")
   const[locationLongitude ,setLocationLongitude] = useState("")
   const[locationName ,setLocationName] = useState("")
@@ -24,7 +24,7 @@ const MobileViewSearchBox = () => {
       /> */}
       <GooglePlaceDropdown updateParentLocation={updateSearchLocation}/>
       <div className="bg-primary px-2 py-1 items-center rounded-full  ">
-        <button className="rounded-md border border-solid border-searchFilterButtonBorder text-white focus:outline-none items-center">
+        <button onClick={onSearchButtonClick} className="rounded-md border border-solid border-searchFilterButtonBorder text-white focus:outline-none items-center">
           <Image src={magnify} width={9} height={9} alt='icon' />
         </button>
       </div>
