@@ -1,37 +1,37 @@
-.Viwers {
-    width: 194px;
-    height: 69px;
-    flex-shrink: 0;
-}
-
-.imagehault {
-    display: flex;
-    height: 71px;
-    width: 71px;
-
-
-}
-@media screen and (max-width: 768px)
-{
-    .mobileview{
-        height:30px;
-        width:100%
-    
+/* Default styles for large screens */
+.left_image {
+    width: 50%; /* 50% width for large screens */
+    float: left;
+  }
+  
+  .right_images {
+    width: 50%; /* 50% width for large screens */
+    float: left;
+  }
+  
+  /* Media query for medium screens */
+  @media screen and (max-width: 768px) {
+    .left_image {
+      width: calc(9/12 * 100%); /* 9/12 width for medium screens */
+      float: left;
     }
-
-    .container{
-        display: grid;
-        grid-template-columns: 1fr 2fr ;
-        gap: 5px;
-        
+  
+    .right_images {
+      width: 50%; /* 50% width for medium screens */
+      float: left;
     }
-
-
-}
-
-.container{
-    display: grid;
-    grid-template-columns: 1fr 3fr ;
-    gap: 5px;
-}
-
+  }
+  
+  /* Media query for small screens */
+  @media screen and (max-width: 480px) {
+    .left_image {
+      width: 100%; /* 100% width for small screens */
+      float: none;
+    }
+  
+    .right_images {
+      width: 100%; /* 100% width for small screens */
+      float: none;
+    }
+  }
+  

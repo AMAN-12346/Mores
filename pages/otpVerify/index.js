@@ -123,6 +123,9 @@ const VerifyOTP = () => {
   };
   const handleResendOTP = async () => {
     const userID = localStorage.getItem("userID");
+    if (!userID) {
+      return;
+    }
 
     // If the userID starts with "+91", it's a mobile number
     const isMobileNumber = userID.startsWith("+91");
@@ -187,7 +190,7 @@ const VerifyOTP = () => {
         <div className={styles.formContainer}>
           <h1 className={styles.heading}>Verify OTP</h1>
           <p className={styles.slogan}>Enter the 6 digit code you received.</p>
-          <div className=" flex mt-3 w-72 -ml-3">
+          <div className="flex mt-3 w-72 -ml-3">
             {otp.map((value, index) => (
               <input
                 key={index}
@@ -195,8 +198,14 @@ const VerifyOTP = () => {
                 maxLength="1"
                 inputMode="numeric"
                 pattern="[0-9]"
-                placeholder="0"
-                className="w-1/5 ml-2 px-2 py-1 text-center border rounded-lg focus:outline-none focus:ring focus:border-blue-300"
+                placeholder="X"
+                className="w-1/5 ml-2 px-2 py-1 text-center"
+                style={{
+                  background: "none", // Remove the background
+                  border: "none", // Remove the default border
+                  borderBottom: "2px solid #333", // Add your desired dark bottom border style here
+                  outline: "none", // Remove the focus outline
+                }}
                 value={value}
                 onChange={(e) => handleOTPChange(index, e.target.value)}
                 onKeyDown={(e) => handleKeyDown(e, index)}
@@ -233,7 +242,7 @@ const VerifyOTP = () => {
 
           {backendError && <p className="text-red-500 mt-2">{backendError}</p>}
         </div>
-
+        <div></div>
         <div className={styles.footerImage}>
           <Image src={footer_image} alt="footer-image" />
         </div>

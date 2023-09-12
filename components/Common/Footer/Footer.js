@@ -71,7 +71,7 @@ const Footer = () => {
                 </div> 
                 <div className='w-[200px]'>
                     <span className={`cursor-default block ${Styles.spanHeading}`}>About</span> 
-                    <a className="cursor-default block">Career</a> 
+                    <Link className="cursor-default block" href='/career'>Career</Link> 
                     <a className="cursor-default block my-3">Terms & Conditions</a> 
                     <a className="cursor-default block">Privacy policy</a>
                 </div> 
@@ -111,7 +111,7 @@ const Footer = () => {
                         quickLinks &&
                         <div className="block"> 
                             <div className="cursor-default mt-4">Properties</div> 
-                            <div className="cursor-default my-2">About us</div> 
+                            <div className="cursor-default my-2"><Link href='/about'>About us</Link></div> 
                             <div className="cursor-default">Blog</div> 
                             <div className="cursor-default my-2">Contact us</div>
                         </div>
@@ -138,7 +138,7 @@ const Footer = () => {
                     {
                         about &&
                         <div className="block"> 
-                            <div className="cursor-default mt-4">Career</div> 
+                            <div className="cursor-default mt-4"><Link href='/career'>Career</Link></div> 
                             <div className="cursor-default my-2">Terms & Conditions</div> 
                             <div className="cursor-default">Privacy policy</div>
                         </div>
