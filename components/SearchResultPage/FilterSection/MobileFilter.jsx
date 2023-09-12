@@ -6,6 +6,8 @@ import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import filterOptions from "../AccordionFilters/const.json";
 import MainAccordion from "./MainAccordion";
+import Tags from "./Tags";
+import { Tag } from "@mui/icons-material";
 
 export default function BasicAccordion() {
   return (
@@ -19,7 +21,7 @@ export default function BasicAccordion() {
           <Typography className="text-3xl font-bold font-sans">Filters</Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>
+          
             <div className="max-lg:flex justify-between max-md:flex-col">
               {filterOptions.map((option, index) => (
                 <div className="">
@@ -32,7 +34,9 @@ export default function BasicAccordion() {
                 </div>
               ))}
             </div>
-          </Typography>
+            
+
+        
         </AccordionDetails>
       </Accordion>
     </div>

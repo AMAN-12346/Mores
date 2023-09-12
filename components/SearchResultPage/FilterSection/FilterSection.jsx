@@ -9,6 +9,7 @@ import Image from "next/image";
 import SortByDropdown from "./SortByDropdown";
 import useWindowWidth from "@/context/useWindowWidth";
 import BasicAccordion from "./MobileFilter";
+import Tags from "./Tags.jsx";
 const FilterSection = () => {
   const [isFilterOpen, setIsFilterOpen] = useState(false);
   const itemPerPage = 5;
@@ -46,8 +47,18 @@ const FilterSection = () => {
             </div>
             <div>
               {windowWidth < 1024 ? (
-                <BasicAccordion />
+                <div className="max-lg:pb-7 h-10 w-10">
+                  <div className=" flex justify-between absolute z-10 h-max">
+                    <div className="">
+                      <BasicAccordion />
+                    </div>
+                    <div>
+                      <SortByDropdown />
+                    </div>
+                  </div>
+                </div>
               ) : (
+                // <Tags name = "Residential" />
                 <div className="flex justify-between">
                   <div className=" max-lg:flex justify-between max-md:flex-col">
                     {filterOptions.map((option, index) => (
@@ -61,9 +72,6 @@ const FilterSection = () => {
                       </div>
                     ))}
                   </div>
-                  
-                   
-                  
                 </div>
               )}
             </div>
@@ -84,7 +92,7 @@ const FilterSection = () => {
         </div>
 
         <div className=" max-lg:w-6/6 max-lg:ml-0 ml-4 h-fit">
-          <div className="max-md:hidden flex justify-between ml-10 mt-5 mr-5">
+          <div className="max-lg:hidden flex justify-between ml-10 mt-5 mr-5">
             <h1 className="font-semibold text-lg"> 456 Properties </h1>
 
             <SortByDropdown />
