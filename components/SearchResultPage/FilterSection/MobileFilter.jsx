@@ -20,7 +20,7 @@ export default function BasicAccordion() {
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
-            <div className="max-lg:flex justify-between max-md:flex-col">
+            {/* <div className="max-lg:flex justify-between max-md:flex-col">
               {filterOptions.map((option, index) => (
                 <div className="">
                   <MainAccordion
@@ -31,7 +31,7 @@ export default function BasicAccordion() {
                   />
                 </div>
               ))}
-            </div>
+            </div> */}
           </Typography>
         </AccordionDetails>
       </Accordion>
