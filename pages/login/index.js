@@ -207,7 +207,7 @@ const LoginUser = () => {
         localStorage.setItem("isLogin", true); //!
 
         setOtpSuccess(true); // Set the login success state to true
-        toast(response.data?.responseMessage);
+        toast.success(response.data?.responseMessage);
         setLoading(false);
         setTimeout(() => {
           setOtpSuccess(false); // Reset the login success state after a timeout
