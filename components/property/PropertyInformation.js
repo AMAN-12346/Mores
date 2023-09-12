@@ -23,61 +23,61 @@ export default function PropertyInformation({ property }) {
 
     // const currentStatusString = property.current_status.ReadyToMove ? "Ready to Move" : `Under Construction: ${property.current_status.UnderConstruction}`;
     return (
-        <div>
-            <div className="bg-[#9DACA1] flex justify-between rounded-t-lg shadow-lg p-4" onClick={handleMobileView}>
+        <>
+            <div className="bg-[#9DACA1] flex justify-between rounded-t-lg lg:p-4 md:p-3 p-2" onClick={handleMobileView}>
                 <div>
-                    <h1 className="text-white text-lg font-semibold">Property Information</h1>
+                    <h1 className="text-white text-[14px] font-semibold">Property Information</h1>
                 </div>
-                {(windowWidth < 768 ? <div className='bg-white rounded-full w-[40px] h-[40px] pl-1 pt-1' onClick={() => setUp(!Up)}>
-                    <h1 className="text-black text-lg font-semibold">{Up ? <FaAngleUp size={30} /> : <FaAngleDown size={30} />}</h1>
+                {(windowWidth < 768 ? <div className='bg-white rounded-full w-[30px] h-[30px] pl-[2px] pt-1' onClick={() => setUp(!Up)}>
+                    <h1 className="text-black text-lg font-semibold">{Up ? <FaAngleUp size={25} /> : <FaAngleDown size={25} />}</h1>
                 </div> : "")}
             </div>
             {
                 view &&
-                <div className="bg-white p-8 shadow-md">
+                <div className="bg-white p-9 shadow-md">
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 text-sm">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 text-sm">
                         {/* Left Column */}
-                        <div className="grid-rows-1 space-y-4">
+                        <div className="grid-rows-1 space-y-1">
                             <div>
-                                <label className="text-lg font-semibold">Property For</label>
-                                <p className="mt-1">{property?.action}</p>
+                                <label className="text-[12px] font-semibold">Property For</label>
+                                <p className="text-[11px]">{property?.action}</p>
+                            </div>
+                            <hr className="my-3 bg-gray-300" />
+
+                            <div>
+                                <label className="text-[12px] font-semibold">City</label>
+                                <p className="text-[11px] ">{property?.cityName ? property.cityName : "Noida"}</p>
+                            </div>
+                            <hr className="my-4 mb-3  bg-gray-300" />
+
+                            <div>
+                                <label className="text-[12px] font-semibold">Price</label>
+                                <p className="text-[11px] ">{property?.price} Lac</p>
                             </div>
                             <hr className="my-4  bg-gray-300" />
 
                             <div>
-                                <label className="text-lg font-semibold">City</label>
-                                <p className="mt-1">{property?.cityName ? property.cityName : "Noida"}</p>
+                                <label className="text-[12px] font-semibold">Age of Property (Years)</label>
+                                <p className="text-[11px] ">0-1 Year</p>
                             </div>
                             <hr className="my-4  bg-gray-300" />
 
                             <div>
-                                <label className="text-lg font-semibold">Price</label>
-                                <p className="mt-1">{property?.price} Lac</p>
-                            </div>
-                            <hr className="my-4  bg-gray-300" />
-
-                            <div>
-                                <label className="text-lg font-semibold">Age of Property (Years)</label>
-                                <p className="mt-1">0-1 Year</p>
-                            </div>
-                            <hr className="my-4  bg-gray-300" />
-
-                            <div>
-                                <label className="text-lg font-semibold">Lift Availability</label>
-                                <p className="mt-1">{property?.perks?.safety?.Lift ? "Yes" : "No"}</p>
+                                <label className="text-[12px] font-semibold">Lift Availability</label>
+                                <p className="text-[11px] ">{property?.perks?.safety?.Lift ? "Yes" : "No"}</p>
                             </div>
                             <hr className="my-4 bg-gray-300" />
 
                             <div>
-                                <label className="text-lg font-semibold">Covered Parking</label>
-                                <p className="mt-1">{property?.coverCarPark ? "YES" : "NO"}</p>
+                                <label className="text-[12px] font-semibold">Covered Parking</label>
+                                <p className="text-[11px] ">{property?.coverCarPark ? "YES" : "NO"}</p>
                             </div>
                             <hr className="my-4 bg-gray-300" />
 
                             <div>
-                                <label className="text-lg font-semibold">Flooring</label>
-                                <p className="mt-1">{property?.flooring}</p>
+                                <label className="text-[12px] font-semibold">Flooring</label>
+                                <p className="text-[11px] ">{property?.flooring}</p>
                             </div>
                             <hr className="my-4 bg-gray-300" />
 
@@ -85,46 +85,46 @@ export default function PropertyInformation({ property }) {
                         </div>
 
                         {/* Middle Column */}
-                        <div className="grid-rows-5 space-y-4">
+                        <div className="grid-rows-5 space-y-1">
                             <div>
-                                <label className="text-lg font-semibold">Property Type</label>
-                                <p className="mt-1">{property?.propertyType}</p>
+                                <label className="text-[12px] font-semibold">Property Type</label>
+                                <p className="text-[11px] ">{property?.propertyType}</p>
                             </div>
                             <hr className="my-4  bg-gray-300" />
 
                             <div>
-                                <label className="text-lg font-semibold">Locality</label>
-                                <p className="mt-1">{property?.locality}</p>
+                                <label className="text-[12px] font-semibold">Locality</label>
+                                <p className="text-[11px] ">{property?.locality}</p>
                             </div>
                             <hr className="my-4  bg-gray-300" />
 
                             <div>
-                                <label className="text-lg font-semibold">Possession Status</label>
-                                <p className="mt-1">ON</p>
+                                <label className="text-[12px] font-semibold">Possession Status</label>
+                                <p className="text-[11px] ">ON</p>
                             </div>
                             <hr className="my-4  bg-gray-300" />
 
                             <div>
-                                <label className="text-lg font-semibold">Number of Rooms</label>
-                                <p className="mt-1">{property?.bedrooms}</p>
+                                <label className="text-[12px] font-semibold">Number of Rooms</label>
+                                <p className="text-[11px] ">{property?.bedrooms}</p>
                             </div>
                             <hr className="my-4  bg-gray-300" />
 
                             <div>
-                                <label className="text-lg font-semibold">Balcony</label>
-                                <p className="mt-1">{property?.balconies}</p>
+                                <label className="text-[12px] font-semibold">Balcony</label>
+                                <p className="text-[11px] ">{property?.balconies}</p>
                             </div>
                             <hr className="my-4  bg-gray-300" />
 
                             <div>
-                                <label className="text-lg font-semibold">Facing</label>
-                                <p className="mt-1">{property?.facing}</p>
+                                <label className="text-[12px] font-semibold">Facing</label>
+                                <p className="text-[11px] ">{property?.facing}</p>
                             </div>
                             <hr className="my-4  bg-gray-300" />
 
                             <div>
-                                <label className="text-lg font-semibold">Floor Number</label>
-                                <p className="mt-1">{property?.floorNumber}</p>
+                                <label className="text-[12px] font-semibold">Floor Number</label>
+                                <p className="text-[11px] ">{property?.floorNumber}</p>
                             </div>
                             <hr className="my-4  bg-gray-300" />
 
@@ -132,45 +132,45 @@ export default function PropertyInformation({ property }) {
                         </div>
 
                         {/* Right Column */}
-                        <div className="grid-rows-9 space-y-4">
+                        <div className="grid-rows-9 space-y-1">
                             <div>
-                                <label className="text-lg font-semibold">Building Type</label>
-                                <p className="mt-1">{property?.propertySubType}</p>
+                                <label className="text-[12px] font-semibold">Building Type</label>
+                                <p className="text-[11px] ">{property?.propertySubType}</p>
                             </div>
                             <hr className="my-4  bg-gray-300" />
 
                             <div>
-                                <label className="text-lg font-semibold">Area</label>
-                                <p className="mt-1">{property?.areaDetails?.bedrooms} SqFt</p>
+                                <label className="text-[12px] font-semibold">Area</label>
+                                <p className="text-[11px] ">{property?.areaDetails?.bedrooms} SqFt</p>
                             </div>
                             <hr className="my-4  bg-gray-300" />
 
                             <div>
-                                <label className="text-lg font-semibold">Furnishing Status</label>
-                                <p className="mt-1">{property?.furniture}</p>
+                                <label className="text-[12px] font-semibold">Furnishing Status</label>
+                                <p className="text-[11px] ">{property?.furniture}</p>
                             </div>
                             <hr className="my-4  bg-gray-300" />
 
                             <div>
-                                <label className="text-lg font-semibold">Number of Bathroom</label>
-                                <p className="mt-1">{property?.bathrooms}</p>
+                                <label className="text-[12px] font-semibold">Number of Bathroom</label>
+                                <p className="text-[11px] ">{property?.bathrooms}</p>
                             </div>
                             <hr className="my-4  bg-gray-300" />
 
                             <div>
-                                <label className="text-lg font-semibold">Water Source</label>
-                                <p className="mt-1">YES</p>
+                                <label className="text-[12px] font-semibold">Water Source</label>
+                                <p className="text-[11px] ">YES</p>
                             </div>
                             <hr className="my-4  bg-gray-300" />
 
                             <div>
-                                <label className="text-lg font-semibold">View</label>
-                                <p className="mt-1">{property?.View}</p>
+                                <label className="text-[12px] font-semibold">View</label>
+                                <p className="text-[11px] ">{property?.View}</p>
                             </div>
                             <hr className="my-4  bg-gray-300" />
                             <div>
-                                <label className="text-lg font-semibold">Total Floor Count</label>
-                                <p className="mt-1">{property?.totalfloor}</p>
+                                <label className="text-[12px] font-semibold">Total Floor Count</label>
+                                <p className="text-[11px] ">{property?.totalfloor}</p>
                             </div>
                             <hr className="my-4  bg-gray-300" />
 
@@ -186,6 +186,6 @@ export default function PropertyInformation({ property }) {
                 </div>
 
             }
-        </div>
+        </>
     )
 }
