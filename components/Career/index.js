@@ -5,18 +5,30 @@ import jobImage from '../../assets/Images/Career/image5.png';
 import awards from '../../assets/Images/Career/cup.png';
 import workspace from '../../assets/Images/Career/workspace.png';
 import coworkers from '../../assets/Images/Career/division.png';
+import interview from '../../assets/Images/Career/meeting.png';
+import cv from '../../assets/Images/Career/cv.png';
+import skills from '../../assets/Images/Career/abilities.png';
+import phone from '../../assets/Images/Career/telephone.png';
 import careerContent from '@/content/Career';
-import { StyledEngineProvider } from '@mui/material';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+import { useData } from '@/context/data';
 
-const Career = () => {
 
-    const color = ["rgba(1, 129, 145, 0.08)", "rgba(147, 22, 2, 0.06)", "rgba(200, 142, 32, 0.06)"];
+const Career = (title) => {
+    const router = useRouter();
+    const [data, setData] = useData();
+
+    const handleApply = (job) => {
+        setData(job);
+        router.push(`/career/${job.title}`)
+    }
 
     return (
         <div className={Styles.mainDiv}>
             {/* head part */}
             <div className='bg-[aliceblue] pb-9'>
-                <div className='flex w-[75%] pt-5 m-auto justify-between'>
+                <div className='flex md:w-[85%] lg:w-[75%] pt-5 m-auto justify-between'>
                     <div className='pt-24'>
                         <h2 className={Styles.smallHeading}>We're hiring!</h2>
                         <h1 className={Styles.heading}>
@@ -53,16 +65,57 @@ const Career = () => {
                 </div>                
             </div>
 
+            {/* Recruitment Process */}
+            <div className='text-center pt-24 w-[80%] m-auto'>
+                <h2 className={Styles.h2heading}>Learn Our Recruitment <span style={{color: "#018191"}}>Process</span></h2>
+                <div className='pt-16 flex justify-center'>
+                    {/* cv submission */}
+                    <div className={Styles.recruitmentSingleDiv}>
+                       <Image src={cv} width={600} height={600} alt='icon-div' className={Styles.imageRecruitment}/>
+                       <h4 className={Styles.h4Heading}>Resume Submission</h4>
+                       <p className={Styles.paraRecruitment}>Submit Your Details for further Process</p>
+                    </div>
+                    {/* phone screening */}
+                    <div className={Styles.recruitmentSingleDiv}>
+                       <Image src={phone} width={600} height={600} alt='icon-div' className={Styles.imageRecruitment}/>
+                       <h4 className={Styles.h4Heading}>Phone Screening</h4>
+                       <p className={Styles.paraRecruitment}>In second round, Our HR will call you.</p>
+                    </div>
+                    {/* skills test */}
+                    <div className={Styles.recruitmentSingleDiv}>
+                       <Image src={skills} width={600} height={600} alt='icon-div' className={Styles.imageRecruitment}/>
+                       <h4 className={Styles.h4Heading}>Skill Test</h4>
+                       <p className={Styles.paraRecruitment}>Prepare Yourself for skill assessment test</p>
+                    </div>
+                    {/* interview */}
+                    <div className={Styles.recruitmentSingleDiv}>
+                       <Image src={interview} width={600} height={600} alt='icon-div' className={Styles.imageRecruitment}/>
+                       <h4 className={Styles.h4Heading}>Final Interview</h4>
+                       <p className={Styles.paraRecruitment}>Final interview with our MD or CEO</p>
+                    </div>
+                </div>
+            </div>
 
             {/* Job Openings */}
 
-            <div className='w-[60%] m-auto pt-36'>
+            <div className='w-[50%] m-auto pt-36 pb-12'>
                 <h4 className={Styles.h4heading}>Current Openings </h4>
                 <hr className={Styles.underline} />
-                {/* {careerContent.jobs.map((job)=> 
-                <div className={Styles}>
-                  
-                </div>)} */}
+                <div className='justify-center mt-5'>
+                {careerContent.jobs.map((job,index)=> 
+                    <div className={Styles.jobDiv}>
+                        <div>
+                            <h4 className={Styles.jobheading}>{job.title}</h4>
+                            <h5>Salary: Rs. XXXX/year</h5>
+                            <h5>Experience: {job.experience}</h5>
+                            <h5>Job Type: Permanent</h5>
+                        </div>
+                        <div>   
+                            <button className={Styles.jobButton} onClick={()=>handleApply(job)}>Apply</button>                          
+                        </div>
+                    </div>
+                )}
+                </div>
             </div>
         </div> 
     );
