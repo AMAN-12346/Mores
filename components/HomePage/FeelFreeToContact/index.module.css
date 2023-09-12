@@ -9,10 +9,9 @@
     color: #FFF;
     text-align: center;
     font-variant-numeric: lining-nums proportional-nums;
-    font-family: Poppins;
     font-style: normal;
+    letter-spacing: 1px;
     font-weight: 600;
-    line-height: normal;
 }
 
 .paragraph{
@@ -20,7 +19,7 @@
     text-align: center;
     font-style: normal;
     margin-top: 5px;
-    font-weight: 300;
+    letter-spacing: 0.5px;
 }
 
 .fieldName{

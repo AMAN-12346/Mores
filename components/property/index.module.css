@@ -1,0 +1,31 @@
+.Viwers {
+    width: 194px;
+    height: 69px;
+    flex-shrink: 0;
+}
+
+.cityTag{
+    position: absolute;
+    bottom: 8%;
+    left: 10%;
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 15px;
+}
+.cityUnderline{
+    width: 91px;
+    height: 4px;
+    flex-shrink: 0;
+    background: #A37F4F;
+}
+
+.tabview {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 40px;
+}
+
+.para::-webkit-scrollbar{
+    display: none;
+}

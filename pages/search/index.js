@@ -4,7 +4,7 @@ import { useState } from "react";
 
 import axios from "axios";
 
-import queryString from "query-string";
+// import queryString from "query-string"; 
 
 import NearMeSearch from "./nearMeSearch";
 

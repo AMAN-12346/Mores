@@ -13,7 +13,7 @@ const Card = ({description}) => {
                 <p className={Styles.name}>{description.name}</p>
             </div>
             <div className={Styles.storyContainer}>
-                <p className={`mb-16 text-xs md:text-sm w-[80%] h-[24vh] m-auto mt-5 ${Styles.story}`}>
+                <p className={`mb-16 text-xs md:text-[13px] w-[80%] h-[24vh] m-auto mt-5 ${Styles.story}`}>
                     {description.story}
                 </p>
                 <div className={Styles.cityTag}>

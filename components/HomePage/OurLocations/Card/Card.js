@@ -5,10 +5,6 @@ import { useEffect } from "react";
 
 const Card = ({name,imageSrc}) => {
 
-    useEffect(()=>{
-        window.scrollTo(0,0)
-    }, [])
-
     return ( 
         <div className={`cursor-default w-[100%] md:w-[60%] lg:w-[32%] ${Styles.card} mr-5`}>
             <Image src={imageSrc} 

@@ -25,7 +25,7 @@ const OurServices = () => {
                 Our Services
                 <hr className={`m-auto md:m-0 ${Styles.underline}`} />
             </h1>       
-            <div className='my-2 md:my-7 flex justify-center md:justify-between ml-[8%]'>
+            <div className='my-2 md:my-5 flex justify-center md:justify-between ml-[7.5%]'>
                 <p className={`w-[100%] md:w-[60%] lg:w-[55%] ${Styles.shortPara}`}>
                     Empowering You with Our Diverse Services
                     Your Solutions, Our Expertise
@@ -39,7 +39,7 @@ const OurServices = () => {
                     <Card name={service} imageSrc={services[service]} />
                 )}
             </div>
-            <div className='w-[100vw]'>
+            <div className='w-[100%] ml-[3%]'>
                 <button className={Styles.exploreAll}>Explore All</button>
             </div>
         </div>

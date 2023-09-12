@@ -22,10 +22,10 @@ const FeelFreeToContact = () => {
 
     return ( 
         <div className={Styles.servicesComponent}>     
-            <h1 className={`text-[24px] md:text-[30px] lg:text-[37px] ${Styles.heading}`}>
+            <h1 className={`text-[24px] md:text-[30px] lg:text-[35px] ${Styles.heading}`}>
                 Feel Free To Contact
             </h1>       
-            <p className={`text-[11px] md:text-[15px] ${Styles.paragraph}`}>Enter the following Details to reach us.</p>
+            <p className={`text-[11px] md:text-[14px] ${Styles.paragraph}`}>Enter the following Details to reach us.</p>
             <form className='mt-9'>
                 <div className='flex justify-evenly flex-wrap'>
                     <div>

@@ -321,8 +321,10 @@ const LoginUser = () => {
           layout="fill"
           objectFit="cover"
         />
+        
+        </div>
       </div>
-    </div>
+    
   );
 };
 

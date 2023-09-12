@@ -5,8 +5,8 @@
 }
 
 .underline{
-    width: 20vw;
-    height: 5px;
+    width: 150px;
+    height: 4px;
     flex-shrink: 0;
     border-radius: 16px;
     background: #FFF;

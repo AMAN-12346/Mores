@@ -3,6 +3,9 @@ import Image from 'next/image';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import burgerMenuIcon from '@/assets/ButtonIcons/burgerMenuIcon.svg';
+import Styles from './index.module.css';
+import moresSvg from '../../../../assets/moreIcon/MoresSvg.svg';
+import ProfileDropdownButton from '@/utils/ProfileDropdownButton/ProfileDropdownButton';
 
 const BurgerMenu = () => {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -24,7 +27,7 @@ const BurgerMenu = () => {
         variant="contained"
         className='flex'
       >
-          <Image src={burgerMenuIcon} width={25} height={50} className='md:w-[30px]'/>
+          <Image src={burgerMenuIcon} width={25} height={50} className='md:w-[30px]' alt='icon'/>
         
       </button>
       <Menu
@@ -32,9 +35,11 @@ const BurgerMenu = () => {
         anchorEl={anchorEl}
         open={Boolean(anchorEl)}
         onClose={handleClose}
+        className={Styles.menu}
       >
+        {anchorEl && <Image src={moresSvg} alt='Mores-Logo' width={143} className={Styles.logo}/>}
         
-        <MenuItem onClick={handleClose} className='w-[200px]' >City</MenuItem>
+        <MenuItem onClick={handleClose}>City</MenuItem>
         <MenuItem onClick={handleClose}>Sell</MenuItem>
         <MenuItem onClick={handleClose}>Rent</MenuItem>
         <MenuItem onClick={handleClose}>Projects</MenuItem>

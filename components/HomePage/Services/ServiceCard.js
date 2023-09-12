@@ -2,6 +2,7 @@
 import Link from "next/link";
 import Styles from "./ServiceCard.module.css";
 import ServiceCardButton from "./ServiceCardButton";
+import Image from "next/image";
 
 
 const ServiceCard = ({name, description}) => {
@@ -19,7 +20,7 @@ const ServiceCard = ({name, description}) => {
                 </Link>                
                 <div className={Styles.iconDiv} style={{background:description.iconBackgroundColor}}>
                     <div className={Styles.imgIconDiv}>
-                        <img
+                        <Image
                             src={description.iconFile}
                             alt="Picture of the author"
                             width={57}
