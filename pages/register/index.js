@@ -9,6 +9,9 @@ import right_side_image from "../register/assets/right_side_image.png";
 import logo_image from "../register/assets/logo_image.png";
 import Link from "next/link";
 import styles from "./Register.module.css";
+import { toast } from 'react-toastify';
+
+
 
 const RegisterUser = () => {
   const [selectedMethod, setSelectedMethod] = useState("email");
@@ -37,11 +40,12 @@ const RegisterUser = () => {
         "http://localhost:1950/api/v1/user/Register",
         payload
       );
-
+      console.log(response);
       if (response.data?.responseCode === 200) {
         localStorage.setItem("userID", inputValue);
         // If the response is successful, navigate to the "otpVerify" path
         setOtpSuccess(true); // Set the login success state to true
+        toast.success(response.data?.responseMessage);
         setTimeout(() => {
           setOtpSuccess(false); // Reset the login success state after a timeout
         }, 3000);
@@ -49,6 +53,7 @@ const RegisterUser = () => {
       } else {
         console.log("i am in register else part");
         setError(response.data?.responseMessage);
+        toast.error(response.data?.responseMessage)
         setTimeout(() => {
           setError("");
         }, 3000);
@@ -56,6 +61,8 @@ const RegisterUser = () => {
       }
     } catch (error) {
       setError(error.response?.data.responseMessage);
+      toast.error(error.response?.data.responseMessage)
+
       setTimeout(() => {
         setError("");
       }, 3000);
@@ -75,21 +82,19 @@ const RegisterUser = () => {
           <p className={styles.slogan}>Create a new account</p>
           <div className={styles.buttonContainer}>
             <button
-              className={`py-2 px-6  md:rounded-l-lg  rounded-l-xl lg:w-36 w-56  mt-3 ${
-                selectedMethod === "email"
-                  ? "bg-primary text-white"
-                  : "bg-secondary text-black"
-              }`}
+              className={`py-2 px-6  md:rounded-l-lg  rounded-l-xl lg:w-36 w-56  mt-3 ${selectedMethod === "email"
+                ? "bg-primary text-white"
+                : "bg-secondary text-black"
+                }`}
               onClick={() => setSelectedMethod("email")}
             >
               Email
             </button>
             <button
-              className={` py-2  md:rounded-r-lg rounded-r-lg px-6 lg:w-36 w-56 mt-3 ${
-                selectedMethod === "phone"
-                  ? "bg-primary text-white"
-                  : "bg-secondary text-black"
-              }`}
+              className={` py-2  md:rounded-r-lg rounded-r-lg px-6 lg:w-36 w-56 mt-3 ${selectedMethod === "phone"
+                ? "bg-primary text-white"
+                : "bg-secondary text-black"
+                }`}
               onClick={() => setSelectedMethod("phone")}
             >
               Phone
@@ -132,10 +137,7 @@ const RegisterUser = () => {
               </Link>
             </p>
           </form>
-          {otpSuccess && (
-            <p className="text-green-500 mt-2">Otp sent successfully!</p>
-          )}
-          {error && <p className="text-red-500 mt-2">{error}</p>}
+
         </div>
 
         <div className={styles.footerImage}>

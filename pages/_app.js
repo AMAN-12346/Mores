@@ -11,7 +11,8 @@ import { useRouter } from 'next/router';
 import Head from "next/head";
 import 'animate.css/animate.css';
 import FavImage from '../public/footer-image.png';
-
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
@@ -33,6 +34,7 @@ function MyApp({ Component, pageProps }) {
       <Navbar />
       <Component {...pageProps}/>
       <Footer /> 
+      <ToastContainer />
     </AuthProvider>
   );
 }
