@@ -10,18 +10,19 @@ import SortByDropdown from "./SortByDropdown";
 import useWindowWidth from "@/context/useWindowWidth";
 import BasicAccordion from "./MobileFilter";
 import Tags from "./Tags.jsx";
-const FilterSection = () => {
+const FilterSection = ({data}) => {
   const [isFilterOpen, setIsFilterOpen] = useState(false);
   const itemPerPage = 5;
   const [currentPage, setCurrentPage] = useState(0);
-  const rows = properties.slice(
+  const rows = data.slice(
     currentPage * itemPerPage,
     (currentPage + 1) * itemPerPage
   );
+  // console.log(rows)
   const handlePerPageChange = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
-  const numberOfPages = Math.ceil(properties.length / itemPerPage);
+  const numberOfPages = Math.ceil(data.length / itemPerPage);
   const pageIndex = Array.from({ length: numberOfPages }, (_, idx) => idx + 1);
   const toggleFilter = () => {
     setIsFilterOpen(!isFilterOpen);
@@ -42,7 +43,6 @@ const FilterSection = () => {
                 <p>Show M-Verified Properties</p>
                 <input className="h-6 w-6 ml-2" type="checkbox" />
               </div>
-
               <MinimumDistanceSlider />
             </div>
             <div>
@@ -93,7 +93,7 @@ const FilterSection = () => {
 
         <div className=" max-lg:w-6/6 max-lg:ml-0 ml-4 h-fit">
           <div className="max-lg:hidden flex justify-between ml-10 mt-5 mr-5">
-            <h1 className="font-semibold text-lg"> 456 Properties </h1>
+            <h1 className="font-semibold text-lg"> {data.length} Properties </h1>
 
             <SortByDropdown />
           </div>
