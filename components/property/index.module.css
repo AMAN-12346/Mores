@@ -13,8 +13,8 @@
     margin-top: 15px;
 }
 .cityUnderline{
-    width: 91px;
-    height: 4px;
+    width: 70px;
+    height: 2px;
     flex-shrink: 0;
     background: #A37F4F;
 }

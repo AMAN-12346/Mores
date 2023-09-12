@@ -98,14 +98,6 @@ const Review = () => {
             else if (window.innerWidth >= 600) {
                 setItemsPerPage(2);
             }
-            //   else if(windowWidth >= 768 && windowWidth < 1024){
-            //     setItemsPerPage(2);
-
-            //   } 
-            //   else if(windowWidth >= 481 && windowWidth < 768){
-            //     setItemsPerPage(2);
-
-            //   }
             else {
                 setItemsPerPage(1);
             }
@@ -131,32 +123,32 @@ const Review = () => {
     };
 
     return (
-        <div className="relative shadow-md">
-            <div className="bg-[#9DACA1] flex justify-between rounded-t-lg shadow-lg p-4" onClick={handleMobileView}>
+        <div className="relative shadow-lg">
+            <div className="bg-[#9DACA1] flex justify-between rounded-t-lg shadow-md lg:p-4 md:p-3 p-2" onClick={handleMobileView}>
                 <div>
-                    <h1 className="text-white text-lg font-semibold">Reviews</h1>
+                    <h1 className="text-white text-[14px] font-semibold">Reviews</h1>
                 </div>
                 <div>
-                    <h1 className="text-white text-lg font-semibold">View All</h1>
+                    <h1 className="text-white text-[12px] font-semibold">View All</h1>
                 </div>
             </div>
             {
                 view &&
-                <div className="bg-white shadow-md ">
+                <div className="bg-white shadow-md">
                     <div className="container">
                         <div className="flex justify-between">
                             {currentReviews.map((review) => (
-                                <div key={review.id} className="rounded-2xl border-solid border-2 border-[#003E71] shadow-md md:p-3 m-6 flex flex-col" style={{ width: "400px", height: "auto" }} >
-                                    <div className="items-center p-3">
-                                        <h2 className="font-semibold">{review.user}</h2>
-                                        <div className="flex mt-2 mb-3">
+                                <div key={review.id} className="rounded-2xl border-solid border-[1.2px] border-[#003E71] shadow-md p-3 m-6 flex flex-col" style={{ width: "400px", height: "auto" }} >
+                                    <div className="items-center px-2">
+                                        <h2 className="font-semibold text-[12px]">{review.user}</h2>
+                                        <div className="flex mt-1 mb-2">
                                             {Array.from({ length: review.rating }).map((_, index) => (
                                                 <svg
                                                     key={index}
                                                     xmlns="http://www.w3.org/2000/svg"
                                                     fill="gold" // Change the color here to gold
                                                     viewBox="0 0 16 16"
-                                                    className="h-5 w-5" // Remove the text-primary class
+                                                    className="h-3 w-3" // Remove the text-primary class
                                                 >
                                                     <path
                                                         fillRule="evenodd"
@@ -165,11 +157,11 @@ const Review = () => {
                                                 </svg>
                                             ))}
                                         </div>
-                                        <div className={`overflow-y-scroll h-24 overflow-x-hidden ${Styles.para}`}>
+                                        <div className={`overflow-y-scroll h-24 text-[10px] overflow-x-hidden ${Styles.para}`}>
                                             <p>{review.review}</p>
                                         </div>
-                                        
-                                        <div className="mt-5">
+
+                                        <div className="mt-5 text-[12px]">
                                             From {review?.city ? review?.city : "New User"}
                                             <hr className={Styles.cityUnderline} />
                                         </div>

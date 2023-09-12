@@ -202,19 +202,19 @@ export default function Amenities({ props }) {
 
     return (
         <div className="bg-white shadow-md">
-            <div className="bg-[#018191] flex justify-between rounded-t-lg shadow-md p-4" onClick={handleMobileView}>
+            <div className="bg-[#018191] flex justify-between rounded-t-lg shadow-md lg:p-4 md:p-3 p-2" onClick={handleMobileView}>
                 <div>
-                    <h1 className="text-white text-lg font-semibold">Amenities</h1>
+                    <h1 className="text-white text-[14px] font-semibold">Amenities</h1>
                 </div>
-                {(windowWidth < 768 ) ? <div className='bg-white rounded-full w-[40px] h-[40px] pl-1 pt-1' onClick={() => setUp(!Up)}>
-                    <h1 className="text-black text-lg font-semibold">{Up ? <FaAngleUp size={30} /> : <FaAngleDown size={30} />}</h1>
-                </div> : ""}
+                {(windowWidth < 768 ? <div className='bg-white rounded-full w-[30px] h-[30px] pl-[2px] pt-1' onClick={() => setUp(!Up)}>
+                    <h1 className="text-black text-lg font-semibold">{Up ? <FaAngleUp size={25} /> : <FaAngleDown size={25} />}</h1>
+                </div> : "")}
             </div>
             {
                 openview &&
                 <div className="flex flex-wrap p-9 text-sm">
                     {rows.map((row, rowIndex) => (
-                        <div key={rowIndex} className="md:w-1/2 lg:w-1/3 px-3 p-5">
+                        <div key={rowIndex} className="md:w-1/2 lg:w-1/3 px-7">
                             <div className="flex flex-col gap-2 justify-center"> {/* Added justify-center */}
                                 {row.map(({ amenity, imageInfo }) => (
                                     <div key={amenity} className="flex items-center gap-4">
@@ -222,11 +222,12 @@ export default function Amenities({ props }) {
                                             <Image
                                                 src={imageInfo.image}
                                                 alt={`${amenity} Icon`}
-                                                height={24}
+                                                className='bg-[#ccd6d7] text-white rounded-full w-[22px] p-[2px]' 
+                                                height={25}
                                                 width={24}
                                             />
                                         )}
-                                        <p className="font-semibold">{imageInfo ? imageInfo.name : amenity}</p>
+                                        <p className="font-semibold text-[11px]">{imageInfo ? imageInfo.name : amenity}</p>
                                     </div>
                                 ))}
                             </div>
