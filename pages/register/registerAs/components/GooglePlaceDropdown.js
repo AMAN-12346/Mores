@@ -13,7 +13,6 @@ const GoogleMap = ({ google, updateParentLocation }) => {
   const [autocompleteResults, setAutocompleteResults] = useState([]);
 
   const [selectedLocation, setSelectedLocation] = useState({});
-
   const [showDropdown, setShowDropdown] = useState(false); // Control dropdown visibility
 
 

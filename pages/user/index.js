@@ -30,7 +30,7 @@ const Sidebar = () => {
               <IconComponent icon={item.icon} />
             </div>
 
-            <span className="ml-7 pt-2 text-lg  hover:text-primary">
+            <span className="ml-3 pt-2 text-sm  hover:text-primary">
               {item.title}
             </span>
           </div>

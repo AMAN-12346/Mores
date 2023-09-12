@@ -1,6 +1,6 @@
 import Image from "next/image";
 import shield from "../../../assets/moreIcon/Shield.svg";
-import mscore from "../../../assets/moreIcon/m-score.png";
+import mscore from "../../../assets/moreIcon/mScore.png";
 import MobileViewProperty from "@/assets/moreIcon/MobileViewProperty";
 import useWindowWidth from "@/context/useWindowWidth";
 // import { useDevice } from 'react-device-detect';

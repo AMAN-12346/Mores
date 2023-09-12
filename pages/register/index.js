@@ -137,6 +137,7 @@ const RegisterUser = () => {
           )}
           {error && <p className="text-red-500 mt-2">{error}</p>}
         </div>
+        <div></div>
 
         <div className={styles.footerImage}>
           <Image src={footer_image} alt="footer-image" />
