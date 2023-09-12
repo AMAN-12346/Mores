@@ -58,7 +58,7 @@ const RightSection = ({ details }) => {
         <h1>{details.propertyName}</h1>
         <div className="flex justify-between">
         <h1 className="max-md:pt-3"> ₹{details.price}</h1>
-        {console.log(windowWidth)}
+        {/* {console.log(windowWidth)} */}
         <div className="">
         { windowWidth < 768 && <MobileViewProperty/>}
         </div>

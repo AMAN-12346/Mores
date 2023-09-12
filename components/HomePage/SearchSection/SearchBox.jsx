@@ -1,14 +1,13 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
+import { useRouter } from "next/router";
 import magnifyingGlass from "../../../assets/SearchBoxIcon/magnifyglass.svg";
 import downArrow from "../../../assets/SearchBoxIcon/downarrow.svg";
 import MobileViewSearchBox from "./MobileViewSearchBox";
 import GooglePlaceDropdown from "@/pages/register/registerAs/components/GooglePlaceDropdown";
 import NearMeSearch from "./NearMe";
 import axios from "axios";
-import queryString from "query-string";
-
 const SearchBox = ({ isMobileView }) => {
   const [budget, setBudget] = useState("");
   const [propertyType, setPropertyType] = useState("");
@@ -16,7 +15,7 @@ const SearchBox = ({ isMobileView }) => {
   const [locationLatitude, setLocationLatitude] = useState("");
   const [locationLongitude, setLocationLongitude] = useState("");
   const [locationName, setLocationName] = useState("");
-
+  const router = useRouter();
   const handleBudgetChange = (event) => {
     setBudget(event.target.value);
   };
@@ -42,27 +41,47 @@ const SearchBox = ({ isMobileView }) => {
   };
 
   const onSearchButtonClick = () => {
-    const payload = {
-      latitude: locationLatitude,
-      longitude: locationLongitude,
-      cityName: locationName,
-      price: budget,
-      propertyType: propertyType,
-    };
-    // const query=queryString.stringify(payload)
-    // console.log(query)
-    axios
-      .get("http://localhost:1950/api/v1/property/searchProperty", {
-        params: payload,
-      })
-      .then((response) => {
-        const responseData = response.data;
-        const properties = responseData.result;
-        console.log(properties);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    const payload = {};
+
+    // Add properties to the payload object if they are filled
+    if (locationLatitude && locationLongitude) {
+      payload.latitude = locationLatitude;
+      payload.longitude = locationLongitude;
+    }
+
+    if (locationName) {
+      payload.cityName = locationName;
+    }
+
+    if (budget) {
+      payload.price = budget;
+    }
+
+    if (propertyType) {
+      payload.propertyType = propertyType;
+    }
+
+
+    try {
+      axios
+        .get("http://localhost:1950/api/v1/property/searchProperty", {
+          params: payload,
+        })
+        .then((response) => {
+          const responseData = response.data;
+          const properties = responseData.result;
+          // console.log(properties);
+           router.push({
+             pathname: "/SearchResultPage",
+             query: { data: JSON.stringify(properties) },
+           });
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
@@ -81,12 +100,6 @@ const SearchBox = ({ isMobileView }) => {
               : "bg-nearme rounded-md p-2 gap-2 items-center"
           }`}
         >
-          {/* <Image src={nearme} width={15} alt="icon" />
-          <button
-            className={`text-primary text-xs ${isMobileView ? "mt-2" : ""}`}
-          >
-            Near Me
-          </button> */}
           <NearMeSearch isMobileView={isMobileView} />
         </div>
       )}
@@ -114,10 +127,9 @@ const SearchBox = ({ isMobileView }) => {
               className="max-lg:hidden text-xs w-full px-4 py-2 rounded-lg leading-tight  font-bold"
             >
               <option value="">Property Type</option>
-              <option value="Resedential">Residential</option>
-              <option value="Commercial">Commercial</option>
+              <option value="RESIDENTIAL">Residential</option>
+              <option value="COMMERCIAL">Commercial</option>
             </select>
-
           </div>
           <div className={`ml-10 text-xs`}>
             <GooglePlaceDropdown updateParentLocation={updateSearchLocation} />
