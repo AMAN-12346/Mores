@@ -1,41 +1,35 @@
-import data from "./SortingOptions/sortingOptions.json";
-import { useState } from "react";
-const SortByDropdown = () => {
-  const [selectedOption, setSelectedOption] = useState("default");
+import * as React from 'react';
+import Box from '@mui/material/Box';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
 
-  const handleOptionChange = (event) => {
-    setSelectedOption(event.target.value);
+export default function SortByDropdown() {
+  const [age, setAge] = React.useState('');
+
+  const handleChange = (event) => {
+    setAge(event.target.value);
   };
 
   return (
-    <div className="inline-flex font-semibold">
-      <select
-        value={selectedOption}
-        onChange={handleOptionChange}
-        className="appearance-none bg-sortbybg  py-2 px-4 pr-8 leading-tight focus:outline-none focus:shadow-outline"
-      >
-        {data.map((option) => (
-          <option key={option.value} value={option.value}>
-            {option.label}
-          </option>
-        ))}
-      </select>
-      <div className="pointer-events-none bg-sortbybg flex items-center px-2">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="16"
-          height="10"
-          viewBox="0 0 16 10"
-          fill="none"
+    <Box sx={{ minWidth: 100, maxWidth: 150 }}>
+      <FormControl fullWidth>
+        <InputLabel id="demo-simple-select-label">Sort By</InputLabel>
+        <Select
+          labelId="demo-simple-select-label"
+          id="demo-simple-select"
+          value={age}
+          label="Sorty By"
+          onChange={handleChange}
         >
-          <path
-            d="M15.0315 1.0105L8.021 8.021L1.0105 1.0105"
-            stroke="#018191"
-            stroke-width="2"
-          />
-        </svg>
-      </div>
-    </div>
+          <MenuItem value={10}>Best Selling</MenuItem>
+          <MenuItem value={20}>Price Low to High</MenuItem>
+          <MenuItem value={30}>Price High to Low</MenuItem>
+          <MenuItem value={40}>Properties Name A-Z</MenuItem>
+          <MenuItem value={50}>Properties Name Z-A</MenuItem>
+        </Select>
+      </FormControl>
+    </Box>
   );
-};
-export default SortByDropdown;
+}

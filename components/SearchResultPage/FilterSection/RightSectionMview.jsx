@@ -1,10 +1,16 @@
+'use client'
 import Image from "next/image";
 import Mscore from "../../../assets/moreIcon/m-score.png";
 // import Mverified from "../../../assets/moreIcon/m-score.png"
 import Mverified from "../../../assets/moreIcon/mVerified.svg";
 import Like from "../../../assets/moreIcon/likeHeart.svg";
 import Share from "../../../assets/moreIcon/share.svg";
+import Mobile from "../../../assets/moreIcon/MobileViewProperty.jsx";
+import { useWindowDimensions } from 'next/head';
+
 const RightSectionMview = ({ details }) => {
+  
+
   console.log(details);
   return (
     <div>
@@ -37,6 +43,11 @@ const RightSectionMview = ({ details }) => {
       <div className="flex justify-between mt-3">
         <div className="flex flex-col font-semibold text-lg justify-between  pr-3">
           <h1> ₹{details[0].price}</h1>
+          <div>
+            {
+              console.log("this is a msg")
+            }
+          </div>
         </div>
         <div className="flex gap-2  text-SearchResultText text-sm items-center">
           <div className="me-3">

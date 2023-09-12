@@ -1,7 +1,7 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
 import Slider from "@mui/material/Slider";
-import mscore from "../../../assets/moreIcon/m-score.png";
+import mscore from "../../../assets/moreIcon/mScore.png";
 import Image from "next/image";
 
 function valuetext(value) {
