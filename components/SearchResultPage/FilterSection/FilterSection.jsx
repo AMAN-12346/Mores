@@ -46,10 +46,13 @@ const FilterSection = ({data}) => {
             </div>
             <div>
               {windowWidth < 1024 ? (
-                <div className="max-lg:pb-7 h-10 w-10">
-                  <div className=" flex justify-between absolute  gap-5 z-10 h-max">
+                <div className="">
+                  <div className=" flex flex-col justify-between   gap-3 h-max">
                     <div className="">
                       <BasicAccordion />
+                    </div>
+                    <div className="h-10">
+
                     </div>
                     <div>
                       <SortByDropdown />
@@ -92,7 +95,7 @@ const FilterSection = ({data}) => {
 
         <div className=" max-lg:w-6/6 max-lg:ml-0 ml-4 h-fit">
           <div className="max-lg:hidden flex justify-between ml-10 mt-5 mr-5">
-            <h1 className="font-semibold text-lg"> {data.length} Properties </h1>
+            <h1 className="font-semibold text-xs"> {data.length} Properties </h1>
 
             <SortByDropdown />
           </div>
@@ -101,7 +104,7 @@ const FilterSection = ({data}) => {
           ))}
         </div>
       </div>
-      <div className="flex justify-center my-20 gap-14 text-xl">
+      <div className="flex justify-center my-20 gap-14 text-sm">
         {/* this is commented and should be uncommented in case we need a left arrow to move 
         to the previous page 
          <button

@@ -12,14 +12,14 @@ import { Tag } from "@mui/icons-material";
 
 export default function BasicAccordion() {
   return (
-    <div className="me-3">
+    <div className="me-3 absolute z-10">
       <Accordion>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
-          <Typography className="text-3xl font-bold font-sans">Filters</Typography>
+          <Typography className="text-3xl font-extrabold font-sans">Filters</Typography>
         </AccordionSummary>
         <AccordionDetails>
           
