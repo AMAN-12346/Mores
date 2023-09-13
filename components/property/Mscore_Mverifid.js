@@ -6,7 +6,7 @@ import Styles from "./index.module.css"
 
 export default function Mscore_Mverifid({ Data }) {
     return (
-        <div className='flex justify-between lg:text-lg md:text-lg text-sm mr-3 my-2 ml-3'>
+        <div className='flex lg:justify-start lg:gap-[50px] justify-between gap-[150px]  lg:text-lg md:text-lg text-sm mr-3 my-2 ml-3'>
             <div className={`${Styles.Mscore_Mverifid}`}>
                 <div className='flex gap-1 text-[13px]'>
                     <Image
