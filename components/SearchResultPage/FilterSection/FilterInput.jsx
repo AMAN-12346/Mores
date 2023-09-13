@@ -5,7 +5,7 @@ const FilterInput = ({ name }) => {
     setIsChecked(event.target.checked);
  }
   return (
-    <div >
+    <div className="" >
       {isChecked ? (
         <div className="flex mt-2 ">
         <label className="rounded-full w-4 h-4 border border-gray-300 flex items-center justify-center cursor-pointer">
@@ -16,7 +16,7 @@ const FilterInput = ({ name }) => {
             checked={isChecked}
             onChange={handleCheckBoxChange}
           />
-          <span>
+          <span >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="19"
@@ -63,7 +63,7 @@ const FilterInput = ({ name }) => {
             </svg>
           </span>
         </label>
-        <p className="ml-2 lg:text-lg text-xs  text-SearchResultText">{name}</p>
+        <p className="ml-2 text-xs  text-SearchResultText">{name}</p>
         </div>
       )}
     </div>

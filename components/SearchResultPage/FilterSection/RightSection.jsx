@@ -1,6 +1,8 @@
 import Image from "next/image";
 import shield from "../../../assets/moreIcon/Shield.svg";
 import mscore from "../../../assets/moreIcon/mScore.png";
+import Like from "../../../assets/moreIcon/likeHeart.svg";
+import Share from "../../../assets/moreIcon/share.svg";
 import MobileViewProperty from "@/assets/moreIcon/MobileViewProperty";
 import useWindowWidth from "@/context/useWindowWidth";
 // import { useDevice } from 'react-device-detect';
@@ -12,49 +14,27 @@ const RightSection = ({ details }) => {
  
 
   return (
-    <div className="px-5">
+    <div className="px-5 ">
       <div className="flex justify-between mt-2 ">
         <div className="flex gap-2 p-1 items-center">
-          <Image src={shield} alt="icon" />
-          <h1 className="text-searchPageText font-semibold">Resendential</h1>
+          <Image className="h-4 w-4" src={shield} alt="icon" />
+          <h1 className="text-searchPageText text-xs font-semibold">Residential</h1>
         </div>
         <div className=" flex justify-between gap-2 align-middle text-center text-button p-1">
-          <div className="flex bg-searchPageText2 rounded-2xl px-4 py-1 items-center align-middle gap-2">
-            <Image src={mscore} alt="icon" />
-            <h1 className="font-semibold text-searchPageText">100</h1>
+          <div className="flex bg-searchPageText2 rounded-2xl px-4 items-center align-middle gap-2">
+            <Image className="h-4 w-3" src={mscore} alt="icon" />
+            <h1 className="font-semibold text-sm text-searchPageText">100</h1>
           </div>
 
-          <div className="bg-gray-200 max-md:hidden rounded-full p-2">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="23"
-              height="23"
-              viewBox="0 0 23 23"
-              fill="none"
-            >
-              <path
-                d="M21.5625 8.44531C21.5625 14.7344 12.2376 19.8249 11.8405 20.0352C11.7358 20.0915 11.6188 20.1209 11.5 20.1209C11.3812 20.1209 11.2642 20.0915 11.1595 20.0352C10.7624 19.8249 1.4375 14.7344 1.4375 8.44531C1.43916 6.96848 2.02657 5.55262 3.07085 4.50835C4.11512 3.46407 5.53098 2.87666 7.00781 2.875C8.86309 2.875 10.4875 3.67281 11.5 5.02137C12.5125 3.67281 14.1369 2.875 15.9922 2.875C17.469 2.87666 18.8849 3.46407 19.9292 4.50835C20.9734 5.55262 21.5608 6.96848 21.5625 8.44531Z"
-                fill="#FF0202"
-              />
-            </svg>
+          <div className=" bg-slate-100 rounded-full max-md:hidden p-1 h-[27px] w-[27px]">
+            <Image height={40} width={40} src={Like} alt="heartIcon" />
           </div>
-          <div className="bg-gray-200 max-md:hidden rounded-full  p-2">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="25"
-              height="25"
-              viewBox="0 0 25 25"
-              fill="none"
-            >
-              <path
-                d="M16.3126 2.86605L23.0091 9.33926C23.0738 9.40179 23.1252 9.47671 23.1604 9.55954C23.1955 9.64237 23.2136 9.73143 23.2136 9.82141C23.2136 9.91138 23.1955 10.0004 23.1604 10.0833C23.1252 10.1661 23.0738 10.241 23.0091 10.3035L16.3126 16.7768C16.2514 16.8371 16.1789 16.8847 16.0992 16.9169C16.0195 16.9491 15.9343 16.9652 15.8484 16.9643C15.6708 16.9643 15.5004 16.8937 15.3748 16.7681C15.2493 16.6425 15.1787 16.4722 15.1787 16.2946V12.9553C9.19657 13.1964 6.67871 16.5446 6.57157 16.6875C6.48633 16.7997 6.36867 16.883 6.23452 16.9261C6.10037 16.9692 5.95622 16.9701 5.82157 16.9285C5.68726 16.8853 5.57005 16.8007 5.48667 16.6868C5.40329 16.573 5.35801 16.4357 5.35728 16.2946C5.35728 9.13391 11.2412 6.93748 15.1787 6.71426V3.34819C15.179 3.21649 15.2181 3.08781 15.2912 2.97823C15.3642 2.86865 15.468 2.78304 15.5894 2.73212C15.7097 2.68026 15.8426 2.6653 15.9714 2.68915C16.1002 2.71299 16.2189 2.77457 16.3126 2.86605ZM6.91978 3.57141C5.79498 3.57141 4.71625 4.01823 3.92089 4.81359C3.12554 5.60894 2.67871 6.68767 2.67871 7.81248V18.0803C2.67871 19.2051 3.12554 20.2839 3.92089 21.0792C4.71625 21.8746 5.79498 22.3214 6.91978 22.3214H17.1876C18.3124 22.3214 19.3912 21.8746 20.1865 21.0792C20.9819 20.2839 21.4287 19.2051 21.4287 18.0803V17.6339C21.4287 17.4563 21.3582 17.286 21.2326 17.1604C21.107 17.0348 20.9367 16.9643 20.7591 16.9643C20.5815 16.9643 20.4111 17.0348 20.2856 17.1604C20.16 17.286 20.0894 17.4563 20.0894 17.6339V18.0803C20.0894 18.8499 19.7837 19.588 19.2395 20.1322C18.6953 20.6764 17.9572 20.9821 17.1876 20.9821H6.91978C6.15018 20.9821 5.4121 20.6764 4.86791 20.1322C4.32372 19.588 4.018 18.8499 4.018 18.0803V7.81248C4.018 7.04288 4.32372 6.3048 4.86791 5.7606C5.4121 5.21641 6.15018 4.91069 6.91978 4.91069H10.9376C11.1152 4.91069 11.2856 4.84014 11.4111 4.71456C11.5367 4.58898 11.6073 4.41865 11.6073 4.24105C11.6073 4.06345 11.5367 3.89312 11.4111 3.76754C11.2856 3.64196 11.1152 3.57141 10.9376 3.57141H6.91978Z"
-                fill="black"
-              />
-            </svg>
+          <div className=" bg-slate-100 rounded-full max-md:hidden p-1 h-[27px] w-[27px]">
+            <Image height={50} width={50} src={Share} alt="share" />
           </div>
         </div>
       </div>
-      <div className="flex max-md:flex-col font-semibold text-2xl justify-between mt-1 ">
+      <div className="flex max-md:flex-col font-semibold text-md justify-between mt-1 ">
         <h1>{details.propertyName}</h1>
         <div className="flex justify-between">
         <h1 className="max-md:pt-3"> ₹{details.price}</h1>
@@ -64,7 +44,7 @@ const RightSection = ({ details }) => {
         </div>
         </div>
       </div>
-      <div className="flex gap-14 mt-4 text-SearchResultText text-lg justify-between">
+      <div className="flex gap-14 mt-4 text-SearchResultText  justify-between">
         <div className="flex items-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -78,10 +58,10 @@ const RightSection = ({ details }) => {
               fill="#78828A"
             />
           </svg>
-          <p className="underline text-sm"> {details.locality}</p>
+          <p className="underline text-xs"> {details.locality}</p>
         </div>
         <div>
-          <h1 className="text-sm max-md:hidden">1.5 BHK</h1>
+          <h1 className="text-xs max-md:hidden">1.5 BHK</h1>
         </div>
       </div>
       <div className="flex max-md:hidden justify-start gap-2 mt-6 text-SearchResultText ">
@@ -105,7 +85,7 @@ const RightSection = ({ details }) => {
               </clipPath>
             </defs>
           </svg>
-          <p className="text-sm">2 Baths</p>
+          <p className="text-xs">2 Baths</p>
         </div>
         <div className="flex  gap-2 items-center">
           <svg
@@ -127,7 +107,7 @@ const RightSection = ({ details }) => {
               </clipPath>
             </defs>
           </svg>
-          <p className="text-sm">6 beds</p>
+          <p className="text-xs">6 beds</p>
         </div>
         <div className="flex gap-2 items-center">
           <svg
@@ -157,7 +137,7 @@ const RightSection = ({ details }) => {
               </clipPath>
             </defs>
           </svg>
-          <p className="text-sm">1650 SqFt</p>
+          <p className="text-xs">1650 SqFt</p>
         </div>
         <div className="flex gap-2 items-center">
           <svg
@@ -182,13 +162,14 @@ const RightSection = ({ details }) => {
               stroke-linejoin="round"
             />
           </svg>
-          <p className="text-sm">{details.furniture}</p>
+          <p className="text-xs">{details.furniture}</p>
         </div>
       </div>
-      <div className="mt-4">
-        <p className="max-md:text-xs">
+      <div className="mt-4 line-clamp-1">
+        <p className="text-xs">
           {details.description}
-          <span className="underline text-black">Read More</span>
+
+          {/* <span className="underline text-black">Read More</span> */}
         </p>
       </div>
       <div className="flex max-md:flex-col max-md:gap-4 justify-between mt-4 ">
@@ -203,11 +184,11 @@ const RightSection = ({ details }) => {
             className="rounded-full"
           />
           <div>
-            <p className="font-semibold text-base">Ralph Rechards</p>
-            <p className="text-sm font-extralight">Owner</p>
+            <p className="font-semibold text-xs">Ralph Rechards</p>
+            <p className="text-xs font-extralight">Owner</p>
           </div>
         </div>
-        <div className="flex justify-center bg-featuredBackground p-1 px-6 text-white max-md:p-2 max-md:my-2 max-md:px-9 rounded-md">
+        <div className="flex justify-center bg-featuredBackground text-sm p-1 px-6 text-white max-md:p-2 max-md:my-2 max-md:px-9 rounded-md">
           <button>
             <div>Contact</div>
           </button>
