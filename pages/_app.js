@@ -19,9 +19,9 @@ import { DataProvider } from "@/context/data.js";
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
  
-  // useEffect(() => {
-  //   window.scrollTo(0,0);
-  // }, [router]);  
+  useEffect(() => {
+    window.scrollTo(0,0);
+  }, [router]);  
 
   return (
     <AuthProvider>
