@@ -139,6 +139,7 @@ const RegisterUser = () => {
           </form>
 
         </div>
+        <div></div>
 
         <div className={styles.footerImage}>
           <Image src={footer_image} alt="footer-image" />

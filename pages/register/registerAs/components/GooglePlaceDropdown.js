@@ -176,7 +176,7 @@ const GoogleMap = ({ google, updateParentLocation }) => {
 
         placeholder="Search for a location"
 
-        className="lg:border rounded-lg md:border border-lg sm:border border-none h-[30px] w-full"
+        className="pl-4 lg:border rounded-lg md:border border-lg sm:border border-none h-[30px] w-full "
 
       />
 

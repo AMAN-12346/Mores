@@ -260,6 +260,8 @@ export default function AddProperty() {
       step4Data: {
         amenities: [],
       },
+      setUplodedPhoto:[],
+      setUplodedVideo:[],
     });
   };
 

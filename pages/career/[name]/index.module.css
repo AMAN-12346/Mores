@@ -1,0 +1,46 @@
+.mainDiv{
+    background-color: aliceblue;
+    width: 100%;
+    height: 40vh;
+    height: fit-content;
+    /* text-align: center; */
+    /* margin: auto; */
+}
+
+.heading{
+    font-size: 67px;
+    padding-top: 12vh;
+    color: #018191;
+    padding-bottom: 3vh;
+}
+.para{
+    font-size: 12px;
+    color: rgb(146, 146, 146);
+}
+.underline{
+    width: 100%;
+    height: 2px;
+    margin-top: 6px;
+    padding-bottom: 5px;
+    color: #018191;
+}
+.jobheading{
+    margin-top: 40px;
+    padding-bottom: 30px;
+    font-size: 30px;
+    color: #018191;
+}
+
+.jobpara{
+    font-size: 13px;
+    color: rgb(105, 103, 103);
+    margin-top: 10px;
+    padding-bottom: 10px;
+}
+.description{
+    font-size: 14px;
+    text-decoration: underline;
+    color: rgb(105, 103, 103);
+    margin-top: 10px;
+    padding-bottom: 10px;
+}
