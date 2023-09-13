@@ -122,6 +122,8 @@ const VerifyOTP = () => {
       }
     } catch (error) {
       console.error("Error logging in:", error);
+      toast.error(error.response?.data.responseMessage)
+
       setLoading(false);
     }
   };
@@ -239,7 +241,7 @@ const VerifyOTP = () => {
               {loading ? "Verifing..." : "Verify"}
             </button>
           </div>
-              </div>
+        </div>
 
         <div className={styles.footerImage}>
           <Image src={footer_image} alt="footer-image" />

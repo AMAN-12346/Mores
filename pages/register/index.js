@@ -21,8 +21,16 @@ const RegisterUser = () => {
   const [otpSuccess, setOtpSuccess] = useState(false);
   const [loading, setLoading] = useState(false);
 
+
+
   const handleRegister = async (event) => {
     event.preventDefault(); // Prevent default form submission behavior
+
+
+    if (inputValue.trim() === "") {
+      // Show a toast message indicating the user should enter their email or mobile number
+      toast.error("Please enter your email or mobile number");
+    }
 
     let payload = {};
     if (selectedMethod === "email") {
@@ -61,8 +69,7 @@ const RegisterUser = () => {
       }
     } catch (error) {
       setError(error.response?.data.responseMessage);
-      toast.error(error.response?.data.responseMessage)
-
+      // toast.error(error.response?.data.responseMessage)
       setTimeout(() => {
         setError("");
       }, 3000);
