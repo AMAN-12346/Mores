@@ -52,10 +52,8 @@ const SinglePropertyCard = () => {
         setIsFilterOpen(!isFilterOpen);
     };
 
-
-
-    // const _id = "64e2f50633e52febc315572c"
     const _id = "65019c69e5d031991a00fad9"
+
     const [property, setProperty] = useState();
 
     const [expanded, setExpanded] = useState(false);
@@ -69,6 +67,7 @@ const SinglePropertyCard = () => {
             const { data } = await axios.get(`http://localhost:1950/api/v1/property/viewproperty/${_id}`);
             if (data) {
                 const info = data?.result;
+                console.log("info-============>>", info);
                 setProperty(info);
             }
         } catch (error) {
