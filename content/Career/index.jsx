@@ -42,7 +42,7 @@ const careerContent ={
                         "title": "Data Operator",
                         "experience": "5 year",
                         "type": "Permanent",
-                        "requirements": ["Graduate", "Experience", "Passionate" , "Certified"],
+                        "requirements": ["Graduate", "Experience", "Passionate" , "Certified","Experience", "Passionate" , "Certified"],
                         "gender": "Male",
                         "description": "We are seeking a motivated and dynamic data operator to join our team. As a Real Estate Agent, you will work with clients to buy, sell, or rent properties. Your responsibilities will include conducting property showings, negotiating offers, and assisting clients through the entire real estate transaction process.",
                         "qualification": ["Valid real estate license in india.","Proven experience as a Real Estate Agent or similar role.",
