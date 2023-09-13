@@ -55,7 +55,7 @@ const SinglePropertyCard = () => {
 
 
     // const _id = "64e2f50633e52febc315572c"
-    const _id = "64fac05b304ac2351c113157"
+    const _id = "65019c69e5d031991a00fad9"
     const [property, setProperty] = useState();
 
     const [expanded, setExpanded] = useState(false);
