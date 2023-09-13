@@ -181,7 +181,7 @@
     color: #195c92;
 }
 .jobButton{
-    color: #f58013;
+    color: #f5841b;
     font-weight: 600;
     font-size: 16px;
     letter-spacing: 0.5px;
@@ -194,6 +194,6 @@
 .jobButton:hover{
     opacity: 0.8;
     color: white;
-    background-color: #f58013;
+    background-color: #f5841b;
 }
 
