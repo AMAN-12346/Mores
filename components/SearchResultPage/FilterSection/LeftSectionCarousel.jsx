@@ -1,6 +1,20 @@
 import { useState } from "react";
 const LeftSectionCarousel=({images})=>{
     const [index,setIndex]=useState(0)
+    images=[
+      {
+        url:'https://images.pexels.com/photos/1612351/pexels-photo-1612351.jpeg?auto=compress&cs=tinysrgb&w=600'
+      },
+      {
+        url:'https://images.pexels.com/photos/2581922/pexels-photo-2581922.jpeg?auto=compress&cs=tinysrgb&w=600'
+      },
+      {
+        url:'https://images.pexels.com/photos/2581922/pexels-photo-2581922.jpeg?auto=compress&cs=tinysrgb&w=600'
+      },
+      {
+        url:'https://images.pexels.com/photos/2581922/pexels-photo-2581922.jpeg?auto=compress&cs=tinysrgb&w=600'
+      }
+    ]
       function prevSlide() {
         const isFirstSlide = index === 0;
         const newIndex = isFirstSlide ? images.length - 1 : index - 1;
@@ -15,10 +29,11 @@ const LeftSectionCarousel=({images})=>{
         setIndex(slideIndex);
       }
     return(
-        <div className="min-h-[290px] min-w-[300px] max-md:h-[160px] px-4 relative group">
+        <div className="min-h-[150px] min-w-[300px] max-md:h-[200px] max-sm:h-[160px] px-4 relative group">
         <div
           style={{
-            backgroundImage: `url(${images[index]})`,
+            // backgroundImage: `url(${images[index]})`,
+            backgroundImage:`url(${images[index].url})`,
             backgroundSize: "fill",
           }}
           className="w-full h-full rounded-2xl bg-center bg-cover duration-500 aspect-square"

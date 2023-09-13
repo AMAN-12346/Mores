@@ -16,7 +16,7 @@ const DropdownButton = ({optionName, menuItem}) => {
           <button
             className='flex h-[60px] items-center mr-3 relative'
           >
-            <p className='mr-1' style={{letterSpacing: "0.5px"}}>{optionName}</p>    
+            <p className='mr-2' style={{letterSpacing: "0.5px"}}>{optionName}</p>    
           
             <Image src={downArrow} className={Styles.image} width={11} alt='down arrow' style={{marginTop: "1px"}} />
             <Image src={whiteTriangle} className={Styles.whiteTriangle} width={20} alt='white triangle' />

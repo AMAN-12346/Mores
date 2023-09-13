@@ -123,8 +123,8 @@ const VerifyOTP = () => {
   };
   const handleResendOTP = async () => {
     const userID = localStorage.getItem("userID");
-    if (!userID){
-      return
+    if (!userID) {
+      return;
     }
 
     // If the userID starts with "+91", it's a mobile number
@@ -198,7 +198,7 @@ const VerifyOTP = () => {
                 maxLength="1"
                 inputMode="numeric"
                 pattern="[0-9]"
-                placeholder="0"
+                placeholder="X"
                 className="w-1/5 ml-2 px-2 py-1 text-center"
                 style={{
                   background: "none", // Remove the background
@@ -242,7 +242,7 @@ const VerifyOTP = () => {
 
           {backendError && <p className="text-red-500 mt-2">{backendError}</p>}
         </div>
-
+        <div></div>
         <div className={styles.footerImage}>
           <Image src={footer_image} alt="footer-image" />
         </div>

@@ -7,29 +7,34 @@ import MinimumDistanceSlider from "./SliderComponent";
 import shield from "../../../assets/moreIcon/Shield.svg";
 import Image from "next/image";
 import SortByDropdown from "./SortByDropdown";
-const FilterSection = () => {
+import useWindowWidth from "@/context/useWindowWidth";
+import BasicAccordion from "./MobileFilter";
+import Tags from "./Tags.jsx";
+const FilterSection = ({data}) => {
   const [isFilterOpen, setIsFilterOpen] = useState(false);
   const itemPerPage = 5;
   const [currentPage, setCurrentPage] = useState(0);
-  const rows = properties.slice(
+  const rows = data.slice(
     currentPage * itemPerPage,
     (currentPage + 1) * itemPerPage
   );
+  // console.log(rows)
   const handlePerPageChange = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
-  const numberOfPages = Math.ceil(properties.length / itemPerPage);
+  const numberOfPages = Math.ceil(data.length / itemPerPage);
   const pageIndex = Array.from({ length: numberOfPages }, (_, idx) => idx + 1);
   const toggleFilter = () => {
     setIsFilterOpen(!isFilterOpen);
   };
 
+  const windowWidth = useWindowWidth();
+
   return (
     <div>
       <div className="flex max-lg:flex-col">
-         {/* change w-1/4*/}
-        <div className="h-fit w-4/4 ml-8 mt-6   bg-white  rounded-md pb-20 max-lg:pb-3 pr-4">
-          <div className="bg-white  overflow-hidden">
+        <div className="h-fit w-4/4 ml-8 mt-6 lg:bg-white rounded-md pb-20 max-lg:pb-3 pr-4">
+          <div className="lg:bg-white  overflow-hidden">
             <div className="ml-8 mt-6 max-lg:hidden">
               <h1 className="text-4xl font-bold">Filter</h1>
               <div className="flex items-center mt-3 text-sm gap-1">
@@ -37,38 +42,58 @@ const FilterSection = () => {
                 <p>Show M-Verified Properties</p>
                 <input className="h-6 w-6 ml-2" type="checkbox" />
               </div>
-
               <MinimumDistanceSlider />
             </div>
-            <div className="max-lg:flex justify-between max-md:flex-col">
-              {filterOptions.map((option, index) => (
-                <div className="">
-                  <MainAccordion
-                    key={index}
-                    hname={option.heading}
-                    htype={option.key}
-                    filters={option.filters}
-                  />
+            <div>
+              {windowWidth < 1024 ? (
+                <div className="max-lg:pb-7 h-10 w-10">
+                  <div className=" flex justify-between absolute z-10 h-max">
+                    <div className="">
+                      <BasicAccordion />
+                    </div>
+                    <div>
+                      <SortByDropdown />
+                    </div>
+                  </div>
                 </div>
-              ))}
+              ) : (
+                // <Tags name = "Residential" />
+                <div className="flex justify-between">
+                  <div className=" max-lg:flex justify-between max-md:flex-col">
+                    {filterOptions.map((option, index) => (
+                      <div className="">
+                        <MainAccordion
+                          key={index}
+                          hname={option.heading}
+                          htype={option.key}
+                          filters={option.filters}
+                        />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
+
             <div className="flex flex-col">
-            <div className="flex max-lg:hidden justify-center text-center ms-4 mt-6">
-              <button className="bg-featuredBackground px-24 py-5 rounded-md text-white text-base font-semibold">
-                Refine Search
-              </button>
-            </div>
-            <div className="flex max-lg:hidden justify-center text-center ms-4 mt-6">
-              <button className="bg-white px-24 py-5 rounded-md text-gray-400 text-base font-semibold border border-solid-gray-500">
-                Remove Filter
-              </button>
-            </div>
+              <div className="flex max-lg:hidden justify-center text-center ms-4 mt-6">
+                <button className="bg-featuredBackground px-24 py-5 rounded-md text-white text-base font-semibold">
+                  Refine Search
+                </button>
+              </div>
+              <div className="flex max-lg:hidden justify-center text-center ms-4 mt-6">
+                <button className="bg-white px-24 py-5 rounded-md text-gray-400 text-base font-semibold border border-solid-gray-500">
+                  Remove Filter
+                </button>
+              </div>
             </div>
           </div>
         </div>
+
         <div className=" max-lg:w-6/6 max-lg:ml-0 ml-4 h-fit">
-          <div className="flex justify-between ml-10 mt-5 mr-5">
-            <h1 className="font-semibold text-lg"> 456 Properties </h1>
+          <div className="max-lg:hidden flex justify-between ml-10 mt-5 mr-5">
+            <h1 className="font-semibold text-lg"> {data.length} Properties </h1>
+
             <SortByDropdown />
           </div>
           {rows.map((row, index) => (
