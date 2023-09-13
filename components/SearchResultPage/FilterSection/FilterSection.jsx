@@ -32,8 +32,8 @@ const FilterSection = ({ data }) => {
 
   return (
     <div>
-      <div className="flex max-lg:flex-col">
-        <div className="h-fit w-4/4 ml-8 mt-6 lg:bg-white rounded-md pb-20 max-lg:pb-3 pr-4">
+      <div className="flex max-lg:flex-col lg:8/8">
+        <div className="h-fit w-4/4 ml-8 mt-6 lg:3/8 lg:bg-white rounded-md pb-20 max-lg:pb-3 pr-4">
           <div className="lg:bg-white  overflow-hidden">
             <div className="ml-8 mt-6 max-lg:hidden">
               <h1 className="text-xl font-bold">Filter</h1>
@@ -91,7 +91,7 @@ const FilterSection = ({ data }) => {
           </div>
         </div>
 
-        <div className=" max-lg:w-6/6 max-lg:ml-0 ml-4 h-fit">
+        <div className=" max-lg:w-6/6 lg:5/8 max-lg:ml-0 ml-4 h-fit w-full">
           <div className="max-lg:hidden flex justify-between ml-10 mt-5 mr-5">
             <h1 className="font-semibold text-base pt-5">
               {" "}

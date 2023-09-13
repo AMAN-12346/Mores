@@ -165,9 +165,10 @@ const RightSection = ({ details }) => {
           <p className="text-xs">{details.furniture}</p>
         </div>
       </div>
-      <div className="mt-4 line-clamp-3">
+      <div className="mt-4 line-clamp-1">
         <p className="text-xs">
           {details.description}
+
           {/* <span className="underline text-black">Read More</span> */}
         </p>
       </div>
