@@ -32,12 +32,12 @@ const SearchBox = ({ isMobileView }) => {
     setLocationLongitude(longitude);
 
     setLocationLatitude(latitude);
-    console.log(
-      "location details: ",
-      locationName,
-      locationLatitude,
-      locationLongitude
-    );
+    // console.log(
+    //   "location details: ",
+    //   locationName,
+    //   locationLatitude,
+    //   locationLongitude
+    // );
   };
 
   const onSearchButtonClick = () => {
