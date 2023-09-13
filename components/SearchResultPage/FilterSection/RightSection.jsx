@@ -14,7 +14,7 @@ const RightSection = ({ details }) => {
  
 
   return (
-    <div className="px-5">
+    <div className="px-5 ">
       <div className="flex justify-between mt-2 ">
         <div className="flex gap-2 p-1 items-center">
           <Image className="h-4 w-4" src={shield} alt="icon" />
@@ -85,7 +85,7 @@ const RightSection = ({ details }) => {
               </clipPath>
             </defs>
           </svg>
-          <p className="text-sm">2 Baths</p>
+          <p className="text-xs">2 Baths</p>
         </div>
         <div className="flex  gap-2 items-center">
           <svg
@@ -107,7 +107,7 @@ const RightSection = ({ details }) => {
               </clipPath>
             </defs>
           </svg>
-          <p className="text-sm">6 beds</p>
+          <p className="text-xs">6 beds</p>
         </div>
         <div className="flex gap-2 items-center">
           <svg
@@ -137,7 +137,7 @@ const RightSection = ({ details }) => {
               </clipPath>
             </defs>
           </svg>
-          <p className="text-sm">1650 SqFt</p>
+          <p className="text-xs">1650 SqFt</p>
         </div>
         <div className="flex gap-2 items-center">
           <svg
@@ -162,13 +162,13 @@ const RightSection = ({ details }) => {
               stroke-linejoin="round"
             />
           </svg>
-          <p className="text-sm">{details.furniture}</p>
+          <p className="text-xs">{details.furniture}</p>
         </div>
       </div>
-      <div className="mt-4">
+      <div className="mt-4 line-clamp-3">
         <p className="text-xs">
           {details.description}
-          <span className="underline text-black">Read More</span>
+          {/* <span className="underline text-black">Read More</span> */}
         </p>
       </div>
       <div className="flex max-md:flex-col max-md:gap-4 justify-between mt-4 ">

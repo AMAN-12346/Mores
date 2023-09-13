@@ -1,7 +1,7 @@
 import FilterInput from "./FilterInput";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import useWindowWidth from "@/context/useWindowWidth";
+import useWindowWidth from "@/context/useWindowWidth";  
 
 const MainAccordion = ({ hname, htype, filters }) => {
   // const windowWidth = useWindowWidth();

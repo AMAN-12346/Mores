@@ -19,10 +19,9 @@ export default function BasicAccordion() {
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
-          <Typography className="text-3xl font-extrabold font-sans">Filters</Typography>
+          <Typography variant="body2">Filters</Typography>
         </AccordionSummary>
         <AccordionDetails>
-          
             <div className="max-lg:flex justify-between max-md:flex-col">
               {filterOptions.map((option, index) => (
                 <div className="">
@@ -35,9 +34,6 @@ export default function BasicAccordion() {
                 </div>
               ))}
             </div>
-            
-
-        
         </AccordionDetails>
       </Accordion>
       </div>
