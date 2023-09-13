@@ -1,6 +1,6 @@
 import Image from "next/image";
 import shield from "../../../assets/moreIcon/Shield.svg";
-import mscore from "../../../assets/moreIcon/m-score.png";
+import mscore from "../../../assets/moreIcon/mScore.png";
 import { useState, useEffect } from "react";
 
 const RightSection = ({ details }) => {
