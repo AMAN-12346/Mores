@@ -45,7 +45,7 @@ const RegisterUser = () => {
         localStorage.setItem("userID", inputValue);
         // If the response is successful, navigate to the "otpVerify" path
         setOtpSuccess(true); // Set the login success state to true
-        toast.success(response.data?.responseMessage);
+        toast(response.data?.responseMessage);
         setTimeout(() => {
           setOtpSuccess(false); // Reset the login success state after a timeout
         }, 3000);
