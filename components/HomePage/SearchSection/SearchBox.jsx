@@ -110,9 +110,7 @@ const SearchBox = ({ isMobileView }) => {
               value={budget}
               onClick={handleClick}
               onChange={handleBudgetChange}
-              className={`${
-                hidden ? "lg:w-[80px] md:w-[80px]" : "lg:w-fit md:w-fit"
-              } text-xs px-1 py-1 rounded-lg leading-tight focus:outline-none focus:shadow-outline font-bold max-lg:w-auto`}
+              className={` text-xs py-1 rounded-lg leading-tight font-bold max-lg:w-auto`}
             >
               <option value="">Budget</option>
               <option value="1000000-2000000 ">₹10 lac-₹20 lac</option>
@@ -124,7 +122,7 @@ const SearchBox = ({ isMobileView }) => {
             <select
               value={propertyType}
               onChange={handlePropertyChange}
-              className="max-lg:hidden text-xs w-full px-4 py-2 rounded-lg leading-tight  font-bold"
+              className="max-lg:hidden text-xs w-full px-4 py-2 rounded-lg leading-tight font-bold"
             >
               <option value="">Property Type</option>
               <option value="RESIDENTIAL">Residential</option>
