@@ -1,18 +1,33 @@
 .dropDown{
     position: relative;
     display: inline-block;
+    height: 50px;
+}
+
+/* white triangle */
+.whiteTriangle{
+    position: absolute;
+    display: none;
+    bottom: -3.5vh;
+    left: 5%;
+    margin-top: 20px;
+    animation: dropdownFade 2s ease;
 }
 
 .dropdownMenu{
     display: none;
     position: absolute;
+    left: -6vw;
     background-color: #ffffff;
-    min-width: fit-content;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
-    border-radius: 0px 0px 8px 8px;
-    padding: 10px 20px 30px;
+    border-radius: 8px 8px 8px 8px;
+    padding: 9px 5px 17px; 
+    max-width: 0;
+    max-height: 0;
+    margin-top: 19px;
+    animation: dropdownFade 1s ease-in-out;
 }
+
 
 .dropdownMenu a{
     padding: 6px 0px;
@@ -27,19 +42,32 @@
 /* rotate the downside arrow */
 .dropDown:hover .image{
     transform: rotate(180deg);
+    transition: transform 0.4s ease-in-out;
 }
 
 /* Change color of dropdown menu items on hover */
 .dropdownMenu a:hover {
     color: #018191;
+    font-weight: 600;
+}
+@keyframes dropdownFade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 /* Show the dropdown menu when hovering over the dropdown button */
-.dropDown:hover .dropdownMenu {
-    display: block;
+.dropDown:hover .dropdownMenu{
+    display: block; 
+    max-width: fit-content;
+    max-height: fit-content;
 }
-
-
+.dropDown:hover .whiteTriangle{
+    display: block;  
+}
 
 /* ------------------------------- Listing ---------------------------------------- */
 
@@ -65,4 +93,7 @@
 
 .innerDiv{
    width: 250px;
+   padding: 10px 15px 10px;
+   border-radius: 8px;
+   margin: 0px 10px;
 }

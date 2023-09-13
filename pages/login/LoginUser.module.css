@@ -1,0 +1,262 @@
+.loginContainer {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+.heading {
+  color: #000;
+  text-align: center;
+  font-family: Gotham;
+  font-size: 33px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 20px;
+}
+
+.slogan {
+  color: #000;
+  text-align: center;
+  font-family: Mazzard;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 20px;
+}
+.leftContent {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 24px;
+  background-color: #faeee0;
+  position: relative;
+}
+
+.formContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  text-align: center;
+  margin-top: -10px;
+  z-index: 9999999;
+  /* padding-left: 60px; */
+}
+
+.inputField {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  width: 50%;
+  margin: auto;
+  margin-top: 15px;
+}
+
+.button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #931602;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 50%;
+}
+
+.buttonContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.footerImage {
+  position: absolute;
+  width: 50%;
+  /* margin: auto; */
+  text-align: center;
+  bottom: 0;
+  top: 60%;
+  left: 25%;
+}
+
+.rightContainer {
+  width: 50%;
+  position: relative;
+  overflow: hidden;
+}
+.rightImage {
+  /* position: absolute; */
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+@media (max-width: 767px) {
+  /* Mobile styles */
+  .loginContainer {
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    margin: auto;
+  }
+
+  .leftContent {
+    position: relative;
+    width: 100%;
+    align-items: center;
+    padding: 16px;
+    text-align: center;
+  }
+
+  .rightContainer {
+    /* position: relative; */
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .formContainer {
+    text-align: center;
+    padding: 25px;
+    width: 100%;
+    margin-top: 150px;
+  }
+
+  .inputField {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    width: 90%;
+    margin: auto;
+    margin-top: 15px;
+  }
+
+  .button {
+    margin-top: 20px;
+    width: 90%;
+  }
+
+  .buttonContainer {
+    /* width: 100%; */
+    width: 260px;
+    justify-content: center;
+    margin-left: 16px;
+    display: flex;
+  }
+  .footerImage {
+    position: relative;
+    width: 100%;
+    margin: auto;
+    top: 10%;
+    bottom: 0;
+    left: 3%;
+    right: 0;
+  }
+  .rightImage {
+    position: relative;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* Tablet styles */
+  .loginContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+  .logo {
+    margin-bottom: 180px;
+  }
+  .heading {
+    color: #000;
+    text-align: center;
+    font-family: Gotham;
+    font-size: 33px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+  .leftContent {
+    position: relative;
+    width: 100%;
+    margin: auto;
+    align-items: center;
+    padding: 16px;
+    text-align: center;
+  }
+
+  .rightContainer {
+    position: relative;
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .formContainer {
+    padding: 25px;
+    text-align: center;
+    margin-top: 100px;
+    width: 90%;
+    margin: auto;
+  }
+
+  .inputField {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    width: 462px;
+    height: 70px;
+    margin: auto;
+    margin-top: 15px;
+  }
+
+  .button {
+    color: #fff;
+    font-family: Mazzard;
+    font-size: 23px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 32px;
+    width: 462px;
+    height: 70px;
+  }
+
+  .buttonContainer {
+    width: 462px;
+    height: 72px;
+    flex-shrink: 0;
+    justify-content: center;
+    margin-left: 75px;
+  }
+
+
+  .footerImage {
+    position: relative;
+    width: 100%;
+    margin: auto;
+    top: 1%;
+    bottom: 0;
+    left: 18%;
+    right: 0;
+  }
+
+  /* .buttonSelect {
+    width: 0px;
+    height: 72px;
+    flex-shrink: 0;
+  } */
+
+  .rightImage {
+    position: relative;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+}

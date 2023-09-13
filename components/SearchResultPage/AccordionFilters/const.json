@@ -1,0 +1,22 @@
+[
+    {
+        "key":"propertyType",
+        "heading":"Property Type",
+        "filters":["Residential","Commercial","PentHouse","Children's Book","Villa","Shop","Office Space","Lands & Plots"]
+    },
+    {
+        "key":"budget",
+        "heading":"Budget",
+        "filters":["₹ 5 lac","₹ 10 lac","₹ 15 lac","₹ 20 lac","₹ 25 lac"]
+    },
+    {
+        "key":"amenities",
+        "heading":"Amenities",
+        "filters":["24 X 7 Security","Attatched Market","Visitor's Parking","Power Backup","Central AC","Swimming Pool","Club House","Kids Play Area"]
+    },
+    {
+        "key":"furnishingStatus",
+        "heading":"Furnishing Status",
+        "filters":["Furnished","Semi-Furnished","Non-Furnished"]
+    }
+]

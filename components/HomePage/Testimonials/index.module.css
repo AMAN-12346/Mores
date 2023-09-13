@@ -16,8 +16,8 @@
 }
 
 .underline{
-    width: 160px;
-    height: 6px;
+    width: 140px;
+    height: 5px;
     flex-shrink: 0;
     border-radius: 15px;
     background: #C88E20;
@@ -41,12 +41,22 @@
     }
     .wrapper {
         margin-top: 40px;
-        overflow-x: scroll;
+        overflow: scroll;
     }
     .wrapper::-webkit-scrollbar{
         display: none;
     }
 }
+@media screen and (min-width:768px) and (max-width:1023px){
+    
+    .wrapper {
+        overflow: scroll;
+    }
+    .wrapper::-webkit-scrollbar{
+        display: none;
+    }
+}
+
 
 
   

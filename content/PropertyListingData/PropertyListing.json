@@ -1,0 +1,2441 @@
+[
+    {
+        "propertyName": "DDA Flats Vasant Kunj",
+        "propertyType": "RESIDENTIAL",
+        "propertySubType": "PENT_HOUSE",
+        "price": "12,00,000",
+        "bedrooms": "3",
+        "bathrooms": "3",
+        "balconies": "PERSONAL",
+        "coverCarPark": true,
+        "uncoverCarPark": true,
+        "PowerBackup": true,
+        "facing": "NORTH_EAST",
+        "View": "EXPRESS_WAY",
+        "flooring": "MARBLE",
+        "tower": "4",
+        "unitNumber": "501",
+        "areaDetails": [
+            {
+                "bedrooms": "100",
+                "bathrooms": "120",
+                "study": "110"
+            }
+        ],
+        "additionalRoom": [
+            {
+                "MEETING_ROOM": 2,
+                "CONFERENCE_ROOM": 1,
+                "BOARD_ROOM": "NA",
+                "LOUNGE_AREA": 1,
+                "RECEPTION_AREA": 1,
+                "PANTRY": 1,
+                "CABIN": 2,
+                "RESTROOM": "NA",
+                "STORAGE_ROOM": "NA",
+                "SERVER_ROOM": "NA",
+                "OPEN_WORKSPACE": 2,
+                "TRAINING_ROOM": 1,
+                "AUDITORIUM": "NA",
+                "LIBRARY": "NA",
+                "SHOWROOM": "NA",
+                "DISPLAY_AREA": "NA"
+            }
+        ],
+        "current_status": [
+            {
+                "ReadyToMove": true,
+                "UnderConstruction": "12-12-2023"
+            }
+        ],
+        "furniture": "SEMI FURNISHED",
+        "action": "RENT",
+        "floorNumber": "23",
+        "cityName": "Bareilly",
+        "description": "Lorem ipsum dolor sit amet. Id nobis halo.",
+        "status": "ACTIVE",
+        "images": ["https://s3-alpha-sig.figma.com/img/8eb3/1af4/3be1843f786155fd94ce06ccf586022d?Expires=1695600000&Signature=hPQu6yH6I73n3uqXylUtwAufjOKyRdaa8KaKP2rfpKq6q1H-IkXKFGZiOuOJvRMfri6VkCz04nSh3mmyrJDNdoTMFRQ3Ks1Q8hBjDxcQ2ofRW5dz7Qaum2EAGhpFK9a3ejn~EbVZONcMftu7houLilEdsMpUegDG7ApzXG60Ut0pFiNTxPB-nizgJF2pA85mTi3naU~c07~SOiljGRqdkVuBOTAbmq7KWLwqTeZa2OiBlnEbhhzhckaql1t5W6wvlg-GwMLB9mtjLkVUhmEkiZJBt289JLzdQ6LlIL05OyXh3BX7rQZLeOzxVGvAGApO33RbNWVq-9UYewh8EGlDeg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4","https://images.pexels.com/photos/2102587/pexels-photo-2102587.jpeg?auto=compress&cs=tinysrgb&w=600","https://images.pexels.com/photos/1862402/pexels-photo-1862402.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"],
+        "locality": "4140 Parker Rd. Allentown, New Mexico 31134",
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                29.34,
+                79.41
+            ]
+        },
+        "allowance": "FAMILY",
+        "perks": {
+            "Sports": {
+                "Gymnasium": true,
+                "SwimmingPool": true,
+                "KidsPool": true,
+                "BadmintonCourt": false,
+                "TennisCourt": false,
+                "SquashCourt": false,
+                "Football": false,
+                "Cricket": false,
+                "Basketball": true,
+                "Volleyball": false,
+                "Yoga": false,
+                "Jogging": false,
+                "TableTennis": false,
+                "park": true,
+                "school": true
+            },
+            "safety": {
+                "PowerBackup": true,
+                "Lift": true,
+                "Security": true,
+                "FireFightingSystems": false,
+                "CCTV": true
+            },
+            "furniture": {
+                "wifi": false,
+                "tv": false,
+                "bed": true,
+                "sofa": false,
+                "table": false
+            }
+        },
+        "createdAt": {
+            "$date": "2023-08-16T05:23:51.621Z"
+        },
+        "updatedAt": {
+            "$date": "2023-08-16T05:23:51.621Z"
+        },
+        "__v": 0
+    },
+    {
+        "propertyName": "Royal Palms",
+        "propertyType": "RESIDENTIAL",
+        "propertySubType": "PENT_HOUSE",
+        "price": "12,00,000",
+        "bedrooms": "3",
+        "bathrooms": "3",
+        "balconies": "PERSONAL",
+        "coverCarPark": true,
+        "uncoverCarPark": true,
+        "PowerBackup": true,
+        "facing": "NORTH_EAST",
+        "View": "EXPRESS_WAY",
+        "flooring": "MARBLE",
+        "tower": "4",
+        "unitNumber": "501",
+        "areaDetails": [
+            {
+                "bedrooms": "100",
+                "bathrooms": "120",
+                "study": "110"
+            }
+        ],
+        "additionalRoom": [
+            {
+                "MEETING_ROOM": 2,
+                "CONFERENCE_ROOM": 1,
+                "BOARD_ROOM": "NA",
+                "LOUNGE_AREA": 1,
+                "RECEPTION_AREA": 1,
+                "PANTRY": 1,
+                "CABIN": 2,
+                "RESTROOM": "NA",
+                "STORAGE_ROOM": "NA",
+                "SERVER_ROOM": "NA",
+                "OPEN_WORKSPACE": 2,
+                "TRAINING_ROOM": 1,
+                "AUDITORIUM": "NA",
+                "LIBRARY": "NA",
+                "SHOWROOM": "NA",
+                "DISPLAY_AREA": "NA"
+            }
+        ],
+        "current_status": [
+            {
+                "ReadyToMove": true,
+                "UnderConstruction": "12-12-2023"
+            }
+        ],
+        "furniture": "SEMI FURNISHED",
+        "action": "RENT",
+        "floorNumber": "23",
+        "cityName": "Ghaziabad",
+        "description": "React component for emoji/svg country flags. ... Start using react-country-flag in your project by running `npm i react-country-flag",
+        "status": "ACTIVE",
+        "images": ["https://images.pexels.com/photos/1612351/pexels-photo-1612351.jpeg?auto=compress&cs=tinysrgb&w=600","https://images.pexels.com/photos/2566860/pexels-photo-2566860.jpeg?auto=compress&cs=tinysrgb&w=600","https://images.pexels.com/photos/463734/pexels-photo-463734.jpeg?auto=compress&cs=tinysrgb&w=600"],
+        "locality": "2972 Westheimer Rd. Santa Ana, Illinois 85486",
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                28.66,
+                77.40
+            ]
+        },
+        "allowance": "FAMILY",
+        "perks": {
+            "Sports": {
+                "Gymnasium": true,
+                "SwimmingPool": true,
+                "KidsPool": true,
+                "BadmintonCourt": false,
+                "TennisCourt": false,
+                "SquashCourt": false,
+                "Football": false,
+                "Cricket": false,
+                "Basketball": true,
+                "Volleyball": false,
+                "Yoga": false,
+                "Jogging": false,
+                "TableTennis": false,
+                "park": true,
+                "school": true
+            },
+            "safety": {
+                "PowerBackup": true,
+                "Lift": true,
+                "Security": true,
+                "FireFightingSystems": false,
+                "CCTV": true
+            },
+            "furniture": {
+                "wifi": false,
+                "tv": false,
+                "bed": true,
+                "sofa": false,
+                "table": false
+            }
+        },
+        "createdAt": {
+            "$date": "2023-08-16T05:23:51.621Z"
+        },
+        "updatedAt": {
+            "$date": "2023-08-16T05:23:51.621Z"
+        },
+        "__v": 0
+    },
+    {
+        "propertyName": "Miro Residence",
+        "propertyType": "RESIDENTIAL",
+        "propertySubType": "PENT_HOUSE",
+        "price": "12,00,000",
+        "bedrooms": "3",
+        "bathrooms": "3",
+        "balconies": "PERSONAL",
+        "coverCarPark": true,
+        "uncoverCarPark": true,
+        "PowerBackup": true,
+        "facing": "NORTH_EAST",
+        "View": "EXPRESS_WAY",
+        "flooring": "MARBLE",
+        "tower": "4",
+        "unitNumber": "501",
+        "areaDetails": [
+            {
+                "bedrooms": "100",
+                "bathrooms": "120",
+                "study": "110"
+            }
+        ],
+        "additionalRoom": [
+            {
+                "MEETING_ROOM": 2,
+                "CONFERENCE_ROOM": 1,
+                "BOARD_ROOM": "NA",
+                "LOUNGE_AREA": 1,
+                "RECEPTION_AREA": 1,
+                "PANTRY": 1,
+                "CABIN": 2,
+                "RESTROOM": "NA",
+                "STORAGE_ROOM": "NA",
+                "SERVER_ROOM": "NA",
+                "OPEN_WORKSPACE": 2,
+                "TRAINING_ROOM": 1,
+                "AUDITORIUM": "NA",
+                "LIBRARY": "NA",
+                "SHOWROOM": "NA",
+                "DISPLAY_AREA": "NA"
+            }
+        ],
+        "current_status": [
+            {
+                "ReadyToMove": true,
+                "UnderConstruction": "12-12-2023"
+            }
+        ],
+        "furniture": "SEMI FURNISHED",
+        "action": "RENT",
+        "floorNumber": "23",
+        "cityName": "Gorakhpur",
+        "description": "React component for emoji/svg country flags. ... Start using react-country-flag in your project by running `npm i react-country-flag",
+        "status": "ACTIVE",
+        "images": ["https://images.pexels.com/photos/2104151/pexels-photo-2104151.jpeg?auto=compress&cs=tinysrgb&w=600","https://images.pexels.com/photos/2189666/pexels-photo-2189666.jpeg?auto=compress&cs=tinysrgb&w=600","https://images.pexels.com/photos/783682/pexels-photo-783682.jpeg?auto=compress&cs=tinysrgb&w=600"],
+        "locality": "456 Pinecrest Apartments Building B, 12345",
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                26.75,
+                83.38
+            ]
+        },
+        "allowance": "FAMILY",
+        "perks": {
+            "Sports": {
+                "Gymnasium": true,
+                "SwimmingPool": true,
+                "KidsPool": true,
+                "BadmintonCourt": false,
+                "TennisCourt": false,
+                "SquashCourt": false,
+                "Football": false,
+                "Cricket": false,
+                "Basketball": true,
+                "Volleyball": false,
+                "Yoga": false,
+                "Jogging": false,
+                "TableTennis": false,
+                "park": true,
+                "school": true
+            },
+            "safety": {
+                "PowerBackup": true,
+                "Lift": true,
+                "Security": true,
+                "FireFightingSystems": false,
+                "CCTV": true
+            },
+            "furniture": {
+                "wifi": false,
+                "tv": false,
+                "bed": true,
+                "sofa": false,
+                "table": false
+            }
+        },
+        "createdAt": {
+            "$date": "2023-08-16T05:23:51.621Z"
+        },
+        "updatedAt": {
+            "$date": "2023-08-16T05:23:51.621Z"
+        },
+        "__v": 0
+    },
+    {
+        "propertyName": "Royal Residence",
+        "propertyType": "RESIDENTIAL",
+        "propertySubType": "PENT_HOUSE",
+        "price": "12,00,000",
+        "bedrooms": "3",
+        "bathrooms": "3",
+        "balconies": "PERSONAL",
+        "coverCarPark": true,
+        "uncoverCarPark": true,
+        "PowerBackup": true,
+        "facing": "NORTH_EAST",
+        "View": "EXPRESS_WAY",
+        "flooring": "MARBLE",
+        "tower": "4",
+        "unitNumber": "501",
+        "areaDetails": [
+            {
+                "bedrooms": "100",
+                "bathrooms": "120",
+                "study": "110"
+            }
+        ],
+        "additionalRoom": [
+            {
+                "MEETING_ROOM": 2,
+                "CONFERENCE_ROOM": 1,
+                "BOARD_ROOM": "NA",
+                "LOUNGE_AREA": 1,
+                "RECEPTION_AREA": 1,
+                "PANTRY": 1,
+                "CABIN": 2,
+                "RESTROOM": "NA",
+                "STORAGE_ROOM": "NA",
+                "SERVER_ROOM": "NA",
+                "OPEN_WORKSPACE": 2,
+                "TRAINING_ROOM": 1,
+                "AUDITORIUM": "NA",
+                "LIBRARY": "NA",
+                "SHOWROOM": "NA",
+                "DISPLAY_AREA": "NA"
+            }
+        ],
+        "current_status": [
+            {
+                "ReadyToMove": true,
+                "UnderConstruction": "12-12-2023"
+            }
+        ],
+        "furniture": "SEMI FURNISHED",
+        "action": "RENT",
+        "floorNumber": "23",
+        "cityName": "Kanpur",
+        "description": "React component for emoji/svg country flags. ... Start using react-country-flag in your project by running `npm i react-country-flag",
+        "status": "ACTIVE",
+        "images": ["https://images.pexels.com/photos/2360673/pexels-photo-2360673.jpeg?auto=compress&cs=tinysrgb&w=600","https://images.pexels.com/photos/1559825/pexels-photo-1559825.jpeg?auto=compress&cs=tinysrgb&w=600","https://images.pexels.com/photos/2816284/pexels-photo-2816284.jpeg?auto=compress&cs=tinysrgb&w=600"],
+        "locality": "6391 Elgin St. Celina, Delaware 10299",
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                26.45,
+                80.31
+            ]
+        },
+        "allowance": "FAMILY",
+        "perks": {
+            "Sports": {
+                "Gymnasium": true,
+                "SwimmingPool": true,
+                "KidsPool": true,
+                "BadmintonCourt": false,
+                "TennisCourt": false,
+                "SquashCourt": false,
+                "Football": false,
+                "Cricket": false,
+                "Basketball": true,
+                "Volleyball": false,
+                "Yoga": false,
+                "Jogging": false,
+                "TableTennis": false,
+                "park": true,
+                "school": true
+            },
+            "safety": {
+                "PowerBackup": true,
+                "Lift": true,
+                "Security": true,
+                "FireFightingSystems": false,
+                "CCTV": true
+            },
+            "furniture": {
+                "wifi": false,
+                "tv": false,
+                "bed": true,
+                "sofa": false,
+                "table": false
+            }
+        },
+        "createdAt": {
+            "$date": "2023-08-16T05:23:51.621Z"
+        },
+        "updatedAt": {
+            "$date": "2023-08-16T05:23:51.621Z"
+        },
+        "__v": 0
+    }, 
+    {
+        "propertyName": "Blue Berry House",
+        "propertyType": "RESIDENTIAL",
+        "propertySubType": "PENT_HOUSE",
+        "price": "12,00,000",
+        "bedrooms": "3",
+        "bathrooms": "3",
+        "balconies": "PERSONAL",
+        "coverCarPark": true,
+        "uncoverCarPark": true,
+        "PowerBackup": true,
+        "facing": "NORTH_EAST",
+        "View": "EXPRESS_WAY",
+        "flooring": "MARBLE",
+        "tower": "4",
+        "unitNumber": "501",
+        "areaDetails": [
+            {
+                "bedrooms": "100",
+                "bathrooms": "120",
+                "study": "110"
+            }
+        ],
+        "additionalRoom": [
+            {
+                "MEETING_ROOM": 2,
+                "CONFERENCE_ROOM": 1,
+                "BOARD_ROOM": "NA",
+                "LOUNGE_AREA": 1,
+                "RECEPTION_AREA": 1,
+                "PANTRY": 1,
+                "CABIN": 2,
+                "RESTROOM": "NA",
+                "STORAGE_ROOM": "NA",
+                "SERVER_ROOM": "NA",
+                "OPEN_WORKSPACE": 2,
+                "TRAINING_ROOM": 1,
+                "AUDITORIUM": "NA",
+                "LIBRARY": "NA",
+                "SHOWROOM": "NA",
+                "DISPLAY_AREA": "NA"
+            }
+        ],
+        "current_status": [
+            {
+                "ReadyToMove": true,
+                "UnderConstruction": "12-12-2023"
+            }
+        ],
+        "furniture": "SEMI FURNISHED",
+        "action": "RENT",
+        "floorNumber": "23",
+        "cityName": "Kanpur",
+        "description": "React component for emoji/svg country flags. ... Start using react-country-flag in your project by running `npm i react-country-flag",
+        "status": "ACTIVE",
+        "images": ["https://images.pexels.com/photos/1172064/pexels-photo-1172064.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1","https://images.pexels.com/photos/1559825/pexels-photo-1559825.jpeg?auto=compress&cs=tinysrgb&w=600","https://images.pexels.com/photos/2816284/pexels-photo-2816284.jpeg?auto=compress&cs=tinysrgb&w=600"],
+        "locality": "6391 Elgin St. Celina, Delaware 10299",
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                26.45,
+                80.31
+            ]
+        },
+        "allowance": "FAMILY",
+        "perks": {
+            "Sports": {
+                "Gymnasium": true,
+                "SwimmingPool": true,
+                "KidsPool": true,
+                "BadmintonCourt": false,
+                "TennisCourt": false,
+                "SquashCourt": false,
+                "Football": false,
+                "Cricket": false,
+                "Basketball": true,
+                "Volleyball": false,
+                "Yoga": false,
+                "Jogging": false,
+                "TableTennis": false,
+                "park": true,
+                "school": true
+            },
+            "safety": {
+                "PowerBackup": true,
+                "Lift": true,
+                "Security": true,
+                "FireFightingSystems": false,
+                "CCTV": true
+            },
+            "furniture": {
+                "wifi": false,
+                "tv": false,
+                "bed": true,
+                "sofa": false,
+                "table": false
+            }
+        },
+        "createdAt": {
+            "$date": "2023-08-16T05:23:51.621Z"
+        },
+        "updatedAt": {
+            "$date": "2023-08-16T05:23:51.621Z"
+        },
+        "__v": 0
+    },
+    {
+        "propertyName": "Retro House",
+        "propertyType": "RESIDENTIAL",
+        "propertySubType": "PENT_HOUSE",
+        "price": "12,00,000",
+        "bedrooms": "3",
+        "bathrooms": "3",
+        "balconies": "PERSONAL",
+        "coverCarPark": true,
+        "uncoverCarPark": true,
+        "PowerBackup": true,
+        "facing": "NORTH_EAST",
+        "View": "EXPRESS_WAY",
+        "flooring": "MARBLE",
+        "tower": "4",
+        "unitNumber": "501",
+        "areaDetails": [
+            {
+                "bedrooms": "100",
+                "bathrooms": "120",
+                "study": "110"
+            }
+        ],
+        "additionalRoom": [
+            {
+                "MEETING_ROOM": 2,
+                "CONFERENCE_ROOM": 1,
+                "BOARD_ROOM": "NA",
+                "LOUNGE_AREA": 1,
+                "RECEPTION_AREA": 1,
+                "PANTRY": 1,
+                "CABIN": 2,
+                "RESTROOM": "NA",
+                "STORAGE_ROOM": "NA",
+                "SERVER_ROOM": "NA",
+                "OPEN_WORKSPACE": 2,
+                "TRAINING_ROOM": 1,
+                "AUDITORIUM": "NA",
+                "LIBRARY": "NA",
+                "SHOWROOM": "NA",
+                "DISPLAY_AREA": "NA"
+            }
+        ],
+        "current_status": [
+            {
+                "ReadyToMove": true,
+                "UnderConstruction": "12-12-2023"
+            }
+        ],
+        "furniture": "SEMI FURNISHED",
+        "action": "RENT",
+        "floorNumber": "23",
+        "cityName": "Kanpur",
+        "description": "React component for emoji/svg country flags. ... Start using react-country-flag in your project by running `npm i react-country-flag",
+        "status": "ACTIVE",
+        "images": ["https://images.pexels.com/photos/1795508/pexels-photo-1795508.jpeg?auto=compress&cs=tinysrgb&w=600","https://images.pexels.com/photos/1559825/pexels-photo-1559825.jpeg?auto=compress&cs=tinysrgb&w=600","https://images.pexels.com/photos/2816284/pexels-photo-2816284.jpeg?auto=compress&cs=tinysrgb&w=600"],
+        "locality": "6391 Elgin St. Celina, Delaware 10299",
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                26.45,
+                80.31
+            ]
+        },
+        "allowance": "FAMILY",
+        "perks": {
+            "Sports": {
+                "Gymnasium": true,
+                "SwimmingPool": true,
+                "KidsPool": true,
+                "BadmintonCourt": false,
+                "TennisCourt": false,
+                "SquashCourt": false,
+                "Football": false,
+                "Cricket": false,
+                "Basketball": true,
+                "Volleyball": false,
+                "Yoga": false,
+                "Jogging": false,
+                "TableTennis": false,
+                "park": true,
+                "school": true
+            },
+            "safety": {
+                "PowerBackup": true,
+                "Lift": true,
+                "Security": true,
+                "FireFightingSystems": false,
+                "CCTV": true
+            },
+            "furniture": {
+                "wifi": false,
+                "tv": false,
+                "bed": true,
+                "sofa": false,
+                "table": false
+            }
+        },
+        "createdAt": {
+            "$date": "2023-08-16T05:23:51.621Z"
+        },
+        "updatedAt": {
+            "$date": "2023-08-16T05:23:51.621Z"
+        },
+        "__v": 0
+    },
+    {
+        "propertyName": "Mullberry Inn",
+        "propertyType": "RESIDENTIAL",
+        "propertySubType": "PENT_HOUSE",
+        "price": "12,00,000",
+        "bedrooms": "3",
+        "bathrooms": "3",
+        "balconies": "PERSONAL",
+        "coverCarPark": true,
+        "uncoverCarPark": true,
+        "PowerBackup": true,
+        "facing": "NORTH_EAST",
+        "View": "EXPRESS_WAY",
+        "flooring": "MARBLE",
+        "tower": "4",
+        "unitNumber": "501",
+        "areaDetails": [
+            {
+                "bedrooms": "100",
+                "bathrooms": "120",
+                "study": "110"
+            }
+        ],
+        "additionalRoom": [
+            {
+                "MEETING_ROOM": 2,
+                "CONFERENCE_ROOM": 1,
+                "BOARD_ROOM": "NA",
+                "LOUNGE_AREA": 1,
+                "RECEPTION_AREA": 1,
+                "PANTRY": 1,
+                "CABIN": 2,
+                "RESTROOM": "NA",
+                "STORAGE_ROOM": "NA",
+                "SERVER_ROOM": "NA",
+                "OPEN_WORKSPACE": 2,
+                "TRAINING_ROOM": 1,
+                "AUDITORIUM": "NA",
+                "LIBRARY": "NA",
+                "SHOWROOM": "NA",
+                "DISPLAY_AREA": "NA"
+            }
+        ],
+        "current_status": [
+            {
+                "ReadyToMove": true,
+                "UnderConstruction": "12-12-2023"
+            }
+        ],
+        "furniture": "SEMI_FURNISHED",
+        "action": "RENT",
+        "floorNumber": "23",
+        "cityName": "Kanpur",
+        "description": "React component for emoji/svg country flags. ... Start using react-country-flag in your project by running `npm i react-country-flag",
+        "status": "ACTIVE",
+        "images": ["https://images.pexels.com/photos/1127119/pexels-photo-1127119.jpeg?auto=compress&cs=tinysrgb&w=600","https://images.pexels.com/photos/1559825/pexels-photo-1559825.jpeg?auto=compress&cs=tinysrgb&w=600","https://images.pexels.com/photos/2816284/pexels-photo-2816284.jpeg?auto=compress&cs=tinysrgb&w=600"],
+        "locality": "6391 Elgin St. Celina, Delaware 10299",
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                26.45,
+                80.31
+            ]
+        },
+        "allowance": "FAMILY",
+        "perks": {
+            "Sports": {
+                "Gymnasium": true,
+                "SwimmingPool": true,
+                "KidsPool": true,
+                "BadmintonCourt": false,
+                "TennisCourt": false,
+                "SquashCourt": false,
+                "Football": false,
+                "Cricket": false,
+                "Basketball": true,
+                "Volleyball": false,
+                "Yoga": false,
+                "Jogging": false,
+                "TableTennis": false,
+                "park": true,
+                "school": true
+            },
+            "safety": {
+                "PowerBackup": true,
+                "Lift": true,
+                "Security": true,
+                "FireFightingSystems": false,
+                "CCTV": true
+            },
+            "furniture": {
+                "wifi": false,
+                "tv": false,
+                "bed": true,
+                "sofa": false,
+                "table": false
+            }
+        },
+        "createdAt": {
+            "$date": "2023-08-16T05:23:51.621Z"
+        },
+        "updatedAt": {
+            "$date": "2023-08-16T05:23:51.621Z"
+        },
+        "__v": 0
+    },
+    {
+        "propertyName": "Maestro Villa",
+        "propertyType": "RESIDENTIAL",
+        "propertySubType": "PENT_HOUSE",
+        "price": "12,00,000",
+        "bedrooms": "3",
+        "bathrooms": "3",
+        "balconies": "PERSONAL",
+        "coverCarPark": true,
+        "uncoverCarPark": true,
+        "PowerBackup": true,
+        "facing": "NORTH_EAST",
+        "View": "EXPRESS_WAY",
+        "flooring": "MARBLE",
+        "tower": "4",
+        "unitNumber": "501",
+        "areaDetails": [
+            {
+                "bedrooms": "100",
+                "bathrooms": "120",
+                "study": "110"
+            }
+        ],
+        "additionalRoom": [
+            {
+                "MEETING_ROOM": 2,
+                "CONFERENCE_ROOM": 1,
+                "BOARD_ROOM": "NA",
+                "LOUNGE_AREA": 1,
+                "RECEPTION_AREA": 1,
+                "PANTRY": 1,
+                "CABIN": 2,
+                "RESTROOM": "NA",
+                "STORAGE_ROOM": "NA",
+                "SERVER_ROOM": "NA",
+                "OPEN_WORKSPACE": 2,
+                "TRAINING_ROOM": 1,
+                "AUDITORIUM": "NA",
+                "LIBRARY": "NA",
+                "SHOWROOM": "NA",
+                "DISPLAY_AREA": "NA"
+            }
+        ],
+        "current_status": [
+            {
+                "ReadyToMove": true,
+                "UnderConstruction": "12-12-2023"
+            }
+        ],
+        "furniture": "SEMI_FURNISHED",
+        "action": "RENT",
+        "floorNumber": "23",
+        "cityName": "Kanpur",
+        "description": "React component for emoji/svg country flags. ... Start using react-country-flag in your project by running `npm i react-country-flag",
+        "status": "ACTIVE",
+        "images": ["https://images.pexels.com/photos/1559825/pexels-photo-1559825.jpeg?auto=compress&cs=tinysrgb&w=600"],
+        "locality": "6391 Elgin St. Celina, Delaware 10299",
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                26.45,
+                80.31
+            ]
+        },
+        "allowance": "FAMILY",
+        "perks": {
+            "Sports": {
+                "Gymnasium": true,
+                "SwimmingPool": true,
+                "KidsPool": true,
+                "BadmintonCourt": false,
+                "TennisCourt": false,
+                "SquashCourt": false,
+                "Football": false,
+                "Cricket": false,
+                "Basketball": true,
+                "Volleyball": false,
+                "Yoga": false,
+                "Jogging": false,
+                "TableTennis": false,
+                "park": true,
+                "school": true
+            },
+            "safety": {
+                "PowerBackup": true,
+                "Lift": true,
+                "Security": true,
+                "FireFightingSystems": false,
+                "CCTV": true
+            },
+            "furniture": {
+                "wifi": false,
+                "tv": false,
+                "bed": true,
+                "sofa": false,
+                "table": false
+            }
+        },
+        "createdAt": {
+            "$date": "2023-08-16T05:23:51.621Z"
+        },
+        "updatedAt": {
+            "$date": "2023-08-16T05:23:51.621Z"
+        },
+        "__v": 0
+    },
+    {
+        "propertyName": "Maestro Villa",
+        "propertyType": "RESIDENTIAL",
+        "propertySubType": "PENT_HOUSE",
+        "price": "12,00,000",
+        "bedrooms": "3",
+        "bathrooms": "3",
+        "balconies": "PERSONAL",
+        "coverCarPark": true,
+        "uncoverCarPark": true,
+        "PowerBackup": true,
+        "facing": "NORTH_EAST",
+        "View": "EXPRESS_WAY",
+        "flooring": "MARBLE",
+        "tower": "4",
+        "unitNumber": "501",
+        "areaDetails": [
+            {
+                "bedrooms": "100",
+                "bathrooms": "120",
+                "study": "110"
+            }
+        ],
+        "additionalRoom": [
+            {
+                "MEETING_ROOM": 2,
+                "CONFERENCE_ROOM": 1,
+                "BOARD_ROOM": "NA",
+                "LOUNGE_AREA": 1,
+                "RECEPTION_AREA": 1,
+                "PANTRY": 1,
+                "CABIN": 2,
+                "RESTROOM": "NA",
+                "STORAGE_ROOM": "NA",
+                "SERVER_ROOM": "NA",
+                "OPEN_WORKSPACE": 2,
+                "TRAINING_ROOM": 1,
+                "AUDITORIUM": "NA",
+                "LIBRARY": "NA",
+                "SHOWROOM": "NA",
+                "DISPLAY_AREA": "NA"
+            }
+        ],
+        "current_status": [
+            {
+                "ReadyToMove": true,
+                "UnderConstruction": "12-12-2023"
+            }
+        ],
+        "furniture": "SEMI_FURNISHED",
+        "action": "RENT",
+        "floorNumber": "23",
+        "cityName": "Kanpur",
+        "description": "React component for emoji/svg country flags. ... Start using react-country-flag in your project by running `npm i react-country-flag",
+        "status": "ACTIVE",
+        "images": ["https://images.pexels.com/photos/1559825/pexels-photo-1559825.jpeg?auto=compress&cs=tinysrgb&w=600"],
+        "locality": "6391 Elgin St. Celina, Delaware 10299",
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                26.45,
+                80.31
+            ]
+        },
+        "allowance": "FAMILY",
+        "perks": {
+            "Sports": {
+                "Gymnasium": true,
+                "SwimmingPool": true,
+                "KidsPool": true,
+                "BadmintonCourt": false,
+                "TennisCourt": false,
+                "SquashCourt": false,
+                "Football": false,
+                "Cricket": false,
+                "Basketball": true,
+                "Volleyball": false,
+                "Yoga": false,
+                "Jogging": false,
+                "TableTennis": false,
+                "park": true,
+                "school": true
+            },
+            "safety": {
+                "PowerBackup": true,
+                "Lift": true,
+                "Security": true,
+                "FireFightingSystems": false,
+                "CCTV": true
+            },
+            "furniture": {
+                "wifi": false,
+                "tv": false,
+                "bed": true,
+                "sofa": false,
+                "table": false
+            }
+        },
+        "createdAt": {
+            "$date": "2023-08-16T05:23:51.621Z"
+        },
+        "updatedAt": {
+            "$date": "2023-08-16T05:23:51.621Z"
+        },
+        "__v": 0
+    },
+    {
+        "propertyName": "Maestro Villa",
+        "propertyType": "RESIDENTIAL",
+        "propertySubType": "PENT_HOUSE",
+        "price": "12,00,000",
+        "bedrooms": "3",
+        "bathrooms": "3",
+        "balconies": "PERSONAL",
+        "coverCarPark": true,
+        "uncoverCarPark": true,
+        "PowerBackup": true,
+        "facing": "NORTH_EAST",
+        "View": "EXPRESS_WAY",
+        "flooring": "MARBLE",
+        "tower": "4",
+        "unitNumber": "501",
+        "areaDetails": [
+            {
+                "bedrooms": "100",
+                "bathrooms": "120",
+                "study": "110"
+            }
+        ],
+        "additionalRoom": [
+            {
+                "MEETING_ROOM": 2,
+                "CONFERENCE_ROOM": 1,
+                "BOARD_ROOM": "NA",
+                "LOUNGE_AREA": 1,
+                "RECEPTION_AREA": 1,
+                "PANTRY": 1,
+                "CABIN": 2,
+                "RESTROOM": "NA",
+                "STORAGE_ROOM": "NA",
+                "SERVER_ROOM": "NA",
+                "OPEN_WORKSPACE": 2,
+                "TRAINING_ROOM": 1,
+                "AUDITORIUM": "NA",
+                "LIBRARY": "NA",
+                "SHOWROOM": "NA",
+                "DISPLAY_AREA": "NA"
+            }
+        ],
+        "current_status": [
+            {
+                "ReadyToMove": true,
+                "UnderConstruction": "12-12-2023"
+            }
+        ],
+        "furniture": "SEMI_FURNISHED",
+        "action": "RENT",
+        "floorNumber": "23",
+        "cityName": "Kanpur",
+        "description": "React component for emoji/svg country flags. ... Start using react-country-flag in your project by running `npm i react-country-flag",
+        "status": "ACTIVE",
+        "images": ["https://images.pexels.com/photos/1559825/pexels-photo-1559825.jpeg?auto=compress&cs=tinysrgb&w=600"],
+        "locality": "6391 Elgin St. Celina, Delaware 10299",
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                26.45,
+                80.31
+            ]
+        },
+        "allowance": "FAMILY",
+        "perks": {
+            "Sports": {
+                "Gymnasium": true,
+                "SwimmingPool": true,
+                "KidsPool": true,
+                "BadmintonCourt": false,
+                "TennisCourt": false,
+                "SquashCourt": false,
+                "Football": false,
+                "Cricket": false,
+                "Basketball": true,
+                "Volleyball": false,
+                "Yoga": false,
+                "Jogging": false,
+                "TableTennis": false,
+                "park": true,
+                "school": true
+            },
+            "safety": {
+                "PowerBackup": true,
+                "Lift": true,
+                "Security": true,
+                "FireFightingSystems": false,
+                "CCTV": true
+            },
+            "furniture": {
+                "wifi": false,
+                "tv": false,
+                "bed": true,
+                "sofa": false,
+                "table": false
+            }
+        },
+        "createdAt": {
+            "$date": "2023-08-16T05:23:51.621Z"
+        },
+        "updatedAt": {
+            "$date": "2023-08-16T05:23:51.621Z"
+        },
+        "__v": 0
+    },
+    {
+        "propertyName": "Maestro Villa",
+        "propertyType": "RESIDENTIAL",
+        "propertySubType": "PENT_HOUSE",
+        "price": "12,00,000",
+        "bedrooms": "3",
+        "bathrooms": "3",
+        "balconies": "PERSONAL",
+        "coverCarPark": true,
+        "uncoverCarPark": true,
+        "PowerBackup": true,
+        "facing": "NORTH_EAST",
+        "View": "EXPRESS_WAY",
+        "flooring": "MARBLE",
+        "tower": "4",
+        "unitNumber": "501",
+        "areaDetails": [
+            {
+                "bedrooms": "100",
+                "bathrooms": "120",
+                "study": "110"
+            }
+        ],
+        "additionalRoom": [
+            {
+                "MEETING_ROOM": 2,
+                "CONFERENCE_ROOM": 1,
+                "BOARD_ROOM": "NA",
+                "LOUNGE_AREA": 1,
+                "RECEPTION_AREA": 1,
+                "PANTRY": 1,
+                "CABIN": 2,
+                "RESTROOM": "NA",
+                "STORAGE_ROOM": "NA",
+                "SERVER_ROOM": "NA",
+                "OPEN_WORKSPACE": 2,
+                "TRAINING_ROOM": 1,
+                "AUDITORIUM": "NA",
+                "LIBRARY": "NA",
+                "SHOWROOM": "NA",
+                "DISPLAY_AREA": "NA"
+            }
+        ],
+        "current_status": [
+            {
+                "ReadyToMove": true,
+                "UnderConstruction": "12-12-2023"
+            }
+        ],
+        "furniture": "SEMI_FURNISHED",
+        "action": "RENT",
+        "floorNumber": "23",
+        "cityName": "Kanpur",
+        "description": "React component for emoji/svg country flags. ... Start using react-country-flag in your project by running `npm i react-country-flag",
+        "status": "ACTIVE",
+        "images": ["https://images.pexels.com/photos/1559825/pexels-photo-1559825.jpeg?auto=compress&cs=tinysrgb&w=600"],
+        "locality": "6391 Elgin St. Celina, Delaware 10299",
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                26.45,
+                80.31
+            ]
+        },
+        "allowance": "FAMILY",
+        "perks": {
+            "Sports": {
+                "Gymnasium": true,
+                "SwimmingPool": true,
+                "KidsPool": true,
+                "BadmintonCourt": false,
+                "TennisCourt": false,
+                "SquashCourt": false,
+                "Football": false,
+                "Cricket": false,
+                "Basketball": true,
+                "Volleyball": false,
+                "Yoga": false,
+                "Jogging": false,
+                "TableTennis": false,
+                "park": true,
+                "school": true
+            },
+            "safety": {
+                "PowerBackup": true,
+                "Lift": true,
+                "Security": true,
+                "FireFightingSystems": false,
+                "CCTV": true
+            },
+            "furniture": {
+                "wifi": false,
+                "tv": false,
+                "bed": true,
+                "sofa": false,
+                "table": false
+            }
+        },
+        "createdAt": {
+            "$date": "2023-08-16T05:23:51.621Z"
+        },
+        "updatedAt": {
+            "$date": "2023-08-16T05:23:51.621Z"
+        },
+        "__v": 0
+    },
+    {
+        "propertyName": "Maestro Villa",
+        "propertyType": "RESIDENTIAL",
+        "propertySubType": "PENT_HOUSE",
+        "price": "12,00,000",
+        "bedrooms": "3",
+        "bathrooms": "3",
+        "balconies": "PERSONAL",
+        "coverCarPark": true,
+        "uncoverCarPark": true,
+        "PowerBackup": true,
+        "facing": "NORTH_EAST",
+        "View": "EXPRESS_WAY",
+        "flooring": "MARBLE",
+        "tower": "4",
+        "unitNumber": "501",
+        "areaDetails": [
+            {
+                "bedrooms": "100",
+                "bathrooms": "120",
+                "study": "110"
+            }
+        ],
+        "additionalRoom": [
+            {
+                "MEETING_ROOM": 2,
+                "CONFERENCE_ROOM": 1,
+                "BOARD_ROOM": "NA",
+                "LOUNGE_AREA": 1,
+                "RECEPTION_AREA": 1,
+                "PANTRY": 1,
+                "CABIN": 2,
+                "RESTROOM": "NA",
+                "STORAGE_ROOM": "NA",
+                "SERVER_ROOM": "NA",
+                "OPEN_WORKSPACE": 2,
+                "TRAINING_ROOM": 1,
+                "AUDITORIUM": "NA",
+                "LIBRARY": "NA",
+                "SHOWROOM": "NA",
+                "DISPLAY_AREA": "NA"
+            }
+        ],
+        "current_status": [
+            {
+                "ReadyToMove": true,
+                "UnderConstruction": "12-12-2023"
+            }
+        ],
+        "furniture": "SEMI_FURNISHED",
+        "action": "RENT",
+        "floorNumber": "23",
+        "cityName": "Kanpur",
+        "description": "React component for emoji/svg country flags. ... Start using react-country-flag in your project by running `npm i react-country-flag",
+        "status": "ACTIVE",
+        "images": ["https://images.pexels.com/photos/1559825/pexels-photo-1559825.jpeg?auto=compress&cs=tinysrgb&w=600"],
+        "locality": "6391 Elgin St. Celina, Delaware 10299",
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                26.45,
+                80.31
+            ]
+        },
+        "allowance": "FAMILY",
+        "perks": {
+            "Sports": {
+                "Gymnasium": true,
+                "SwimmingPool": true,
+                "KidsPool": true,
+                "BadmintonCourt": false,
+                "TennisCourt": false,
+                "SquashCourt": false,
+                "Football": false,
+                "Cricket": false,
+                "Basketball": true,
+                "Volleyball": false,
+                "Yoga": false,
+                "Jogging": false,
+                "TableTennis": false,
+                "park": true,
+                "school": true
+            },
+            "safety": {
+                "PowerBackup": true,
+                "Lift": true,
+                "Security": true,
+                "FireFightingSystems": false,
+                "CCTV": true
+            },
+            "furniture": {
+                "wifi": false,
+                "tv": false,
+                "bed": true,
+                "sofa": false,
+                "table": false
+            }
+        },
+        "createdAt": {
+            "$date": "2023-08-16T05:23:51.621Z"
+        },
+        "updatedAt": {
+            "$date": "2023-08-16T05:23:51.621Z"
+        },
+        "__v": 0
+    },
+    {
+        "propertyName": "Maestro Villa",
+        "propertyType": "RESIDENTIAL",
+        "propertySubType": "PENT_HOUSE",
+        "price": "12,00,000",
+        "bedrooms": "3",
+        "bathrooms": "3",
+        "balconies": "PERSONAL",
+        "coverCarPark": true,
+        "uncoverCarPark": true,
+        "PowerBackup": true,
+        "facing": "NORTH_EAST",
+        "View": "EXPRESS_WAY",
+        "flooring": "MARBLE",
+        "tower": "4",
+        "unitNumber": "501",
+        "areaDetails": [
+            {
+                "bedrooms": "100",
+                "bathrooms": "120",
+                "study": "110"
+            }
+        ],
+        "additionalRoom": [
+            {
+                "MEETING_ROOM": 2,
+                "CONFERENCE_ROOM": 1,
+                "BOARD_ROOM": "NA",
+                "LOUNGE_AREA": 1,
+                "RECEPTION_AREA": 1,
+                "PANTRY": 1,
+                "CABIN": 2,
+                "RESTROOM": "NA",
+                "STORAGE_ROOM": "NA",
+                "SERVER_ROOM": "NA",
+                "OPEN_WORKSPACE": 2,
+                "TRAINING_ROOM": 1,
+                "AUDITORIUM": "NA",
+                "LIBRARY": "NA",
+                "SHOWROOM": "NA",
+                "DISPLAY_AREA": "NA"
+            }
+        ],
+        "current_status": [
+            {
+                "ReadyToMove": true,
+                "UnderConstruction": "12-12-2023"
+            }
+        ],
+        "furniture": "SEMI_FURNISHED",
+        "action": "RENT",
+        "floorNumber": "23",
+        "cityName": "Kanpur",
+        "description": "React component for emoji/svg country flags. ... Start using react-country-flag in your project by running `npm i react-country-flag",
+        "status": "ACTIVE",
+        "images": ["https://images.pexels.com/photos/1559825/pexels-photo-1559825.jpeg?auto=compress&cs=tinysrgb&w=600"],
+        "locality": "6391 Elgin St. Celina, Delaware 10299",
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                26.45,
+                80.31
+            ]
+        },
+        "allowance": "FAMILY",
+        "perks": {
+            "Sports": {
+                "Gymnasium": true,
+                "SwimmingPool": true,
+                "KidsPool": true,
+                "BadmintonCourt": false,
+                "TennisCourt": false,
+                "SquashCourt": false,
+                "Football": false,
+                "Cricket": false,
+                "Basketball": true,
+                "Volleyball": false,
+                "Yoga": false,
+                "Jogging": false,
+                "TableTennis": false,
+                "park": true,
+                "school": true
+            },
+            "safety": {
+                "PowerBackup": true,
+                "Lift": true,
+                "Security": true,
+                "FireFightingSystems": false,
+                "CCTV": true
+            },
+            "furniture": {
+                "wifi": false,
+                "tv": false,
+                "bed": true,
+                "sofa": false,
+                "table": false
+            }
+        },
+        "createdAt": {
+            "$date": "2023-08-16T05:23:51.621Z"
+        },
+        "updatedAt": {
+            "$date": "2023-08-16T05:23:51.621Z"
+        },
+        "__v": 0
+    },
+    {
+        "propertyName": "Maestro Villa",
+        "propertyType": "RESIDENTIAL",
+        "propertySubType": "PENT_HOUSE",
+        "price": "12,00,000",
+        "bedrooms": "3",
+        "bathrooms": "3",
+        "balconies": "PERSONAL",
+        "coverCarPark": true,
+        "uncoverCarPark": true,
+        "PowerBackup": true,
+        "facing": "NORTH_EAST",
+        "View": "EXPRESS_WAY",
+        "flooring": "MARBLE",
+        "tower": "4",
+        "unitNumber": "501",
+        "areaDetails": [
+            {
+                "bedrooms": "100",
+                "bathrooms": "120",
+                "study": "110"
+            }
+        ],
+        "additionalRoom": [
+            {
+                "MEETING_ROOM": 2,
+                "CONFERENCE_ROOM": 1,
+                "BOARD_ROOM": "NA",
+                "LOUNGE_AREA": 1,
+                "RECEPTION_AREA": 1,
+                "PANTRY": 1,
+                "CABIN": 2,
+                "RESTROOM": "NA",
+                "STORAGE_ROOM": "NA",
+                "SERVER_ROOM": "NA",
+                "OPEN_WORKSPACE": 2,
+                "TRAINING_ROOM": 1,
+                "AUDITORIUM": "NA",
+                "LIBRARY": "NA",
+                "SHOWROOM": "NA",
+                "DISPLAY_AREA": "NA"
+            }
+        ],
+        "current_status": [
+            {
+                "ReadyToMove": true,
+                "UnderConstruction": "12-12-2023"
+            }
+        ],
+        "furniture": "SEMI_FURNISHED",
+        "action": "RENT",
+        "floorNumber": "23",
+        "cityName": "Kanpur",
+        "description": "React component for emoji/svg country flags. ... Start using react-country-flag in your project by running `npm i react-country-flag",
+        "status": "ACTIVE",
+        "images": ["https://images.pexels.com/photos/1559825/pexels-photo-1559825.jpeg?auto=compress&cs=tinysrgb&w=600"],
+        "locality": "6391 Elgin St. Celina, Delaware 10299",
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                26.45,
+                80.31
+            ]
+        },
+        "allowance": "FAMILY",
+        "perks": {
+            "Sports": {
+                "Gymnasium": true,
+                "SwimmingPool": true,
+                "KidsPool": true,
+                "BadmintonCourt": false,
+                "TennisCourt": false,
+                "SquashCourt": false,
+                "Football": false,
+                "Cricket": false,
+                "Basketball": true,
+                "Volleyball": false,
+                "Yoga": false,
+                "Jogging": false,
+                "TableTennis": false,
+                "park": true,
+                "school": true
+            },
+            "safety": {
+                "PowerBackup": true,
+                "Lift": true,
+                "Security": true,
+                "FireFightingSystems": false,
+                "CCTV": true
+            },
+            "furniture": {
+                "wifi": false,
+                "tv": false,
+                "bed": true,
+                "sofa": false,
+                "table": false
+            }
+        },
+        "createdAt": {
+            "$date": "2023-08-16T05:23:51.621Z"
+        },
+        "updatedAt": {
+            "$date": "2023-08-16T05:23:51.621Z"
+        },
+        "__v": 0
+    },
+    {
+        "propertyName": "Maestro Villa",
+        "propertyType": "RESIDENTIAL",
+        "propertySubType": "PENT_HOUSE",
+        "price": "12,00,000",
+        "bedrooms": "3",
+        "bathrooms": "3",
+        "balconies": "PERSONAL",
+        "coverCarPark": true,
+        "uncoverCarPark": true,
+        "PowerBackup": true,
+        "facing": "NORTH_EAST",
+        "View": "EXPRESS_WAY",
+        "flooring": "MARBLE",
+        "tower": "4",
+        "unitNumber": "501",
+        "areaDetails": [
+            {
+                "bedrooms": "100",
+                "bathrooms": "120",
+                "study": "110"
+            }
+        ],
+        "additionalRoom": [
+            {
+                "MEETING_ROOM": 2,
+                "CONFERENCE_ROOM": 1,
+                "BOARD_ROOM": "NA",
+                "LOUNGE_AREA": 1,
+                "RECEPTION_AREA": 1,
+                "PANTRY": 1,
+                "CABIN": 2,
+                "RESTROOM": "NA",
+                "STORAGE_ROOM": "NA",
+                "SERVER_ROOM": "NA",
+                "OPEN_WORKSPACE": 2,
+                "TRAINING_ROOM": 1,
+                "AUDITORIUM": "NA",
+                "LIBRARY": "NA",
+                "SHOWROOM": "NA",
+                "DISPLAY_AREA": "NA"
+            }
+        ],
+        "current_status": [
+            {
+                "ReadyToMove": true,
+                "UnderConstruction": "12-12-2023"
+            }
+        ],
+        "furniture": "SEMI_FURNISHED",
+        "action": "RENT",
+        "floorNumber": "23",
+        "cityName": "Kanpur",
+        "description": "React component for emoji/svg country flags. ... Start using react-country-flag in your project by running `npm i react-country-flag",
+        "status": "ACTIVE",
+        "images": ["https://images.pexels.com/photos/1559825/pexels-photo-1559825.jpeg?auto=compress&cs=tinysrgb&w=600"],
+        "locality": "6391 Elgin St. Celina, Delaware 10299",
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                26.45,
+                80.31
+            ]
+        },
+        "allowance": "FAMILY",
+        "perks": {
+            "Sports": {
+                "Gymnasium": true,
+                "SwimmingPool": true,
+                "KidsPool": true,
+                "BadmintonCourt": false,
+                "TennisCourt": false,
+                "SquashCourt": false,
+                "Football": false,
+                "Cricket": false,
+                "Basketball": true,
+                "Volleyball": false,
+                "Yoga": false,
+                "Jogging": false,
+                "TableTennis": false,
+                "park": true,
+                "school": true
+            },
+            "safety": {
+                "PowerBackup": true,
+                "Lift": true,
+                "Security": true,
+                "FireFightingSystems": false,
+                "CCTV": true
+            },
+            "furniture": {
+                "wifi": false,
+                "tv": false,
+                "bed": true,
+                "sofa": false,
+                "table": false
+            }
+        },
+        "createdAt": {
+            "$date": "2023-08-16T05:23:51.621Z"
+        },
+        "updatedAt": {
+            "$date": "2023-08-16T05:23:51.621Z"
+        },
+        "__v": 0
+    },
+    {
+        "propertyName": "Maestro Villa",
+        "propertyType": "RESIDENTIAL",
+        "propertySubType": "PENT_HOUSE",
+        "price": "12,00,000",
+        "bedrooms": "3",
+        "bathrooms": "3",
+        "balconies": "PERSONAL",
+        "coverCarPark": true,
+        "uncoverCarPark": true,
+        "PowerBackup": true,
+        "facing": "NORTH_EAST",
+        "View": "EXPRESS_WAY",
+        "flooring": "MARBLE",
+        "tower": "4",
+        "unitNumber": "501",
+        "areaDetails": [
+            {
+                "bedrooms": "100",
+                "bathrooms": "120",
+                "study": "110"
+            }
+        ],
+        "additionalRoom": [
+            {
+                "MEETING_ROOM": 2,
+                "CONFERENCE_ROOM": 1,
+                "BOARD_ROOM": "NA",
+                "LOUNGE_AREA": 1,
+                "RECEPTION_AREA": 1,
+                "PANTRY": 1,
+                "CABIN": 2,
+                "RESTROOM": "NA",
+                "STORAGE_ROOM": "NA",
+                "SERVER_ROOM": "NA",
+                "OPEN_WORKSPACE": 2,
+                "TRAINING_ROOM": 1,
+                "AUDITORIUM": "NA",
+                "LIBRARY": "NA",
+                "SHOWROOM": "NA",
+                "DISPLAY_AREA": "NA"
+            }
+        ],
+        "current_status": [
+            {
+                "ReadyToMove": true,
+                "UnderConstruction": "12-12-2023"
+            }
+        ],
+        "furniture": "SEMI_FURNISHED",
+        "action": "RENT",
+        "floorNumber": "23",
+        "cityName": "Kanpur",
+        "description": "React component for emoji/svg country flags. ... Start using react-country-flag in your project by running `npm i react-country-flag",
+        "status": "ACTIVE",
+        "images": ["https://images.pexels.com/photos/1559825/pexels-photo-1559825.jpeg?auto=compress&cs=tinysrgb&w=600"],
+        "locality": "6391 Elgin St. Celina, Delaware 10299",
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                26.45,
+                80.31
+            ]
+        },
+        "allowance": "FAMILY",
+        "perks": {
+            "Sports": {
+                "Gymnasium": true,
+                "SwimmingPool": true,
+                "KidsPool": true,
+                "BadmintonCourt": false,
+                "TennisCourt": false,
+                "SquashCourt": false,
+                "Football": false,
+                "Cricket": false,
+                "Basketball": true,
+                "Volleyball": false,
+                "Yoga": false,
+                "Jogging": false,
+                "TableTennis": false,
+                "park": true,
+                "school": true
+            },
+            "safety": {
+                "PowerBackup": true,
+                "Lift": true,
+                "Security": true,
+                "FireFightingSystems": false,
+                "CCTV": true
+            },
+            "furniture": {
+                "wifi": false,
+                "tv": false,
+                "bed": true,
+                "sofa": false,
+                "table": false
+            }
+        },
+        "createdAt": {
+            "$date": "2023-08-16T05:23:51.621Z"
+        },
+        "updatedAt": {
+            "$date": "2023-08-16T05:23:51.621Z"
+        },
+        "__v": 0
+    },
+    {
+        "propertyName": "Maestro Villa",
+        "propertyType": "RESIDENTIAL",
+        "propertySubType": "PENT_HOUSE",
+        "price": "12,00,000",
+        "bedrooms": "3",
+        "bathrooms": "3",
+        "balconies": "PERSONAL",
+        "coverCarPark": true,
+        "uncoverCarPark": true,
+        "PowerBackup": true,
+        "facing": "NORTH_EAST",
+        "View": "EXPRESS_WAY",
+        "flooring": "MARBLE",
+        "tower": "4",
+        "unitNumber": "501",
+        "areaDetails": [
+            {
+                "bedrooms": "100",
+                "bathrooms": "120",
+                "study": "110"
+            }
+        ],
+        "additionalRoom": [
+            {
+                "MEETING_ROOM": 2,
+                "CONFERENCE_ROOM": 1,
+                "BOARD_ROOM": "NA",
+                "LOUNGE_AREA": 1,
+                "RECEPTION_AREA": 1,
+                "PANTRY": 1,
+                "CABIN": 2,
+                "RESTROOM": "NA",
+                "STORAGE_ROOM": "NA",
+                "SERVER_ROOM": "NA",
+                "OPEN_WORKSPACE": 2,
+                "TRAINING_ROOM": 1,
+                "AUDITORIUM": "NA",
+                "LIBRARY": "NA",
+                "SHOWROOM": "NA",
+                "DISPLAY_AREA": "NA"
+            }
+        ],
+        "current_status": [
+            {
+                "ReadyToMove": true,
+                "UnderConstruction": "12-12-2023"
+            }
+        ],
+        "furniture": "SEMI_FURNISHED",
+        "action": "RENT",
+        "floorNumber": "23",
+        "cityName": "Kanpur",
+        "description": "React component for emoji/svg country flags. ... Start using react-country-flag in your project by running `npm i react-country-flag",
+        "status": "ACTIVE",
+        "images": ["https://images.pexels.com/photos/1559825/pexels-photo-1559825.jpeg?auto=compress&cs=tinysrgb&w=600"],
+        "locality": "6391 Elgin St. Celina, Delaware 10299",
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                26.45,
+                80.31
+            ]
+        },
+        "allowance": "FAMILY",
+        "perks": {
+            "Sports": {
+                "Gymnasium": true,
+                "SwimmingPool": true,
+                "KidsPool": true,
+                "BadmintonCourt": false,
+                "TennisCourt": false,
+                "SquashCourt": false,
+                "Football": false,
+                "Cricket": false,
+                "Basketball": true,
+                "Volleyball": false,
+                "Yoga": false,
+                "Jogging": false,
+                "TableTennis": false,
+                "park": true,
+                "school": true
+            },
+            "safety": {
+                "PowerBackup": true,
+                "Lift": true,
+                "Security": true,
+                "FireFightingSystems": false,
+                "CCTV": true
+            },
+            "furniture": {
+                "wifi": false,
+                "tv": false,
+                "bed": true,
+                "sofa": false,
+                "table": false
+            }
+        },
+        "createdAt": {
+            "$date": "2023-08-16T05:23:51.621Z"
+        },
+        "updatedAt": {
+            "$date": "2023-08-16T05:23:51.621Z"
+        },
+        "__v": 0
+    },
+    {
+        "propertyName": "Maestro Villa",
+        "propertyType": "RESIDENTIAL",
+        "propertySubType": "PENT_HOUSE",
+        "price": "12,00,000",
+        "bedrooms": "3",
+        "bathrooms": "3",
+        "balconies": "PERSONAL",
+        "coverCarPark": true,
+        "uncoverCarPark": true,
+        "PowerBackup": true,
+        "facing": "NORTH_EAST",
+        "View": "EXPRESS_WAY",
+        "flooring": "MARBLE",
+        "tower": "4",
+        "unitNumber": "501",
+        "areaDetails": [
+            {
+                "bedrooms": "100",
+                "bathrooms": "120",
+                "study": "110"
+            }
+        ],
+        "additionalRoom": [
+            {
+                "MEETING_ROOM": 2,
+                "CONFERENCE_ROOM": 1,
+                "BOARD_ROOM": "NA",
+                "LOUNGE_AREA": 1,
+                "RECEPTION_AREA": 1,
+                "PANTRY": 1,
+                "CABIN": 2,
+                "RESTROOM": "NA",
+                "STORAGE_ROOM": "NA",
+                "SERVER_ROOM": "NA",
+                "OPEN_WORKSPACE": 2,
+                "TRAINING_ROOM": 1,
+                "AUDITORIUM": "NA",
+                "LIBRARY": "NA",
+                "SHOWROOM": "NA",
+                "DISPLAY_AREA": "NA"
+            }
+        ],
+        "current_status": [
+            {
+                "ReadyToMove": true,
+                "UnderConstruction": "12-12-2023"
+            }
+        ],
+        "furniture": "SEMI_FURNISHED",
+        "action": "RENT",
+        "floorNumber": "23",
+        "cityName": "Kanpur",
+        "description": "React component for emoji/svg country flags. ... Start using react-country-flag in your project by running `npm i react-country-flag",
+        "status": "ACTIVE",
+        "images": ["https://images.pexels.com/photos/1559825/pexels-photo-1559825.jpeg?auto=compress&cs=tinysrgb&w=600"],
+        "locality": "6391 Elgin St. Celina, Delaware 10299",
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                26.45,
+                80.31
+            ]
+        },
+        "allowance": "FAMILY",
+        "perks": {
+            "Sports": {
+                "Gymnasium": true,
+                "SwimmingPool": true,
+                "KidsPool": true,
+                "BadmintonCourt": false,
+                "TennisCourt": false,
+                "SquashCourt": false,
+                "Football": false,
+                "Cricket": false,
+                "Basketball": true,
+                "Volleyball": false,
+                "Yoga": false,
+                "Jogging": false,
+                "TableTennis": false,
+                "park": true,
+                "school": true
+            },
+            "safety": {
+                "PowerBackup": true,
+                "Lift": true,
+                "Security": true,
+                "FireFightingSystems": false,
+                "CCTV": true
+            },
+            "furniture": {
+                "wifi": false,
+                "tv": false,
+                "bed": true,
+                "sofa": false,
+                "table": false
+            }
+        },
+        "createdAt": {
+            "$date": "2023-08-16T05:23:51.621Z"
+        },
+        "updatedAt": {
+            "$date": "2023-08-16T05:23:51.621Z"
+        },
+        "__v": 0
+    },
+    {
+        "propertyName": "Maestro Villa",
+        "propertyType": "RESIDENTIAL",
+        "propertySubType": "PENT_HOUSE",
+        "price": "12,00,000",
+        "bedrooms": "3",
+        "bathrooms": "3",
+        "balconies": "PERSONAL",
+        "coverCarPark": true,
+        "uncoverCarPark": true,
+        "PowerBackup": true,
+        "facing": "NORTH_EAST",
+        "View": "EXPRESS_WAY",
+        "flooring": "MARBLE",
+        "tower": "4",
+        "unitNumber": "501",
+        "areaDetails": [
+            {
+                "bedrooms": "100",
+                "bathrooms": "120",
+                "study": "110"
+            }
+        ],
+        "additionalRoom": [
+            {
+                "MEETING_ROOM": 2,
+                "CONFERENCE_ROOM": 1,
+                "BOARD_ROOM": "NA",
+                "LOUNGE_AREA": 1,
+                "RECEPTION_AREA": 1,
+                "PANTRY": 1,
+                "CABIN": 2,
+                "RESTROOM": "NA",
+                "STORAGE_ROOM": "NA",
+                "SERVER_ROOM": "NA",
+                "OPEN_WORKSPACE": 2,
+                "TRAINING_ROOM": 1,
+                "AUDITORIUM": "NA",
+                "LIBRARY": "NA",
+                "SHOWROOM": "NA",
+                "DISPLAY_AREA": "NA"
+            }
+        ],
+        "current_status": [
+            {
+                "ReadyToMove": true,
+                "UnderConstruction": "12-12-2023"
+            }
+        ],
+        "furniture": "SEMI_FURNISHED",
+        "action": "RENT",
+        "floorNumber": "23",
+        "cityName": "Kanpur",
+        "description": "React component for emoji/svg country flags. ... Start using react-country-flag in your project by running `npm i react-country-flag",
+        "status": "ACTIVE",
+        "images": ["https://images.pexels.com/photos/1559825/pexels-photo-1559825.jpeg?auto=compress&cs=tinysrgb&w=600"],
+        "locality": "6391 Elgin St. Celina, Delaware 10299",
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                26.45,
+                80.31
+            ]
+        },
+        "allowance": "FAMILY",
+        "perks": {
+            "Sports": {
+                "Gymnasium": true,
+                "SwimmingPool": true,
+                "KidsPool": true,
+                "BadmintonCourt": false,
+                "TennisCourt": false,
+                "SquashCourt": false,
+                "Football": false,
+                "Cricket": false,
+                "Basketball": true,
+                "Volleyball": false,
+                "Yoga": false,
+                "Jogging": false,
+                "TableTennis": false,
+                "park": true,
+                "school": true
+            },
+            "safety": {
+                "PowerBackup": true,
+                "Lift": true,
+                "Security": true,
+                "FireFightingSystems": false,
+                "CCTV": true
+            },
+            "furniture": {
+                "wifi": false,
+                "tv": false,
+                "bed": true,
+                "sofa": false,
+                "table": false
+            }
+        },
+        "createdAt": {
+            "$date": "2023-08-16T05:23:51.621Z"
+        },
+        "updatedAt": {
+            "$date": "2023-08-16T05:23:51.621Z"
+        },
+        "__v": 0
+    },
+    {
+        "propertyName": "Maestro Villa",
+        "propertyType": "RESIDENTIAL",
+        "propertySubType": "PENT_HOUSE",
+        "price": "12,00,000",
+        "bedrooms": "3",
+        "bathrooms": "3",
+        "balconies": "PERSONAL",
+        "coverCarPark": true,
+        "uncoverCarPark": true,
+        "PowerBackup": true,
+        "facing": "NORTH_EAST",
+        "View": "EXPRESS_WAY",
+        "flooring": "MARBLE",
+        "tower": "4",
+        "unitNumber": "501",
+        "areaDetails": [
+            {
+                "bedrooms": "100",
+                "bathrooms": "120",
+                "study": "110"
+            }
+        ],
+        "additionalRoom": [
+            {
+                "MEETING_ROOM": 2,
+                "CONFERENCE_ROOM": 1,
+                "BOARD_ROOM": "NA",
+                "LOUNGE_AREA": 1,
+                "RECEPTION_AREA": 1,
+                "PANTRY": 1,
+                "CABIN": 2,
+                "RESTROOM": "NA",
+                "STORAGE_ROOM": "NA",
+                "SERVER_ROOM": "NA",
+                "OPEN_WORKSPACE": 2,
+                "TRAINING_ROOM": 1,
+                "AUDITORIUM": "NA",
+                "LIBRARY": "NA",
+                "SHOWROOM": "NA",
+                "DISPLAY_AREA": "NA"
+            }
+        ],
+        "current_status": [
+            {
+                "ReadyToMove": true,
+                "UnderConstruction": "12-12-2023"
+            }
+        ],
+        "furniture": "SEMI_FURNISHED",
+        "action": "RENT",
+        "floorNumber": "23",
+        "cityName": "Kanpur",
+        "description": "React component for emoji/svg country flags. ... Start using react-country-flag in your project by running `npm i react-country-flag",
+        "status": "ACTIVE",
+        "images": ["https://images.pexels.com/photos/1559825/pexels-photo-1559825.jpeg?auto=compress&cs=tinysrgb&w=600"],
+        "locality": "6391 Elgin St. Celina, Delaware 10299",
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                26.45,
+                80.31
+            ]
+        },
+        "allowance": "FAMILY",
+        "perks": {
+            "Sports": {
+                "Gymnasium": true,
+                "SwimmingPool": true,
+                "KidsPool": true,
+                "BadmintonCourt": false,
+                "TennisCourt": false,
+                "SquashCourt": false,
+                "Football": false,
+                "Cricket": false,
+                "Basketball": true,
+                "Volleyball": false,
+                "Yoga": false,
+                "Jogging": false,
+                "TableTennis": false,
+                "park": true,
+                "school": true
+            },
+            "safety": {
+                "PowerBackup": true,
+                "Lift": true,
+                "Security": true,
+                "FireFightingSystems": false,
+                "CCTV": true
+            },
+            "furniture": {
+                "wifi": false,
+                "tv": false,
+                "bed": true,
+                "sofa": false,
+                "table": false
+            }
+        },
+        "createdAt": {
+            "$date": "2023-08-16T05:23:51.621Z"
+        },
+        "updatedAt": {
+            "$date": "2023-08-16T05:23:51.621Z"
+        },
+        "__v": 0
+    },
+    {
+        "propertyName": "Maestro Villa",
+        "propertyType": "RESIDENTIAL",
+        "propertySubType": "PENT_HOUSE",
+        "price": "12,00,000",
+        "bedrooms": "3",
+        "bathrooms": "3",
+        "balconies": "PERSONAL",
+        "coverCarPark": true,
+        "uncoverCarPark": true,
+        "PowerBackup": true,
+        "facing": "NORTH_EAST",
+        "View": "EXPRESS_WAY",
+        "flooring": "MARBLE",
+        "tower": "4",
+        "unitNumber": "501",
+        "areaDetails": [
+            {
+                "bedrooms": "100",
+                "bathrooms": "120",
+                "study": "110"
+            }
+        ],
+        "additionalRoom": [
+            {
+                "MEETING_ROOM": 2,
+                "CONFERENCE_ROOM": 1,
+                "BOARD_ROOM": "NA",
+                "LOUNGE_AREA": 1,
+                "RECEPTION_AREA": 1,
+                "PANTRY": 1,
+                "CABIN": 2,
+                "RESTROOM": "NA",
+                "STORAGE_ROOM": "NA",
+                "SERVER_ROOM": "NA",
+                "OPEN_WORKSPACE": 2,
+                "TRAINING_ROOM": 1,
+                "AUDITORIUM": "NA",
+                "LIBRARY": "NA",
+                "SHOWROOM": "NA",
+                "DISPLAY_AREA": "NA"
+            }
+        ],
+        "current_status": [
+            {
+                "ReadyToMove": true,
+                "UnderConstruction": "12-12-2023"
+            }
+        ],
+        "furniture": "SEMI_FURNISHED",
+        "action": "RENT",
+        "floorNumber": "23",
+        "cityName": "Kanpur",
+        "description": "React component for emoji/svg country flags. ... Start using react-country-flag in your project by running `npm i react-country-flag",
+        "status": "ACTIVE",
+        "images": ["https://images.pexels.com/photos/1559825/pexels-photo-1559825.jpeg?auto=compress&cs=tinysrgb&w=600"],
+        "locality": "6391 Elgin St. Celina, Delaware 10299",
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                26.45,
+                80.31
+            ]
+        },
+        "allowance": "FAMILY",
+        "perks": {
+            "Sports": {
+                "Gymnasium": true,
+                "SwimmingPool": true,
+                "KidsPool": true,
+                "BadmintonCourt": false,
+                "TennisCourt": false,
+                "SquashCourt": false,
+                "Football": false,
+                "Cricket": false,
+                "Basketball": true,
+                "Volleyball": false,
+                "Yoga": false,
+                "Jogging": false,
+                "TableTennis": false,
+                "park": true,
+                "school": true
+            },
+            "safety": {
+                "PowerBackup": true,
+                "Lift": true,
+                "Security": true,
+                "FireFightingSystems": false,
+                "CCTV": true
+            },
+            "furniture": {
+                "wifi": false,
+                "tv": false,
+                "bed": true,
+                "sofa": false,
+                "table": false
+            }
+        },
+        "createdAt": {
+            "$date": "2023-08-16T05:23:51.621Z"
+        },
+        "updatedAt": {
+            "$date": "2023-08-16T05:23:51.621Z"
+        },
+        "__v": 0
+    },
+    {
+        "propertyName": "Maestro Villa",
+        "propertyType": "RESIDENTIAL",
+        "propertySubType": "PENT_HOUSE",
+        "price": "12,00,000",
+        "bedrooms": "3",
+        "bathrooms": "3",
+        "balconies": "PERSONAL",
+        "coverCarPark": true,
+        "uncoverCarPark": true,
+        "PowerBackup": true,
+        "facing": "NORTH_EAST",
+        "View": "EXPRESS_WAY",
+        "flooring": "MARBLE",
+        "tower": "4",
+        "unitNumber": "501",
+        "areaDetails": [
+            {
+                "bedrooms": "100",
+                "bathrooms": "120",
+                "study": "110"
+            }
+        ],
+        "additionalRoom": [
+            {
+                "MEETING_ROOM": 2,
+                "CONFERENCE_ROOM": 1,
+                "BOARD_ROOM": "NA",
+                "LOUNGE_AREA": 1,
+                "RECEPTION_AREA": 1,
+                "PANTRY": 1,
+                "CABIN": 2,
+                "RESTROOM": "NA",
+                "STORAGE_ROOM": "NA",
+                "SERVER_ROOM": "NA",
+                "OPEN_WORKSPACE": 2,
+                "TRAINING_ROOM": 1,
+                "AUDITORIUM": "NA",
+                "LIBRARY": "NA",
+                "SHOWROOM": "NA",
+                "DISPLAY_AREA": "NA"
+            }
+        ],
+        "current_status": [
+            {
+                "ReadyToMove": true,
+                "UnderConstruction": "12-12-2023"
+            }
+        ],
+        "furniture": "SEMI_FURNISHED",
+        "action": "RENT",
+        "floorNumber": "23",
+        "cityName": "Kanpur",
+        "description": "React component for emoji/svg country flags. ... Start using react-country-flag in your project by running `npm i react-country-flag",
+        "status": "ACTIVE",
+        "images": ["https://images.pexels.com/photos/1559825/pexels-photo-1559825.jpeg?auto=compress&cs=tinysrgb&w=600"],
+        "locality": "6391 Elgin St. Celina, Delaware 10299",
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                26.45,
+                80.31
+            ]
+        },
+        "allowance": "FAMILY",
+        "perks": {
+            "Sports": {
+                "Gymnasium": true,
+                "SwimmingPool": true,
+                "KidsPool": true,
+                "BadmintonCourt": false,
+                "TennisCourt": false,
+                "SquashCourt": false,
+                "Football": false,
+                "Cricket": false,
+                "Basketball": true,
+                "Volleyball": false,
+                "Yoga": false,
+                "Jogging": false,
+                "TableTennis": false,
+                "park": true,
+                "school": true
+            },
+            "safety": {
+                "PowerBackup": true,
+                "Lift": true,
+                "Security": true,
+                "FireFightingSystems": false,
+                "CCTV": true
+            },
+            "furniture": {
+                "wifi": false,
+                "tv": false,
+                "bed": true,
+                "sofa": false,
+                "table": false
+            }
+        },
+        "createdAt": {
+            "$date": "2023-08-16T05:23:51.621Z"
+        },
+        "updatedAt": {
+            "$date": "2023-08-16T05:23:51.621Z"
+        },
+        "__v": 0
+    },
+    {
+        "propertyName": "Maestro Villa",
+        "propertyType": "RESIDENTIAL",
+        "propertySubType": "PENT_HOUSE",
+        "price": "12,00,000",
+        "bedrooms": "3",
+        "bathrooms": "3",
+        "balconies": "PERSONAL",
+        "coverCarPark": true,
+        "uncoverCarPark": true,
+        "PowerBackup": true,
+        "facing": "NORTH_EAST",
+        "View": "EXPRESS_WAY",
+        "flooring": "MARBLE",
+        "tower": "4",
+        "unitNumber": "501",
+        "areaDetails": [
+            {
+                "bedrooms": "100",
+                "bathrooms": "120",
+                "study": "110"
+            }
+        ],
+        "additionalRoom": [
+            {
+                "MEETING_ROOM": 2,
+                "CONFERENCE_ROOM": 1,
+                "BOARD_ROOM": "NA",
+                "LOUNGE_AREA": 1,
+                "RECEPTION_AREA": 1,
+                "PANTRY": 1,
+                "CABIN": 2,
+                "RESTROOM": "NA",
+                "STORAGE_ROOM": "NA",
+                "SERVER_ROOM": "NA",
+                "OPEN_WORKSPACE": 2,
+                "TRAINING_ROOM": 1,
+                "AUDITORIUM": "NA",
+                "LIBRARY": "NA",
+                "SHOWROOM": "NA",
+                "DISPLAY_AREA": "NA"
+            }
+        ],
+        "current_status": [
+            {
+                "ReadyToMove": true,
+                "UnderConstruction": "12-12-2023"
+            }
+        ],
+        "furniture": "SEMI_FURNISHED",
+        "action": "RENT",
+        "floorNumber": "23",
+        "cityName": "Kanpur",
+        "description": "React component for emoji/svg country flags. ... Start using react-country-flag in your project by running `npm i react-country-flag",
+        "status": "ACTIVE",
+        "images": ["https://images.pexels.com/photos/1559825/pexels-photo-1559825.jpeg?auto=compress&cs=tinysrgb&w=600"],
+        "locality": "6391 Elgin St. Celina, Delaware 10299",
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                26.45,
+                80.31
+            ]
+        },
+        "allowance": "FAMILY",
+        "perks": {
+            "Sports": {
+                "Gymnasium": true,
+                "SwimmingPool": true,
+                "KidsPool": true,
+                "BadmintonCourt": false,
+                "TennisCourt": false,
+                "SquashCourt": false,
+                "Football": false,
+                "Cricket": false,
+                "Basketball": true,
+                "Volleyball": false,
+                "Yoga": false,
+                "Jogging": false,
+                "TableTennis": false,
+                "park": true,
+                "school": true
+            },
+            "safety": {
+                "PowerBackup": true,
+                "Lift": true,
+                "Security": true,
+                "FireFightingSystems": false,
+                "CCTV": true
+            },
+            "furniture": {
+                "wifi": false,
+                "tv": false,
+                "bed": true,
+                "sofa": false,
+                "table": false
+            }
+        },
+        "createdAt": {
+            "$date": "2023-08-16T05:23:51.621Z"
+        },
+        "updatedAt": {
+            "$date": "2023-08-16T05:23:51.621Z"
+        },
+        "__v": 0
+    }
+   
+]

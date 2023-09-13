@@ -1,6 +1,6 @@
 .servicesComponent{
     width: 95%;
-    margin-top: 90px;
+    margin-top: 60px;
     padding-bottom: 20px;
     margin-right: 0px;
 }
@@ -25,21 +25,22 @@
 
 .shortPara{
     color: rgba(0, 0, 0, 0.46);
-    font-size: 15px;
-    font-style: normal;
-    font-weight: 400;
+    font-size: 14px;
     line-height: 162%; /* 32.4px */
 }
 
 .wrapper {
     display: flex;
-    width: 100%;
-    overflow: hidden;
+    width: 99%;
+    overflow: scroll;
     scroll-behavior: smooth;
     gap: 3%;
     padding: 20px 20px;
     margin-top: 50px;
     margin-left: 6%;
+}
+.wrapper::-webkit-scrollbar{
+    display: none;
 }
   
 

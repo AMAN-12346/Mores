@@ -1,5 +1,5 @@
-"use client"
-  
+"use client";
+
 import React, { useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
@@ -7,105 +7,189 @@ import axios from "axios";
 import footer_image from "../assets/footer-image.png";
 import right_side_image from "../assets/right_side_image.png";
 import logo_image from "../assets/logo_image.png";
+import Link from "next/link";
+import { apiGooglePlace } from "@/config.js";
+import GooglePlaceDropdown from "./components/GooglePlaceDropdown";
+import styles from "./RegisterAs.module.css";
 
-const RegisterUser = () => {
+import { useAuth } from "@/context/auth";
+
+const RegisterUser = ({ selectedLocation }) => {
+  const [cityName, setParentCity] = useState("");
+  const [longitude, setParentLongitude] = useState("");
+  const [latitude, setParentLatitude] = useState("");
+
   const [selectedRole, setSelectedRole] = useState("individual"); // Changed state and variable names
-  const [inputValue, setInputValue] = useState("");
+  const [inputName, setNameValue] = useState("");
+  const [email, setEmail] = useState("");
+  const [city, setCity] = useState("");
+  const [auth, setAuth] = useAuth();
+  const [mobileNumber, setMobileNumber] = useState("");
+  const [coordinates, setCoordinates] = useState({ lat: 0, lng: 0 });
+
+  console.log(auth, "auth from register AS>>>>>>>>>>>>>>>");
+
   const router = useRouter();
   const [otpSuccess, setOtpSuccess] = useState(false);
 
+  const updateParentLocation = (city, longitude, latitude) => {
+    setParentCity(city);
+    setParentLongitude(longitude);
+    setParentLatitude(latitude);
+  };
+
   const handleRegister = async (event) => {
+    console.log(
+      city,
+      coordinates,
+      email,
+      mobileNumber,
+      ">>>>>>>>>>>>>>>>>>>>>>>"
+    );
     event.preventDefault();
 
-    let payload = {};
-    if (selectedRole === "individual") { // Updated condition
-      payload.userID = inputValue;
-      // Additional individual-related payload data can be added here
-    } else if (selectedRole === "agent") { // Updated condition
-      payload.userID = inputValue;
-      // Additional agent-related payload data can be added here
-    }
+    let payload = {
+      name: inputName,
+      city: cityName,
+      latitude: latitude,
+      longitude: longitude,
+      email: email,
+      mobileNumber: mobileNumber,
+      userType: selectedRole,
+    };
+    console.log(payload, "register as>>>>>>>>>>>>>>>>>>>>>");
 
     try {
-      const response = await axios.post("http://localhost:1950/api/v1/user/Register", // Updated endpoint
+      const response = await axios.post(
+        "http://localhost:1950/api/v1/user/Register",
         payload
       );
 
-      if (response.status === 200) {
+      if (response.data?.responseCode === 200) {
         localStorage.setItem("userID", inputValue);
         setOtpSuccess(true);
         setTimeout(() => {
           setOtpSuccess(false);
           router.push("/otpVerify");
         }, 3000);
+        router.push(`/login`);
       }
     } catch (error) {
       console.error("Error registering user:", error);
     }
   };
+  const handlePlaceSelect = async (place) => {
+    try {
+      const response = await axios.get(
+        `https://maps.googleapis.com/maps/api/place/details/json?place_id=${place.place_id}&fields=geometry&key=${apiGooglePlace}`
+      );
 
+      const location = response.data.result.geometry.location;
+      setCoordinates({
+        lat: location.lat,
+        lng: location.lng,
+      });
+    } catch (error) {
+      console.error("Error fetching place details:", error);
+    }
+  };
   return (
-    <div className="flex items-center justify-center">
-      <div className="w-1/2 p-32 bg-login_background">
-        <div className="absolute top-4 left-4">
-          <Image
+    <div className={styles.loginContainer}>
+      <div className={styles.leftContent}>
+        <div className={styles.logo}>
+          {/* <Image
             className="bg-contain"
             src={logo_image}
             alt="footer-image"
             height={30}
             width={130}
-          />
+          /> */}
         </div>
-        <h1 className="text-2xl font-bold">Register</h1>
-        <p className="mt-2">I am a:</p>
-        <div className="mt-5 w-full">
-        <button
-          className={`py-2 px-6 rounded-xl w-36 ${
-            selectedRole === "individual"
-              ? "bg-primary text-white"
-              : "bg-secondary text-black"
-          }`}
-          onClick={() => setSelectedRole("individual")}
-        >
-          Individual
-        </button>
-        <button
-          className={`-ml-3 py-2 px-6 rounded-xl w-36 ${
-            selectedRole === "agent"
-              ? "bg-primary text-white"
-              : "bg-secondary text-black"
-          }`}
-          onClick={() => setSelectedRole("agent")}
-        >
-          Agent
-        </button>
-      </div>
-        <form className="mt-8" onSubmit={handleRegister}>
-          <div className="relative">
-            <input
-              type="text"
-              className="border rounded-lg pl-12 pr-8 py-2 w-9/12 mb-5"
-              placeholder="Full Name"
-              value={inputValue}
-              onChange={(e) => setInputValue(e.target.value)}
-            />
-             <input
-              type="text"
-              className="border rounded-lg pl-12 pr-8 py-2 w-9/12"
-              placeholder="Mobile Number"
-              value={inputValue}
-              onChange={(e) => setInputValue(e.target.value)}
-            />
-
-            <span className="absolute right-3 top-1/2 transform -translate-y-1/2">
-              {/* Add flag icon here */}
-            </span>
+        <div className={styles.formContainer}>
+          <h1 className="text-2xl font-bold">Register</h1>
+          <p className="mt-2 mb-2">I am a:</p>
+          <div className={styles.buttonContainer}>
+            <button
+              className={`py-2 px-6 rounded-xl w-36 ${
+                selectedRole === "individual"
+                  ? "bg-primary text-white"
+                  : "bg-secondary text-black"
+              }`}
+              onClick={() => setSelectedRole("individual")}
+            >
+              Individual
+            </button>
+            <button
+              className={`-ml-3 py-2 px-6 rounded-xl w-36 ${
+                selectedRole === "agent"
+                  ? "bg-primary text-white"
+                  : "bg-secondary text-black"
+              }`}
+              onClick={() => setSelectedRole("agent")}
+            >
+              Agent
+            </button>
           </div>
-          <button className="w-9/12 bg-button text-white py-2 rounded-lg mt-4">
-            Register
-          </button>
-        </form>
-      
+          <form className="mt-8" onSubmit={handleRegister}>
+            <div className="relative">
+              <input
+                type="text"
+                className="border rounded-lg pl-12 pr-8 py-2 w-9/12 mb-5"
+                placeholder="Full Name"
+                value={inputName}
+                onChange={(e) => setNameValue(e.target.value)}
+              />
+              <input
+                type="text"
+                className="border rounded-lg pl-12 pr-8 py-2 w-9/12"
+                placeholder={
+                  auth.userResult?.mobileNumber !== undefined
+                    ? auth.userResult?.mobileNumber
+                    : "Mobile Number"
+                }
+                value={mobileNumber}
+                onChange={(e) => setMobileNumber(e.target.value)}
+                defaultValue={auth.userResult?.mobileNumber} // Autofill mobile number if available
+                disabled={auth.userResult?.mobileNumber !== undefined} // Disable input if mobile number is present
+              />
+
+              <span className="absolute right-3 top-1/2 transform -translate-y-1/2">
+                {/* Add flag icon here */}
+              </span>
+
+              <input
+                type="text"
+                className="border rounded-lg pl-12 pr-8 py-2 w-9/12 mb-5 mt-5"
+                placeholder={
+                  auth.userResult?.email !== undefined
+                    ? auth.userResult?.email
+                    : "Email"
+                }
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                defaultValue={auth.userResult?.email}
+                disabled={auth.userResult?.email !== undefined}
+              />
+
+              <GooglePlaceDropdown
+                updateParentLocation={updateParentLocation}
+              />
+            </div>
+            <button className="w-9/12 bg-button text-white py-2 rounded-lg mt-4">
+              Register
+            </button>
+            <p className="mt-3">
+              Want to Login?{" "}
+              <Link
+                href="/login"
+                className="text-button underline cursor-pointer"
+              >
+                Login
+              </Link>
+            </p>
+          </form>
+        </div>
+
         <div className="mt-0">
           <Image
             src={footer_image}
@@ -115,12 +199,12 @@ const RegisterUser = () => {
           />
         </div>
       </div>
-      <div className="w-1/2">
+      <div className={styles.rightContainer}>
         <Image
           src={right_side_image}
-          alt="footer-image"
-          height={1042}
-          width={710}
+          alt="right-side-image"
+          layout="fill"
+          objectFit="cover"
         />
       </div>
     </div>

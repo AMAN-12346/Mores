@@ -1,455 +1,625 @@
 import React, { useState } from "react";
+import StepThreeCard from "./cards/StepThreeCard";
+import Image from "next/image";
+import video from "../component/services/assets/photo.png";
+import photo from "../component/services/assets/vedio.png";
+import styles from "./AdditionalDetails.module.css";
+import axios from "axios";
+import { API } from "@/config.js";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
-const AdditionalDetailsForm = () => {
-    const [additionalRooms, setAdditionalRooms] = useState([]);
+const AdditionalDetailsForm = ({
+  data,
+  onChange,
+  onPhotoChange,
+  onVideoChange,
+}) => {
+  const [videoURLs, setVideoURLs] = useState([]);
+  const [photoURLs, setPhotoURLs] = useState([]);
+  const [photoUploadLoading, setPhotoUploadLoading] = useState(false);
+  const [videoUploadLoading, setVideoUploadLoading] = useState(false);
 
-  const [possessionStatus, setPossessionStatus] = useState("");
-  const [furnishStatus, setFurnishStatus] = useState("");
-  const [propertyAge, setPropertyAge] = useState("");
-  const [additionalBalconies, setAdditionalBalconies] = useState([]);
-  const [balconyView, setBalconyView] = useState(""); // State for Balcony View
-  const [viewOption, setViewOption] = useState("");
-  const [flooringOption, setFlooringOption] = useState("");
-  const [floorNumber, setFloorNumber] = useState("");
-  const [towerBlock, setTowerBlock] = useState("");
-  const [totalFloors, setTotalFloors] = useState("");
-  const [unitNumber, setUnitNumber] = useState("");
-  const [privateBalcony, setPrivateBalcony] = useState(false);
-  const [numBedrooms, setNumBedrooms] = useState("");
-  const [numBathrooms, setNumBathrooms] = useState("");
-  const [powerBackupOption, setPowerBackupOption] = useState("");
+  const [uploadMessage, setUploadMessage] = useState(""); // State for upload message
 
-  const handleAdditionalRoomClick = (roomType) => {
-    if (additionalRooms.includes(roomType)) {
-      setAdditionalRooms(additionalRooms.filter(room => room !== roomType));
-    } else {
-      setAdditionalRooms([...additionalRooms, roomType]);
+  // const [additionalRooms, setAdditionalRooms] = useState([]);
+
+  // const [possessionStatus, setPossessionStatus] = useState("");
+  // const [furnishStatus, setFurnishStatus] = useState("");
+  // const [propertyAge, setPropertyAge] = useState("");
+  // const [additionalBalconies, setAdditionalBalconies] = useState([]);
+  // const [balconyView, setBalconyView] = useState(""); // State for Balcony View
+  // const [viewOption, setViewOption] = useState("");
+  // const [flooringOption, setFlooringOption] = useState("");
+  // const [floorNumber, setFloorNumber] = useState("");
+  // const [towerBlock, setTowerBlock] = useState("");
+  // const [totalFloors, setTotalFloors] = useState("");
+  // const [unitNumber, setUnitNumber] = useState("");
+  // const [privateBalcony, setPrivateBalcony] = useState(false);
+  // const [numBedrooms, setNumBedrooms] = useState("");
+  // const [numBathrooms, setNumBathrooms] = useState("");
+  // const [powerBackupOption, setPowerBackupOption] = useState("");
+
+  const handlePhotoSelect = () => {
+    const input = document.createElement("input");
+    input.type = "file";
+    input.accept = "image/*";
+    input.multiple = true;
+
+    input.addEventListener("change", async (event) => {
+      const files = Array.from(event.target.files);
+
+      // Create a FormData object to send files
+      const formData = new FormData();
+      files.forEach((file, index) => {
+        formData.append(`photo${index}`, file);
+      });
+
+      try {
+        setPhotoUploadLoading(true);
+        // Send a POST request to your API endpoint
+        const response = await axios.post(`${API}user/awsImage`, formData, {
+          headers: {
+            "Content-Type": "multipart/form-data", // Set the content type for file upload
+          },
+        });
+        // console.log(response);
+        const photoUrls = response.data.result;
+        const mappedPhotoUrls = photoUrls.map((url, index) => ({
+          id: index, // You can assign a unique ID if needed
+          url: url,
+        }));
+
+        setPhotoURLs(mappedPhotoUrls);
+        // console.log(mappedPhotoUrls, "urls from add photo");
+
+        // Call onVideoChange with the mapped URLs
+        onPhotoChange({ photoURLs: mappedPhotoUrls });
+
+        console.log(photoURLs, "photo upload response");
+
+        setPhotoUploadLoading(false);
+        setUploadMessage(
+          `${mappedPhotoUrls.length} Photos uploaded successfully!`
+        );
+
+        // Clear success message after 3 seconds
+        setTimeout(() => {
+          setUploadMessage("");
+        }, 3000);
+      } catch (error) {
+        console.error("Error uploading files:", error);
+        setPhotoUploadLoading(false);
+        // Show error message
+        setUploadMessage("Error uploading photos. Please try again.");
+
+        // Clear error message after 3 seconds
+        setTimeout(() => {
+          setUploadMessage("");
+        }, 3000);
+      }
+    });
+
+    input.click();
+  };
+
+  const handleVideoSelect = async () => {
+    const input = document.createElement("input");
+    input.type = "file";
+    input.accept = "video/*";
+    input.multiple = true;
+
+    input.addEventListener("change", async (event) => {
+      const files = Array.from(event.target.files);
+
+      const formData = new FormData();
+      files.forEach((file, index) => {
+        formData.append(`video${index}`, file);
+      });
+
+      try {
+        setVideoUploadLoading(true);
+        const response = await axios.post(`${API}user/awsVideo`, formData, {
+          headers: {
+            "Content-Type": "multipart/form-data", // Set the content type for video upload
+          },
+        });
+        console.log(response, "videos????????????????");
+
+        if (response.data.responseCode === 200) {
+          const videoUrls = response.data.result; // Assuming response.data.result is an array of URLs
+
+          // Map the URLs and set them in the state
+          const mappedVideoUrls = videoUrls.map((url, index) => ({
+            id: index, // You can assign a unique ID if needed
+            url: url,
+          }));
+
+          setVideoURLs(mappedVideoUrls);
+          console.log(mappedVideoUrls, "urls from add video");
+
+          // Call onVideoChange with the mapped URLs
+          onVideoChange({ videoURLs: mappedVideoUrls });
+
+          console.log(response.data.responseMessage);
+          setVideoUploadLoading(false);
+          // Show success message
+          setUploadMessage(`${mappedVideoUrls.length} Videos uploaded successfully!`);
+
+          // Clear success message after 3 seconds
+          setTimeout(() => {
+            setUploadMessage("");
+          }, 3000);
+        } else {
+          console.error(
+            "Error uploading videos:",
+            response.data.responseMessage
+          );
+          setVideoUploadLoading(false);
+          // Show error message
+          setUploadMessage("Error uploading videos. Please try again.");
+
+          // Clear error message after 3 seconds
+          setTimeout(() => {
+            setUploadMessage("");
+          }, 3000);
+        }
+      } catch (error) {
+        console.error("Error uploading videos:", error);
+        setVideoUploadLoading(false);
+        // Show error message
+        setUploadMessage("Error uploading videos. Please try again.");
+
+        // Clear error message after 3 seconds
+        setTimeout(() => {
+          setUploadMessage("");
+        }, 3000);
+      }
+    });
+
+    input.click();
+  };
+
+  const renderButtons = (options, selectedValue, onChangeHandler) => {
+    return options.map((option) => (
+      <div className="">
+        <button
+          key={option.value}
+          className={`text-xs ${styles.button} ${
+            selectedValue === option.value
+              ? "bg-primary text-white"
+              : "bg-white text-gray-600"
+          } border-2 border-primary`}
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+          onClick={() => onChangeHandler(option.value)}
+        >
+          {option.label}
+        </button>
+      </div>
+    ));
+  };
+
+  // Define your bucket name as a constant
+
+  const deletePhoto = async (index, url) => {
+    // Extract the key from the URL (assuming the key comes after the last '/')
+    const key = url.substring(url.lastIndexOf("/") + 1);
+    console.log(key, ">>>>>>key");
+
+    const BUCKET_NAME = "more-bucket-s3";
+
+    try {
+      // Send a POST request to the photo deletion API with bucketName and key as data
+      const response = await axios.post("user/removeImage", {
+        Bucket: BUCKET_NAME,
+        Key: key,
+      });
+
+      if (response.status === 200) {
+        // If the request is successful, update the state to remove the deleted photo
+        setPhotoURLs((prevURLs) => prevURLs.filter((_, i) => i !== index));
+        setUploadMessage("Photo deleted successfully!");
+
+        // Clear error message after 3 seconds
+        setTimeout(() => {
+          setUploadMessage("");
+        }, 3000);
+      } else {
+        setUploadMessage("Error deleting photo. Please try again.");
+
+        // Clear error message after 3 seconds
+        setTimeout(() => {
+          setUploadMessage("");
+        }, 3000);
+      }
+    } catch (error) {
+      // Handle any network or other errors
+      console.error("An error occurred while deleting photo:", error);
+      setUploadMessage("Error deleting photo. Please try again.");
+
+      // Clear error message after 3 seconds
+      setTimeout(() => {
+        setUploadMessage("");
+      }, 3000);
     }
   };
 
-  const handleAdditionalBalconyClick = (balconyType) => {
-    if (additionalBalconies.includes(balconyType)) {
-      setAdditionalBalconies(additionalBalconies.filter(balcony => balcony !== balconyType));
-    } else {
-      setAdditionalBalconies([...additionalBalconies, balconyType]);
+  // Function to delete a video by its index
+  const deleteVideo = async (index, url) => {
+    const BUCKET_NAME = "more-bucket-s3";
+
+    // Extract the key from the URL (assuming the key comes after the last '/')
+    const key = url.substring(url.lastIndexOf("/") + 1);
+
+    try {
+      // Send a POST request to the video deletion API with key as data
+      const response = await axios.post("user/removeVideo", {
+        Bucket: BUCKET_NAME,
+        Key: key,
+      });
+
+      if (response.status === 200) {
+        setVideoURLs((prevURLs) => prevURLs.filter((_, i) => i !== index));
+        setUploadMessage("Video Deleted Successfully!");
+
+        // Clear error message after 3 seconds
+        setTimeout(() => {
+          setUploadMessage("");
+        }, 3000);
+      } else {
+        console.error("Failed to delete video.");
+        setUploadMessage("Error deleting video. Please try again.");
+
+        // Clear error message after 3 seconds
+        setTimeout(() => {
+          setUploadMessage("");
+        }, 3000);
+      }
+    } catch (error) {
+      console.error("An error occurred while deleting video:", error);
+      setUploadMessage("Error deleting video. Please try again.");
+
+      // Clear error message after 3 seconds
+      setTimeout(() => {
+        setUploadMessage("");
+      }, 3000);
     }
-  }
+  };
+
   const allBalconyOptions = [
-    "Connected Balcony",
-    "Individual Balcony",
-    "Room Attached Balcony",
+    { value: "connected", label: "Connected" },
+    { value: "individual", label: "Individual" },
+    { value: "roomAttached", label: "Room Attached" },
     // Add more balcony options here...
   ];
+
   const allAdditionalRooms = [
-    "Pooja Room",
-    "Servent Room",
-    "Study Room",
-    "Extra Room",
+    { value: "poojaRoom", label: "Pooja Room" },
+    { value: "servantRoom", label: "Servant Room" },
+    { value: "studyRoom", label: "Study Room" },
+    { value: "extraRoom", label: "Extra Room" },
     // Add more room options here...
   ];
-  return (
-    <div className="p-8">
-      <h2 className="text-2xl font-semibold mb-4 border-b pb-2">
-        Additional Details
-      </h2>
 
-     {/* Additional Rooms */}
-     <div className="mb-4">
-        <label className="block font-semibold mb-2">Additional Rooms</label>
-        <div className="flex space-x-4">
-          {allAdditionalRooms.map(roomType => (
-            <button
-              key={roomType}
-              className={`px-4 py-2 rounded-full ${
-                additionalRooms.includes(roomType)
-                  ? "bg-primary text-white"
-                  : "bg-white text-gray-600"
-              } border-2 border-primary`}
-              onClick={() => handleAdditionalRoomClick(roomType)}
-            >
-              {roomType}
-            </button>
-          ))}
+  const possessionStatusOptions = [
+    { value: "readyToMove", label: "Ready to Move" },
+    { value: "underConstruction", label: "Under Construction" },
+    // Add more possession options here...
+  ];
+
+  const furnishStatusOptions = [
+    { value: "furnished", label: "Furnished" },
+    { value: "semiFurnished", label: "Semi-Furnished" },
+    { value: "unfurnished", label: "Unfurnished" },
+    // Add more furnish options here...
+  ];
+
+  const propertyAgeOptions = [
+    { value: "0-1", label: "0-1 Years" },
+    { value: "2-4", label: "2-4 Years" },
+    { value: "5-7", label: "5-7 Years" },
+    { value: "8-10", label: "8-10 Years" },
+    { value: "10+", label: "10+ Years" },
+  ];
+
+  const allPowerBackupOptions = [
+    { value: "noBackup", label: "No Backup" },
+    { value: "available", label: "Available" },
+    // Add more power backup options here...
+  ];
+
+  const bedroomOptions = [
+    { value: "1", label: "1" },
+    { value: "2", label: "2" },
+    { value: "3", label: "3" },
+    { value: "4", label: "4" },
+    { value: "5", label: "5" },
+    { value: "5+", label: "5+" },
+  ];
+
+  const bathroomOptions = [
+    { value: "1", label: "1" },
+    { value: "2", label: "2" },
+    { value: "3", label: "3" },
+    { value: "4", label: "4" },
+    { value: "4+", label: "4+" },
+  ];
+  return (
+    <div className="p-8 -mb-10">
+      {/* <AdditionalDetail/> */}
+      {/* Additional Rooms */}
+      <label className="block font-semibold mb-2 text-xs">
+        Upload Photo/Video
+      </label>
+      {/* //!make two divs for showing photos */}
+      <div className="block md:flex justify-center w-fit gap-8">
+        <div className="flex flex-col">
+          <div>
+            <StepThreeCard
+              icon={
+                <div className="flex items-center justify-center rounded-full bg-iconBackground p-4 w-20 m-auto">
+                  <Image src={photo} alt="Photo" width={80} height={80} />
+                </div>
+              }
+              definition="Property Listing with more than 5 photos gets more views"
+              buttonLabel="Attach Photos"
+              onSelect={handlePhotoSelect}
+              onPhotoUpload={photoUploadLoading}
+            />
+          </div>
+          <div className="flex justify-end">
+            <div className="grid grid-cols-3 gap-2">
+              {photoURLs.slice(0, 5).map((photoURL, index) => (
+                <div key={`photo_${index}`} className="mb-2">
+                  <img src={photoURL.url} alt={`Uploaded Photo ${index}`} />
+                  <button onClick={() => deletePhoto(index, photoURL.url)}>
+                    <FontAwesomeIcon icon={faTrash} /> {/* Trash icon */}
+                  </button>
+                </div>
+              ))}
+            </div>
+          </div>
+          {photoURLs.length > 5 && (
+            <div className="flex justify-end  mt-2">
+              <div className="grid grid-cols-3 gap-2 h-2">
+                {photoURLs.slice(5).map((photoURL, index) => (
+                  <div key={`photo_${index}`} className="mb-2 h-2">
+                    <img src={photoURL.url} alt={`Uploaded Photo ${index}`} />
+                    <button onClick={() => deletePhoto(index,photoURL.url)}>
+                      <FontAwesomeIcon icon={faTrash} /> {/* Trash icon */}
+                    </button>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+        <div className="flex flex-col">
+          <StepThreeCard
+            icon={
+              <div className="flex items-center justify-center rounded-full bg-iconBackground p-4 w-20 h-20 m-auto">
+                <Image src={video} alt="Video" width={80} height={50} />
+              </div>
+            }
+            definition="Property Listing with video gets 3X more views"
+            buttonLabel="Attach Videos"
+            onSelect={handleVideoSelect}
+            onVideoUpload={videoUploadLoading}
+          />
+          <div className="flex justify-end ">
+            {videoURLs.map((videoURL, index) => (
+              <div key={`video_${index}`} className="mb-2 ml-3">
+                <video controls width="180" height="120">
+                  <source src={videoURL.url} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+                <button onClick={() => deleteVideo(index,videoURL.url)}>
+                  <FontAwesomeIcon icon={faTrash} /> {/* Trash icon */}
+                </button>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+      {uploadMessage && (
+        <div
+          className={`text-center mt-2 ${
+            uploadMessage.includes("Error") ? "text-red-500" : "text-green-500"
+          }`}
+        >
+          {uploadMessage}
+        </div>
+      )}
+
+      <div className="mb-4 mt-4">
+        <label className="block font-semibold mb-2 w-fit text-xs">
+          Additional Rooms
+        </label>
+        <div className="flex flex-wrap gap-2">
+          {renderButtons(allAdditionalRooms, data.additionalRooms, (value) =>
+            onChange("additionalRooms", value)
+          )}
         </div>
       </div>
 
       {/* Possession Status */}
       <div className="mb-4">
-        <label className="block font-semibold mb-2">Possession Status</label>
-        <div className="flex space-x-4">
-          <button
-            className={`px-4 py-2 rounded-full ${
-              possessionStatus === "readyToMove"
-                ? "bg-primary text-white"
-                : "bg-white text-gray-600"
-            } border-2 border-primary`}
-            onClick={() => setPossessionStatus("readyToMove")}
-          >
-            Ready to Move
-          </button>
-          <button
-            className={`px-4 py-2 rounded-full ${
-              possessionStatus === "underConstruction"
-                ? "bg-primary text-white"
-                : "bg-white text-gray-600"
-            } border-2 border-primary`}
-            onClick={() => setPossessionStatus("underConstruction")}
-          >
-            Under Construction
-          </button>
-          {/* Add more buttons for other possession options */}
+        <label className="block font-semibold mb-2 w-fit text-xs">
+          Possession Status
+        </label>
+        <div className="flex flex-wrap gap-2">
+          {renderButtons(
+            possessionStatusOptions,
+            data.possessionStatus,
+            (value) => onChange("possessionStatus", value)
+          )}
         </div>
       </div>
 
       {/* Furnish Status */}
       <div className="mb-4">
-        <label className="block font-semibold mb-2">Furnish Status</label>
-        <div className="flex space-x-4">
-          <button
-            className={`px-4 py-2 rounded-full ${
-              furnishStatus === "furnished"
-                ? "bg-primary text-white"
-                : "bg-white text-gray-600"
-            } border-2 border-primary`}
-            onClick={() => setFurnishStatus("furnished")}
-          >
-            Furnished
-          </button>
-          <button
-            className={`px-4 py-2 rounded-full ${
-              furnishStatus === "semiFurnished"
-                ? "bg-primary text-white"
-                : "bg-white text-gray-600"
-            } border-2 border-primary`}
-            onClick={() => setFurnishStatus("semiFurnished")}
-          >
-            Semi-Furnished
-          </button>
-          <button
-            className={`px-4 py-2 rounded-full ${
-              furnishStatus === "unfurnished"
-                ? "bg-primary text-white"
-                : "bg-white text-gray-600"
-            } border-2 border-primary`}
-            onClick={() => setFurnishStatus("unfurnished")}
-          >
-            Unfurnished
-          </button>
-          {/* Add more buttons for other furnish options */}
-        </div>
-      </div>
-
-      {/* Age of Property */}
-
-      <div className="mb-4">
-        <label className="block font-semibold mb-2">Age of Property</label>
-        <div className="flex space-x-4">
-          <button
-            className={`px-4 py-2 rounded-full ${
-              propertyAge === "0-1"
-                ? "bg-primary text-white"
-                : "bg-white text-gray-600"
-            } border-2 border-primary`}
-            onClick={() => setPropertyAge("0-1")}
-          >
-            0-1 Years
-          </button>
-          <button
-            className={`px-4 py-2 rounded-full ${
-              propertyAge === "2-4"
-                ? "bg-primary text-white"
-                : "bg-white text-gray-600"
-            } border-2 border-primary`}
-            onClick={() => setPropertyAge("2-4")}
-          >
-            2-4 Years
-          </button>
-          <button
-            className={`px-4 py-2 rounded-full ${
-              propertyAge === "5-7"
-                ? "bg-primary text-white"
-                : "bg-white text-gray-600"
-            } border-2 border-primary`}
-            onClick={() => setPropertyAge("5-7")}
-          >
-            5-7 Years
-          </button>
-          <button
-            className={`px-4 py-2 rounded-full ${
-              propertyAge === "8-10"
-                ? "bg-primary text-white"
-                : "bg-white text-gray-600"
-            } border-2 border-primary`}
-            onClick={() => setPropertyAge("8-10")}
-          >
-            8-10 Years
-          </button>
-          <button
-            className={`px-4 py-2 rounded-full ${
-              propertyAge === "10+"
-                ? "bg-primary text-white"
-                : "bg-white text-gray-600"
-            } border-2 border-primary`}
-            onClick={() => setPropertyAge("10+")}
-          >
-            10+ Years
-          </button>
+        <label className="block font-semibold mb-2 w-fit text-xs">
+          Furnish Status
+        </label>
+        <div className="flex flex-wrap gap-2">
+          {renderButtons(furnishStatusOptions, data.furnishStatus, (value) =>
+            onChange("furnishStatus", value)
+          )}
         </div>
       </div>
 
       {/* Number of Bedrooms */}
       <div className="mb-4">
-        <label className="block font-semibold mb-2">Number of Bedrooms</label>
-        <div className="flex space-x-4">
-          <button
-            className={`px-4 py-2 rounded-full ${
-              numBedrooms === "1"
-                ? "bg-primary text-white"
-                : "bg-white text-gray-600"
-            } border-2 border-primary`}
-            onClick={() => setNumBedrooms("1")}
-          >
-            1
-          </button>
-          <button
-            className={`px-4 py-2 rounded-full ${
-              numBedrooms === "2"
-                ? "bg-primary text-white"
-                : "bg-white text-gray-600"
-            } border-2 border-primary`}
-            onClick={() => setNumBedrooms("2")}
-          >
-            2
-          </button>
-          <button
-            className={`px-4 py-2 rounded-full ${
-              numBedrooms === "3"
-                ? "bg-primary text-white"
-                : "bg-white text-gray-600"
-            } border-2 border-primary`}
-            onClick={() => setNumBedrooms("3")}
-          >
-            3
-          </button>
-          <button
-            className={`px-4 py-2 rounded-full ${
-              numBedrooms === "4"
-                ? "bg-primary text-white"
-                : "bg-white text-gray-600"
-            } border-2 border-primary`}
-            onClick={() => setNumBedrooms("4")}
-          >
-            4
-          </button>
-          <button
-            className={`px-4 py-2 rounded-full ${
-              numBedrooms === "5"
-                ? "bg-primary text-white"
-                : "bg-white text-gray-600"
-            } border-2 border-primary`}
-            onClick={() => setNumBedrooms("5")}
-          >
-            5
-          </button>
-          <button
-            className={`px-4 py-2 rounded-full ${
-              numBedrooms === "5+"
-                ? "bg-primary text-white"
-                : "bg-white text-gray-600"
-            } border-2 border-primary`}
-            onClick={() => setNumBedrooms("5+")}
-          >
-            5+
-          </button>
+        <label className="block font-semibold mb-2 w-fit text-xs">
+          Number of Bedrooms
+        </label>
+        <div className="flex flex-wrap gap-2 text-sm">
+          {renderButtons(bedroomOptions, data.numBedrooms, (value) =>
+            onChange("numBedrooms", value)
+          )}
         </div>
       </div>
 
       {/* Number of Bathrooms */}
       <div className="mb-4">
-        <label className="block font-semibold mb-2">Number of Bathrooms</label>
-        <div className="flex space-x-4">
-          <button
-            className={`px-4 py-2 rounded-full ${
-              numBathrooms === "1"
-                ? "bg-primary text-white"
-                : "bg-white text-gray-600"
-            } border-2 border-primary`}
-            onClick={() => setNumBathrooms("1")}
-          >
-            1
-          </button>
-          <button
-            className={`px-4 py-2 rounded-full ${
-              numBathrooms === "2"
-                ? "bg-primary text-white"
-                : "bg-white text-gray-600"
-            } border-2 border-primary`}
-            onClick={() => setNumBathrooms("2")}
-          >
-            2
-          </button>
-          <button
-            className={`px-4 py-2 rounded-full ${
-              numBathrooms === "3"
-                ? "bg-primary text-white"
-                : "bg-white text-gray-600"
-            } border-2 border-primary`}
-            onClick={() => setNumBathrooms("3")}
-          >
-            3
-          </button>
-          <button
-            className={`px-4 py-2 rounded-full ${
-              numBathrooms === "4"
-                ? "bg-primary text-white"
-                : "bg-white text-gray-600"
-            } border-2 border-primary`}
-            onClick={() => setNumBathrooms("4")}
-          >
-            4
-          </button>
-          <button
-            className={`px-4 py-2 rounded-full ${
-              numBathrooms === "4+"
-                ? "bg-primary text-white"
-                : "bg-white text-gray-600"
-            } border-2 border-primary`}
-            onClick={() => setNumBathrooms("4+")}
-          >
-            4+
-          </button>
+        <label className="block font-semibold mb-2 w-fit text-xs">
+          Number of Bathrooms
+        </label>
+        <div className="flex flex-wrap gap-2">
+          {renderButtons(bathroomOptions, data.numBathrooms, (value) =>
+            onChange("numBathrooms", value)
+          )}
         </div>
       </div>
 
-      {/* Balcony Option */}
-        {/* Additional Balconies */}
-        <div className="mb-4">
-        <label className="block font-semibold mb-2">Additional Balconies</label>
-        <div className="flex space-x-4">
-          {allBalconyOptions.map(balconyType => (
-            <button
-              key={balconyType}
-              className={`px-4 py-2 rounded-full ${
-                additionalBalconies.includes(balconyType)
-                  ? "bg-primary text-white"
-                  : "bg-white text-gray-600"
-              } border-2 border-primary`}
-              onClick={() => handleAdditionalBalconyClick(balconyType)}
-            >
-              {balconyType}
-            </button>
-          ))}
-        </div>
-      </div>
-
-      {/* Power Backup Option */}
+      {/* Age of Property */}
       <div className="mb-4">
-        <label className="block font-semibold mb-2">Power Backup</label>
-        <div className="flex space-x-4">
-          <button
-            className={`px-4 py-2 rounded-full ${
-              powerBackupOption === "noBackup"
-                ? "bg-primary text-white"
-                : "bg-white text-gray-600"
-            } border-2 border-primary`}
-            onClick={() => setPowerBackupOption("noBackup")}
-          >
-            No Backup
-          </button>
-          <button
-            className={`px-4 py-2 rounded-full ${
-              powerBackupOption === "available"
-                ? "bg-primary text-white"
-                : "bg-white text-gray-600"
-            } border-2 border-primary`}
-            onClick={() => setPowerBackupOption("available")}
-          >
-            Available
-          </button>
-          {/* Add more buttons for other power backup options */}
+        <label className="block font-semibold mb-2 w-fit text-xs">
+          Age of Property
+        </label>
+        <div className="flex flex-wrap gap-2">
+          {renderButtons(propertyAgeOptions, data.propertyAge, (value) =>
+            onChange("propertyAge", value)
+          )}
         </div>
       </div>
-      <div className="flex -mb-16">
-  {/* First Column */}
-  <div className="mb-4 flex-1 pr-4">
-    <label className="block font-semibold mb-2">View</label>
-    <select
-      className="w-full border rounded-md px-4 py-2 focus:outline-none focus:border-primary"
-      value={balconyView}
-      onChange={(e) => setBalconyView(e.target.value)}
-    >
-      <option value="">Select Balcony View</option>
-      <option value="city">City View</option>
-      <option value="garden">Garden View</option>
-      {/* Add more balcony view options */}
-    </select>
 
-    {/* Floor Number */}
-    <div className="mb-4 mt-4">
-      <label className="block font-semibold mb-2">Floor Number</label>
-      <input
-        type="text"
-        className="w-full border rounded-md px-4 py-2 focus:outline-none focus:border-primary"
-        value={floorNumber}
-        onChange={(e) => setFloorNumber(e.target.value)}
-      />
-    </div>
+      {/* Additional Balconies */}
+      <div className="mb-4">
+        <label className="block font-semibold mb-2 w-fit text-xs">
+          Additional Balconies
+        </label>
+        <div className="flex flex-wrap gap-3">
+          {renderButtons(allBalconyOptions, data.additionalBalconies, (value) =>
+            onChange("additionalBalconies", value)
+          )}
+        </div>
+      </div>
 
-    {/* Tower/Block */}
-    <div className="mb-4">
-      <label className="block font-semibold mb-2">Tower/Block</label>
-      <input
-        type="text"
-        className="w-full border rounded-md px-4 py-2 focus:outline-none focus:border-primary"
-        value={towerBlock}
-        onChange={(e) => setTowerBlock(e.target.value)}
-      />
-    </div>
-  </div>
+      {/* Power Backup */}
+      <div className="mb-4">
+        <label className="block font-semibold mb-2 w-fit text-xs">
+          Power Backup
+        </label>
+        <div className="flex flex-wrap gap-3">
+          {renderButtons(
+            allPowerBackupOptions,
+            data.powerBackupOption,
+            (value) => onChange("powerBackupOption", value)
+          )}
+        </div>
+      </div>
 
-  {/* Second Column */}
-  <div className="mb-4 flex-1 pl-4">
-    <label className="block font-semibold mb-2">Flooring Option</label>
-    <input
-      type="text"
-      className="w-full border rounded-md px-4 py-2 focus:outline-none focus:border-primary"
-      value={flooringOption}
-      onChange={(e) => setFlooringOption(e.target.value)}
-    />
+      <div className="grid sm:grid-cols-2">
+        {/* First Column */}
+        <div className="mb-4 flex-1 pr-4">
+          <label className="block font-semibold mb-2 w-fit text-xs">View</label>
+          <select
+            className="w-full h-[30px] border text-[10px] rounded-md px-4 py-2 focus:outline-none focus:border-primary"
+            value={data.balconyView}
+            onChange={(e) => onChange("balconyView", e.target.value)}
+          >
+            <option className="text-xs" value="">
+              Select Balcony View
+            </option>
+            <option className="text-xs" value="city">
+              City View
+            </option>
+            <option className="text-xs" value="garden">
+              Garden View
+            </option>
+          </select>
 
-    {/* Total Floors */}
-    <div className="mb-4">
-      <label className="block font-semibold mb-2">Total Floors</label>
-      <input
-        type="text"
-        className="w-full border rounded-md px-4 py-2 focus:outline-none focus:border-primary"
-        value={totalFloors}
-        onChange={(e) => setTotalFloors(e.target.value)}
-      />
-    </div>
+          {/* Floor Number */}
+          <div className="mb-4 mt-4">
+            <label className="block font-semibold mb-2 w-fit text-xs">
+              Floor Number
+            </label>
+            <input
+              type="text"
+              className="w-full h-[30px] border rounded-md px-4 py-2 focus:outline-none focus:border-primary"
+              value={data.floorNumber}
+              onChange={(e) => onChange("floorNumber", e.target.value)}
+            />
+          </div>
 
-    {/* Unit Number */}
-    <div className="-mb-10">
-      <label className="block font-semibold mb-2">Unit Number</label>
-      <input
-        type="text"
-        className="w-full border rounded-md px-4 py-2 focus:outline-none focus:border-primary"
-        value={unitNumber}
-        onChange={(e) => setUnitNumber(e.target.value)}
-      />
-    </div>
-  </div>
-</div>
+          {/* Tower/Block */}
+          <div className="mb-4">
+            <label className="block font-semibold mb-2 w-fit text-xs">
+              Tower/Block
+            </label>
+            <input
+              type="text"
+              className="w-full h-[30px] border rounded-md px-4 py-2 focus:outline-none focus:border-primary"
+              value={data.towerBlock}
+              onChange={(e) => onChange("towerBlock", e.target.value)}
+            />
+          </div>
+        </div>
 
-      {/* Private Balcony */}
-      {/* <div className="mb-4">
-        <label className="block font-semibold mb-2">Private Balcony</label>
-        <input
-          type="checkbox"
-          checked={privateBalcony}
-          onChange={(e) => setPrivateBalcony(e.target.checked)}
-        />
-      </div> */}
+        {/* Second Column */}
+        <div className="mb-4 flex-1 pl-4 mt-0">
+          <label className="block font-semibold mb-2 w-fit text-xs">
+            Flooring Option
+          </label>
+          <input
+            type="text"
+            className="w-full border h-[30px] rounded-md px-4 py-2 focus:outline-none focus:border-primary"
+            value={data.flooringOption}
+            onChange={(e) => onChange("flooringOption", e.target.value)}
+          />
+
+          {/* Total Floors */}
+          <div className="mb-4">
+            <label className="block font-semibold mb-2 mt-4 w-fit text-xs">
+              Total Floors
+            </label>
+            <input
+              type="text"
+              className="w-full h-[30px] border rounded-md px-4 py-2 focus:outline-none focus:border-primary"
+              value={data.totalFloors}
+              onChange={(e) => onChange("totalFloors", e.target.value)}
+            />
+          </div>
+
+          {/* Unit Number */}
+          <div className="">
+            <label className="block font-semibold mb-2 w-fit text-xs">
+              Unit Number
+            </label>
+            <input
+              type="text"
+              className="w-full border h-[30px] rounded-md px-4 py-2 focus:outline-none focus:border-primary"
+              value={data.unitNumber}
+              onChange={(e) => onChange("unitNumber", e.target.value)}
+            />
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

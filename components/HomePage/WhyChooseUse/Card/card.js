@@ -12,7 +12,7 @@ const Card = ({name, description}) => {
                 />
             </div>
             <h1 className="font-semibold text-base lg:text-xl my-4 lg:my-5">{name}</h1>
-            <p className="mb-10 text-[13px] md:text-[15px] lg:text-sm w-[80%] m-auto text-gray-500">{description.label}</p>
+            <p className="mb-10 text-[13px] md:text-[14px] w-[80%] m-auto text-gray-500">{description.label}</p>
         </div>
      );
 }

@@ -21,6 +21,7 @@
     border-radius: 50%;
     border: 1.5px solid #003E71;
     padding: 2px;
+    object-fit: cover;
 }
 
 .name{
@@ -28,16 +29,19 @@
     position: absolute;
     top: 28%;
     left: 20%;
+    font-size: 15px;
     font-weight: 600;
 }
 
 .story{
-    display: -webkit-box;
+    /* display: -webkit-box; */
     -webkit-line-clamp: 7; /* Number of lines to display */
     -webkit-box-orient: vertical;
     overflow: scroll;
     text-overflow: ellipsis;
+    cursor: pointer;
     color: #666;
+    line-height: 23px;
 }
 .story::-webkit-scrollbar{
     display: none;
@@ -47,13 +51,13 @@
     position: absolute;
     bottom: 8%;
     left: 10%;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 600;
     margin-top: 15px;
 }
 .cityUnderline{
-    width: 91px;
-    height: 4px;
+    width: 71px;
+    height: 3px;
     flex-shrink: 0;
     background: #A37F4F;
 }
@@ -71,7 +75,7 @@
         left: 18%;
     }
     .story{
-        font-size: 14px;
+        font-size: 12px;
         line-height: 21px;
     }    
 }

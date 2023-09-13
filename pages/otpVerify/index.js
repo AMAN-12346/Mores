@@ -9,6 +9,9 @@ import right_side_image from "../register/assets/right_side_image.png";
 import logo_image from "../register/assets/logo_image.png";
 import Services from "@/components/HomePage/Services/Services";
 import { useAuth } from "../../context/auth";
+import styles from "./OtpVerification.module.css";
+import { toast } from 'react-toastify';
+
 
 const VerifyOTP = () => {
   const [otp, setOTP] = useState(["", "", "", "", "", ""]);
@@ -17,6 +20,9 @@ const VerifyOTP = () => {
   const [auth, setAuth] = useAuth();
   const [backendError, setError] = useState("");
   const [resendOtpMessage, setResendOtpMessage] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const source = router.query.source;
 
   const otpInputsRef = useRef([
     { current: null },
@@ -68,7 +74,7 @@ const VerifyOTP = () => {
     const enteredOTP = otp.join("");
 
     // If the userID starts with "+91", it's a mobile number
-    const isMobileNumber = userID.startsWith("+91");
+    const isMobileNumber = userID?.startsWith("+91");
 
     const payload = {
       userID,
@@ -76,6 +82,7 @@ const VerifyOTP = () => {
     };
     console.log("payload from verify : ", payload);
     try {
+      setLoading(true);
       // Send POST request to verify OTP
       const response = await axios.post(
         "http://localhost:1950/api/v1/user/verifyOTP",
@@ -93,13 +100,21 @@ const VerifyOTP = () => {
 
         // Delete the userID from local storage
         localStorage.removeItem("userID");
-        setLoginSuccess(true); // Set the login success state to true
+        setLoginSuccess(true);
+        toast.success(response.data?.responseMessage) // Set the login success state to true
+        setLoading(false);
         setTimeout(() => {
           setLoginSuccess(false); // Reset the login success state after a timeout
-          router.push("/");
         }, 1000);
+        if (source === "register") {
+          router.push("/register/registerAs"); // Redirect to home page if source is login
+        } else {
+          router.push("/");
+        }
       } else {
         setError(response.data?.responseMessage);
+        toast.error(response.data?.responseMessage)
+        setLoading(false);
         setTimeout(() => {
           setError("");
         }, 3000);
@@ -107,10 +122,14 @@ const VerifyOTP = () => {
       }
     } catch (error) {
       console.error("Error logging in:", error);
+      setLoading(false);
     }
   };
   const handleResendOTP = async () => {
     const userID = localStorage.getItem("userID");
+    if (!userID) {
+      return;
+    }
 
     // If the userID starts with "+91", it's a mobile number
     const isMobileNumber = userID.startsWith("+91");
@@ -120,6 +139,7 @@ const VerifyOTP = () => {
     };
 
     try {
+      setLoading(true);
       // Send PUT request to resendOTP
       const response = await axios.put(
         "http://localhost:1950/api/v1/user/resendOTP",
@@ -141,25 +161,30 @@ const VerifyOTP = () => {
           }
         });
         setResendOtpMessage(response.data?.responseMessage);
+        toast.success(response.data?.responseMessage)
+        setLoading(false);
         setTimeout(() => {
           setResendOtpMessage("");
         }, 3000);
         router.push("/otpVerify");
       } else {
         setError(response.data?.responseMessage);
+        toastr.error(response.data?.responseMessage)
+        setLoading(false);
         setTimeout(() => {
           setError("");
         }, 3000);
       }
     } catch (error) {
+      setLoading(false);
       console.log(error);
     }
   };
 
   return (
-    <div className="flex items-center justify-center max-h-fit overflow-x-hidden overflow-y-hidden">
-      <div className="w-1/2 p-32 bg-login_background">
-        <div className="absolute top-4 left-4">
+    <div className={styles.loginContainer}>
+      <div className={styles.leftContent}>
+        <div className={styles.logo}>
           <Image
             className="bg-contain"
             src={logo_image}
@@ -168,68 +193,64 @@ const VerifyOTP = () => {
             width={130}
           />
         </div>
-        <h1 className="text-2xl font-bold">Verify OTP</h1>
-        <p className="mt-2">Enter the 6 digit code you received.</p>
-        <div className="flex mt-6 w-9/12">
-          {otp.map((value, index) => (
-            <input
-              key={index}
-              type="text"
-              maxLength="1"
-              inputMode="numeric"
-              pattern="[0-9]"
-              placeholder="0"
-              className="w-1/5 ml-2 px-2 py-1 text-center border rounded-lg focus:outline-none focus:ring focus:border-blue-300"
-              value={value}
-              onChange={(e) => handleOTPChange(index, e.target.value)}
-              onKeyDown={(e) => handleKeyDown(e, index)}
-              ref={(input) => (otpInputsRef.current[index] = input)}
-            />
-          ))}
-        </div>
+        <div className={styles.formContainer}>
+          <h1 className={styles.heading}>Verify OTP</h1>
+          <p className={styles.slogan}>Enter the 6 digit code you received.</p>
+          <div className="flex mt-3 w-72 -ml-3">
+            {otp.map((value, index) => (
+              <input
+                key={index}
+                type="text"
+                maxLength="1"
+                inputMode="numeric"
+                pattern="[0-9]"
+                placeholder="X"
+                className="w-1/5 ml-2 px-2 py-1 text-center"
+                style={{
+                  background: "none", // Remove the background
+                  border: "none", // Remove the default border
+                  borderBottom: "2px solid #333", // Add your desired dark bottom border style here
+                  outline: "none", // Remove the focus outline
+                }}
+                value={value}
+                onChange={(e) => handleOTPChange(index, e.target.value)}
+                onKeyDown={(e) => handleKeyDown(e, index)}
+                ref={(input) => (otpInputsRef.current[index] = input)}
+              />
+            ))}
+          </div>
 
-        <p className="mt-6">
-          <span className="text-gray-500">Not get code yet?</span>
-          <a
-            href="#"
-            className="text-button underline ml-1"
-            onClick={handleResendOTP}
-          >
-            Resend
-          </a>
-        </p>
-        <button
-          className="w-9/12 bg-button text-white py-2 rounded-lg mt-6"
-          onClick={handleVerifyOTP}
-        >
-          Verify
-        </button>
+          <p className="mt-3">
+            <span className={styles.notGet}>Not get code yet?</span>
+            <a
+              href="#"
+              className="text-button underline ml-1"
+              onClick={handleResendOTP}
+            >
+              Resend
+            </a>
+          </p>
+          <div className={styles.buttonContainer}>
+            <button
+              className={`${styles.button} bg-button text-white py-2 rounded-lg mt-4`}
+              onClick={handleVerifyOTP}
+              disabled={loading}
+            >
+              {loading ? "Verifing..." : "Verify"}
+            </button>
+          </div>
+              </div>
 
-        {loginSuccess && (
-          <p className="text-green-500 mt-2">Login successfully!</p>
-        )}
-        {resendOtpMessage && (
-          <p className="text-red-500 mt-2">{resendOtpMessage}</p>
-        )}
-
-        {backendError && <p className="text-red-500 mt-2">{backendError}</p>}
-
-        <div className="mt-0">
-          <Image
-            src={footer_image}
-            alt="footer-image"
-            height={500}
-            width={500}
-          />
+        <div className={styles.footerImage}>
+          <Image src={footer_image} alt="footer-image" />
         </div>
       </div>
-      <div className="w-1/2 bg-contain">
+      <div className={styles.rightContainer}>
         <Image
           src={right_side_image}
-          alt="footer-image"
-          height={0}
-          width={0}
-          className=""
+          alt="right-side-image"
+          layout="fill"
+          objectFit="cover"
         />
       </div>
     </div>

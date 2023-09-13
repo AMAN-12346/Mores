@@ -12,22 +12,48 @@ import DropdownButton from '@/utils/DropdownButton/DropdownButton';
 import useWindowWidth from '@/context/useWindowWidth';
 import BurgerMenu from './BurgerMenu';
 import MobileMenu from './MobileMenu';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import navbarContent from '@/content/Navbar';
 
  
 const Navbar = () => {
     const [auth, setAuth] = useAuth();
     const [navbarContentData, setNavbarContentData] = useState(navbarContent);
-
+    const [prevScrollPos, setPrevScrollPos] = useState(0);
     const router = useRouter();
     const windowWidth = useWindowWidth();
+
+    // hide navbar in desktop and tablet view only
+    useEffect(() => {
+        const handleScroll = () => {
+          const currentScrollPos = window.scrollY;
+        //   console.log("--->", window)
+          if (prevScrollPos > currentScrollPos && windowWidth >768) {
+            // Show the navbar
+            document.getElementById("navbar").style.top = "0";
+          } else {
+            // Hide the navbar
+            document.getElementById("navbar").style.top = "-100px";
+          }
+          setPrevScrollPos(currentScrollPos);
+          if (prevScrollPos == currentScrollPos) {
+
+            console.log("screen stopped")
+          }
+        };
+    
+        window.addEventListener("scroll", handleScroll);
+    
+        return () => {
+          window.removeEventListener("scroll", handleScroll);
+        };
+      }, [prevScrollPos]);
 
     // List of paths where Navbar should be hidden
     const pathsWithoutNavbar = ['/login', '/register','/otpVerify'];
 
     if (pathsWithoutNavbar.includes(router.pathname)) {
-        return null; // Do not render the Navbar
+        return null;
     }
 
     // for mobile view
@@ -39,46 +65,23 @@ const Navbar = () => {
         )
     }
 
+
     return ( 
-        <div className={Styles.navbar}>
-           <div className={`flex w-[100vw] ml-5 md:justify-between lg:justify-normal`}>
+        <div className={Styles.navbar} id="navbar">
+           <div className={`flex pl-4 md:justify-between lg:justify-normal ${Styles.outerDiv}`}>
                 {(windowWidth >1024) ?
-                    <div className='w-[65vw] flex items-center'>
-                        <div className='w-[13vw]'>
+                    <div className='w-[64vw] flex items-center'>
+                        <div className='w-[150px]'>
                             <MoresLogo />
                         </div>
 
-                        <div className={`flex justify-evenly mr-4 ml-7`}> 
+                        <div className={`flex justify-evenly ml-9`}> 
                         {Object.keys(navbarContentData).map((content)=> 
                             <div className={Styles.optionName}>
                                <DropdownButton optionName={content} menuItem={navbarContentData[content]} />  
                             </div>
                         )}
                         </div> 
-                                    
-                        {/* <div className={`flex justify-evenly mr-4 ml-7`}> 
-                            <div className={Styles.optionName}>
-                                <DropdownButton optionName="City" menuItem={['random', 'data']} />  
-                            </div>
-                            <div className={Styles.optionName}>
-                                <DropdownButton optionName="Sell" menuItem={['random', 'data']} />  
-                            </div>
-                            <div className={Styles.optionName}>
-                                <DropdownButton optionName="Rent" menuItem={['random', 'data']} />  
-                            </div>
-                            <div className={Styles.optionName}>
-                                <DropdownButton optionName="Projects" menuItem={['random', 'data']} />  
-                            </div>
-                            <div className={Styles.optionName}>
-                                <DropdownButton optionName="Agents" menuItem={['random', 'data']} />  
-                            </div>
-                            <div className={Styles.optionName}>
-                                <DropdownButton optionName="services" menuItem={['random', 'data']} />  
-                            </div>
-                            <div className={Styles.optionName}>
-                                <DropdownButton optionName="Resources" menuItem={['random', 'data']} />  
-                            </div>
-                        </div>  */}
                     </div>
                 : 
                 <div className='flex w-[180px] justify-between mt-[10px]'>
@@ -91,22 +94,27 @@ const Navbar = () => {
            
             <div className='md:w-[420px] lg:w-[420px]'>
                 {!auth.userResult ? 
-                    <div className='text-center hover:opacity-95 -mr-16'>
+                    <div className='text-center flex hover:opacity-95 absolute right-9 lg:mt-[20px]'>
+                        <Link href='/user'>
+                           <button className={`mr-3 ${Styles.sellRentButton}`}>Sell & Rent Property</button>
+                        </Link>
                         <Link href='/login'>
                             <button className={Styles.button}>Login Now</button> 
                         </Link>
                     </div>
                 :
-                    <div className='flex flex-start'>
-                        <button className={`mr-3 ${Styles.sellRentButton}`}>Sell & Rent Property</button>
-                        <Image src={fillHeart} width={24} height={28} className='mr-2'/>
+                    <div className='flex flex-start md:mt-[1px] lg:mt-[6px]'>
+                        <Link href='/user'>
+                           <button className={`mr-3 mt-[14px] ${Styles.sellRentButton}`}>Sell & Rent Property</button>
+                        </Link>
+                        <Image src={fillHeart} width={24} height={28} className='mr-4 mt-2'/>
 
-                        <Image src={notificationBell} width={17} height={21}/>
-                        <div className='relative pt-3 mr-4'>
+                        <Image src={notificationBell} width={17} height={21} className='mt-2'/>
+                        <div className='relative pt-4 mr-4'>
                             <p className={Styles.counter}>{auth.userResult?.notification?.length ? auth.userResult?.notification?.length : 0}</p>
                         </div>
             
-                        <div className={Styles.optionName}>
+                        <div className={Styles.divName}>
                             <div className={Styles.name}>
                                 <ProfileDropdownButton />
                             </div>                         
