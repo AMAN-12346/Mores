@@ -10,6 +10,8 @@ import logo_image from "../register/assets/logo_image.png";
 import Services from "@/components/HomePage/Services/Services";
 import { useAuth } from "../../context/auth";
 import styles from "./OtpVerification.module.css";
+import { toast } from 'react-toastify';
+
 
 const VerifyOTP = () => {
   const [otp, setOTP] = useState(["", "", "", "", "", ""]);
@@ -98,7 +100,8 @@ const VerifyOTP = () => {
 
         // Delete the userID from local storage
         localStorage.removeItem("userID");
-        setLoginSuccess(true); // Set the login success state to true
+        setLoginSuccess(true);
+        toast.success(response.data?.responseMessage) // Set the login success state to true
         setLoading(false);
         setTimeout(() => {
           setLoginSuccess(false); // Reset the login success state after a timeout
@@ -110,6 +113,7 @@ const VerifyOTP = () => {
         }
       } else {
         setError(response.data?.responseMessage);
+        toast.error(response.data?.responseMessage)
         setLoading(false);
         setTimeout(() => {
           setError("");
@@ -157,6 +161,7 @@ const VerifyOTP = () => {
           }
         });
         setResendOtpMessage(response.data?.responseMessage);
+        toast.success(response.data?.responseMessage)
         setLoading(false);
         setTimeout(() => {
           setResendOtpMessage("");
@@ -164,6 +169,7 @@ const VerifyOTP = () => {
         router.push("/otpVerify");
       } else {
         setError(response.data?.responseMessage);
+        toastr.error(response.data?.responseMessage)
         setLoading(false);
         setTimeout(() => {
           setError("");
@@ -233,16 +239,8 @@ const VerifyOTP = () => {
               {loading ? "Verifing..." : "Verify"}
             </button>
           </div>
-          {loginSuccess && (
-            <p className="text-green-500 mt-2">Login successfully!</p>
-          )}
-          {resendOtpMessage && (
-            <p className="text-red-500 mt-2">{resendOtpMessage}</p>
-          )}
+              </div>
 
-          {backendError && <p className="text-red-500 mt-2">{backendError}</p>}
-        </div>
-        <div></div>
         <div className={styles.footerImage}>
           <Image src={footer_image} alt="footer-image" />
         </div>

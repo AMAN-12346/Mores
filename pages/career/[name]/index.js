@@ -61,7 +61,7 @@ const index = () => {
                     </div>
                     <div className='m-auto w-fit'>
                         <InputValue className={Styles.containerInput} placeholder="Phone Number" value={phone} setValue={setPhone}/>
-                        <InputValue className={Styles.containerInput} placeholder="Your resume" value={resume} setValue={setResume} />
+                        <InputValue type="file" className={Styles.containerInput} placeholder="Your resume" value={resume} setValue={setResume} />
                     </div>
                     <div className='m-auto w-fit'>
                        <button className={Styles.formButton}>Submit</button>
