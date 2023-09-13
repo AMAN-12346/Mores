@@ -13,6 +13,7 @@ import IconLocation from '../../../assets/AmenitiesIcons/location.svg'
 import bathtub from '../../../assets/AmenitiesIcons/bathtub.svg'
 import bedRoom from '../../../assets/AmenitiesIcons/doubleBed.svg'
 import measured from '../../../assets/AmenitiesIcons/measured.svg'
+import Unfurnished from '../../../assets/AmenitiesIcons/Unfurnished.svg'
 import OverView from '../../../components/property/OverView';
 import Amenities from '../../../components/property/Amenities';
 import PropertyInformation from '../../../components/property/PropertyInformation';
@@ -27,12 +28,42 @@ import HighlightAmenities from '@/components/property/HighlightAmenities';
 import SimpleMap from '@/components/GoogleMapo/Using_Lat_Log';
 import data from '../../../content/FeaturedProperties/featuredProperties.json'
 import FeaturedSection from '@/components/HomePage/FeaturedPropertiesSection/FeaturedSection';
+import FeaturedSectionCard from '@/components/HomePage/FeaturedPropertiesSection/FeaturedSectionCard';
+import SearchResultCard from '@/components/SearchResultPage/Card/SearchResultCard';
 // import SimpleMap from '@/components/GoogleMapo/Using_Lat_Log'; 
 
 const SinglePropertyCard = () => {
+
+
+    const [isFilterOpen, setIsFilterOpen] = useState(false);
+    const itemPerPage = 3;
+    const [currentPage, setCurrentPage] = useState(0);
+    const rows = data.slice(
+        currentPage * itemPerPage,
+        (currentPage + 1) * itemPerPage
+    );
+    const handlePerPageChange = (pageNumber) => {
+        setCurrentPage(pageNumber);
+    };
+    const numberOfPages = Math.ceil(data.length / itemPerPage);
+    const pageIndex = Array.from({ length: numberOfPages }, (_, idx) => idx + 1);
+
+    const toggleFilter = () => {
+        setIsFilterOpen(!isFilterOpen);
+    };
+
+
+
     // const _id = "64e2f50633e52febc315572c"
     const _id = "64fac05b304ac2351c113157"
     const [property, setProperty] = useState();
+
+    const [expanded, setExpanded] = useState(false);
+
+    const togglePoints = () => {
+        setExpanded(!expanded);
+    };
+
     const ShowCard = async () => {
         try {
             const { data } = await axios.get(`http://localhost:1950/api/v1/property/viewproperty/${_id}`);
@@ -91,7 +122,7 @@ const SinglePropertyCard = () => {
 
                     {/* Right grid  */}
                     <div className="w-4/12">
-                        <div className="grid grid-cols-2 lg:gap-[5.5px] ">
+                        <div className="grid grid-cols-2 lg:gap-[5.5px] gap-[3px]">
                             {/* Render first image */}
                             <div className="w-full rounded-md  overflow-hidden">
                                 <img
@@ -159,7 +190,7 @@ const SinglePropertyCard = () => {
                     </div>
                 </div>
 
-                <div className="flex justify-between mt-3 lg:mr-11 md:mr-10 mr-8 ml-8 lg:text-[14px] text[12px]"> {/* Name and price */}
+                <div className="flex justify-between mt-3 lg:mr-11 md:mr-10 mr-8 ml-8 lg:text-[18px] text[14px]"> {/* Name and price */}
                     <p className="font-bold">{property?.propertyName}</p>
                     <p className="font-bold">₹ 12,00000</p>
                 </div>
@@ -171,13 +202,13 @@ const SinglePropertyCard = () => {
                         alt="IconLocation"
                         height={23}
                         width={23}
-                    /><a href="#" className="underline color:var(--neutral-grayscale-70, #78828A) hover:underline lg:text-[14px] text-[12px] px-2">
+                    /><a href="#" className="underline color:var(--neutral-grayscale-70, #78828A) hover:underline lg:text-[14px] text-[12px]">
                         {property?.locality}
                     </a>
                 </div>
 
                 <div className="lg:flex -mt-3 w-12/12 lg:ml-8 md:ml-3 justify-between"> {/* amenities and two button */}
-                    <div className="flex lg:w-6/12 w-12/12 lg:justify-start justify-start lg:ml-0 lg:mr-0 mr-6 ml-8 lg:mt-3 mt-3 lg:text-[14px] text-[12px]">
+                    <div className="flex lg:w-6/12 w-12/12 lg:justify-start justify-start lg:ml-0 lg:mr-0 mr-6 ml-8 lg:mt-3 mt-3 lg:text-[14px] md:text-[12px] text-[10px]">
                         <div className="flex items-center">
                             <Image
                                 className="bg-contain"
@@ -208,16 +239,17 @@ const SinglePropertyCard = () => {
                             />
                             <p className='p-2 items-center md:mr-4'>{property?.areaDetails.bedrooms ? property?.areaDetails.bedrooms : 1000} SqFt</p>
                         </div>
-                        {/* <div className="flex items-center">
+
+                        <div className="flex items-center">
                             <Image
                                 className="bg-contain"
-                                src={measured}
+                                src={Unfurnished}
                                 alt="Measured Icon"
                                 height={22}
                                 width={23}
                             />
-                            <p className='p-2 items-center'>Unfurnished</p>
-                        </div> */}
+                            <p className='p-2 items-center md:mr-4'>Unfurnished</p>
+                        </div>
                     </div>
                     <div className="flex lg:w-4/12 md:w-5/12 w-12/12 lg:justify-end justify-between lg:gap-6 lg:ml-0 lg:mr-10 ml-7 mr-10 mt-3 gap-4">
                         <button
@@ -249,7 +281,6 @@ const SinglePropertyCard = () => {
                                 background: '#931602',
                                 height: '50px',
                                 width: '300px'
-
                             }}
                         >
                             <Image
@@ -282,8 +313,50 @@ const SinglePropertyCard = () => {
                     <div className='px-8 mt-10 mb-[150px]'>
                         <div className='lg:-mt-40 md:mt-36 mt-7 lg:p-24 text-center'>
                             <h3 className='justify-center lg:text-[36px] md:text-[36px] text-2xl font-extrabold text-[#283646]'>Recommened For You</h3>
-                            <hr className="my-2 w-[260px] h-[5px] rounded-full m-auto bg-[#C88E20]" />
-                            <FeaturedSection data={data} />
+                            <hr className="my-2 w-[360px] h-[5px] rounded-full m-auto bg-[#C88E20]" />
+                            <div className='flex justify-center'>
+                            {rows.map((row, index) => (
+                                <FeaturedSectionCard key={index} singlePropertyData={row} />
+                            ))}
+                            </div>
+                        </div>
+
+                        <div className="flex -mt-4 justify-center gap-10 text-xl">
+                            {pageIndex
+                                .slice(
+                                    Math.max(0, currentPage - 2),
+                                    Math.min(numberOfPages, currentPage + 3)
+                                )
+                                .map((page) => (
+                                    <button
+                                        key={page}
+                                        onClick={() => handlePerPageChange(page - 1)}
+                                        className={
+                                            page === currentPage + 1
+                                                ? "active rounded-full w-12 h-12 text-white font-bold bg-paginationButton"
+                                                : ""
+                                        }
+                                    >
+                                        {page}
+                                    </button>
+                                ))}
+                            <button
+                                disabled={currentPage >= numberOfPages - 1}
+                                onClick={() => handlePerPageChange(currentPage + 1)}
+                            >
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="48"
+                                    height="16"
+                                    viewBox="0 0 48 16"
+                                    fill="none"
+                                >
+                                    <path
+                                        d="M47.7071 8.70711C48.0976 8.31658 48.0976 7.68342 47.7071 7.29289L41.3431 0.928932C40.9526 0.538408 40.3195 0.538408 39.9289 0.928932C39.5384 1.31946 39.5384 1.95262 39.9289 2.34315L45.5858 8L39.9289 13.6569C39.5384 14.0474 39.5384 14.6805 39.9289 15.0711C40.3195 15.4616 40.9526 15.4616 41.3431 15.0711L47.7071 8.70711ZM0 9H47V7H0V9Z"
+                                        fill="black"
+                                    />
+                                </svg>
+                            </button>
                         </div>
                     </div>
                 </div>
