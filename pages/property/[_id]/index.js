@@ -123,37 +123,45 @@ const SinglePropertyCard = () => {
                     <div className="w-4/12">
                         <div className="grid grid-cols-2 lg:gap-[5.5px] gap-[3px]">
                             {/* Render first image */}
-                            <div className="w-full rounded-md  overflow-hidden">
-                                <img
+                            <div className="w-full rounded-md overflow-hidden">
+                                <Image
+                                    className="w-full h-full"
                                     src={property?.images[1]?.original}
                                     alt="First Image"
-                                    className="w-full h-full object-cover"
+                                    height={400}
+                                    width={500}
                                 />
                             </div>
 
                             {/* Render second image */}
                             <div className="w-full rounded-md overflow-hidden">
-                                <img
+                                <Image
+                                    className="w-full h-full"
                                     src={property?.images[2]?.original}
-                                    alt="Second Image"
-                                    className="w-full h-full object-cover"
+                                    alt="First Image"
+                                    height={400}
+                                    width={500}
                                 />
                             </div>
 
                             {/* Render 3rd image */}
                             <div className="w-full rounded-md overflow-hidden">
-                                <img
+                            <Image
+                                    className="w-full h-full"
                                     src={property?.images[3]?.original}
-                                    alt="Second Image"
-                                    className="w-full h-full object-cover"
+                                    alt="First Image"
+                                    height={400}
+                                    width={500}
                                 />
                             </div>
                             {/* Render 4th image */}
                             <div className="w-full rounded-md overflow-hidden">
-                                <img
+                            <Image
+                                    className="w-full h-full"
                                     src={property?.images[4]?.original}
-                                    alt="Second Image"
-                                    className="w-full h-full object-cover"
+                                    alt="First Image"
+                                    height={400}
+                                    width={500}
                                 />
                             </div>
 
@@ -164,10 +172,12 @@ const SinglePropertyCard = () => {
 
                             {/* Display the image count */}
                             <div className="w-full rounded-md overflow-hidden relative">
-                                <img
-                                    src={property?.images[4]?.original}
-                                    alt="Second Image"
-                                    className="w-full h-full object-cover"
+                            <Image
+                                    className="w-full h-full"
+                                    src={property?.images[0]?.original}
+                                    alt="First Image"
+                                    height={400}
+                                    width={500}
                                 />
                                 <div className="absolute inset-0 flex justify-center items-center text-white bg-gray-800 bg-opacity-75">
                                     <p className="text-2xl font-semibold">{property?.images.length - 2} +</p>
@@ -314,9 +324,9 @@ const SinglePropertyCard = () => {
                             <h3 className='justify-center lg:text-[36px] md:text-[36px] text-2xl font-extrabold text-[#283646]'>Recommened For You</h3>
                             <hr className="my-2 w-[360px] h-[5px] rounded-full m-auto bg-[#C88E20]" />
                             <div className='flex justify-center'>
-                            {rows.map((row, index) => (
-                                <FeaturedSectionCard key={index} singlePropertyData={row} />
-                            ))}
+                                {rows.map((row, index) => (
+                                    <FeaturedSectionCard key={index} singlePropertyData={row} />
+                                ))}
                             </div>
                         </div>
 
