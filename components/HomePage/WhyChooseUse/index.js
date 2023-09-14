@@ -18,8 +18,8 @@ const WhyChooseUs = () => {
                 </p>
             </div>
             <div className={`flex mt-12 pb-16 w-[100%] justify-evenly text-center px-12 ${Styles.cardsDiv}`}>
-                {Object.keys(list).map((item) =>
-                   <Card name={item} description={list[item]}/>
+                {Object.keys(list).map((item , index) =>
+                   <Card name={item} description={list[item]} key={index}/>
                 )}
             </div>
         </div>
