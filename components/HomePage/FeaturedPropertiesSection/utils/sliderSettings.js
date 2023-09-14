@@ -1,12 +1,10 @@
 export const sliderSettings = {
-    slidesPerView: 3,
-    breakpoints: {
-      480: {
-        slidesPerView: 1,
-        spaceBetween: 10,
-      },
-      600: {
-        slidesPerView: 3,
-      },
+  slidesPerView: 2, 
+  spaceBetween: 300, 
+  breakpoints: {
+    600: {
+      slidesPerView: 3,
+      spaceBetween: 330, 
     },
-  };
+  },
+};

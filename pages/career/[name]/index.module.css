@@ -1,3 +1,110 @@
 .mainDiv{
-    /* background-color: ; */
+    /* background-color: #018191; */
+    background-image: url("https://images.pexels.com/photos/17485632/pexels-photo-17485632/free-photo-of-an-artist-s-illustration-of-artificial-intelligence-ai-this-image-depicts-ai-safety-research-to-prevent-the-misuse-and-encourage-beneficial-uses-it-was-created-by-artist-khyati-trehan.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+    width: 100%;
+    opacity: 0.6;
+    height: 50vh;
+    height: fit-content;
+    /* text-align: center; */
+    /* margin: auto; */
+}
+
+.heading{
+    font-size: 67px;
+    padding-top: 9vh;
+    color: rgb(87, 88, 89);
+    padding-bottom: 3vh;
+}
+.para{
+    font-size: 12px;
+    color: rgb(11, 11, 11);
+    padding-bottom: 30px;
+}
+.jobheading{
+    margin-top: 40px;
+    padding-bottom: 30px;
+    font-size: 30px;
+    color: #018191;
+}
+
+.jobButton{
+    background-color: #f5841b;
+    margin-top: 40px;
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+    height: 40px;
+    letter-spacing: 0.5px;
+    padding: 8px 25px;
+    border-radius: 4px;
+}
+
+.jobpara{
+    font-size: 14px;
+    color: #018191;
+    margin-top: 10px;
+    padding-bottom: 10px;
+}
+.jobParagraph{
+    font-size: 13px;
+    color: #4c4e4e;
+    margin-top: 10px;
+    padding-bottom: 6px;
+}
+
+/* requirements */
+.requirementPoint{
+    width: fit-content;
+    /* background-color: #ffee98; */
+    background-color: #f7f7f7;
+    color: #018191;
+    margin: 10px 10px;
+    padding: 10px 19px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    font-size: 12px;
+    border-radius: 25px;
+    border: 1px solid #018191;
+    cursor: default;
+}
+
+
+/* form  css */
+.container{
+    width: 100%;
+    padding: 10px;
+    padding-bottom: 30px;
+    background-color: #FAEEE0;
+    border-radius: 10px 10px 0px 0px;
+}
+.containerHeading{
+    font-size: 40px;
+    letter-spacing: 1px;
+    color: #f5841b;
+    padding: 20px 0px;
+    text-align: center;
+}
+.containerInput{
+    width: 300px;
+    padding: 8px 10px;
+    font-size: 14px;
+    margin: 10px 0px;
+    background-color: #ffffff;
+    border: 1.5px solid #018191;
+    color: #018191;
+    border-radius: 6px;
+}
+.containerInput:focus{
+    outline: none;
+}
+.formButton{
+    background-color: #aa2516;
+    margin: 40px 0;
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+    height: 40px;
+    letter-spacing: 0.5px;
+    padding: 8px 35px;
+    border-radius: 4px;
 }

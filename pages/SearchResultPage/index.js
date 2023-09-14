@@ -14,8 +14,6 @@ const SearchResultPage=()=>{
         <FilterSection data={parsedResults}/>
         <FeelFreeToContact/>
         <OurNewsBlog/>
-        
-
         </>
 
     )
