@@ -63,7 +63,6 @@ const SearchSection = () => {
 
      </div> */}
       {/* <div className="flex flex-col justify-end">
-        
         <div className="flex w-full overflow-hidden  ">
           <Image src={repeatImg} width={150} height={50} alt='buildings' />
           <Image src={repeatImg} width={100} height={50} alt='buildings' />
