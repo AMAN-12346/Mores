@@ -68,7 +68,7 @@
   width: 100%;
 }
 .buttonContainer {
-  width: 100%;
+  width: 280px;
   display: flex;
   justify-content: center;
   margin-bottom: -8px;
@@ -144,9 +144,10 @@
   }
 
   .buttonContainer {
-    width: 100%;
+    width: 290px;
     justify-content: center;
     display: flex;
+  
   }
 
   .footerImage {
