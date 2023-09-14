@@ -103,7 +103,7 @@ const Career = (title) => {
                 <hr className={Styles.underline} />
                 <div className='justify-center mt-5'>
                 {careerContent.jobs.map((job,index)=> 
-                    <div className={Styles.jobDiv}>
+                    <div className={Styles.jobDiv} key={index}>
                         <div>
                             <h4 className={Styles.jobheading}>{job.title}</h4>
                             <h5>Salary: Rs. XXXX/year</h5>
