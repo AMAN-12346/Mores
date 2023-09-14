@@ -12,7 +12,7 @@ const ServiceCard = ({name, description}) => {
                 {name}
             </h1>                 
             <ul className={Styles.unorderedList}>
-                {description.points.map((point)=> <li className={Styles.listItem}>{point}</li> )}
+                {description.points.map((point, index)=> <li className={Styles.listItem} key={index}>{point}</li> )}
             </ul>  
             <div>
                 <Link href={description.path}>

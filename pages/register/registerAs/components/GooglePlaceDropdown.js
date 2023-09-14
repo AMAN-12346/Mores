@@ -77,6 +77,7 @@ const GoogleMap = ({ google, updateParentLocation }) => {
       <input
         type="text"
         value={searchValue}
+        style={{outline:'none'}}
         onChange={onSearchInputChange}
         placeholder="Search for a location"
         className="pl-4 lg:rounded-lg md:border-lg sm: border-none h-[30px] w-full"

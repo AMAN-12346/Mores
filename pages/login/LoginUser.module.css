@@ -39,6 +39,7 @@
   width: 100%;
   display: flex;
   flex-direction: column;
+  
   align-items: left;
   text-align: center;
   margin-top: -10px;
@@ -70,6 +71,7 @@
   width: 100%;
   display: flex;
   justify-content: center;
+  margin-left: 0px;
 }
 
 .footerImage {
@@ -98,7 +100,9 @@
   object-fit: contain;
 }
 
-@media (max-width: 767px) {
+
+
+@media (max-width: 767px ) {
   /* Mobile styles */
   .loginContainer {
     flex-direction: column;
@@ -144,10 +148,12 @@
 
   .buttonContainer {
     /* width: 100%; */
-    width: 260px;
+    width: 250px;
     justify-content: center;
     margin-left: 16px;
     display: flex;
+    margin: auto;
+
   }
   .footerImage {
     position: relative;
@@ -166,7 +172,7 @@
   }
 }
 
-@media (min-width: 768px) and (max-width: 1023px) {
+@media (min-width: 768px) and (max-width: 1024px) {
   /* Tablet styles */
   .loginContainer {
     flex-direction: column;
@@ -215,6 +221,7 @@
     height: 70px;
     margin: auto;
     margin-top: 15px;
+
   }
 
   .button {
@@ -234,6 +241,7 @@
     flex-shrink: 0;
     justify-content: center;
     margin-left: 75px;
+    margin: auto;
   }
 
 
@@ -247,11 +255,7 @@
     right: 0;
   }
 
-  /* .buttonSelect {
-    width: 0px;
-    height: 72px;
-    flex-shrink: 0;
-  } */
+  
 
   .rightImage {
     position: relative;
@@ -260,3 +264,5 @@
     object-fit: contain;
   }
 }
+
+

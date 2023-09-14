@@ -47,7 +47,7 @@ const Navbar = () => {
         return () => {
           window.removeEventListener("scroll", handleScroll);
         };
-      }, [prevScrollPos]);
+      }, [prevScrollPos, windowWidth]);
 
     // List of paths where Navbar should be hidden
     const pathsWithoutNavbar = ['/login', '/register','/otpVerify'];
@@ -76,8 +76,8 @@ const Navbar = () => {
                         </div>
 
                         <div className={`flex justify-evenly ml-9`}> 
-                        {Object.keys(navbarContentData).map((content)=> 
-                            <div className={Styles.optionName}>
+                        {Object.keys(navbarContentData).map((content,index)=> 
+                            <div className={Styles.optionName} key={index}>
                                <DropdownButton optionName={content} menuItem={navbarContentData[content]} />  
                             </div>
                         )}
@@ -107,9 +107,9 @@ const Navbar = () => {
                         <Link href='/user'>
                            <button className={`mr-3 mt-[14px] ${Styles.sellRentButton}`}>Sell & Rent Property</button>
                         </Link>
-                        <Image src={fillHeart} width={24} height={28} className='mr-4 mt-2'/>
+                        <Image src={fillHeart} width={24} height={28} className='mr-4 mt-2' alt='image'/>
 
-                        <Image src={notificationBell} width={17} height={21} className='mt-2'/>
+                        <Image src={notificationBell} width={17} height={21} className='mt-2' alt='image'/>
                         <div className='relative pt-4 mr-4'>
                             <p className={Styles.counter}>{auth.userResult?.notification?.length ? auth.userResult?.notification?.length : 0}</p>
                         </div>

@@ -1,6 +1,6 @@
 import React from 'react'
 import mVerified from '../../assets/moreIcon/mVerified.png'
-import MScore from '../../assets/moreIcon/MScore.png'
+import MScore from '../../assets/moreIcon/mScore.png'
 import Image from 'next/image';
 import Styles from "./index.module.css"
 

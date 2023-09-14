@@ -16,9 +16,9 @@ const About = () => {
                <h1 className={Styles.heading}>About Us</h1>
                <p className={Styles.paragraph}>{aboutContent.about}</p>
                <h1 className={Styles.subheading}>Management Team</h1>
-               {aboutContent.person.map((data) => 
-                    <div className='flex mb-3'>
-                        <Image src={data.imageFile} width={600} height={600} className={Styles.pic} />
+               {aboutContent.person.map((data, index) => 
+                    <div className='flex mb-3' key={index}>
+                        <Image src={data.imageFile} width={600} height={600} className={Styles.pic} alt='image'/>
                         <div className={Styles.dataDiv}>
                             <h2 className={Styles.nameheading}>{data.name}, {data.position}</h2>
                             <p className={Styles.paragraph}>{data.story}</p>
@@ -30,8 +30,8 @@ const About = () => {
                <h1 className={`md:mt-12 ${Styles.subheading}`}>Our Services</h1>
                <div className='flex max-sm:flex-wrap max-sm:justify-center pb-7 mt-5'>
                 {aboutContent.services.map((data,index) => 
-                        <div className={Styles.serviceDiv} style={{backgroundColor: color[index]}}>
-                            <Image src={data.icon} width={600} height={600} className={Styles.icon} />
+                        <div className={Styles.serviceDiv} style={{backgroundColor: color[index]}} key={index}>
+                            <Image src={data.icon} width={600} height={600} className={Styles.icon} alt='image' />
                             <h2 className={Styles.servicePara}>{data.name}</h2>
                         </div>
                 )}
@@ -41,8 +41,8 @@ const About = () => {
                <h1 className={`md:mt-7 ${Styles.subheading}`}>Core Values of MORES</h1>
                <div className='flex pb-7 mt-5 flex-wrap justify-center text-center'>
                 {aboutContent.coreValues.map((data,index) => 
-                        <div className={Styles.coreValuesDiv}>
-                            <Image src={data.icon} width={600} height={600} className={Styles.icon} />
+                        <div className={Styles.coreValuesDiv} key={index}>
+                            <Image src={data.icon} width={600} height={600} className={Styles.icon} alt='image'/>
                             <h2 className={Styles.coreValuesPara}>{data.name}</h2>
                         </div>
                 )}
@@ -53,7 +53,7 @@ const About = () => {
                 <div className='flex pb-7 mt-5'>
                     {aboutContent.social.map((data,index) => 
                         <>
-                            <Image src={data.icon} width={60} height={60} className={Styles.SocialIcon} />
+                            <Image src={data.icon} width={60} height={60} className={Styles.SocialIcon} alt='image'/>
                         </>
                     )}
                </div>

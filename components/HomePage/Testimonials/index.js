@@ -16,8 +16,8 @@ const Testimonials = () => {
                 <hr className={Styles.underline} />
             </h1>       
             <div className={`lg:justify-center ml-7 md:ml-7 lg:ml-0 ${Styles.wrapper}`}>
-                {Object.keys(list).map((listItem) =>
-                    <Card description={list[listItem]}/>
+                {Object.keys(list).map((listItem, index) =>
+                    <Card description={list[listItem]} key={index}/>
                 )}
             </div>
             {/* conditional rendering of dots for tab view */}
