@@ -98,13 +98,13 @@ const Footer = () => {
                                 quickLinks ?
                                     <div>
                                         <button className={Styles.RightSlideButton}>
-                                            <Image src={leftArrow} width={18} height={18} className="m-auto rotate-90" />
+                                            <Image src={leftArrow} width={18} height={18} className="m-auto rotate-90" alt='image'/>
                                         </button>
                                     </div>
                                     :
                                     <div>
                                         <button className={Styles.RightSlideButton}>
-                                            <Image src={leftArrow} width={18} height={18} className="m-auto -rotate-90" />
+                                            <Image src={leftArrow} width={18} height={18} className="m-auto -rotate-90" alt='image'/>
                                         </button>
                                     </div>
                             }
@@ -126,13 +126,13 @@ const Footer = () => {
                                 about ?
                                     <div>
                                         <button className={Styles.RightSlideButton}>
-                                            <Image src={leftArrow} width={18} height={18} className="m-auto rotate-90" />
+                                            <Image src={leftArrow} width={18} height={18} className="m-auto rotate-90" alt='image'/>
                                         </button>
                                     </div>
                                     :
                                     <div>
                                         <button className={Styles.RightSlideButton}>
-                                            <Image src={leftArrow} width={18} height={18} className="m-auto -rotate-90" />
+                                            <Image src={leftArrow} width={18} height={18} className="m-auto -rotate-90" alt='image'/>
                                         </button>
                                     </div>
                             }
@@ -153,13 +153,13 @@ const Footer = () => {
                                 contacts ?
                                     <div>
                                         <button className={Styles.RightSlideButton}>
-                                            <Image src={leftArrow} width={18} height={18} className="m-auto rotate-90" />
+                                            <Image src={leftArrow} width={18} height={18} className="m-auto rotate-90" alt='image'/>
                                         </button>
                                     </div>
                                     :
                                     <div>
                                         <button className={Styles.RightSlideButton}>
-                                            <Image src={leftArrow} width={18} height={18} className="m-auto -rotate-90 " alt='icon' />
+                                            <Image src={leftArrow} width={18} height={18} className="m-auto -rotate-90 " alt='icon' alt='image'/>
                                         </button>
                                     </div>
                             }

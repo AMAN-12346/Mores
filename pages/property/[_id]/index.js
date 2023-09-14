@@ -226,7 +226,7 @@ const SinglePropertyCard = () => {
                                 height={23}
                                 width={23}
                             />
-                            <p className='p-2 items-center md:mr-4'>{property?.bedrooms} Bed's</p>
+                            <p className='p-2 items-center md:mr-4'>{property?.bedrooms} Beds</p>
                         </div>
                         <div className="flex items-center">
                             <Image
@@ -236,7 +236,7 @@ const SinglePropertyCard = () => {
                                 height={22}
                                 width={23}
                             />
-                            <p className='p-2 items-center md:mr-4'>{property?.bathrooms} Bath's</p>
+                            <p className='p-2 items-center md:mr-4'>{property?.bathrooms} Baths</p>
                         </div>
                         <div className="flex items-center">
                             <Image
