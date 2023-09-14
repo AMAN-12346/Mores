@@ -159,7 +159,7 @@ const Footer = () => {
                                     :
                                     <div>
                                         <button className={Styles.RightSlideButton}>
-                                            <Image src={leftArrow} width={18} height={18} className="m-auto -rotate-90 " alt='icon' alt='image'/>
+                                            <Image src={leftArrow} width={18} height={18} className="m-auto -rotate-90 " alt='image'/>
                                         </button>
                                     </div>
                             }
