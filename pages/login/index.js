@@ -292,7 +292,7 @@ const LoginUser = () => {
             </button>
             <div>
               <p className="mt-3">
-                Don't have an account?{" "}
+                Don not have an account?{" "}
                 <Link
                   href="/register"
                   className="text-button underline cursor-pointer"
