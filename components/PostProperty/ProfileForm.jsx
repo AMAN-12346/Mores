@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 const ProfileForm = () => {
@@ -9,10 +10,10 @@ const ProfileForm = () => {
         
         
       <div className="border-black p-10 me-2  bg-white rounded">
-        <img
+        <Image
           className="rounded-full"
           src="http://localhost:3000/_next/image?url=https%3A%2F%2Fs3-alpha-sig.figma.com%2Fimg%2F22aa%2F3b45%2F6260f5c114826d26f0063851b8322353%3FExpires%3D1693785600%26Signature%3DX0scVn4d3eneQGiJHCUCFGZATEWF3GA5fsx4MNMeYtFzwC7m~4KjS4HFh1Hw6YgaFLPLwVN5D~4BnNwVMpFSmSNTHiRn2CuGV5pqMCMaIHKNN0QXkzadNgpG-EQRUSOw~Dw7gcuUuaHJZ1Fb2YAiJg-vZZV3EA6x5RK2sAzDQ0nFt22F3nysZDJDgVIvsjoBFOUfRzQ4o3xM6VXe12mVZLgtRA4zaMCOIHd6QIoXuN01aIbF8r60ksLtoinf6NG3yQBew1CgRyESShuI7YjrgtLGIzKsvnOZc5EKaGSpuYIqS60SAPkwrJ~tgvYH2rVA38gRSAYEBDrRtMh8TaAv8A__%26Key-Pair-Id%3DAPKAQ4GOSFWCVNEHN3O4&w=128&q=75"
-          alt=""
+          alt="Image"
         />
         <div>
             <button className="text-sm p-4 font-semibold  border-slate-600 rounded" >Choose Image</button>
