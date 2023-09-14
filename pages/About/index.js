@@ -16,8 +16,8 @@ const About = () => {
                <h1 className={Styles.heading}>About Us</h1>
                <p className={Styles.paragraph}>{aboutContent.about}</p>
                <h1 className={Styles.subheading}>Management Team</h1>
-               {aboutContent.person.map((data) => 
-                    <div className='flex mb-3'>
+               {aboutContent.person.map((data, index) => 
+                    <div className='flex mb-3' key={index}>
                         <Image src={data.imageFile} width={600} height={600} className={Styles.pic} />
                         <div className={Styles.dataDiv}>
                             <h2 className={Styles.nameheading}>{data.name}, {data.position}</h2>
@@ -30,7 +30,7 @@ const About = () => {
                <h1 className={`md:mt-12 ${Styles.subheading}`}>Our Services</h1>
                <div className='flex max-sm:flex-wrap max-sm:justify-center pb-7 mt-5'>
                 {aboutContent.services.map((data,index) => 
-                        <div className={Styles.serviceDiv} style={{backgroundColor: color[index]}}>
+                        <div className={Styles.serviceDiv} style={{backgroundColor: color[index]}} key={index}>
                             <Image src={data.icon} width={600} height={600} className={Styles.icon} />
                             <h2 className={Styles.servicePara}>{data.name}</h2>
                         </div>
@@ -41,7 +41,7 @@ const About = () => {
                <h1 className={`md:mt-7 ${Styles.subheading}`}>Core Values of MORES</h1>
                <div className='flex pb-7 mt-5 flex-wrap justify-center text-center'>
                 {aboutContent.coreValues.map((data,index) => 
-                        <div className={Styles.coreValuesDiv}>
+                        <div className={Styles.coreValuesDiv} key={index}>
                             <Image src={data.icon} width={600} height={600} className={Styles.icon} />
                             <h2 className={Styles.coreValuesPara}>{data.name}</h2>
                         </div>

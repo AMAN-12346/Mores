@@ -238,7 +238,7 @@ const RentAgreement = () => {
                               <div className={`flex justify-between flex-wrap ${Styles.innerSummary}`}>
                                 {Object.keys(assets).map((asset, index) =>
 
-                                    <div className={Styles.amenityDetails}>
+                                    <div className={Styles.amenityDetails} key={index}>
                                         <div className={Styles.amenityName} >{asset}</div>
                                         <div className={Styles.amenityButton}>
                                             <button  onClick={() => assets[asset] !== 0 && setAssets({ ...assets, [asset]: assets[asset] - 1 })}>-</button>
@@ -391,7 +391,7 @@ const RentAgreement = () => {
                         <h2 className="font-semibold">AND</h2>
                         <p className="mb-5 text-xs">{rtitle} {rname}, S/O {rParentName} , having contact number {rMob}, Email id {rEmail}, PAN {rPan}, UID (ADHAAR NO.): {rAdhaar}, residing at {rAddress}.</p>
 
-                        <p className="mb-5 text-xs">For the purpose hereof, the Lessor and Lessee are referred to collectively as the "Parties" and individually the "Party" as the context may require.</p>
+                        <p className="mb-5 text-xs">For the purpose hereof, the Lessor and Lessee are referred to collectively as the Parties and individually the Party as the context may require.</p>
 
 
                         <p className="mb-5 text-xs">
@@ -416,7 +416,7 @@ const RentAgreement = () => {
                             </li>
 
                             <li>
-                                The notice period to be served by either party would be of {noticePeriod} Day(s). Either the LESSOR or the LESSEE may terminate this agreement without assigning any reasons whatsoever by giving one month's advance notice to the other party.
+                                The notice period to be served by either party would be of {noticePeriod} Day(s). Either the LESSOR or the LESSEE may terminate this agreement without assigning any reasons whatsoever by giving one month advance notice to the other party.
                             </li>
 
                             <li>
@@ -448,7 +448,7 @@ const RentAgreement = () => {
                             </li>
 
                             <li>
-                                That the Second Party shall have no right to sub-let the whole or part of Demised Premises to any other person or entity at any time. Further, The Lessor or his authorized representative has the right to visit the Demised Premises on any working day during business hours after taking the Lessee's permission.
+                                That the Second Party shall have no right to sub-let the whole or part of Demised Premises to any other person or entity at any time. Further, The Lessor or his authorized representative has the right to visit the Demised Premises on any working day during business hours after taking the Lessee permission.
                             </li>
 
                             <li>
@@ -483,12 +483,12 @@ const RentAgreement = () => {
                             </li>
 
                             <li>
-                                Without any prejudice to a Party's other rights and claims under this Lease or otherwise, if one party breaches any of its representations, obligations, warranties, covenants or undertakings or violates any provision hereunder, it shall indemnify and keep the other Party and/or service providers harmless against all direct damages and costs suffered or borne by it or them thereby including but not limited to costs incurred in defending all claims/actions, or proceedings that may arise or may be otherwise necessary to ensure exclusive, quiet and peaceful access, occupation and use of the Leased Premises in accordance with this Deed. Without prejudice to other rights enjoyed by either Party (non- defaulting Party) under the Deed and Applicable Laws, the other Party (Defaulting Party) shall be responsible for and will indemnify against all claims, demands, suits, proceedings, judgments, direct damage, and relevant costs that the non-defaulting Party may suffer or incur in connection with loss of life and/or personal injury to the occupants of the Leased Premises and/or damage to the Building if the same arise from any wrongful/negligent act or omission of the defaulting Party.
+                                Without any prejudice to a Party other rights and claims under this Lease or otherwise, if one party breaches any of its representations, obligations, warranties, covenants or undertakings or violates any provision hereunder, it shall indemnify and keep the other Party and/or service providers harmless against all direct damages and costs suffered or borne by it or them thereby including but not limited to costs incurred in defending all claims/actions, or proceedings that may arise or may be otherwise necessary to ensure exclusive, quiet and peaceful access, occupation and use of the Leased Premises in accordance with this Deed. Without prejudice to other rights enjoyed by either Party (non- defaulting Party) under the Deed and Applicable Laws, the other Party (Defaulting Party) shall be responsible for and will indemnify against all claims, demands, suits, proceedings, judgments, direct damage, and relevant costs that the non-defaulting Party may suffer or incur in connection with loss of life and/or personal injury to the occupants of the Leased Premises and/or damage to the Building if the same arise from any wrongful/negligent act or omission of the defaulting Party.
 
                             </li>
 
                             <li>
-                                Force Majeure: If the whole or any part of the Demised Premises shall at any time during the term of the lease be destroyed or damaged due to any force majeure circumstances including storm, tempest, flood, Act of God, an act of terrorism, war or any other irresistible force or the Lessee is deprived of the use of the Demised Premises for reasons not attributable to the Lessee, the Lessor hereby undertakes to restore the Demised Premises as expeditiously as possible or, as the case may be, to remove the impediment in its use and occupation as expeditiously as possible. Notwithstanding the foregoing, upon the happening of any such event as aforesaid, the Lessee shall not be liable to pay Lease Rent during the period the Lessee is deprived of the use of the Demised Premises or any part thereof. The Lessee shall also have the option to terminate the Lease after the event by giving one month's notice and without payment of any rent in lieu thereof and without incurring any liability to pay any other amount whatsoever to the Lessor.
+                                Force Majeure: If the whole or any part of the Demised Premises shall at any time during the term of the lease be destroyed or damaged due to any force majeure circumstances including storm, tempest, flood, Act of God, an act of terrorism, war or any other irresistible force or the Lessee is deprived of the use of the Demised Premises for reasons not attributable to the Lessee, the Lessor hereby undertakes to restore the Demised Premises as expeditiously as possible or, as the case may be, to remove the impediment in its use and occupation as expeditiously as possible. Notwithstanding the foregoing, upon the happening of any such event as aforesaid, the Lessee shall not be liable to pay Lease Rent during the period the Lessee is deprived of the use of the Demised Premises or any part thereof. The Lessee shall also have the option to terminate the Lease after the event by giving one month notice and without payment of any rent in lieu thereof and without incurring any liability to pay any other amount whatsoever to the Lessor.
 
                             </li>
 
