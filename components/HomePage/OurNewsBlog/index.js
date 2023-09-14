@@ -18,8 +18,8 @@ const OurNewsBlog = () => {
             </div>
             <div className={`${Styles.cardsDiv}`}>
                 {
-                    Object.keys(blogContent).map((news)=>
-                    <NewsBlogCard description={blogContent[news]}/>
+                    Object.keys(blogContent).map((news, index)=>
+                    <NewsBlogCard description={blogContent[news]} key={index}/>
                 )}
             </div>
             <div className='flex lg:mb-12 my-9 lg:mt-16 justify-center md:justify-between w-[78%] m-auto'>

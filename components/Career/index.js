@@ -30,14 +30,14 @@ const Career = (title) => {
             <div className='bg-[aliceblue] pb-9'>
                 <div className='flex md:w-[85%] lg:w-[75%] pt-5 m-auto justify-between'>
                     <div className='pt-24'>
-                        <h2 className={Styles.smallHeading}>We're hiring!</h2>
+                        <h2 className={Styles.smallHeading}>We are hiring!</h2>
                         <h1 className={Styles.heading}>
                             Join Our Team
                         </h1>
                         <p className={Styles.para}>We are looking for passionate people to join us on our mission. We value flat hierarchies, clear communication and full ownership and responsibility.</p>
                         <div className={Styles.opening}>View Openings</div>
                     </div>
-                    <Image src={jobImage} width={800} height={800} className={Styles.imageDiv}/>
+                    <Image src={jobImage} width={800} height={800} className={Styles.imageDiv} alt='image'/>
                 </div>
             </div>
 
@@ -61,7 +61,7 @@ const Career = (title) => {
                     <h2 className={Styles.h2heading}>
                         Your Life At <span style={{color: "#018191"}}>MORES</span>
                     </h2>
-                    <p className={Styles.careerPara}> life at Moore's is a journey of growth and innovation. The collaborative culture fuels your passion for excellence. Work-life balance is cherished, and diversity is celebrated. We're excited about the impactful work we do here.</p>
+                    <p className={Styles.careerPara}> life at More is a journey of growth and innovation. The collaborative culture fuels your passion for excellence. Work-life balance is cherished, and diversity is celebrated. We are excited about the impactful work we do here.</p>
                 </div>                
             </div>
 
@@ -103,7 +103,7 @@ const Career = (title) => {
                 <hr className={Styles.underline} />
                 <div className='justify-center mt-5'>
                 {careerContent.jobs.map((job,index)=> 
-                    <div className={Styles.jobDiv}>
+                    <div className={Styles.jobDiv} key={index}>
                         <div>
                             <h4 className={Styles.jobheading}>{job.title}</h4>
                             <h5>Salary: Rs. XXXX/year</h5>

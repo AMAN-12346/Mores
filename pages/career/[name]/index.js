@@ -7,7 +7,7 @@ import InputValue from '@/utils/InputValue';
 import { useState } from 'react';
 import Link from 'next/link';
 
-const index = () => {
+const Index = () => {
     const [data, setData] = useData();
     const [name, setName] = useState();
     const [email, setEmail] = useState();
@@ -37,16 +37,16 @@ const index = () => {
                 <p className={Styles.jobpara}>Expertise : <span style={{color:"#4c4e4e"}}>{data.experience}</span></p>
                 <div className={Styles.jobpara}>Requirements</div>
                 <ul className='mb-7 flex flex-wrap'>
-                    {data?.requirements?.map((points)=>
-                    <li className={Styles.requirementPoint}>{points}</li>
+                    {data?.requirements?.map((points, index)=>
+                    <li className={Styles.requirementPoint} key={index}>{points}</li>
                     )}
                 </ul>
                 <div className={Styles.jobpara}>Description</div>
                 <p className={Styles.jobParagraph}>{data.description}</p>
                 <div className={Styles.jobpara}>Must Have</div>
                 <ul className='pb-7 ml-3'>
-                    {data?.qualification?.map((line)=>
-                    <li className={Styles.jobParagraph}> ● {line}</li>
+                    {data?.qualification?.map((line, index)=>
+                    <li className={Styles.jobParagraph} key={index}> ● {line}</li>
                     )}
                 </ul>
 
@@ -72,6 +72,6 @@ const index = () => {
     );
 }
  
-export default index;
+export default Index;
 
 

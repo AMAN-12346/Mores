@@ -14,8 +14,8 @@ const Services = () => {
                 <hr className={Styles.underline} />
             </h1>       
             <div className={`${Styles.wrapper}`}>
-            {Object.keys(serviceList).map((service) =>
-                <ServiceCard name={service} description={serviceList[service]}/>
+            {Object.keys(serviceList).map((service, index) =>
+                <ServiceCard name={service} description={serviceList[service]} key={index}/>
             )}
             </div>
         </div>

@@ -76,8 +76,8 @@ const Navbar = () => {
                         </div>
 
                         <div className={`flex justify-evenly ml-9`}> 
-                        {Object.keys(navbarContentData).map((content)=> 
-                            <div className={Styles.optionName}>
+                        {Object.keys(navbarContentData).map((content,index)=> 
+                            <div className={Styles.optionName} key={index}>
                                <DropdownButton optionName={content} menuItem={navbarContentData[content]} />  
                             </div>
                         )}

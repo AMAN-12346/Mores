@@ -40,8 +40,8 @@ const OurLocation = () => {
             <div className='relative'>
                 {(windowWidth < 768) && <LeftRightSlideButtons leftFunction={() => scroll(-400)} rightFunction={() => scroll(+400)} className={Styles.buttonArrangement} />}
                 <div className={Styles.wrapper} ref={scrollContainerRef}> 
-                    {Object.keys(services).map((service)=>
-                        <Card name={service} imageSrc={services[service]} />
+                    {Object.keys(services).map((service, index)=>
+                        <Card name={service} imageSrc={services[service]} key={index}/>
                     )}
                 </div>
             </div>
