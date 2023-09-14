@@ -5,8 +5,8 @@ export default function RecommenedCard({Data}) {
     <div>
       {/* Render property cards */}
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-        {Data?.map((item) => (
-          <FeaturesSectionCard singlePropertyData={item} />
+        {Data?.map((data,index) => (
+          <FeaturesSectionCard  key={index} singlePropertyData={data} />
         ))}
       </div>
     </div>

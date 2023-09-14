@@ -24,7 +24,7 @@ export default function BasicAccordion() {
         <AccordionDetails>
             <div className="max-lg:flex justify-between max-md:flex-col">
               {filterOptions.map((option, index) => (
-                <div className="">
+                <div key={index}>
                   <MainAccordion
                     key={index}
                     hname={option.heading}
