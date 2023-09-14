@@ -24,19 +24,19 @@ const MobileMenu = () => {
             {/* Bottom menu */}
             <div className='fixed bottom-0 z-10 w-[100vw] h-[48px] pt-[8px] bg-white flex text-[10px] font-semibold justify-evenly tracking-wide shadow-lg shadow-gray-950'>
                 <div className={Styles.itemDiv}>
-                    <Image src={bottomHome} width={18} height={20}  className='m-auto mb-1'/>
+                    <Image src={bottomHome} width={18} height={20}  className='m-auto mb-1' alt='image'/>
                     Home
                 </div>
                 <div>
-                    <Image src={bottomSellRent} width={18} height={20} className='m-auto mb-1' />
+                    <Image src={bottomSellRent} width={18} height={20} className='m-auto mb-1' alt='image'/>
                     Sell & Rent
                 </div>
                 <div>
-                    <Image src={bottomHeart} width={18} height={20} className='m-auto mb-1' />
+                    <Image src={bottomHeart} width={18} height={20} className='m-auto mb-1' alt='image'/>
                     Favourites
                 </div>
                 <div>
-                    <Image src={notificationBell} width={16} height={20} className='m-auto mb-1' />
+                    <Image src={notificationBell} width={16} height={20} className='m-auto mb-1' alt='image'/>
                     Notification
                 </div>
             </div>
