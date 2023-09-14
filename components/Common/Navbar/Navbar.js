@@ -47,7 +47,7 @@ const Navbar = () => {
         return () => {
           window.removeEventListener("scroll", handleScroll);
         };
-      }, [prevScrollPos]);
+      }, [prevScrollPos, windowWidth]);
 
     // List of paths where Navbar should be hidden
     const pathsWithoutNavbar = ['/login', '/register','/otpVerify'];
