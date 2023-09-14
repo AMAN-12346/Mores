@@ -8,6 +8,8 @@ import axios from "axios";
 import { API } from "@/config.js";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
+import  {toast}  from "react-toastify";
+
 
 const AdditionalDetailsForm = ({
   data,
@@ -79,9 +81,10 @@ const AdditionalDetailsForm = ({
         console.log(photoURLs, "photo upload response");
 
         setPhotoUploadLoading(false);
-        setUploadMessage(
-          `${mappedPhotoUrls.length} Photos uploaded successfully!`
-        );
+        // setUploadMessage(
+        //   `${mappedPhotoUrls.length} Photos uploaded successfully!`
+        // );
+        toast(response.data?.responseMessage)
 
         // Clear success message after 3 seconds
         setTimeout(() => {
@@ -144,7 +147,8 @@ const AdditionalDetailsForm = ({
           console.log(response.data.responseMessage);
           setVideoUploadLoading(false);
           // Show success message
-          setUploadMessage(`${mappedVideoUrls.length} Videos uploaded successfully!`);
+          // setUploadMessage(`${mappedVideoUrls.length} Videos uploaded successfully!`);
+          toast.success(response.data?.responseMessage)
 
           // Clear success message after 3 seconds
           setTimeout(() => {
@@ -155,9 +159,12 @@ const AdditionalDetailsForm = ({
             "Error uploading videos:",
             response.data.responseMessage
           );
+          toast.error( response.data.responseMessage)
           setVideoUploadLoading(false);
           // Show error message
           setUploadMessage("Error uploading videos. Please try again.");
+          toast.error(response.data.responseMessage)
+
 
           // Clear error message after 3 seconds
           setTimeout(() => {
@@ -222,7 +229,8 @@ const AdditionalDetailsForm = ({
       if (response.status === 200) {
         // If the request is successful, update the state to remove the deleted photo
         setPhotoURLs((prevURLs) => prevURLs.filter((_, i) => i !== index));
-        setUploadMessage("Photo deleted successfully!");
+
+        toast.info(response.data?.responseMessage)
 
         // Clear error message after 3 seconds
         setTimeout(() => {
@@ -264,7 +272,7 @@ const AdditionalDetailsForm = ({
 
       if (response.status === 200) {
         setVideoURLs((prevURLs) => prevURLs.filter((_, i) => i !== index));
-        setUploadMessage("Video Deleted Successfully!");
+        toast.info(response.data?.responseMessage)
 
         // Clear error message after 3 seconds
         setTimeout(() => {

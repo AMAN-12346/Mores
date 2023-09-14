@@ -56,6 +56,16 @@ const PropertyDetailsForm = ({ data, onChange, onLocationChange }) => {
     { value: "pentHouse", label: "PentHouse" },
   ];
 
+  const propertiesTypeOptions = [
+    { value: "apartment", label: "Apartment" },
+    { value: "villa", label: "Villa" },
+    { value: "plot", label: "Plot" },
+    { value: "builderFloor", label: "Builder Floor" },
+    { value: "pentHouse", label: "PentHouse" },
+  ];
+
+
+
   const updateCityLocation = (city, longitude, latitude) => {
     setCity(city);
     setCityLongitude(longitude);

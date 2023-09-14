@@ -69,7 +69,7 @@ const RegisterUser = () => {
       }
     } catch (error) {
       setError(error.response?.data.responseMessage);
-      // toast.error(error.response?.data.responseMessage)
+      toast.error(error.response?.data.responseMessage)
       setTimeout(() => {
         setError("");
       }, 3000);

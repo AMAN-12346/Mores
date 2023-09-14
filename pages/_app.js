@@ -38,7 +38,7 @@ function MyApp({ Component, pageProps }) {
         <Component {...pageProps}/>
         <Footer /> 
       </DataProvider>
-      <ToastContainer />
+      <ToastContainer theme="dark"/>
     </AuthProvider>
   );
 }
