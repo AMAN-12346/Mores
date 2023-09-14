@@ -29,7 +29,7 @@ import Jogging from '../../../../../assets/AmenitiesIcons/Jogging.png';
 const amenityIcons = {
     Gymnasium: Gymnasium,
     school: school,
-    SwimmingPool:testing,
+    // SwimmingPool:testing,
     Lift : Lift,
     FireFightingSystems : FireFightingSystems,
     wifi : wifi,
@@ -60,6 +60,129 @@ export default function Amenities({ selected, onUpdateAmenities }) {
   const [showAll, setShowAll] = useState(false);
   const numAmenitiesToShow = showAll ? Object.keys(amenityIcons).length : 6;
 
+  const amenityIco ={
+    TennisCourt: {
+        image: TennisCourt,
+        name: 'Tennis Court'
+    },
+    table:{
+      image:table,
+      name:'Table'
+    },
+    Jogging: {
+        image: Jogging,
+        name: "Jogging"
+    },
+    PowerBackup: {
+        image: PowerBackup,
+        name: "Power Backup"
+    },
+    Gymnasium: {
+        image: Gymnasium,
+        name: "Gymnasium"
+    },
+    school: {
+        image: school,
+        name: "School"
+    },
+    sofa: {
+        image: sofa,
+        name: "Sofa"
+    },
+    Lift: {
+        image: Lift,
+        name: "Lift"
+    },
+    FireFightingSystems: {
+        image: FireFightingSystems,
+        name: "Fire Fighting Systems"
+    },
+    wifi: {
+        image: wifi,
+        name: "WIFI"
+    },
+    PowerBackup: {
+        image: PowerBackup,
+        name: "Power Backup"
+    },
+    Security: {
+        image: Security,
+        name: "Security"
+    },
+    CCTV: {
+        image: CCTV,
+        name: "CCTV"
+    },
+    tv: {
+        image: tv,
+        name: "TV"
+    },
+    KidsPool: {
+        image: school,
+        name: "Kids Pool"
+    },
+    BadmintonCourt: {
+        image: BadmintonCourt,
+        name: "Badminton Court"
+    },
+    TennisCourt: {
+        image: TennisCourt,
+        name: "Tennis Court"
+    },
+    Football: {
+        image: Football,
+        name: "Football"
+    },
+    SquashCourt: {
+        image: SquashCourt,
+        name: "Squash Court"
+    },
+    Cricket: {
+        image: Cricket,
+        name: "Cricket"
+    },
+    Volleyball: {
+        image: Volleyball,
+        name: "Volleyball"
+    },
+    Yoga: {
+        image: Yoga,
+        name: "Yoga"
+    },
+    SquashCourt: {
+        image: SquashCourt,
+        name: "Squash Court"
+    },
+    Basketball: {
+        image: Basketball,
+        name: "Basket ball"
+    },
+    Cricket: {
+        image: Cricket,
+        name: "Cricket"
+    },
+    bathtub: {
+        image: bathtub,
+        name: "bathtub"
+    },
+    doubleBed: {
+        image: doubleBed,
+        name: "doubleBed"
+    },
+    bed: {
+        image: doubleBed,
+        name: "Bed"
+    },
+    TableTennis: {
+        image: TennisCourt,
+        name: "Table Tennis"
+    },
+    park: {
+        image: school,
+        name: "Park"
+    },
+};
+
   useEffect(() => {
     onUpdateAmenities(selectedAmenities);
   }, [selectedAmenities, onUpdateAmenities]);
@@ -83,7 +206,7 @@ export default function Amenities({ selected, onUpdateAmenities }) {
               selectedAmenities.includes(amenity) ? 'text-primary text-xs' : 'text-gray-800 text-xs'
             }`}
             onClick={() => toggleAmenity(amenity)}
-          >
+            >
             <div
               className={`w-10 h-10 flex items-center justify-center rounded-full text-xs ${
                 selectedAmenities.includes(amenity) ? 'bg-secondary text-xs' : ''
@@ -92,14 +215,16 @@ export default function Amenities({ selected, onUpdateAmenities }) {
               <Image
                 src={amenityIcons[amenity]}
                 alt={amenity}
-                width={20}
-                height={15}
-                className={`rounded-md ${
-                  selectedAmenities.includes(amenity) ? 'bg-white' : ''
+                width={24}
+                height={25}
+                className={`${
+                  selectedAmenities.includes(amenity) ? '' : 'bg-[#ccd6d7] text-white rounded-full w-[22px] p-[2px]'
                 }`}
               />
+              
             </div>
-            <span>{amenity}</span>
+            <span>{amenityIco[amenity].name}</span>
+            
           </div>
         )
       ))}

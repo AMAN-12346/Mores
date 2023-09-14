@@ -14,7 +14,6 @@ const MobileViewSearchBox = ({onSearchButtonClick}) => {
     setLocationLongitude(longitude);
 
     setLocationLatitude(latitude);
-    console.log("location details: " , locationName, locationLatitude, locationLongitude)
   };
   return (
     <div className="flex text-xs gap-10 items-center p-1 bg-white rounded-full">

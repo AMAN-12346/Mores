@@ -11,11 +11,9 @@ const SearchResultPage=()=>{
     return(
         <>      
         <TopBar/>
-        <FilterSection data={parsedResults}/>
+         <FilterSection data={parsedResults}/>
         <FeelFreeToContact/>
         <OurNewsBlog/>
-        
-
         </>
 
     )

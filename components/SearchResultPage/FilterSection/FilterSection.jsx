@@ -58,13 +58,11 @@ const FilterSection = ({ data }) => {
                   </div>
                 </div>
               ) : (
-                // <Tags name = "Residential" />
                 <div className="flex justify-between">
                   <div className=" max-lg:flex justify-between max-md:flex-col">
                     {filterOptions.map((option, index) => (
-                      <div className="">
+                      <div key={index}>
                         <MainAccordion
-                          key={index}
                           hname={option.heading}
                           htype={option.key}
                           filters={option.filters}

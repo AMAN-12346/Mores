@@ -1,12 +1,12 @@
 import { useState } from "react"
-import queryString from "query-string"
 import nearme from "../../../assets/SearchBoxIcon/nearme.svg"
 import Image from "next/image"
 import axios from "axios"
-import  {googleApiKey} from '../../../config.js'
+import {apiGooglePlace} from '../../../config.js'
+import {useRouter} from "next/router"
 const NearMeSearch = ({isMobileView}) => {
   const [locationAccess, setLocationAccess] = useState(false);
-
+  const router=useRouter()
   const handleNearMeClick = async () => {
     try {
       const position = await new Promise((resolve, reject) => {
@@ -16,14 +16,13 @@ const NearMeSearch = ({isMobileView}) => {
       const { latitude, longitude } = position.coords;
       setLocationAccess(true);
 
-      console.log(locationAccess);
+      // console.log(locationAccess);
 
       // Use reverse geocoding to fetch detailed address from Google Places API
-      const apiUrl = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}&key=${googleApiKey}`;
+      const apiUrl = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}&key=${apiGooglePlace}`;
 
       const response = await fetch(apiUrl);
       const data = await response.json();
-
       const cityComponent = data.results[0]?.address_components.find(
         (component) => component.types.includes("locality")
       )?.long_name;
@@ -32,19 +31,22 @@ const NearMeSearch = ({isMobileView}) => {
       // Log the values to the console
       console.log("Latitude:", latitude);
       console.log("Longitude:", longitude);
-      console.log("City Name:", cityName);
+      console.log("CityName:", cityName);
 
       const payload = {
         latitude: latitude,
         longitude: longitude,
         cityName: cityName,
       };
-
-      const query = queryString.stringify(payload);
-      console.log("query", query);
+      
       // Send the search query to the backend using Axios
-      const backendResponse = await axios.post("/api/search", payload);
-      console.log("Backend Response:", backendResponse.data);
+      const backendResponse = await axios.get("http://localhost:1950/api/v1/property/searchProperty",{params:payload});
+      // console.log("Backend Response:", backendResponse.data);
+      const properties=backendResponse.data.result
+      router.push({
+        pathname: "/SearchResultPage",
+        query: { data: JSON.stringify(properties) },
+      })
     } catch (error) {
       alert("you have to allow location for search near me");
       console.log(error);
