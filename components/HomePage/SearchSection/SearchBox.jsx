@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import magnifyingGlass from "../../../assets/SearchBoxIcon/magnifyglass.svg";
-import downArrow from "../../../assets/SearchBoxIcon/downarrow.svg";
 import MobileViewSearchBox from "./MobileViewSearchBox";
 import GooglePlaceDropdown from "@/pages/register/registerAs/components/GooglePlaceDropdown";
 import NearMeSearch from "./NearMe";

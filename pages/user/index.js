@@ -22,7 +22,7 @@ const Sidebar = () => {
     <div className="flex w-full">
       <div className="w-[320px] h-[1014px] border-10 border-black bg-white pl-10 overscroll-x-none max-lg:hidden">
         {data.map((item, index) => (
-          <div
+          <div key={index}
             className="flex mt-5 cursor-pointer "
             onClick={handlePostPropertyClick}>
           
