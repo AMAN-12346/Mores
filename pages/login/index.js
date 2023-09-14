@@ -171,6 +171,8 @@ import right_side_image from "../register/assets/right_side_image.png";
 import logo_image from "../register/assets/logo_image.png";
 import Link from "next/link";
 import styles from "./LoginUser.module.css"; // Import the custom styles
+import { toast } from 'react-toastify';
+
 
 const LoginUser = () => {
   const [selectedMethod, setSelectedMethod] = useState("email");
@@ -205,6 +207,7 @@ const LoginUser = () => {
         localStorage.setItem("isLogin", true); //!
 
         setOtpSuccess(true); // Set the login success state to true
+        toast.success(response.data?.responseMessage);
         setLoading(false);
         setTimeout(() => {
           setOtpSuccess(false); // Reset the login success state after a timeout
@@ -212,6 +215,7 @@ const LoginUser = () => {
         }, 3000); // Set the timeout to 3 seconds (adjust as needed)
       } else {
         setError(response.data?.responseMessage);
+        toast.error(response.data?.responseMessage);
         setTimeout(() => {
           setError("");
         }, 3000);
@@ -219,6 +223,7 @@ const LoginUser = () => {
       }
     } catch (error) {
       setError(error.response?.data.responseMessage);
+      toast.error(error.response?.data.responseMessage)
       setTimeout(() => {
         setError("");
       }, 3000);
@@ -238,25 +243,21 @@ const LoginUser = () => {
           <p className={styles.slogan}>Access back to your account</p>
           <div className={styles.buttonContainer}>
             <button
-              className={`${
-                styles.buttonSelect
-              }py-2 px-6  md:rounded-l-lg  rounded-l-xl lg:w-36 w-60 mt-3 z-40  ${
-                selectedMethod === "email"
+              className={`${styles.buttonSelect
+                }py-2 px-6  md:rounded-l-lg  rounded-l-xl lg:w-36 w-60 mt-3 z-40  ${selectedMethod === "email"
                   ? "bg-primary text-white"
                   : "bg-secondary text-black"
-              }`}
+                }`}
               onClick={() => setSelectedMethod("email")}
             >
               Email
             </button>
             <button
-              className={`${
-                styles.buttonSelect
-              } py-2  md:rounded-r-lg rounded-r-lg px-6 lg:w-36 w-60 mt-3 ${
-                selectedMethod === "phone"
+              className={`${styles.buttonSelect
+                } py-2  md:rounded-r-lg rounded-r-lg px-6 lg:w-36 w-60 mt-3 ${selectedMethod === "phone"
                   ? "bg-primary text-white"
                   : "bg-secondary text-black"
-              }`}
+                }`}
               onClick={() => setSelectedMethod("phone")}
             >
               Phone
@@ -300,10 +301,6 @@ const LoginUser = () => {
                 </Link>
               </p>
             </div>
-            {otpSuccess && (
-              <p className="text-green-500 mt-2">Otp sent successfully!</p>
-            )}
-            {error && <p className="text-red-500 mt-2">{error}</p>}
           </form>
         </div>
 
@@ -321,10 +318,10 @@ const LoginUser = () => {
           layout="fill"
           objectFit="cover"
         />
-        
-        </div>
+
       </div>
-    
+    </div>
+
   );
 };
 

@@ -11,15 +11,17 @@ import { useRouter } from 'next/router';
 import Head from "next/head";
 import 'animate.css/animate.css';
 import FavImage from '../public/footer-image.png';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { DataProvider } from "@/context/data.js";
 
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
  
-  // useEffect(() => {
-  //   window.scrollTo(0,0);
-  // }, [router]);  
+  useEffect(() => {
+    window.scrollTo(0,0);
+  }, [router]);  
 
   return (
     <AuthProvider>
@@ -36,6 +38,7 @@ function MyApp({ Component, pageProps }) {
         <Component {...pageProps}/>
         <Footer /> 
       </DataProvider>
+      <ToastContainer />
     </AuthProvider>
   );
 }

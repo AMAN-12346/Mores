@@ -9,7 +9,7 @@ const TopBar = () => {
 
       <div className="absolute inset-0 flex flex-col justify-center items-center">
         
-        <h1 className="text-3xl font-semibold p-1 px-8 absolute z-10">Buy</h1>
+        <h1 className="text-3xl font-semibold p-1 px-8 absolute z-10">Blog</h1>
         <div className="bg-slate-600 opacity-70 rounded-3xl h-10 w-40   "></div>
         
       </div>

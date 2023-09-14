@@ -51,7 +51,7 @@ const amenityIconsess = {
 };
 
 export default function Amenities({ props }) {
-    const allAmenities = Object.assign({}, props?.perks?.Sports, props?.perks?.safety);
+    const allAmenities = Object.assign({}, props?.perks);
 
     const [openview, setOpenview] = useState(true);
     const [Up, setUp] = useState(true);
