@@ -7,7 +7,7 @@ import InputValue from '@/utils/InputValue';
 import { useState } from 'react';
 import Link from 'next/link';
 
-const index = () => {
+const Index = () => {
     const [data, setData] = useData();
     const [name, setName] = useState();
     const [email, setEmail] = useState();
@@ -72,6 +72,6 @@ const index = () => {
     );
 }
  
-export default index;
+export default Index;
 
 
