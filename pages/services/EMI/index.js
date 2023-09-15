@@ -1,6 +1,5 @@
 "use client";
 import { useEffect, useState } from "react"
-import { PieChart } from '@mui/x-charts';
 import Styles from './index.module.css';
 import InputValue from "@/utils/InputValue";
 import Image from "next/image";
@@ -78,26 +77,7 @@ const EMI = () => {
                                     Total Interest of {time} month : <b> ₹ {totalInterest}</b>
                                 </div>
                             </div>
-                            <PieChart
-                            series={[
-                                {
-                                    data: [
-                                        { id: 0, value: totalInterest, label: 'Interest' },
-                                        { id: 1, value: amount, label: 'Principle' },
-                                    ],
-                                    innerRadius: 12,
-                                    outerRadius: 95,
-                                    paddingAngle: 0,
-                                    cornerRadius: 5,
-                                    startAngle: 0,
-                                    endAngle: 360,
-                                    cx: 121,
-                                    cy: 150,
-                                }
-                            ]}
-                            width={370}
-                            height={300}
-                            />
+                         
                         </div>
                         :
                         <div className={`md:absolute md:right-15 bottom-12 ${Styles.sideDiv}`}>
