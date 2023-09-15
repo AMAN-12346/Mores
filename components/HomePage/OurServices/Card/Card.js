@@ -3,11 +3,14 @@ import Styles from "./Card.module.css";
 import amoebaButton from '../../../../assets/ButtonIcons/amoebaButton.svg'
 import axios from "axios";
 import { useState } from "react";
+import { useRouter } from "next/router";
+
 
 const Card = ({name,imageSrc}) => {
 
     const [loading, setLoading] = useState(false);
     const [propertyList, setPropertyList] = useState();
+    const router = useRouter();
 
     const handleClick = async() => {
         try{
@@ -16,7 +19,11 @@ const Card = ({name,imageSrc}) => {
 
             if(data){
                 setPropertyList(data?.result);
-                console.log("it is ", propertyList , "data ==>", data)            
+                console.log("it is ", propertyList , "data ==>", data) 
+                router.push({
+                    pathname: "/SearchResultPage",
+                    query: { data: JSON.stringify(data.result) },
+                  });           
             } 
             setLoading(false); 
             return;         
@@ -40,6 +47,7 @@ const Card = ({name,imageSrc}) => {
                     className="w-[160px] md:w-[160px]"
                 />
                 <p className={Styles.name}>{loading ? "Wait..." : name}</p>
+                
             </div>
         </div>
      );

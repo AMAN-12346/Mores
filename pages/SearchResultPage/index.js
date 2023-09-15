@@ -3,11 +3,12 @@ import OurNewsBlog from "@/components/HomePage/OurNewsBlog"
 import FilterSection from "@/components/SearchResultPage/FilterSection/FilterSection"
 import TopBar from "@/components/SearchResultPage/TopBar/TopBar"
 import { useRouter } from "next/router"
+
 const SearchResultPage=()=>{
     const router =useRouter()
     const {data}=router.query
     const parsedResults=data?JSON.parse(data):[]
-    // console.log(parsedResults)
+    console.log(parsedResults)
     return(
         <>      
         <TopBar/>
